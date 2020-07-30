@@ -8,7 +8,7 @@
 
 # cp introducao.html index.html
 
-rm docs/*
-cd src
-R -e "bookdown::render_book('index.Rmd', bookdown::gitbook(lib_dir = 'libs'))"
-google-chrome ../docs/introdução.html &
+rm -rf docs/*
+# cd src
+# R -e "bookdown::render_book('index.Rmd', bookdown::gitbook(lib_dir = 'libs'))"
+# google-chrome ../docs/introdução.html
