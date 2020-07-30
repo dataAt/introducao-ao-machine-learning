@@ -1,0 +1,4 @@
+book_filename: intro-ao-machine-learning
+output_dir: "../docs"
+delete_merged_file: true
+download: ["pdf"]

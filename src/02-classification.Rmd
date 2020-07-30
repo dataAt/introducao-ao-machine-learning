@@ -1,0 +1,12 @@
+---
+output: bookdown::html_document2
+bibliography: bibfile.bib
+fig_caption: yes
+header-includes:
+- \usepackage{float}
+- \floatsetup[table]{capposition=bot}
+---
+
+# Classificação
+
+Lorem ipsum dolor sit amet

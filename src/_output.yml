@@ -1,0 +1,15 @@
+bookdown::gitbook:
+    lib_dir: assets
+    split_by: chapter
+    config:
+        search: yes
+        toc:
+            collapse: subsection
+            before: |
+            <li><a href="./">Introdução ao Machine Learning</a></li>
+            after: |
+            <li><a href="https://github.com/dataAt/introducao-ao-machile-learning" target="blank">Contribua com este material</a></li>
+bookdown::pdf_book:
+    keep_tex: yes
+bookdown::html_book:
+    css: custom.css
