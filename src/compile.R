@@ -1,9 +1,12 @@
 #Instalação do pacote renv
-if (!requireNamespace("remotes"))
-  install.packages("remotes")
-remotes::install_github("rstudio/renv")
+if (!requireNamespace("renv")) {
+  if (!requireNamespace("remotes"))
+    install.packages("remotes")
+  remotes::install_github("rstudio/renv")
+}
 
 # inicializa um novo ambiente
+renv::consent(provided = TRUE)
 renv::init()
 
 # Restaura o ambiente criado
