@@ -9,4 +9,38 @@ header-includes:
 
 # Classificação
 
-Lorem ipsum dolor sit amet
+Algoritmos de classificação são aqueles [...]
+
+## Exemplos de algoritmos de classificação
+
+### Naive Bayes
+
+### $k$-Nearest Neighbors
+
+*Somos a **soma** dos que nos cercam*
+
+<!-- Rascunho do texto base para a apresentação do kNN-->
+
+<!-- Conceitos gerais -->
+$k$-Nearest Neighbors (kNN) é um algoritmo de classificação supervisionado que através da assimilação de elementos já classificados define a classe a qual um determinado elemento vai pertencer.
+
+- Este é um algoritmo que é criado utilizando a ideia base de que os dados que representam fenômenos relacionados e por conta disso, compartilham características.
+
+- Distâncias
+  - Euclidean;
+  - Mahalanobis
+
+- Complexidade
+
+<!-- ToDo: Adicionar três figuras nessa parte: (i) Pouca quantidade de pontos; (ii) Quantidade média de pontos; (iii) Grande quantidade de pontos -->
+<!-- Isso ajuda a pessoa a entender a escala de crescimento da complexidade -->
+
+<!-- Escolha do K -->
+
+
+
+<!-- Visualização do funcionamento -->
+
+<!-- Exemplos de uso  -->
+
+### Decision Tree
