@@ -11,6 +11,15 @@ header-includes:
 
 Algoritmos de classificação são aqueles [...]
 
+<!-- Somente três serão apresentados -->
+<!-- Acho que isso aqui pode ser substituído por uma figura e então, comentários em cima dela podem ser feitos-->
+Classes de algoritmos: (Modelos probabilisticos; Decision Trees; *Instance-based Learning*)
+
+***Instance-basedLearning***
+
+<!-- Rascunho -->
+Na aprendizagem baseada em exemplos, a primeira fase da construção do modelo de treinamento é freqüentemente dispensada. A instância de teste está diretamente relacionada com as instâncias de treinamento a fim de criar um modelo de classificação. Tais métodos são chamados de métodos de aprendizagem preguiçosos, pois aguardam o conhecimento da instância de teste para criar um modelo otimizado localmente, que é específico para a instância de teste. A vantagem de tais métodos é que eles podem ser adaptados diretamente à instância de teste específica, e podem evitar a perda de informação associada à incompletude de qualquer modelo de treinamento.
+
 ## Exemplos de algoritmos de classificação
 
 ### Naive Bayes
