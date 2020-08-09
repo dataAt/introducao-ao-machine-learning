@@ -7,6 +7,13 @@ header-includes:
 - \floatsetup[table]{capposition=bot}
 ---
 
+
+```{r, echo=FALSE}
+# Estes comandos não devem ser executados em seu terminal
+library(reticulate) 
+use_python("venv/bin/python3")
+```
+
 # Classificação
 
 *"Nossas características nos fazem iguais e diferentes ao mesmo tempo"* 
@@ -107,8 +114,44 @@ Como forma de reduzir essa complexidade e a quantidade de elementos que precisam
 
 ### Exemplo de uso
 
-<!-- ToDo: Adicionar três figuras nessa parte: (i) Pouca quantidade de pontos; (ii) Quantidade média de pontos; (iii) Grande quantidade de pontos -->
+<!-- ToDo: Verificar e mover para a introdução -->
+Como foi possível perceber o kNN é um algoritmo simples e pode ser implementado facilmente em linguagens como Python e R, mas, não há a necessidade da implementação desse e dos demais algoritmos apresentados neste livro do zero, há diversas bibliotecas que podem ser utilizadas para facilitar todo o processo aplicação do algoritmo. Assim, esta seção vai fazer o uso da biblioteca scikit-learn e do pacote class para realizar a aplicação do kNN.
 
+Para começar, os dados utilizados estão disponíveis no arquivo knnpoints.csv e a visualização desses está disponível na Figura abaixo
+
+<center>
+![](assets/1_classification/1_knn/examples/pointviz.png)
+</center>
+
+Abaixo é apresentado a maneira a qual o scikit-learn é importado para ser utilizado
+
+```{python}
+from sklearn.neighbors import KNeighborsClassifier
+```
+
+#### Exemplo 1
+
+```{python}
+
+```
+
+<center>
+![](assets/1_classification/1_knn/examples/test_1.png)
+</center>
+
+#### Exemplo 2
+
+<center>
+![](assets/1_classification/1_knn/examples/test_2.png)
+</center>
+
+#### Exemplo 3
+
+<center>
+![](assets/1_classification/1_knn/examples/test_3.png)
+</center>
+
+<!-- ToDo: Adicionar três figuras nessa parte: (i) Pouca quantidade de pontos; (ii) Quantidade média de pontos; (iii) Grande quantidade de pontos -->
 <!-- Isso ajuda a pessoa a entender a escala de crescimento da complexidade -->
 <!-- Escolha do K -->
 <!-- Visualização do funcionamento -->
