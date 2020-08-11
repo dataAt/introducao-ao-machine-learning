@@ -11,12 +11,12 @@ header-includes:
 ```{r, echo=FALSE}
 # Estes comandos não devem ser executados em seu terminal
 library(reticulate) 
-use_python("venv/bin/python3")
+use_condaenv('/home/felipe/anaconda3/envs/ml-course')
 ```
 
 # Classificação
 
-*"Nossas características nos fazem iguais e diferentes ao mesmo tempo"* 
+*"Nossas características nos fazem iguais e diferentes ao mesmo tempo" - Autor desconhecido* 
 
 Os algoritmos de Aprendizado de Máquina (AM) supervisionado, apresentados anteriormente, podem ser aplicados para a solução de problemas de Classificação e Regressão. Neste capítulo, serão apresenados os algoritmos de AM para as tarefas de classificação. Para começar, precisamos definir o que é classificação e quais problemas essa pode ser utilizada para resolver. Podemos dizer que classificação é
 
@@ -40,50 +40,84 @@ Dito isto, é importante considerar que, os algoritmos de AM que são empregados
 
 ## *k*-Nearest Neighbors
 
+Para começar, o primeiro algoritmo que vamos tratar será o *k*-Nearest Neighbors (kNN), um algoritmo de classificação *lazzy learning*, que através da análise de vizinhança de amostras de um determinado conjunto de treinamento, define o rótulo de classe das amostras do conjunto de teste. De maneira geral, o que o algoritmo faz é buscar os elementos que estão próximos à amostra que está sendo classificada, e com base nessas amostras que estão próximas faz a classificação. Então, aqui temos uma mistura de conceitos, vamos começar primeiro resumindo o algoritmo em uma frase:
+
+> Me diga com quem tu andas, que eu digo quem tu és
+
+Essa frase ajuda muito a assimilar a ideia geral do algoritmo, mantenha ela em mente durante essa seção. Agora, precisamos entender que o kNN é dividido em duas partes principais: (i) Análise de vizinhança; (ii) Determinação do rótulo da classe. Vamos começar pela primeira parte.
+
+- (i) Análise de vizinhança; 
+
+Nesta parte do algoritmo o que se busca é determinar quem são as amostras do conjunto de treinamento que estão mais próximas da amostra de teste que está sendo classificada. Certo, mas nesse caso, o que é "estar próximo" ? De maneira intuitiva, a ideia de proximidade está relacionada a distância, e é exatamente dessa forma que o algoritmo, nesta etapa, faz a determinação dos elementos próximos, para isso, utiliza várias funções de distância. Um exemplo de função de distância é a `Distância Euclidiana`, sim! a mesma que utilizamos para várias partes de nossas vidas para manipulação de elementos no espaço euclidiano. Você lembra de usar ela para calcular a distância entre dois pontos ? Vamos olhar a fórmula para relembrar
+
+Então, a `Distância euclidiana` é apresentada da seguinte forma
+
+<center>
+$\sqrt{\sum_{i = 1}^{n} (p_i - q_i)^2}$
+</center>
+
+Assim, através dessa função o algoritmo determina os elementos que estão mais próximos de uma determinada amostra. Cabe lembrar que, essa não é a única função, várias outras podem ser utilizadas. Agora, podemos ir para a segunda parte, vamos lá!
+
+- (ii) Determinação do rótulo da classe.
+
+> Para entender esta segunda parte, devemos nos lembrar que, esse algoritmo é um algoritmo supervisionado, então, quando estamos falando do conjunto amostral de treino, estamos assumindo que esses dados já possuem um rótulo definido e que esses rótulos serão utilizados no processo de classificação dos dados que não tem rótulo. Feito esse lembrete, vamos continuar!
+
+Nesta parte do algoritmo, após calcular a distância de cada um dos pontos, ele escolhe os *k* elementos mais próximos. Com a determinação desses elementos mais próximos, o algoritmo analisa e contabiliza, por classe, quantos são os elementos que compoem a vizinhança, dessa forma, ao final desse processo, o algoritmo sabe quais são as classes vizinhas da amostra a ser classificada e quantos elementos de cada uma dessas classes estão presentes na vizinhança. Feito isso, o algoritmo vai determinar o rótulo da amostra a ser classificada como sendo igual a classe, que na vizinhança possui a maior quantidade de elementos. Somente isso! Viu que interessante, esse é um algoritmo simples e que pode ser muito eficiente dependendo do contexto de uso. 
+
+Mas espera ai, você pode estar se perguntando, "E a ideia do treino e teste que foi falada antes?", bem, esse é um algoritmo de classificação *lazzy learning* lembra ? Ou seja, a parte de treinamento é resumida em apenas organizar ou armazenar os dados, de modo a deixar eles pronto para o uso.
+
 <!-- Melhorar a explicação dessa parte inicial, falando dos problemas de k vizinhos e etc-->
 <!-- Acho que aqui, antes de apresentar um exemplo visual, deve vir uma explicação do algoritmo, tipo: (i) Calcula tal coisa; (ii) Faça outra coisa... Isso ajuda a deixar mais palpável o exemplo visual que está sendo apresentado -->
 <!-- A explicação das distâncias também precisa vir aqui, acredito ser bem importante (Falar e mostrar a euclidiana e alguma outra e então, indicar que para cada tipo de problema e dado pode ser aplicada alguma técnica) -->
 <!-- Falar aqui da ideia de já ter dados classificados (Facilita para a explicação da clusterização) -->
-*k*-Nearest Neighbors (kNN) é um algoritmo de classificação *lazzy learning*, que utilizando das características de vizinhança do elemento que está sendo classificado, atribui a este uma classe. A ideia utilizada para a criação e aplicação dessa técnica é baseada na suposição de que, dados registrados sobre um determinado fenômeno, quando próximos, tendem a representam eventos semelhantes.
+<!-- *k*-Nearest Neighbors (kNN) é um algoritmo de classificação *lazzy learning*, que utilizando das características de vizinhança do elemento que está sendo classificado, atribui a este uma classe. A ideia utilizada para a criação e aplicação dessa técnica é baseada na suposição de que, dados registrados sobre um determinado fenômeno, quando próximos, tendem a representam eventos semelhantes. -->
 
 <!-- ToDo: Fazer referência cruzada e parar de usar essa coisa de 'a figura abaixo'-->
-Para tornar todo o entendimento desse algoritmo mais palpável, vamos considerar um pequeno conjunto de dados de exemplo, este apresentado em um plano cartesiano bidimensional. Nesses dados, apresentados na Figura abaixo, as coordenadas $x$ e $y$ representam as características de um determinado ponto e a cor representa a classe.
+<!-- Para tornar todo o entendimento desse algoritmo mais palpável, vamos considerar um pequeno conjunto de dados de exemplo, este apresentado em um plano cartesiano bidimensional. Nesses dados, apresentados na Figura abaixo, as coordenadas $x$ e $y$ representam as características de um determinado ponto e a cor representa a classe. -->
+
+Agora, com o objetivo de deixar tudo mais claro, vamos para um exemplo visual, passo a passo da execução do algoritmo! Então, vamos começar considerando que o nosso conjunto amostral é formado por um grupo de pontos de várias cores, onde as cores representam os rótulos de cada um desses pontos e então, a ideia vai ser aplicar o kNN para determinar o rótulo de um novo ponto com base nesse conjunto já existente.
+
+> Veja aqui que os pontos que já existem representam o conjunto de treino, e o ponto que será classificado, representa o conjunto de teste
+
+Os pontos de treinamento são apresentados abaixo
 
 <center>
 ![](assets/1_classification/1_knn/00_dataset.jpg)
 </center>
 
-Dado este conjunto de dados, vamos fazer a aplicação do kNN para classificar o ponto vermelhor que é apresentado na Figura abaixo
+Beleza! Então, com esse conjunto de dados, vamos adicionar um novo ponto, este é representado pelo ponto vermelho na figura abaixo. Perceba que, este é uma amostra que representa o conjunto de teste, e que, ao ser inserido neste espaço, ele não possui nenhum rótulo definido.
 
 <center>
 ![](assets/1_classification/1_knn/01_classify.jpg)
 </center>
 
-O primeiro passo então é a realização do cálculo da distância entre a amostra que está sendo classificada e todos os pontos presentes no conjunto de dados.
+Certo! Então já temos nosso problema de classificação definido, vamos resolver ele com o kNN. Aqui, o valor de *k* = 5 (Não se preocupe, vamos voltar nesse valor de *k* depois), ou seja, na primeira parte do algoritmo, análise de vizinhança, vamos buscar os 5 elementos mais próximos ao ponto vermelho.
+
+Feito essas considerações, vamos de maneira manual fazer a aplicação do algoritmo, começando com o primeiro passo, de análise de vizinhança, feito com o cálculo das distâncias. Aqui, você vai perceber que a distância utilizada foi a euclidiana, que apresentamos anteriormente.
 
 <center>
 ![](assets/1_classification/1_knn/02_distance.jpg)
 </center>
 
-Com a distância calculada, faz-se a determinação dos *k* vizinhos mais próximos. Neste caso, a quantidade de vizinhos buscadas é 4.
+Com as distâncias calculadas a segunda parte do algoritmo, de determinação do rótulo com base nos vizinhos pode ser iniciada. Para isso, primeiro faz-se a seleção dos 5 elementos mais próximos.
 
 <center>
 ![](assets/1_classification/1_knn/03_neighbor.jpg)
 </center>
 
-Com os vizinhos mais próximos detectados, tem-se definido a vizinhança dos *k* elementos mais próximos do ponto que está sendo classificado naquele momento. Para a definição da classe do ponto que está sendo classificado, faz-se então a contagem da quantidade de elementos que estão presentes e suas respectivas classes.
+Com os vizinhos mais próximos determinados, é feito a contagem desses, separando cada um desses por rótulo, de modo que, a vizinhança é sumarizada em quantidade de elementos por rótulo, como apresentado abaixo.
 
 <center>
 ![](assets/1_classification/1_knn/04_classcount.jpg)
 </center>
 
-Então, é feita a determinação da classe do ponto que está sendo classificado através da escolha da classe que mais aparece na contagem, que neste caso é representada pela cor laranja, que possui três elementos.
+Então, é feita a determinação do rótulo do ponto que está sendo classificado, que como podemos ver, vai receber o rótulo laranja, uma vez que, esta é a classe que mais aparece na vizinhança do ponto vermelho.
 
 <center>
 ![](assets/1_classification/1_knn/05_classdefinition.jpg)
 </center>
 
-E é desta forma que os passos que vimos do algoritmo kNN são materializados frente a um conjunto de dados.
+É desta forma que os passos que vimos do algoritmo kNN são materializados frente a um conjunto de dados. Viu que legal! O que o algoritmo faz é exatamente aquilo que está na frase que apresentamos antes.
 
 <!-- Rascunho do texto base para a apresentação do kNN-->
 <!-- Conceitos gerais -->
@@ -100,22 +134,24 @@ E é desta forma que os passos que vimos do algoritmo kNN são materializados fr
 
 <!--hyperparâmetros, isso já vai ter cido apresentado ao leitor antes ? -->
 <!-- Usar da ideia do treino/teste, por isso, esse vai precisar ser adicionado lá em cima -->
-Legal! Então o algoritmo é deveras muito simples de ser entendido, tem uma quantidade pequena de passos, todos bem compreensíveis. Mas uma pergunta pode ter surgido durante a explicação do algoritmo, como determinar o valor de *k*. E bem, para esta pergunta existem várias respostas, aqui, será adotada a abordagem da seleção considerando o melhor resultado, assim, durante o processo de treinamento e definição dos hyperparâmetros do kNN, opta-se pela escolha do valor de *k* que apresenta o melhor resultado entre os elementos com classe já conhecida e o resultado que o algoritmo está apresentando.
+Legal! Então o algoritmo é deveras muito simples de ser entendido, tem uma quantidade pequena de passos, todos compreensíveis. Mas uma pergunta pode ter surgido durante a explicação do algoritmo, como determinar o valor de *k*. E bem, para esta pergunta existem várias respostas, aqui, será adotada a abordagem da seleção considerando o melhor resultado, assim, durante o processo de treinamento e definição dos hyperparâmetros do kNN, opta-se pela escolha do valor de *k* que apresenta o melhor resultado entre os elementos com classe já conhecida e o resultado que o algoritmo está apresentando. 
+
+Outras abordagens baseadas em otimizações também podem ser uma saída para este caso, mas essas, não serão abordadas neste livro introdutório.
 
 ### Complexidade
 
-Como você pode estar pensando, esse pode não ser um algoritmo computacionalmente muito barato, já que, o cálculo de distância, nesse algoritmo básico que apresentados, é sempre calculado entre o ponto que está sendo classificado, o que se pensarmos em uma quantidade de pontos crescente, como apresentado na Figura abaixo, pode representar um algoritmo com muito tempo para gerar os resultados.
+Como você pode ter pensando, esse pode não ser um algoritmo computacionalmente muito barato, já que, o cálculo de distância nesse algoritmo que apresentamos, é sempre calculado entre todos os pontos do conjunto de treinamento com o conjunto de teste, o que se pensarmos em apenas poucas quantidades de pontos pode não ser um problema, mas que, com a crescente na quantidade, pode ser inviável. Para isso, considere a Figura abaixo, imagina que o ponto vermelho vai ser classificado, a distância dele para todos os outros pontos terá de ser determinada.
 
 <center>
 ![](assets/1_classification/1_knn/06_complexity.jpg)
 </center>
 
-Como forma de reduzir essa complexidade e a quantidade de elementos que precisam ser contabilizados no cálculo da distância, várias implementações aplicam passos de indexação dos dados, com estruturas de dados como a KD-Tree e a Quad-Tree, como é o caso do scikit-learn. Essa abordagem de implementação evita com que todos os pontos tenham de ser calculados, possibilitando assim com que apenas os necessários, neste caso, os mais próximos sejam utilizados nos cálculos de distância.
+Como forma de reduzir essa complexidade e a quantidade de elementos que precisam ser contabilizados no cálculo da distância, várias implementações aplicam passos de indexação dos dados, com estruturas de dados como a KD-Tree ou a Quad-Tree, como é o caso do scikit-learn. Essa abordagem de implementação evita com que todos os pontos tenham de ser calculados, possibilitando assim com que apenas os necessários, neste caso, os mais próximos sejam utilizados nos cálculos de distância.
 
 ### Exemplo de uso
 
 <!-- ToDo: Verificar e mover para a introdução -->
-Como foi possível perceber o kNN é um algoritmo simples e pode ser implementado facilmente em linguagens como Python e R, mas, não há a necessidade da implementação desse e dos demais algoritmos apresentados neste livro do zero, há diversas bibliotecas que podem ser utilizadas para facilitar todo o processo aplicação do algoritmo. Assim, esta seção vai fazer o uso da biblioteca scikit-learn e do pacote class para realizar a aplicação do kNN.
+Como foi possível perceber o kNN é um algoritmo simples e pode ser implementado facilmente em linguagens como Python e R, mas, não há a necessidade da implementação do zero desse e dos demais algoritmos apresentados neste livro, há diversas bibliotecas que podem ser utilizadas para facilitar todo o processo aplicação do algoritmo. Assim, esta seção vai fazer o uso da biblioteca scikit-learn e do pacote class para realizar a aplicação do kNN.
 
 Para começar, os dados utilizados estão disponíveis no arquivo knnpoints.csv e a visualização desses está disponível na Figura abaixo
 
