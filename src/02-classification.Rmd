@@ -16,7 +16,7 @@ use_condaenv('/home/felipe/anaconda3/envs/rstudio-python-cursoml')
 
 # Classificação
 
-*"Nossas características nos fazem iguais e diferentes ao mesmo tempo" - Autor desconhecido* 
+*"Nossas características nos fazem igualmente diferentes" - Autor desconhecido* 
 
 Os algoritmos de Aprendizado de Máquina (AM) supervisionado, apresentados anteriormente, podem ser aplicados para a solução de problemas de Classificação e Regressão. Neste capítulo, serão apresenados os algoritmos de AM para as tarefas de classificação. Para começar, precisamos definir o que é classificação e quais problemas essa pode ser utilizada para resolver. Podemos dizer que classificação é
 
@@ -195,6 +195,32 @@ from sklearn.neighbors import KNeighborsClassifier
 
 ## Árvore de decisão
 
+*"O importante é não deixar de fazer perguntas"* - Albert Einstein
+
+Bem, agora vamos começar a falar de árvore de decisão, esse que é um dos algoritmos mais utilizados na área de Aprendizado de Máquina por conta de seu bom balanceamento entre sua capacidade de solução de diversos problemas de classificação e a facilidade de interpretação dos resultados de suas classificações. Essas são propriedades importantes e que infelizmente podem não ser encontrados em algoritmos mais avançados.  Para começar, antes de nos aprofundarmos nas árvores de decisão dentro do contexto de aprendizado de máquina, façamos uma familiarização com o conceito de árvore de decisão, sua forma de representação e uso.
+
+Inicialmente eu devo dizer, que de maneira geral, tenho certeza que você já viu e até mesmo fez o uso de uma árvore de decisão sem saber. Eu afirmo isso já que em diversas áreas o conceito de árvore de decisão é aplicado como forma de representar o conhecimento de um especialista ou mesmo um procedimento. Por exemplo, se você foi colocar no papel agora, a maneira a qual você decide se vai a praia ou não, como isso ficaria ? Se o conceito de árvore de decisão for aplicado, as decisões de "ir à praia" ou "ficar em casa" poderia ser representada da seguinte forma.
+
+<center>
+![](assets/1_classification/2_decision-tree/arvore_geral.png)
+</center>
+
+Veja que interessante! É certeza que você já fez uma estrutura assim para tomar decisões, ou mesmo estruturar as ideias, se não fez, ao menos viu isso em diversos lugares. Bem, em um contexto bem geral, essa é a ideia de uma árvore de decisão, uma estrutura hierárquica, que através da utilização de características de um determinado problema, "toma decisões". Indo para o contexto de Aprendizado de Máquina, a ideia geral da árvore de decisão é a mesma, sendo diferente na maneira com que as regras da árvore são geradas. 
+
+Isso já que, se pensarmos em uma empresa nos dias antes do Aprendizado de Máquina surgir e se tornar popular e amplamente aplicável, todas as regras utilizadas para a composição de uma árvore seriam geradas por especialistas, com base em estudos e conhecimentos empíricos. Com o Aprendizado de Máquina, os algoritmos são utilizados para selecionar quais são as características mais relevantes e quais as perguntas que devem estar presentes na árvore para a melhor "tomada de decisão". Dentro desta seção de **Classificação**, o conceito de "melhor tomada de decisão" será aplicado com a ideia de classificar os dados, assim, dado um conjunto de dados com rótulos, a ideia é criar uma árvore de decisão que seja capaz de representar as regras que definem  os rótulos que estão presentes nos dados, o que torna a árvore de decisão um algoritmo de classificação supervisionado.
+
+### O processo de aprendizado
+
+<!--  -->
+Legal! Agora vamos apresentar os principais conceitos utilizados no processo de aprendizado de uma árvore de decisão.
+
+#### Entropia e ganho de informação
+
+O primeiro passo necesário para entender
+
+#### Geração da árvore
+
+<!--
 Algoritmo baseado em árvores de decisão (Por isso mostrar o conceito geral delas) - A ideia da representação de conhecimento
 
 - Árvore de decisão (Definição geral)
@@ -204,5 +230,8 @@ Algoritmo baseado em árvores de decisão (Por isso mostrar o conceito geral del
 
 - Problemas com ajuste
   - Muitas perguntas vão fazer com que o sistema seja 'especialista' no conjunto de treinamento, caindo no chamado *overfitting*
+-->
 
 ## Naive Bayes
+
+
