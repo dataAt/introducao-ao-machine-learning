@@ -11,7 +11,7 @@ header-includes:
 ```{r, echo=FALSE}
 # Estes comandos não devem ser executados em seu terminal
 library(reticulate) 
-use_condaenv('/home/felipe/anaconda3/envs/ml-course')
+use_condaenv('/home/felipe/anaconda3/envs/rstudio-python-cursoml')
 ```
 
 # Classificação
@@ -194,5 +194,15 @@ from sklearn.neighbors import KNeighborsClassifier
 <!-- Exemplos de uso  -->
 
 ## Árvore de decisão
+
+Algoritmo baseado em árvores de decisão (Por isso mostrar o conceito geral delas) - A ideia da representação de conhecimento
+
+- Árvore de decisão (Definição geral)
+- Entrar no contexto de aprendizado
+  - Ok, mas como o algoritmo faz para aprender sobre os dados (Entropia de Shannon)
+  - Processo de criação da árvore (Indução, em alto nível)
+
+- Problemas com ajuste
+  - Muitas perguntas vão fazer com que o sistema seja 'especialista' no conjunto de treinamento, caindo no chamado *overfitting*
 
 ## Naive Bayes
