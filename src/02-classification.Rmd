@@ -7,7 +7,6 @@ header-includes:
 - \floatsetup[table]{capposition=bot}
 ---
 
-
 ```{r, echo=FALSE}
 # Estes comandos não devem ser executados em seu terminal
 library(reticulate) 
@@ -17,7 +16,7 @@ reticulate::use_miniconda()
 
 # Classificação
 
-*"Nossas características nos fazem igualmente diferentes" - Autor desconhecido* 
+<!-- *"Nossas características nos fazem igualmente diferentes" - Autor desconhecido*  -->
 
 - A classificação é um processo feito em duas etapas, aprendizado e previsão.
 
@@ -42,6 +41,10 @@ Dito isto, é importante considerar que, os algoritmos de AM que são empregados
 <!-- ***Instance-based Learning*** -->
 
 ## *k*-Nearest Neighbors
+
+* "Você é a média das pessoas com que anda" - Adaptação de ditado popular
+
+<!-- ToDo: Refatorar -->
 
 Para começar, o primeiro algoritmo que vamos tratar será o *k*-Nearest Neighbors (kNN), um algoritmo de classificação *lazzy learning*, que através da análise de vizinhança de amostras de um determinado conjunto de treinamento, define o rótulo de classe das amostras do conjunto de teste. De maneira geral, o que o algoritmo faz é buscar os elementos que estão próximos à amostra que está sendo classificada, e com base nessas amostras que estão próximas faz a classificação. Então, aqui temos uma mistura de conceitos, vamos começar primeiro resumindo o algoritmo em uma frase:
 
@@ -227,123 +230,109 @@ knitr::include_graphics("assets/1_classification/2_decision-tree/03_dt.png")
 ```
 Se lembrarmos a definição feita anteriormente, temos que as árvores de decisão são estruturas recursivas, então, a mesma lógica de busca do elemento que melhor descreve um conjunto de dados e então a divisão é aplicado nos nós resultantes, isso é feito até que não haja mais elementos suficientes para a divisão ou quando em um nó, todos os elementos pertencem a apenas uma classe. Na Figura \@ref(fig:class_dt4) uma divisão é feita no nó esquerdo, gerado anteriormente, e no nó esquerdo não é feito mais nada.
 
-```{r fig:class_dt4, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Conjunto de dados 3 - Fonte: Produção do autor'}
+```{r fig:class_dt4, echo=FALSE, fig.align='center', out.width = "79%", fig.cap='Conjunto de dados 3 - Fonte: Produção do autor'}
 knitr::include_graphics("assets/1_classification/2_decision-tree/04_dt.png")
 ```
 Vamos supor agora que a árvore apresentada na Figura \ref@(fig:class_dt4) finalizou seu treinamento, de modo que classificações podem ser iniciadas. Você pode se perguntar, mas em alguns nós da árvore há uma mistura de elementos, como ele vai fazer a identificação da classe ? Bem, este é um problema recorrente na aplicação das árvores de decisão, nem sempre, as regras escolhidas vão criar grupos de dados 100% puros (de uma única classe). Mais regras poderia ser adicionadas, mas ai, caimos no problema de *overfitting*, onde a árvore começa a criar regras específicas para os dados que estão sendo utilizados no treinamento, o que faz seu desempenho ser muito ruim com dados que não sejam do conjunto utilizado no treino. Com relação a definição da classe, o que é feito é definir a classe do nó gerado, considerando a classe mais representativa de cada nó, então, se formos classificar um novo ponto e ele tem X > 10, ele vai ser colocado como classe `Vermelha` no conjunto de dados.
 
-Agora que temos uma visão geral do algoritmo, vamos dar um passo a frente, e ver como os passos apresentados acima são feitos no algoritmo.
+Agora que temos uma visão geral do algoritmo, vamos dar ir adiante a frente e ver como os passos apresentados acima são feitos no algoritmo.
 
 ### Funcionamento
 
+<!-- ToDo: Adicionar informação de que existem diversos algoritmos para a construção da árvore de decisão: ID3, CARTx... -->
+
+Nesta seção, vamos materializar as ideias que foram apresentadas na seção de `Visão Geral`, descrevendo os passos envolvidos em cada uma das etapas do treinamento da árvore de decisão que foi apresentado anteriormente. Se lembrarmos dos passos que vimos anteriormente, temos que a criação da árvore ocorre em três etapas
+
+- 1. Seleção do melhor atributo para a divisão dos registros
+- 2. Utilização deste atributo para a divisão do conjunto de dados, gerando novos nós na árvore
+- 3. Para cada nó gerado no passo 2, aplica, recursivamente o algoritmo de construção, iniciando no passo 1. O algoritmo deve parar a recursão e não dividir mais os nós quando: 
+  - (i) Todos os dados do nó pertencerem a uma mesma classe; 
+  - (ii) Não há dados suficientes para a divisão; ou 
+  - (iii) Todos os atributos disponíveis nos dados já foram utilizados.
+
+Agora, para que seja possível entender os conceitos utilizados na construção da árvore de decisão, vamos passar por cada um dos tópicos listados anteriormente.
+
+#### Seleção do melhor atributo e divisão dos dados
+
+Como foi apresentado na visão geral, a primeira etapa do algoritmo de criação de uma árvore de decisão é a seleção do atributo que melhor divide o conjunto de dados. Naquele caso, o algoritmo decidiu fazer o uso do atributo `X` como base para a divisão, considerando também que o valor deste deveria ser menor que 10. Ambas essas decisões foram tomadas seguindo alguns critérios, que ajudaram a definir as perguntas que melhor dividem os dados. Esses critérios são apresentados nessa seção.
+
+Vamos começar com a seleção de atributos. Existem diversas métricas que podem auxiliar o algoritmo de criação da árvore de decisão a escolher os melhores atributos, sendo alguns deles o `Índice GINI` e o `Ganho de informação`. Neste documento, vamos considerar o uso da métrica de ganho de informação, neste, as divisões no conjunto de dados são feitas considerando a diminuição da entropia que esta vai causar no conjunto de dados.
+
+Calma, eu sei, é muito coisa de uma vez só, mas vamos por partes. Primeiro, a entropia é um conceito utilizado para determinar o grau de desordem do conjunto de dados. Antes de apresentar a fórmula, vamos dar uma olhada em diferentes conjuntos de dados e seus níveis de entropia.
+
+```{r fig:class_dt5, echo=FALSE, fig.align='center', out.width = "79%", fig.cap='Níveis de entropia - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/2_decision-tree/05_dt.png")
+```
+
+Perceba que, nos conjuntos de dados apresentados na Figura \@ref(fig:class_dt5), quando menos mistura (Entenda como confusão neste caso) eu tenho no conjunto de dados, menor é a entropia do sistema. Então, a ideia base do ganho de informação é ir fazendo divisões de modo que os espaços resultantes da divisão tenham a menor entropia possível. Agora que já sabemos o que é, vejamos a fórmula da entropia.
+
+$E\:=-\:\sum _{i=1}^{^N}\left(p_i\cdot log_2\cdot p_i\right)\:$, onde
+
+$N$ = Quantidade total de elementos no conjunto de dados,
+
+$p_i$ = Probabilidade de aparição da classe $i$ no conjunto de dados
+
+Usando dessas duas informações a entropia do sistema pode ser gerada! Bem, e o `Ganho de informação` ? Então, ele representa a vantagem que um determinado atributo tem de ser utilizado para a divisão, onde essa vantagem representa o grau de diminuição da entropia do conjunto de dados. O ganho de informação é definido como:
+
+$GI\left(Q\right)=E_0-\sum _{i=1}^q\left(\frac{N_i}{N}E_i\right)\:$, onde
+
+$E_0$ = Entropia do nó pai (Nó atual)
+
+$E_i$ = Entropia do filho a ser gerado
+
+$q$ = Quantidade de nós filho
+
+$N$ = Quantidade total de elementos no conjunto de dados
+
+$N_i$ = Quantidade de dados a ser inserido no nó filho $i$
+
+Uma vez tendo esses conceitos definidos, cabe deixar claro que, o ganho de informação será o elemento base utilizado no processo de seleção do atributo que melhor divide o conjunto de dados (Que tem maior ganho de informação), e uma vez que este atributo é selecionado, ele passa a ser utilizado para a realização da divisão dos dados. Neste processo de divisão, mais passos podem ser considerados, mas o objetivo deste documento é de apenas apresentar a intuição geral por trás da árvore de decisão e seu processo de treinamento.
+
+#### Exemplo de construção da árvore
+
+Para fechar essa parte mais téorica do funcionamento da árvore de decisão e podermos iniciar a parte prática, vamos fazer um exemplo passo a passo da criação de uma árvore de decisão. Neste exemplo, vamos utilizar os dados que estão apresentados na tabela abaixo, esses que foram postos com valores categóricos de maneira a tornar mais simples todo o cálculo passo a passo que será realizado.
+
+| Está chovendo ? | Está com tempo ? | Transporte (Classe) |
+|:---------------:|:----------------:|:-------------------:|
+|       Sim       |        Sim       |        Ônibus       |
+|       Sim       |        Não       |        Ônibus       |
+|       Não       |        Sim       |      Caminhada      |
+|       Não       |        Não       |        Ônibus       |
+
+Bom, nesta primeira etapa nossa árvore nem existe, é preciso definir para ela um ponto de partida, um atributo que será utilizada para dividir o conjunto de dados e então ir criando os ramos de decisão. Como vimos na seção anterior, vamos utilizar o `Ganho de informação` para realizar essa decisão. Então, para começar, vamos calcular o ganho de informação para cada uma dos atributos, afinal, se quisermos saber qual a melhor, precisamos testar todas.
+
+Para calcular o ganho de informação, precisamos primeiro calcular as entropias para os nós filhos que serão gerados caso este atributo seja o selecionado para a divisão. Para isso, aplicamos a divisão considerando o atributo e então, para cada nó gerado, calculamos a entropia. Por exemplo, no caso do atributo `Está chovendo?`, a divisão gerou dois nós. Um para o valor `Sim` e outro para o `Não`. Dentro desses dois nós é feita a inserção dos elementos correspondentes. No caso de quando `Está chovendo?` for `Sim`, o único transporte possível é o `Ônibus`, então, ele é o único inserido no nó resultante. O mesmo vale para quando a resposta é `Não`, mas para esta resposta, são possíveis os transportes `Ônibus` e `Caminhada`. A Figura \@ref(fig:class_dt6) apresenta a aplicação desta lógica em ambas os atributos (`Está chovendo?` e `Está com tempo?`)
+
+```{r fig:class_dt6, echo=FALSE, fig.align='center', out.width = "90%", fig.cap='Entropia dos nós filhos - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/2_decision-tree/06_dt.png")
+```
+
+Com a entropia contabilizada para cada nó filho, de cada um dos atributos, o ganho de informação pode ser calculado. Vamos então começar calculando a entropia do nó pai, que como visto anteriormente, basicamente representa a entropia da divisão atual dos dados, que neste primeiro momento vai considerar todo o conjunto de dados. Lembre-se de que o calculo é feito considerando o atributo de classe, neste caso `Transporte`.
+
+$E_0=-\left(\left(\frac{3}{4}\cdot log_2\frac{3}{4}\right)+\left(\frac{1}{4}\cdot log_2\frac{1}{4}\right)\right)\:\:\approx \:0.81$
+
+Beleza! Com isso calculado, vejamos o ganho de informação para cada atributo
+
+<!-- ToDo: Validar -->
+* `Está chovendo?`
+
+$GI\left(EstaChovendo?\right)\:=\:0.81\:-\:\sum _{n=1}^q\:\left(\frac{N_i}{N}E_i\right)=0.31$
+
+* `Está com tempo?`
+
+$GI\left(EstaComTempo?\right)\:=\:0.81\:-\:\sum _{n=1}^q\:\left(\frac{N_i}{N}E_i\right)=0.31$
+
+Opa! Olha que interessante, no final das contas os dois atributos tem a mesma quantidade de ganho de informação, o que indica que, ao selecionar um ou outro, a qualidade da divisão vai acabar sendo a mesma. Neste caso, outros critérios podem ser aplicados para o desempate, mas esses não serão tratados aqui. O ponto para este exercício é que, com os ganhos de informação calculados pode-se fazer a seleção do atributo para iniciar a divisão dos dados e assim começar a construção da árvore de decisão.
+
+Bem, é básicamente assim que a árvore de decisão aprende, nos passos seguintes a este, utilizando a propriedade recursiva, citada anteriormente, estes passos vão sendo aplicados até atingir os critérios de parada já apresentados também. Com isso, você sabe agora o processo base que é utilizado para no processo de treinamento de uma árvore de decisão. Uma vez que a árvore é criada, é possível iniciar o processo de classificação dos dados, onde, as instâncias que precisam ser classificadas são colocadas na estrutura da árvore e então a classe é definida pela aplicação das regras, exatamente como vimos no exemplo de visão geral apresentado.
+
+Acho que agora você consegue perceber o motivo deste ser um dos métodos de aprendizado de máquina mais utilizados que existe, sua simplicidade de implementação, interpretação junto a seu alto poder de generalização fazem com que este seja aplicado em diversos casos.
+
+### Problemas com overfitting
+
+Assim como qualquer outro algoritmo, de aprendizado de máquina ou não, as árvores de decisão apresentam alguns problemas, o que não as torna "balas de prata" para todos os contextos. Um dos principais problemas que vem junto às árvores de decisão é o *overfitting*, neste, a árvore, durante o processo de treinamento, começa a criar regras que consideram características que são muito específicas dos dados que estão sendo utilizados no processo de treinamento, isso faz com que ao ser aplicada em outros dados, que não os de treinamento, problemas com a identificação e classificação acabem surgindo. Então, ao utilizar a árvore de decisão tome cuidado com a quantidade de regras e do tamanho da árvore que está sendo gerado. Isso tudo pode ser controlado durante o processo de implementação, controlando os parâmetros de criação da árvore, como os limites de altura e de quantidade de nós resultados.
+
 ### Exemplos
-
-
-Para começar, devo dizer que você provavelmente já deve ter utilizado 
-
-
-que deixa evidente as regras que estão sendo utilizadas
-
-com suas propriedades
-
-A árvore de decisão é um dos algoritmos mais utilizados na área de Aprendizado de Máquina, isso ocorre por conta das propriedades que 
-O algoritmo de árvore de decisão é um dos mais utilizados na área de Aprendizado de Máquina, isso ocorre por conta das propriedades que e
-
-
-O algoritmo de árvore de decisão é um dos mais utilizados na área de Aprendizado de Máquina, isso ocorre por conta de suas diversas propriedades que fazem desse algoritmo simples de entender e fácil de aplicar nos mais variados contextos. No capítulo anterior, foi realizado a apresentação das árvores de decisão para a solução de problemas de regressão
-
-
-
-Para começar, é importante saber que as propriedades base, apresentadas no capó
-
-
-No capítulo anterior, foram foi realizada a apresentação do algoritmo de árvore de decisão como uma ferramenta para a solução dos problemas de regressão. Esta seção apresenta o uso de árvores de decisão no contexto dos problemas de classificação.
-
-As árvores de decisão, são um dos
-
-
-Árvores de decisão, são a
-
-
-<!-- Fluxo de apresentação dos conceitos -->
-
-- Árvore de decisão como mecanismo para a representação do conhecimento
-- 
-
-
-
-- Conceito geral de árvore de decisão
-- Como funciona o algoritmo de árvore de decisão ?
-  - Seleção de atributo (Com ganho de informação);
-    - "Quanto maior é a entropia, menor é a ordem do sistema"
-    - "O ganho de informação é a diminuição da entropia"
-      - O ganho de informação calcula a diferença entre a entropia antes da divisão e a entropia média após a divisão do conjunto
-      de dados com base em determinados valores de atributo
-      - Escolhe a variável que tem o maior ganho de informação
-  - 
-
-
-
-- Entropia e ganho de informação como base
-  - O índice GINI também poderia ser aplicado para este caso
-
-A primeira coisa que precisa ficar clara é que a árvore de decisão, antes do conceito em ML, é uma técnica que pode ser utilizada para a representação de conhecimento e informação.
-  
-<!-- Refazer essa primeira parte passando uma ideia genérica de como a coisa toda funciona. Fazendo a análise e separação dos espaços na mão, acredito que isso seja a melhor coisa a ser feita -->
-
-<!-- Informações que precisam ser consideradas no momento em que a explicação estiver sendo feita -->
-- A árvore de decisão pode ser criada de diferentes formas!
-  - Por isso existem diversos algoritmos para fazer isso (Não precisa entrar em muitos detalhes)
-
-- Seleção de atributos <!-- O exemplo vai ter que deixar isso bem claro! -->
-  - A forma de escolher o melhor atributo para a construção da árvore é feita com base em uma métrica
-    - Ganho de informação (Entropia)
-    - Índice GINI
-
-- Problemas de Overfitting
-  - O controle do overfitting da árvore deve ser feito através através da poda
-  - "Sabe muito sobre o treino"
-
-* Ideia geral
-
-* Matemática
-
-*"O importante é não deixar de fazer perguntas"* - Albert Einstein
-
-Bem, agora vamos começar a falar de árvore de decisão, esse que é um dos algoritmos mais utilizados na área de Aprendizado de Máquina por conta de seu bom balanceamento entre sua capacidade de solução de diversos problemas de classificação e a facilidade de interpretação dos resultados de suas classificações. Essas são propriedades importantes e que infelizmente podem não ser encontrados em algoritmos mais avançados.  Para começar, antes de nos aprofundarmos nas árvores de decisão dentro do contexto de aprendizado de máquina, façamos uma familiarização com o conceito de árvore de decisão, sua forma de representação e uso.
-
-Inicialmente eu devo dizer, que de maneira geral, tenho certeza que você já viu e até mesmo fez o uso de uma árvore de decisão sem saber. Eu afirmo isso já que em diversas áreas o conceito de árvore de decisão é aplicado como forma de representar o conhecimento de um especialista ou mesmo um procedimento. Por exemplo, se você foi colocar no papel agora, a maneira a qual você decide se vai a praia ou não, como isso ficaria ? Se o conceito de árvore de decisão for aplicado, as decisões de "ir à praia" ou "ficar em casa" poderia ser representada da seguinte forma.
-
-<center>
-![](assets/1_classification/2_decision-tree/arvore_geral.png)
-</center>
-
-Veja que interessante! É certeza que você já fez uma estrutura assim para tomar decisões, ou mesmo estruturar as ideias, se não fez, ao menos viu isso em diversos lugares. Bem, em um contexto bem geral, essa é a ideia de uma árvore de decisão, uma estrutura hierárquica, que através da utilização de características de um determinado problema, "toma decisões". Indo para o contexto de Aprendizado de Máquina, a ideia geral da árvore de decisão é a mesma, sendo diferente na maneira com que as regras da árvore são geradas. 
-
-Isso já que, se pensarmos em uma empresa nos dias antes do Aprendizado de Máquina surgir e se tornar popular e amplamente aplicável, todas as regras utilizadas para a composição de uma árvore seriam geradas por especialistas, com base em estudos e conhecimentos empíricos. Com o Aprendizado de Máquina, os algoritmos são utilizados para selecionar quais são as características mais relevantes e quais as perguntas que devem estar presentes na árvore para a melhor "tomada de decisão". Dentro desta seção de **Classificação**, o conceito de "melhor tomada de decisão" será aplicado com a ideia de classificar os dados, assim, dado um conjunto de dados com rótulos, a ideia é criar uma árvore de decisão que seja capaz de representar as regras que definem  os rótulos que estão presentes nos dados, o que torna a árvore de decisão um algoritmo de classificação supervisionado.
-
-### O processo de aprendizado
-
-<!--  -->
-Legal! Agora vamos apresentar os principais conceitos utilizados no processo de aprendizado de uma árvore de decisão.
-
-#### Entropia e ganho de informação
-
-O primeiro passo necesário para entender
-
-#### Geração da árvore
-
-<!--
-Algoritmo baseado em árvores de decisão (Por isso mostrar o conceito geral delas) - A ideia da representação de conhecimento
-
-- Árvore de decisão (Definição geral)
-- Entrar no contexto de aprendizado
-  - Ok, mas como o algoritmo faz para aprender sobre os dados (Entropia de Shannon)
-  - Processo de criação da árvore (Indução, em alto nível)
-
-- Problemas com ajuste
-  - Muitas perguntas vão fazer com que o sistema seja 'especialista' no conjunto de treinamento, caindo no chamado *overfitting*
--->
 
 ## Naive Bayes
 
