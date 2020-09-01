@@ -8,5 +8,42 @@ header-includes:
 ---
 
 # Regressão
+Todas as pessoas pelo menos uma vez na vida já sentiu ou sentirá a necessidade 
+de prever algum acontecimento futuro. Estamos a todo momento assimilando 
+informações para realizar alguma tomada de decisão, seja de forma intrínseca ou 
+não. No contexto de Machine Learning (ML) isso é feito pela técnicas de 
+regressão. A regressão é uma ferramenta que busca modelar relações entre 
+variáveis dependentes e independentes através de métodos estatísticos 
+[@soto2013regression]. 
 
-Lorem ipsum dolor sit amet
+Uma variável independente, normalmente representada pela  variável $x$, 
+caracteriza uma grandeza que está sendo manipulada durante um experimento e que 
+não sofre influência de outras variáveis. Já a variável dependente, normalmente 
+representada pela variável $y$, caracteriza valores que estão diretamente 
+associados à variável independente, ou seja, ao ser manipulada os valores 
+variável independente, o valor das variáveis dependentes também sofrem 
+alterações. Na Figura \@ref(fig:happinessWorld) é apresentada a relação entre a 
+expectativa de vida baseada e um índice de felicidade calculado em diversos 
+países obtidos a partir de um levantamento feito por @helliwell2020social. A 
+variável independente nesse exemplo é representada pelo índice de felicidade e a 
+expectativa de vida age como variável independente, dessa forma pode ser 
+observada uma tendência de expectativa de vida maior em países com alto índice 
+de felicidade, com uma força de correlação de 0.77.
+
+```{r happinessWorld, echo=FALSE, fig.align="center", fig.cap='Relação entre o índice de felicidade e expectativa de vida. Fonte: [@helliwell2020social]'}
+  knitr::include_graphics("assets/happiness_world.png")
+```
+
+As relações entre as variáveis dependentes e independetes são feitas através de 
+algum coeficiente de correlação. Uma das métricas de correlação mais utilizadas 
+é o coeficiente de Pearson ($\rho$), que mede a associação linear entre duas 
+variáveis [@kirck2008pearson]. Os valores do coeficiente de Pearson variam entre 
+-1 e 1, quanto mais próximos desses extremos melhor correlacionado estão as 
+variáveis. O coeficiente de Pearson pode ser definido pela Equação
+
+\begin{equation} 
+    r = \frac{{}\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
+    {\sqrt{\sum_{i=1}^{n} (x_i - \overline{x})^2(y_i - \overline{y})^2}}
+\end{equation} 
+
+

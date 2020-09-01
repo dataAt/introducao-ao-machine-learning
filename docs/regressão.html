@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Regressão | 01-introduction.split</title>
-  <meta name="description" content="" />
+  <title>3 Regressão | Agrupamento</title>
+  <meta name="description" content="3 Regressão | Agrupamento" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Regressão | 01-introduction.split" />
+  <meta property="og:title" content="3 Regressão | Agrupamento" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Regressão | 01-introduction.split" />
+  <meta name="twitter:title" content="3 Regressão | Agrupamento" />
   
   
   
@@ -83,7 +83,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Agrupamento</a>
           </h1>
         </div>
 
@@ -93,7 +93,42 @@
             <section class="normal" id="section-">
 <div id="regressão" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Regressão</h1>
-<p>Lorem ipsum dolor sit amet</p>
+<p>Todas as pessoas pelo menos uma vez na vida já sentiu ou sentirá a necessidade
+de prever algum acontecimento futuro. Estamos a todo momento assimilando
+informações para realizar alguma tomada de decisão, seja de forma intrínseca ou
+não. No contexto de Machine Learning (ML) isso é feito pela técnicas de
+regressão. A regressão é uma ferramenta que busca modelar relações entre
+variáveis dependentes e independentes através de métodos estatísticos
+<span class="citation">(Soto 2013)</span>.</p>
+<p>Uma variável independente, normalmente representada pela variável <span class="math inline">\(x\)</span>,
+caracteriza uma grandeza que está sendo manipulada durante um experimento e que
+não sofre influência de outras variáveis. Já a variável dependente, normalmente
+representada pela variável <span class="math inline">\(y\)</span>, caracteriza valores que estão diretamente
+associados à variável independente, ou seja, ao ser manipulada os valores
+variável independente, o valor das variáveis dependentes também sofrem
+alterações. Na Figura <a href="regressão.html#fig:happinessWorld">3.1</a> é apresentada a relação entre a
+expectativa de vida baseada e um índice de felicidade calculado em diversos
+países obtidos a partir de um levantamento feito por <span class="citation">Helliwell et al. (2020)</span>. A
+variável independente nesse exemplo é representada pelo índice de felicidade e a
+expectativa de vida age como variável independente, dessa forma pode ser
+observada uma tendência de expectativa de vida maior em países com alto índice
+de felicidade, com uma força de correlação de 0.77.</p>
+<div class="figure" style="text-align: center"><span id="fig:happinessWorld"></span>
+<img src="assets/happiness_world.png" alt="Relação entre o índice de felicidade e expectativa de vida. Fonte: [@helliwell2020social]"  />
+<p class="caption">
+Figure 3.1: Relação entre o índice de felicidade e expectativa de vida. Fonte: <span class="citation">(Helliwell et al. 2020)</span>
+</p>
+</div>
+<p>As relações entre as variáveis dependentes e independetes são feitas através de
+algum coeficiente de correlação. Uma das métricas de correlação mais utilizadas
+é o coeficiente de Pearson (<span class="math inline">\(\rho\)</span>), que mede a associação linear entre duas
+variáveis <span class="citation">(Kirch 2008)</span>. Os valores do coeficiente de Pearson variam entre
+-1 e 1, e quanto mais próximos desses extremos melhor correlacionado estão as
+variáveis. O coeficiente de Pearson pode ser definido pela Equação</p>
+<p><span class="math display">\[\begin{equation} 
+    r = \frac{{}\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
+    {\sqrt{\sum_{i=1}^{n} (x_i - \overline{x})^2(y_i - \overline{y})^2}}
+\end{equation}\]</span></p>
 
 </div>
             </section>
@@ -152,6 +187,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
