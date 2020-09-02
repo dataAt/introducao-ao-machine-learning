@@ -121,14 +121,25 @@ Figure 3.1: Relação entre o índice de felicidade e expectativa de vida. Fonte
 </div>
 <p>As relações entre as variáveis dependentes e independetes são feitas através de
 algum coeficiente de correlação. Uma das métricas de correlação mais utilizadas
-é o coeficiente de Pearson (<span class="math inline">\(\rho\)</span>), que mede a associação linear entre duas
-variáveis <span class="citation">(Kirch 2008)</span>. Os valores do coeficiente de Pearson variam entre
--1 e 1, e quanto mais próximos desses extremos melhor correlacionado estão as
-variáveis. O coeficiente de Pearson pode ser definido pela Equação</p>
-<p><span class="math display">\[\begin{equation} 
-    r = \frac{{}\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
+é o coeficiente de Pearson, que mede a associação linear entre duas variáveis
+<span class="citation">(Kirch 2008)</span>. O coeficiente de Pearson de amostras populacionais
+pertecentes a duas variáveis pode ser definido pela
+Equação <a href="regressão.html#eq:corr-pearson">(3.1)</a>.</p>
+<p><span class="math display" id="eq:corr-pearson">\[\begin{equation} 
+    r_{xy} = \frac{{}\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
     {\sqrt{\sum_{i=1}^{n} (x_i - \overline{x})^2(y_i - \overline{y})^2}}
+\tag{3.1}
 \end{equation}\]</span></p>
+<p>Os valores do coeficiente de Pearson variam entre -1 e 1, de tal forma que
+quanto mais próximos desses extremos, melhor correlacionado estão as variáveis.
+A Figura <a href="regressão.html#fig:scatterCorrelations">3.2</a> mostra alguns exemplos com gráficos de
+disperssão de variáveis com diferentes correlações.</p>
+<div class="figure" style="text-align: center"><span id="fig:scatterCorrelations"></span>
+<img src="assets/correlations.png" alt="Diferentes correlações entre variáveis. Fonte: [@helliwell2020social]"  />
+<p class="caption">
+Figure 3.2: Diferentes correlações entre variáveis. Fonte: <span class="citation">(Helliwell et al. 2020)</span>
+</p>
+</div>
 
 </div>
             </section>

@@ -36,14 +36,26 @@ de felicidade, com uma força de correlação de 0.77.
 
 As relações entre as variáveis dependentes e independetes são feitas através de 
 algum coeficiente de correlação. Uma das métricas de correlação mais utilizadas 
-é o coeficiente de Pearson ($\rho$), que mede a associação linear entre duas 
-variáveis [@kirck2008pearson]. Os valores do coeficiente de Pearson variam entre 
--1 e 1, quanto mais próximos desses extremos melhor correlacionado estão as 
-variáveis. O coeficiente de Pearson pode ser definido pela Equação
+é o coeficiente de Pearson, que mede a associação linear entre duas variáveis 
+[@kirck2008pearson]. O coeficiente de Pearson de amostras populacionais 
+pertecentes a duas variáveis pode ser definido pela 
+Equação \@ref(eq:corr-pearson).
 
 \begin{equation} 
-    r = \frac{{}\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
+    r_{xy} = \frac{{}\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
     {\sqrt{\sum_{i=1}^{n} (x_i - \overline{x})^2(y_i - \overline{y})^2}}
+(\#eq:corr-pearson)
 \end{equation} 
+
+Os valores do coeficiente de Pearson variam entre -1 e 1, de tal forma que 
+quanto mais próximos desses extremos, melhor correlacionado estão as variáveis. 
+A Figura \@ref(fig:scatterCorrelations) mostra alguns exemplos com gráficos de 
+disperssão de variáveis com diferentes correlações.
+
+```{r scatterCorrelations, echo=FALSE, fig.align="center", fig.cap='Diferentes correlações entre variáveis. Fonte: [@helliwell2020social]'}
+  knitr::include_graphics("assets/correlations.png")
+```
+
+
 
 
