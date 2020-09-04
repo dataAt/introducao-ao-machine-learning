@@ -118,7 +118,7 @@ países obtidos a partir de um levantamento feito por <span class="citation">Hel
 variável independente nesse exemplo é representada pelo índice de felicidade e a
 expectativa de vida age como variável independente, dessa forma pode ser
 observada uma tendência de expectativa de vida maior em países com alto índice
-de felicidade, com uma força de correlação de 0.77.</p>
+de felicidade, com uma força de correlação de 0,77.</p>
 <div class="figure" style="text-align: center"><span id="fig:happinessWorld"></span>
 <img src="assets/happiness_world.png" alt="Relação entre o índice de felicidade e expectativa de vida. Fonte: [@helliwell2020social]"  />
 <p class="caption">
@@ -167,7 +167,7 @@ relação entre duas variáveis através de uma função, que pode ser definida 
 \end{equation}\]</span></p>
 <p>Onde <span class="math inline">\(y_{i}\)</span> é a variável dependente, também denominada de variável alvo,
 <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(beta x_{i}\)</span> são coeficientes calculados pela regressão, que
-representam o intercepto e inclinação da reta, respectivamente.</p>
+representam o intercepto no eixo <span class="math inline">\(y\)</span> e inclinação da reta, respectivamente.</p>
 <p>A RLM é semelhante semelhante à RLS, porém possui multiplas variáveis
 preditoras, e pode ser definida por:</p>
 <p><span class="math display" id="eq:rlm-function">\[\begin{equation} 
@@ -184,15 +184,73 @@ inclinação da reta, as técnicas baseadas em mínimos quadrados oridinários e
 gradiente descendente são as mais comuns.</p>
 <div id="métodos-dos-quadrados-ordinários" class="section level4" number="3.1.1.1">
 <h4><span class="header-section-number">3.1.1.1</span> Métodos dos quadrados ordinários</h4>
-<p>O Métodos dos quadrados ordinários (MQO) ou método dos mínimos quadrados (MMQ)
-busca encontrar o melhor valor para os coeficientes, de tal forma que a
-diferença absoluta entre o valor real e o predito pela função seja o menor para
-todos os pontos. A Figura @ref{fig:ols} mostra um exmplo de regressão linar
-utilizando o MQO.</p>
+<p>O Método dos quadrados ordinários (MQO) ou método dos mínimos quadrados (MMQ),
+busca encontrar o melhor valor para os coeficientes citados anteriormente, de
+tal forma que a diferença absoluta entre o valor real e o predito pela função
+seja a menor possível entre todos os pontos. A Figura <a href="regressão.html#fig:ols">3.3</a> mostra um
+exmplo de regressão linar utilizando o MQO para um conjunto de pontos com força
+de correlação de 0,9.</p>
 <div class="figure" style="text-align: center"><span id="fig:ols"></span>
 <img src="assets/ols.png" alt="Exemplo do método dos quadrados ordinários."  />
 <p class="caption">
 Figure 3.3: Exemplo do método dos quadrados ordinários.
+</p>
+</div>
+<p>Considerando a Imagem <a href="regressão.html#fig:ols">3.3</a>, uma amostra de 10 pontos como exemplo, que
+será chamada de <span class="math inline">\(A\)</span>, ou seja, <span class="math inline">\(A = \{(x_{i}, y_{i}):i=1, ..., 10\}\)</span>. O MQO tem
+como objetivo estibular os coeficientes da função, de tal forma que a soma
+quadrática dos erros absolutos <span class="math inline">\(E^{2}\)</span> seja a menor possível:</p>
+<p><span class="math display" id="eq:error-ols">\[\begin{equation} 
+    E^{2} = \sum_{i=1}^{n=10}(y_{i}-(\alpha+\beta x_{i}))^{2}
+\tag{3.4}
+\end{equation}\]</span></p>
+<p>Expandindo a equação fica:</p>
+<p><span class="math display" id="eq:expanded-error-ols">\[\begin{equation} 
+    E = ((y_{1}-(\alpha+\beta x_{1}))^{2}+(y_{2}-(\alpha+\beta x_{2}))^{2}+ ... + (y_{10}-(\alpha+\beta x_{10}))^{2})^{2}
+\tag{3.5}
+\end{equation}\]</span></p>
+<p>Após isso, é teremos uma função com duas variáveis, e para encontrar seus
+valores e igualar a zero, a fim de se obter os pontos críticos, é necessário
+calcular as derivadas parciais em relação a <span class="math inline">\(\alpha\)</span> (Equação
+<a href="regressão.html#eq:partial-alpha">(3.6)</a> e <span class="math inline">\(\beta\)</span> (Equação <a href="regressão.html#eq:partial-beta">(3.7)</a>.</p>
+<!-- = 2(y_{1}-\alpha+\beta x_{1})\times1+2(y_{2}-\alpha+\beta x_{2})\times1+ ... + 2(y_{10}-\alpha+\beta x_{10})\times1 = 0 -->
+<p><span class="math display" id="eq:partial-alpha">\[\begin{equation} 
+    \frac{\partial E^{2}}{\partial \alpha} = (y_{1}-(\alpha+\beta x_{1}))^{2}+(y_{2}-(\alpha+\beta x_{2}))^{2}+ ... + (y_{10}-(\alpha+\beta x_{10}))^{2} = 0
+\tag{3.6}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:partial-beta">\[\begin{equation} 
+    \frac{\partial E^{2}}{\partial \beta} = (y_{1}-(\alpha+\beta x_{1}))^{2}+(y_{2}-(\alpha+\beta x_{2}))^{2}+ ... + (y_{10}-(\alpha+\beta x_{10}))^{2} = 0
+\tag{3.7}
+\end{equation}\]</span></p>
+<p>Após calcular as derivadas parcias, teremos duas equações, das quais podemos
+encontrar os valores das duas variáveis utilizando um sistema de equações
+lineares. Após encontrar as variáveis e realizar as devidas substituições,
+teremos a equação da reta, ou seja, a regressão linear.</p>
+</div>
+<div id="gradiente-descendente" class="section level4" number="3.1.1.2">
+<h4><span class="header-section-number">3.1.1.2</span> Gradiente descendente</h4>
+<p>O método do gradiente descendente (GD) é uma das técnicas mais utilizadas para
+otimização de modelos de ML. O GD é um método interativo que busca encontrar os
+coeficiente <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span> através da minimuzação de uma função de custo,
+normalmente o erro quadrático médio (MSE - sigla do inglês,
+<em>mean squared error</em>). O MSE pode ser definido pela Equação <a href="regressão.html#eq:mse">(3.8)</a>, onde
+<span class="math inline">\(e_{i}\)</span> é a diferença entre o valor real de <span class="math inline">\(y_{i}\)</span> e o valor previsto pela
+equação.</p>
+<p><span class="math display" id="eq:mse">\[\begin{equation} 
+    MSE = \frac{1}{n} \sum^{n}_{i=1}e_{i}^{2}
+\tag{3.8}
+\end{equation}\]</span></p>
+<p>O GD deve ajustar os coeficientes até que o MSE seja o menor possível e cada
+intereação. A atualização dos coeficiente é feita com base em uma taxa de
+aprendizado, normalmente definida em 0,0001. Uma taxa de aprendizado muito
+grande o GD pode cair em um mínimo local, já um valor muito baixo, o modelo pode
+demorar muito mais tempo para chegar em um mínimo local, necessitando de muito
+mais tempo e processamento, conforme ilustrado na Figura
+<a href="regressão.html#fig:learning-rate">3.4</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:learning-rate"></span>
+<img src="assets/learning-rate-gd.png" alt="Problemas na taxa de aprendizado do gradiente descendente."  />
+<p class="caption">
+Figure 3.4: Problemas na taxa de aprendizado do gradiente descendente.
 </p>
 </div>
 
