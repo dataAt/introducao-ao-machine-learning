@@ -56,6 +56,66 @@ disperssão de variáveis com diferentes correlações.
   knitr::include_graphics("assets/correlations.png")
 ```
 
+Os métodos de regressão se utilizam dessas correlações entre as variáveis para 
+estimar valores não existentes na amostra ou conjunto de dados. Entretanto, nem
+sempre essas correlações são tão explicítas assim, sendo necessário outras 
+abordagens mais robustas para realizar as previsões.Em ML os modelos de 
+regressão podem ser criados a partir de diversas abordagens, desde as mais 
+simples com poucas configurações de parâmetros e de fácil interpretação do 
+funcionamento, até as abordagens mais complexas. Os métodos de regressão 
+abordados neste capítulo serão `Regressão linear`, 
+`Máquina de vetores de suporte` e `Árvores de decisão`.
+
+## Regressão Linear
+
+A regressão linear é um dos métodos mais intuitivos e utilizados para essa 
+finalidade. Esses métodos são dividos em dois grupos, a regressão linear simples
+(RLS) e regressão linear múltipla (RLM). A RLS tem como objetivo estabelecer uma
+relação entre duas variáveis através de uma função, que pode ser definida por:
+
+\begin{equation} 
+    y_{i} = \alpha+\beta x_{i}
+(\#eq:rls-function)
+\end{equation} 
+
+Onde $y_{i}$ é a variável dependente, também denominada de variável alvo,
+$\alpha$ e $beta x_{i}$ são coeficientes calculados pela regressão, que 
+representam o intercepto e inclinação da reta, respectivamente.
+
+A RLM é semelhante semelhante à RLS, porém possui multiplas variáveis 
+preditoras, e pode ser definida por:
+
+\begin{equation} 
+    y_{i} = \alpha+\beta x_{i1}+\beta x_{i2}+...+\beta x_{in}
+(\#eq:rlm-function)
+\end{equation} 
+
+Onde $y_{i}$ é a variável dependente, $\alpha$ continua sendo o coeficiente de 
+intercepto e $\beta x_{ip}$ o é coeficiente angular da $p$-ésima variável. Ambos 
+os métodos podem ainda serem somados a um termo $\epsilon$ de erro. 
+
+### Cálculo dos coeficientes
+
+Existem diversas abordagens para se calcular os coeficientes de intercepto de 
+inclinação da reta, as técnicas baseadas em mínimos quadrados oridinários e 
+gradiente descendente são as mais comuns.
+
+#### Métodos dos quadrados ordinários
+
+O Métodos dos quadrados ordinários (MQO) ou método dos mínimos quadrados (MMQ)
+busca encontrar o melhor valor para os coeficientes, de tal forma que a 
+diferença absoluta entre o valor real e o predito pela função seja o menor para
+todos os pontos. A Figura \@ref{fig:ols} mostra um exmplo de regressão linar 
+utilizando o MQO.
+
+```{r ols, echo=FALSE, fig.align="center", fig.cap='Exemplo do método dos quadrados ordinários.'}
+  knitr::include_graphics("assets/ols.png")
+```
+
+
+ 
+
+
 
 
 

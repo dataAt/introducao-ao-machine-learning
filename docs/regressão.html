@@ -70,7 +70,13 @@
 <li class="chapter" data-level="1.1" data-path="introdução.html"><a href="introdução.html#machine-learning"><i class="fa fa-check"></i><b>1.1</b> Machine learning</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="classificação.html"><a href="classificação.html"><i class="fa fa-check"></i><b>2</b> Classificação</a></li>
-<li class="chapter" data-level="3" data-path="regressão.html"><a href="regressão.html"><i class="fa fa-check"></i><b>3</b> Regressão</a></li>
+<li class="chapter" data-level="3" data-path="regressão.html"><a href="regressão.html"><i class="fa fa-check"></i><b>3</b> Regressão</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="regressão.html"><a href="regressão.html#regressão-linear"><i class="fa fa-check"></i><b>3.1</b> Regressão Linear</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="regressão.html"><a href="regressão.html#cálculo-dos-coeficientes"><i class="fa fa-check"></i><b>3.1.1</b> Cálculo dos coeficientes</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="4" data-path="agrupamento.html"><a href="agrupamento.html"><i class="fa fa-check"></i><b>4</b> Agrupamento</a></li>
 <li class="chapter" data-level="5" data-path="considerações-finais.html"><a href="considerações-finais.html"><i class="fa fa-check"></i><b>5</b> Considerações finais</a></li>
 <li class="chapter" data-level="6" data-path="referências-bibliográficas.html"><a href="referências-bibliográficas.html"><i class="fa fa-check"></i><b>6</b> Referências Bibliográficas</a></li>
@@ -140,7 +146,59 @@ disperssão de variáveis com diferentes correlações.</p>
 Figure 3.2: Diferentes correlações entre variáveis. Fonte: <span class="citation">(Helliwell et al. 2020)</span>
 </p>
 </div>
+<p>Os métodos de regressão se utilizam dessas correlações entre as variáveis para
+estimar valores não existentes na amostra ou conjunto de dados. Entretanto, nem
+sempre essas correlações são tão explicítas assim, sendo necessário outras
+abordagens mais robustas para realizar as previsões.Em ML os modelos de
+regressão podem ser criados a partir de diversas abordagens, desde as mais
+simples com poucas configurações de parâmetros e de fácil interpretação do
+funcionamento, até as abordagens mais complexas. Os métodos de regressão
+abordados neste capítulo serão <code>Regressão linear</code>,
+<code>Máquina de vetores de suporte</code> e <code>Árvores de decisão</code>.</p>
+<div id="regressão-linear" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Regressão Linear</h2>
+<p>A regressão linear é um dos métodos mais intuitivos e utilizados para essa
+finalidade. Esses métodos são dividos em dois grupos, a regressão linear simples
+(RLS) e regressão linear múltipla (RLM). A RLS tem como objetivo estabelecer uma
+relação entre duas variáveis através de uma função, que pode ser definida por:</p>
+<p><span class="math display" id="eq:rls-function">\[\begin{equation} 
+    y_{i} = \alpha+\beta x_{i}
+\tag{3.2}
+\end{equation}\]</span></p>
+<p>Onde <span class="math inline">\(y_{i}\)</span> é a variável dependente, também denominada de variável alvo,
+<span class="math inline">\(\alpha\)</span> e <span class="math inline">\(beta x_{i}\)</span> são coeficientes calculados pela regressão, que
+representam o intercepto e inclinação da reta, respectivamente.</p>
+<p>A RLM é semelhante semelhante à RLS, porém possui multiplas variáveis
+preditoras, e pode ser definida por:</p>
+<p><span class="math display" id="eq:rlm-function">\[\begin{equation} 
+    y_{i} = \alpha+\beta x_{i1}+\beta x_{i2}+...+\beta x_{in}
+\tag{3.3}
+\end{equation}\]</span></p>
+<p>Onde <span class="math inline">\(y_{i}\)</span> é a variável dependente, <span class="math inline">\(\alpha\)</span> continua sendo o coeficiente de
+intercepto e <span class="math inline">\(\beta x_{ip}\)</span> o é coeficiente angular da <span class="math inline">\(p\)</span>-ésima variável. Ambos
+os métodos podem ainda serem somados a um termo <span class="math inline">\(\epsilon\)</span> de erro.</p>
+<div id="cálculo-dos-coeficientes" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Cálculo dos coeficientes</h3>
+<p>Existem diversas abordagens para se calcular os coeficientes de intercepto de
+inclinação da reta, as técnicas baseadas em mínimos quadrados oridinários e
+gradiente descendente são as mais comuns.</p>
+<div id="métodos-dos-quadrados-ordinários" class="section level4" number="3.1.1.1">
+<h4><span class="header-section-number">3.1.1.1</span> Métodos dos quadrados ordinários</h4>
+<p>O Métodos dos quadrados ordinários (MQO) ou método dos mínimos quadrados (MMQ)
+busca encontrar o melhor valor para os coeficientes, de tal forma que a
+diferença absoluta entre o valor real e o predito pela função seja o menor para
+todos os pontos. A Figura @ref{fig:ols} mostra um exmplo de regressão linar
+utilizando o MQO.</p>
+<div class="figure" style="text-align: center"><span id="fig:ols"></span>
+<img src="assets/ols.png" alt="Exemplo do método dos quadrados ordinários."  />
+<p class="caption">
+Figure 3.3: Exemplo do método dos quadrados ordinários.
+</p>
+</div>
 
+</div>
+</div>
+</div>
 </div>
             </section>
 
