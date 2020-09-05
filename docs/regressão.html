@@ -128,18 +128,10 @@ Figure 3.1: Relação entre o índice de felicidade e expectativa de vida. Fonte
 <p>As relações entre as variáveis dependentes e independetes são feitas através de
 algum coeficiente de correlação. Uma das métricas de correlação mais utilizadas
 é o coeficiente de Pearson, que mede a associação linear entre duas variáveis
-<span class="citation">(Kirch 2008)</span>. O coeficiente de Pearson de amostras populacionais
-pertecentes a duas variáveis pode ser definido pela
-Equação <a href="regressão.html#eq:corr-pearson">(3.1)</a>.</p>
-<p><span class="math display" id="eq:corr-pearson">\[\begin{equation} 
-    r_{xy} = \frac{{}\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
-    {\sqrt{\sum_{i=1}^{n} (x_i - \overline{x})^2(y_i - \overline{y})^2}}
-\tag{3.1}
-\end{equation}\]</span></p>
-<p>Os valores do coeficiente de Pearson variam entre -1 e 1, de tal forma que
-quanto mais próximos desses extremos, melhor correlacionado estão as variáveis.
-A Figura <a href="regressão.html#fig:scatterCorrelations">3.2</a> mostra alguns exemplos com gráficos de
-disperssão de variáveis com diferentes correlações.</p>
+<span class="citation">(Kirch 2008)</span>. Os valores do coeficiente de Pearson variam entre -1 e 1,
+de tal forma que quanto mais próximos desses extremos, melhor correlacionado
+estão as variáveis. A Figura <a href="regressão.html#fig:scatterCorrelations">3.2</a> mostra alguns
+exemplos com gráficos de disperssão de variáveis com diferentes correlações.</p>
 <div class="figure" style="text-align: center"><span id="fig:scatterCorrelations"></span>
 <img src="assets/correlations.png" alt="Diferentes correlações entre variáveis. Fonte: [@helliwell2020social]"  />
 <p class="caption">
@@ -163,7 +155,7 @@ finalidade. Esses métodos são dividos em dois grupos, a regressão linear simp
 relação entre duas variáveis através de uma função, que pode ser definida por:</p>
 <p><span class="math display" id="eq:rls-function">\[\begin{equation} 
     y_{i} = \alpha+\beta x_{i}
-\tag{3.2}
+\tag{3.1}
 \end{equation}\]</span></p>
 <p>Onde <span class="math inline">\(y_{i}\)</span> é a variável dependente, também denominada de variável alvo,
 <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(beta x_{i}\)</span> são coeficientes calculados pela regressão, que
@@ -172,7 +164,7 @@ representam o intercepto no eixo <span class="math inline">\(y\)</span> e inclin
 preditoras, e pode ser definida por:</p>
 <p><span class="math display" id="eq:rlm-function">\[\begin{equation} 
     y_{i} = \alpha+\beta x_{i1}+\beta x_{i2}+...+\beta x_{in}
-\tag{3.3}
+\tag{3.2}
 \end{equation}\]</span></p>
 <p>Onde <span class="math inline">\(y_{i}\)</span> é a variável dependente, <span class="math inline">\(\alpha\)</span> continua sendo o coeficiente de
 intercepto e <span class="math inline">\(\beta x_{ip}\)</span> o é coeficiente angular da <span class="math inline">\(p\)</span>-ésima variável. Ambos
@@ -202,25 +194,25 @@ como objetivo estibular os coeficientes da função, de tal forma que a soma
 quadrática dos erros absolutos <span class="math inline">\(E^{2}\)</span> seja a menor possível:</p>
 <p><span class="math display" id="eq:error-ols">\[\begin{equation} 
     E^{2} = \sum_{i=1}^{n=10}(y_{i}-(\alpha+\beta x_{i}))^{2}
-\tag{3.4}
+\tag{3.3}
 \end{equation}\]</span></p>
 <p>Expandindo a equação fica:</p>
 <p><span class="math display" id="eq:expanded-error-ols">\[\begin{equation} 
     E = ((y_{1}-(\alpha+\beta x_{1}))^{2}+(y_{2}-(\alpha+\beta x_{2}))^{2}+ ... + (y_{10}-(\alpha+\beta x_{10}))^{2})^{2}
-\tag{3.5}
+\tag{3.4}
 \end{equation}\]</span></p>
 <p>Após isso, é teremos uma função com duas variáveis, e para encontrar seus
 valores e igualar a zero, a fim de se obter os pontos críticos, é necessário
 calcular as derivadas parciais em relação a <span class="math inline">\(\alpha\)</span> (Equação
-<a href="regressão.html#eq:partial-alpha">(3.6)</a> e <span class="math inline">\(\beta\)</span> (Equação <a href="regressão.html#eq:partial-beta">(3.7)</a>.</p>
+<a href="regressão.html#eq:partial-alpha">(3.5)</a> e <span class="math inline">\(\beta\)</span> (Equação <a href="regressão.html#eq:partial-beta">(3.6)</a>.</p>
 <!-- = 2(y_{1}-\alpha+\beta x_{1})\times1+2(y_{2}-\alpha+\beta x_{2})\times1+ ... + 2(y_{10}-\alpha+\beta x_{10})\times1 = 0 -->
 <p><span class="math display" id="eq:partial-alpha">\[\begin{equation} 
     \frac{\partial E^{2}}{\partial \alpha} = (y_{1}-(\alpha+\beta x_{1}))^{2}+(y_{2}-(\alpha+\beta x_{2}))^{2}+ ... + (y_{10}-(\alpha+\beta x_{10}))^{2} = 0
-\tag{3.6}
+\tag{3.5}
 \end{equation}\]</span></p>
 <p><span class="math display" id="eq:partial-beta">\[\begin{equation} 
     \frac{\partial E^{2}}{\partial \beta} = (y_{1}-(\alpha+\beta x_{1}))^{2}+(y_{2}-(\alpha+\beta x_{2}))^{2}+ ... + (y_{10}-(\alpha+\beta x_{10}))^{2} = 0
-\tag{3.7}
+\tag{3.6}
 \end{equation}\]</span></p>
 <p>Após calcular as derivadas parcias, teremos duas equações, das quais podemos
 encontrar os valores das duas variáveis utilizando um sistema de equações
@@ -233,12 +225,12 @@ teremos a equação da reta, ou seja, a regressão linear.</p>
 otimização de modelos de ML. O GD é um método interativo que busca encontrar os
 coeficiente <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span> através da minimuzação de uma função de custo,
 normalmente o erro quadrático médio (MSE - sigla do inglês,
-<em>mean squared error</em>). O MSE pode ser definido pela Equação <a href="regressão.html#eq:mse">(3.8)</a>, onde
+<em>mean squared error</em>). O MSE pode ser definido pela Equação <a href="regressão.html#eq:mse">(3.7)</a>, onde
 <span class="math inline">\(e_{i}\)</span> é a diferença entre o valor real de <span class="math inline">\(y_{i}\)</span> e o valor previsto pela
 equação.</p>
 <p><span class="math display" id="eq:mse">\[\begin{equation} 
     MSE = \frac{1}{n} \sum^{n}_{i=1}e_{i}^{2}
-\tag{3.8}
+\tag{3.7}
 \end{equation}\]</span></p>
 <p>O GD deve ajustar os coeficientes até que o MSE seja o menor possível e cada
 intereação. A atualização dos coeficiente é feita com base em uma taxa de
