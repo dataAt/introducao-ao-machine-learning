@@ -52,6 +52,69 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 </head>
 
@@ -262,19 +325,66 @@ Figure 3.7: Regressão linear com taxa de aprendizagem baixa no gradiente descen
 </p>
 </div>
 <p>Já com uma taxa de aprendizagem equilibrada, o GD é capaz de ajustar os
-coeficientes de forma mais eficiente. A Figura <a href="regressão.html#fig:gd-example2">3.7</a> mostra
+coeficientes de forma mais eficiente. A Figura <a href="regressão.html#fig:gd-example3">3.8</a> mostra
 o resultado do algoritmo executado com uma taxa de aprendizagem mais
-equilibrada.</p>
+equilibrada. Como os valores iniciais dos coeficientes são definidos de forma
+aleatória, nas primeiras iterações o gradiente apresenta uma alta pertubação,
+que vai se atenuando ao longo das épocas.</p>
 <div class="figure" style="text-align: center"><span id="fig:gd-example3"></span>
 <img src="assets/gradient-descendent.png" alt="Regressão linear com taxa de aprendizagem baixa no gradiente descendente."  />
 <p class="caption">
 Figure 3.8: Regressão linear com taxa de aprendizagem baixa no gradiente descendente.
 </p>
 </div>
-<p>Quando se trata de dados com muitas dimensões, ou seja, dados com muitas
-variáveis preditoras, o GD tem melhor performance em relação ao método de MQO.
-Sendo assim, o método MQO é recomendado para conjunto de dados com poucas
-dimensões e o GD para conjunto de dados com muitas variáveis preditoras.</p>
+<p>Para dados com poucas dimensões, ou seja, poucas variáveis preditoras, o MQO é
+mais recomendado, pois diferente do GD, não é um algoritmo interativo, e sua
+complexidade está associada diretamente à quantidade de pontos. Já o GD tem
+melhor performance quando os dados possuem muitas dimensões.</p>
+<p>A regressão linear pode ser aplicada em uma vasta variedade de problemas, mas
+como foi apresentado ao longo desta seção, é necessário que os dados possuam uma
+alta correlação. Este algoritmo está disponível na biblioteca <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">Scikit-learn</a>
+par ser utilizado em Python.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="regressão.html#cb2-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb2-2"><a href="regressão.html#cb2-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="regressão.html#cb2-3"></a></span>
+<span id="cb2-4"><a href="regressão.html#cb2-4"></a></span>
+<span id="cb2-5"><a href="regressão.html#cb2-5"></a><span class="co"># Definição dos valores de uma única variável preditora</span></span>
+<span id="cb2-6"><a href="regressão.html#cb2-6"></a>x <span class="op">=</span> [[<span class="dv">0</span>], [<span class="dv">1</span>], [<span class="dv">2</span>], [<span class="dv">3</span>]] </span>
+<span id="cb2-7"><a href="regressão.html#cb2-7"></a></span>
+<span id="cb2-8"><a href="regressão.html#cb2-8"></a><span class="co"># Definição dos valores das variáveis alvo</span></span>
+<span id="cb2-9"><a href="regressão.html#cb2-9"></a>y <span class="op">=</span> [<span class="fl">1.3</span>, <span class="fl">2.2</span>, <span class="fl">2.6</span>, <span class="fl">3.3</span>] </span>
+<span id="cb2-10"><a href="regressão.html#cb2-10"></a></span>
+<span id="cb2-11"><a href="regressão.html#cb2-11"></a><span class="co"># Instanciando regressão linear e ajustando-a aos dados</span></span>
+<span id="cb2-12"><a href="regressão.html#cb2-12"></a>lr <span class="op">=</span> LinearRegression().fit(x, y) </span>
+<span id="cb2-13"><a href="regressão.html#cb2-13"></a></span>
+<span id="cb2-14"><a href="regressão.html#cb2-14"></a><span class="co"># Obtendo os valores aproximados da variável alvo</span></span>
+<span id="cb2-15"><a href="regressão.html#cb2-15"></a>y_regression <span class="op">=</span> [lr.predict([xi])[<span class="dv">0</span>] <span class="cf">for</span> xi <span class="kw">in</span> x] </span>
+<span id="cb2-16"><a href="regressão.html#cb2-16"></a></span>
+<span id="cb2-17"><a href="regressão.html#cb2-17"></a><span class="co"># Criando novos pontos somente com valores da variável preditora</span></span>
+<span id="cb2-18"><a href="regressão.html#cb2-18"></a>x_test <span class="op">=</span> [[<span class="op">-</span><span class="dv">1</span>], [<span class="fl">2.75</span>], [<span class="fl">4.3</span>]]</span>
+<span id="cb2-19"><a href="regressão.html#cb2-19"></a></span>
+<span id="cb2-20"><a href="regressão.html#cb2-20"></a><span class="co"># Aplicando regressão linear para prever os valores da variável alvo</span></span>
+<span id="cb2-21"><a href="regressão.html#cb2-21"></a>y_test <span class="op">=</span> lr.predict(x_test)</span>
+<span id="cb2-22"><a href="regressão.html#cb2-22"></a></span>
+<span id="cb2-23"><a href="regressão.html#cb2-23"></a><span class="co"># Concatenando dados de treino e teste</span></span>
+<span id="cb2-24"><a href="regressão.html#cb2-24"></a>y_regression <span class="op">=</span> [<span class="op">*</span>y_regression, <span class="op">*</span>y_test]</span>
+<span id="cb2-25"><a href="regressão.html#cb2-25"></a>x_regression <span class="op">=</span> [<span class="op">*</span>x, <span class="op">*</span>x_test]</span>
+<span id="cb2-26"><a href="regressão.html#cb2-26"></a></span>
+<span id="cb2-27"><a href="regressão.html#cb2-27"></a><span class="co"># Exibindo dados de treino</span></span>
+<span id="cb2-28"><a href="regressão.html#cb2-28"></a>plt.scatter(x, y, color<span class="op">=</span><span class="st">&#39;gray&#39;</span>, label<span class="op">=</span><span class="st">&#39;Dados de treino&#39;</span>) </span>
+<span id="cb2-29"><a href="regressão.html#cb2-29"></a></span>
+<span id="cb2-30"><a href="regressão.html#cb2-30"></a><span class="co"># Exibindo dados de teste</span></span>
+<span id="cb2-31"><a href="regressão.html#cb2-31"></a>plt.scatter(x_test, y_test, color<span class="op">=</span><span class="st">&#39;red&#39;</span>, label<span class="op">=</span><span class="st">&#39;Dados de teste&#39;</span>)</span>
+<span id="cb2-32"><a href="regressão.html#cb2-32"></a></span>
+<span id="cb2-33"><a href="regressão.html#cb2-33"></a><span class="co"># Exibindo reta da regressão linear</span></span>
+<span id="cb2-34"><a href="regressão.html#cb2-34"></a>plt.plot(x_regression, y_regression, color<span class="op">=</span><span class="st">&#39;black&#39;</span>, label<span class="op">=</span><span class="st">&#39;Regressão linear&#39;</span>)</span>
+<span id="cb2-35"><a href="regressão.html#cb2-35"></a></span>
+<span id="cb2-36"><a href="regressão.html#cb2-36"></a><span class="co">#Configurações do gráfico</span></span>
+<span id="cb2-37"><a href="regressão.html#cb2-37"></a>plt.xlabel(<span class="st">&#39;Variável preditora ($x$)&#39;</span>)</span>
+<span id="cb2-38"><a href="regressão.html#cb2-38"></a>plt.ylabel(<span class="st">&#39;Variável alvo ($y$)&#39;</span>)</span>
+<span id="cb2-39"><a href="regressão.html#cb2-39"></a>plt.legend()</span>
+<span id="cb2-40"><a href="regressão.html#cb2-40"></a>plt.show()</span></code></pre></div>
+<p><img src="intro-ao-machine-learning_files/figure-html/unnamed-chunk-2-1.png" /><!-- --></p>
 
 </div>
 </div>
