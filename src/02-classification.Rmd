@@ -7,13 +7,6 @@ header-includes:
 - \floatsetup[table]{capposition=bot}
 ---
 
-```{r, echo=FALSE}
-# Estes comandos não devem ser executados em seu terminal
-library(reticulate) 
-reticulate::use_miniconda()
-# use_condaenv('/home/felipe/anaconda3/envs/rstudio-python-cursoml')
-```
-
 # Classificação
 
 *"Nossas características nos fazem igualmente diferentes" - Autor desconhecido*
@@ -409,20 +402,6 @@ Acho que agora você consegue perceber o motivo deste ser um dos métodos de apr
 <p align="justify">
 Assim como qualquer outro algoritmo, de aprendizado de máquina ou não, as árvores de decisão apresentam alguns problemas, o que não as torna "balas de prata" para todos os contextos. Um dos principais problemas que vem junto às árvores de decisão é o *overfitting*, neste, a árvore, durante o processo de treinamento, começa a criar regras que consideram características que são muito específicas dos dados que estão sendo utilizados no processo de treinamento, isso faz com que ao ser aplicada em outros dados, que não os de treinamento, problemas com a identificação e classificação acabem surgindo. Então, ao utilizar a árvore de decisão tome cuidado com a quantidade de regras e do tamanho da árvore que está sendo gerado. Isso tudo pode ser controlado durante o processo de implementação, controlando os parâmetros de criação da árvore, como os limites de altura e de quantidade de nós resultados.
 </p>
-
-### Exemplos
-
-<!-- Páginas do Kaggle -->
-
-## Naive Bayes
-
-*"Eu lhe dei a chance"* - Saruman (Senhor dos aneis)
-
-<p align="justify">
-Até aqui passamos por dois tipos de algoritmos de aprendizado supervisionado que são utilizados para a classificação, o kNN e a Árvore de decisão. Agora, vamos falar brevemente sobre a classe de algoritmos probabilísticos, em especial, o classificador Naive Bayes, que assim como a árvore de decisão é amplamente utilizado, sendo aplicado recorrentemente em problemas que precisam realizar a classificação de dados textuais.
-</p>
-
-<!-- ToDo: Adicionar restante do conteúdo -->
 
 ### Exemplos
 
