@@ -151,6 +151,51 @@ para a taxa de aprendizagem.
   knitr::include_graphics("assets/learning-rate-gd.png")
 ```
 
+Os prinicipais parâmetros a serem definidos nessa abordagem são a taxa de 
+aprendizagem e o número de iterações. Considerando os pontos utilizados no 
+exemplo anterior, foi aplicada a regressão linear utilizando o GD como método de 
+atualização dos coeficientes. A Figura \@ref(fig:gd-example1) mostra o ajuste da 
+função, custo e os coeficientes $\alpha$ e $\beta$ ao longo de 50 iterações com 
+taxa de aprendizado muito baixa. Nessa figura pode ser observado que as 
+iterações finalizam antes da convergência do modelo. 
+
+```{r gd-example1, echo=FALSE, fig.align="center", fig.cap='Regressão linear com taxa de aprendizagem baixa no gradiente descendente.'}
+  knitr::include_graphics("assets/gradient-descendent-small.png")
+```
+
+Como mencionado anteriormente, uma taxa de aprendizagem muito grande também 
+interfere no ajuste dos coeficientes, uma vez o modelo não consegue atingir o 
+mínimo global. A Figura \@ref(fig:gd-example2) mostra o resultado da execução da
+regressão linear utilizando uma taxa de aprendizagem muito grande no GD.
+
+```{r gd-example2, echo=FALSE, fig.align="center", fig.cap='Regressão linear com taxa de aprendizagem baixa no gradiente descendente.'}
+  knitr::include_graphics("assets/gradient-descendent-large.png")
+```
+
+Já com uma taxa de aprendizagem equilibrada, o GD é capaz de ajustar os 
+coeficientes de forma mais eficiente. A Figura  \@ref(fig:gd-example3) mostra
+o resultado do algoritmo executado com uma taxa de aprendizagem mais 
+equilibrada. Como os valores iniciais dos coeficientes são definidos de forma 
+aleatória, nas primeiras iterações o gradiente apresenta uma alta pertubação, 
+que vai se atenuando ao longo das épocas.
+
+```{r gd-example3, echo=FALSE, fig.align="center", fig.cap='Regressão linear com taxa de aprendizagem baixa no gradiente descendente.'}
+  knitr::include_graphics("assets/gradient-descendent.png")
+```
+
+Para dados com poucas dimensões, ou seja, poucas variáveis preditoras, o MQO é 
+mais recomendado, pois diferente do GD, não é um algoritmo interativo, e sua
+complexidade está associada diretamente à quantidade de pontos. Já o GD tem 
+melhor performance quando os dados possuem muitas dimensões.
+
+A regressão linear pode ser aplicada em uma vasta variedade de problemas, mas 
+como foi apresentado ao longo desta seção, é necessário que os dados possuam uma 
+alta correlação.
+
+
+
+
+
 
 
 

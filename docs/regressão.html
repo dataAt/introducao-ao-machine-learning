@@ -183,56 +183,17 @@ tal forma que a diferença absoluta entre o valor real e o predito pela função
 seja a menor possível entre todos os pontos. A Figura <a href="regressão.html#fig:ols">3.3</a> mostra um
 exmplo de regressão linar utilizando o MQO para o conjunto pontos descritos na
 tabela a seguir:</p>
-<table>
-<thead>
-<tr class="header">
-<th>Variável independente</th>
-<th>Variável dependente</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0.75</td>
-<td>5.78</td>
-</tr>
-<tr class="even">
-<td>1.90</td>
-<td>10.25</td>
-</tr>
-<tr class="odd">
-<td>1.46</td>
-<td>7.93</td>
-</tr>
-<tr class="even">
-<td>1.20</td>
-<td>7.13</td>
-</tr>
-<tr class="odd">
-<td>0.31</td>
-<td>5.18</td>
-</tr>
-<tr class="even">
-<td>0.31</td>
-<td>3.02</td>
-</tr>
-<tr class="odd">
-<td>0.12</td>
-<td>2.62</td>
-</tr>
-<tr class="even">
-<td>1.73</td>
-<td>8.63</td>
-</tr>
-<tr class="odd">
-<td>1.20</td>
-<td>6.59</td>
-</tr>
-<tr class="even">
-<td>1.42</td>
-<td>8.56</td>
-</tr>
-</tbody>
-</table>
+<p>| Variável independente | Variável dependente |
+| 0.44 | 5.52 |
+| 1.74 | 8.89 |
+| 0.41 | 4.05 |
+| 1.84 | 9.31 |
+| 0.98 | 6.57 |
+| 1.22 | 8.27 |
+| 1.53 | 6.93 |
+| 1.04 | 6.41 |
+| 0.59 | 6.93 |
+| 0.38 | 6.98 |</p>
 <div class="figure" style="text-align: center"><span id="fig:ols"></span>
 <img src="assets/ols.png" alt="Exemplo do método dos quadrados ordinários."  />
 <p class="caption">
@@ -277,6 +238,43 @@ para a taxa de aprendizagem.</p>
 Figure 3.5: Problemas na taxa de aprendizado do gradiente descendente.
 </p>
 </div>
+<p>Os prinicipais parâmetros a serem definidos nessa abordagem são a taxa de
+aprendizagem e o número de iterações. Considerando os pontos utilizados no
+exemplo anterior, foi aplicada a regressão linear utilizando o GD como método de
+atualização dos coeficientes. A Figura <a href="regressão.html#fig:gd-example1">3.6</a> mostra o ajuste da
+função, custo e os coeficientes <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span> ao longo de 50 iterações com
+taxa de aprendizado muito baixa. Nessa figura pode ser observado que as
+iterações finalizam antes da convergência do modelo.</p>
+<div class="figure" style="text-align: center"><span id="fig:gd-example1"></span>
+<img src="assets/gradient-descendent-small.png" alt="Regressão linear com taxa de aprendizagem baixa no gradiente descendente."  />
+<p class="caption">
+Figure 3.6: Regressão linear com taxa de aprendizagem baixa no gradiente descendente.
+</p>
+</div>
+<p>Como mencionado anteriormente, uma taxa de aprendizagem muito grande também
+interfere no ajuste dos coeficientes, uma vez o modelo não consegue atingir o
+mínimo global. A Figura <a href="regressão.html#fig:gd-example2">3.7</a> mostra o resultado da execução da
+regressão linear utilizando uma taxa de aprendizagem muito grande no GD.</p>
+<div class="figure" style="text-align: center"><span id="fig:gd-example2"></span>
+<img src="assets/gradient-descendent-large.png" alt="Regressão linear com taxa de aprendizagem baixa no gradiente descendente."  />
+<p class="caption">
+Figure 3.7: Regressão linear com taxa de aprendizagem baixa no gradiente descendente.
+</p>
+</div>
+<p>Já com uma taxa de aprendizagem equilibrada, o GD é capaz de ajustar os
+coeficientes de forma mais eficiente. A Figura <a href="regressão.html#fig:gd-example2">3.7</a> mostra
+o resultado do algoritmo executado com uma taxa de aprendizagem mais
+equilibrada.</p>
+<div class="figure" style="text-align: center"><span id="fig:gd-example3"></span>
+<img src="assets/gradient-descendent.png" alt="Regressão linear com taxa de aprendizagem baixa no gradiente descendente."  />
+<p class="caption">
+Figure 3.8: Regressão linear com taxa de aprendizagem baixa no gradiente descendente.
+</p>
+</div>
+<p>Quando se trata de dados com muitas dimensões, ou seja, dados com muitas
+variáveis preditoras, o GD tem melhor performance em relação ao método de MQO.
+Sendo assim, o método MQO é recomendado para conjunto de dados com poucas
+dimensões e o GD para conjunto de dados com muitas variáveis preditoras.</p>
 
 </div>
 </div>
