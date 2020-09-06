@@ -68,9 +68,9 @@ relação entre duas variáveis através de uma função, que pode ser definida 
 (\#eq:rls-function)
 \end{equation} 
 
-Onde $y_{i}$ é a variável dependente, também denominada de variável alvo,
-$\alpha$ e $beta x_{i}$ são coeficientes calculados pela regressão, que 
-representam o intercepto no eixo $y$ e inclinação da reta, respectivamente.
+Onde $y_{i}$ é a variável alvo, $\alpha$ e $beta x_{i}$ são coeficientes 
+calculados pela regressão, que representam o intercepto no eixo $y$ e inclinação 
+da reta, respectivamente.
 
 A RLM é semelhante semelhante à RLS, porém possui multiplas variáveis 
 preditoras, e pode ser definida por:
@@ -80,15 +80,16 @@ preditoras, e pode ser definida por:
 (\#eq:rlm-function)
 \end{equation} 
 
-Onde $y_{i}$ é a variável dependente, $\alpha$ continua sendo o coeficiente de 
+Onde $y_{i}$ é a variável alvo, $\alpha$ continua sendo o coeficiente de 
 intercepto e $\beta x_{ip}$ o é coeficiente angular da $p$-ésima variável. Ambos 
 os métodos podem ainda serem somados a um termo $\epsilon$ de erro. 
 
-### Cálculo dos coeficientes
+### Coeficientes da regressão linear
 
-Existem diversas abordagens para se calcular os coeficientes de intercepto de 
-inclinação da reta, as técnicas baseadas em mínimos quadrados oridinários e 
-gradiente descendente são as mais comuns.
+Existem diversas abordagens para se calcular os coeficientes $\alpha$ e $\beta$ 
+da equação da regressão linear, as técnicas baseadas em mínimos quadrados 
+oridinários e gradiente descendente são as mais comuns. A seguir serão 
+apresentados os funcionamentos dessas abordagens.
 
 #### Métodos dos quadrados ordinários
 
@@ -96,72 +97,55 @@ O Método dos quadrados ordinários (MQO) ou método dos mínimos quadrados (MMQ
 busca encontrar o melhor valor para os coeficientes citados anteriormente, de 
 tal forma que a diferença absoluta entre o valor real e o predito pela função 
 seja a menor possível entre todos os pontos. A Figura \@ref(fig:ols) mostra um 
-exmplo de regressão linar utilizando o MQO para um conjunto de pontos com força 
-de correlação de 0,9.
+exmplo de regressão linar utilizando o MQO para o conjunto pontos descritos na
+tabela a seguir:
+
+|	Variável independente	|	Variável dependente	|
+|	0.44	|	5.52	|
+|	1.74	|	8.89	|
+|	0.41	|	4.05	|
+|	1.84	|	9.31	|
+|	0.98	|	6.57	|
+|	1.22	|	8.27	|
+|	1.53	|	6.93	|
+|	1.04	|	6.41	|
+|	0.59	|	6.93	|
+|	0.38	|	6.98	|
 
 ```{r ols, echo=FALSE, fig.align="center", fig.cap='Exemplo do método dos quadrados ordinários.'}
   knitr::include_graphics("assets/ols.png")
 ```
 
-Considerando a Imagem \@ref(fig:ols), uma amostra de 10 pontos como exemplo, que
-será chamada de $A$, ou seja, $A = \{(x_{i}, y_{i}):i=1, ..., 10\}$. O MQO tem 
-como objetivo estibular os coeficientes da função, de tal forma que a soma 
-quadrática dos erros absolutos $E^{2}$ seja a menor possível:
+Para se chegar no resultado apresentado na Figura \@ref(fig:ols), os 
+coeficientes da regressão linear foram ajustados, de tal tal forma que o erro 
+quadrático médio entre entre a função e cada um dos pontos fossem a menor 
+possível. A Figura \@ref(fig:ols-steps) mostra o ajuste dos coeficientes da 
+equação em relação a cada ponto.
 
-\begin{equation} 
-    E^{2} = \sum_{i=1}^{n=10}(y_{i}-(\alpha+\beta x_{i}))^{2}
-(\#eq:error-ols)
-\end{equation} 
-
-Expandindo a equação fica:
-
-\begin{equation} 
-    E = ((y_{1}-(\alpha+\beta x_{1}))^{2}+(y_{2}-(\alpha+\beta x_{2}))^{2}+ ... + (y_{10}-(\alpha+\beta x_{10}))^{2})^{2}
-(\#eq:expanded-error-ols)
-\end{equation} 
-
-Após isso, é teremos uma função com duas variáveis, e para encontrar seus 
-valores e igualar a zero, a fim de se obter os pontos críticos, é necessário 
-calcular as derivadas parciais em relação a $\alpha$ (Equação 
-\@ref(eq:partial-alpha) e $\beta$ (Equação \@ref(eq:partial-beta).
-
-<!-- = 2(y_{1}-\alpha+\beta x_{1})\times1+2(y_{2}-\alpha+\beta x_{2})\times1+ ... + 2(y_{10}-\alpha+\beta x_{10})\times1 = 0 -->
-\begin{equation} 
-    \frac{\partial E^{2}}{\partial \alpha} = (y_{1}-(\alpha+\beta x_{1}))^{2}+(y_{2}-(\alpha+\beta x_{2}))^{2}+ ... + (y_{10}-(\alpha+\beta x_{10}))^{2} = 0
-(\#eq:partial-alpha)
-\end{equation} 
-
-\begin{equation} 
-    \frac{\partial E^{2}}{\partial \beta} = (y_{1}-(\alpha+\beta x_{1}))^{2}+(y_{2}-(\alpha+\beta x_{2}))^{2}+ ... + (y_{10}-(\alpha+\beta x_{10}))^{2} = 0
-(\#eq:partial-beta)
-\end{equation} 
-
-Após calcular as derivadas parcias, teremos duas equações, das quais podemos 
-encontrar os valores das duas variáveis utilizando um sistema de equações 
-lineares. Após encontrar as variáveis e realizar as devidas substituições, 
-teremos a equação da reta, ou seja, a regressão linear.
+```{r ols-steps, echo=FALSE, fig.align="center", fig.cap='Ajuste da regressão linear por método dos quadrados ordinários.'}
+  knitr::include_graphics("assets/ols-steps.png")
+```
 
 #### Gradiente descendente
 O método do gradiente descendente (GD) é uma das técnicas mais utilizadas para 
-otimização de modelos de ML. O GD é um método interativo que busca encontrar os 
-coeficiente $\alpha$ e $\beta$ através da minimuzação de uma função de custo, 
-normalmente o erro quadrático médio (MSE - sigla do inglês, 
-*mean squared error*). O MSE pode ser definido pela Equação \@ref(eq:mse), onde
-$e_{i}$ é a diferença entre o valor real de $y_{i}$ e o valor previsto pela 
-equação.
+otimização de modelos de ML. Este é um método interativo que busca encontrar os 
+coeficiente $\alpha$ e $\beta$ através da minimização de uma função de custo, 
+que normalmente é o erro quadrático médio (MSE - sigla do inglês, 
+*mean squared error*).
 
-\begin{equation} 
-    MSE = \frac{1}{n} \sum^{n}_{i=1}e_{i}^{2}
-(\#eq:mse)
-\end{equation} 
-
-O GD deve ajustar os coeficientes até que o MSE seja o menor possível e cada 
-intereação. A atualização dos coeficiente é feita com base em uma taxa de 
-aprendizado, normalmente definida em 0,0001. Uma taxa de aprendizado muito 
-grande o GD pode cair em um mínimo local, já um valor muito baixo, o modelo pode 
-demorar muito mais tempo para chegar em um mínimo local, necessitando de muito 
-mais tempo e processamento, conforme ilustrado na Figura 
-\@ref(fig:learning-rate).
+O GD funciona de forma iterativa e inicializa os coeficientes com um valor 
+predefinido ou aleatório. Em cada iteração é obtido o somatório do erro entre 
+todos os valores das variáveis dependentes e valores calculados pela função. Com
+base nesse erro e em uma taxa de aprendizagem do modelo predefinida, os valores
+dos coeficientes da função são atualizados para a próxima iteração. A taxa de 
+aprendizagem deve ser definda com um valor equilibrado. A definição de um valor 
+muito alto para a taxa de aprendizagem pode levar o modelo a cair em um mínimo 
+local, ou seja, o modelo não consegue chegar em seu melhor ajuste. Já quando a 
+taxa de aprendizagem é definida com um valor muito baixo, o modelo demora mais 
+tempo para chegar no ajuste ideal, necessitando de muito mais tempo e 
+processamento até que haja a convergência. A Figura \@ref(fig:learning-rate) 
+mostra o comportamento do GD com diferentes categorias de valores mencionadas 
+para a taxa de aprendizagem.
 
 ```{r learning-rate, echo=FALSE, fig.align="center", fig.cap='Problemas na taxa de aprendizado do gradiente descendente.'}
   knitr::include_graphics("assets/learning-rate-gd.png")

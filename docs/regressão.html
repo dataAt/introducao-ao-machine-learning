@@ -74,7 +74,7 @@
 <ul>
 <li class="chapter" data-level="3.1" data-path="regressão.html"><a href="regressão.html#regressão-linear"><i class="fa fa-check"></i><b>3.1</b> Regressão Linear</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="regressão.html"><a href="regressão.html#cálculo-dos-coeficientes"><i class="fa fa-check"></i><b>3.1.1</b> Cálculo dos coeficientes</a></li>
+<li class="chapter" data-level="3.1.1" data-path="regressão.html"><a href="regressão.html#coeficientes-da-regressão-linear"><i class="fa fa-check"></i><b>3.1.1</b> Coeficientes da regressão linear</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="agrupamento.html"><a href="agrupamento.html"><i class="fa fa-check"></i><b>4</b> Agrupamento</a></li>
@@ -157,92 +157,124 @@ relação entre duas variáveis através de uma função, que pode ser definida 
     y_{i} = \alpha+\beta x_{i}
 \tag{3.1}
 \end{equation}\]</span></p>
-<p>Onde <span class="math inline">\(y_{i}\)</span> é a variável dependente, também denominada de variável alvo,
-<span class="math inline">\(\alpha\)</span> e <span class="math inline">\(beta x_{i}\)</span> são coeficientes calculados pela regressão, que
-representam o intercepto no eixo <span class="math inline">\(y\)</span> e inclinação da reta, respectivamente.</p>
+<p>Onde <span class="math inline">\(y_{i}\)</span> é a variável alvo, <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(beta x_{i}\)</span> são coeficientes
+calculados pela regressão, que representam o intercepto no eixo <span class="math inline">\(y\)</span> e inclinação
+da reta, respectivamente.</p>
 <p>A RLM é semelhante semelhante à RLS, porém possui multiplas variáveis
 preditoras, e pode ser definida por:</p>
 <p><span class="math display" id="eq:rlm-function">\[\begin{equation} 
     y_{i} = \alpha+\beta x_{i1}+\beta x_{i2}+...+\beta x_{in}
 \tag{3.2}
 \end{equation}\]</span></p>
-<p>Onde <span class="math inline">\(y_{i}\)</span> é a variável dependente, <span class="math inline">\(\alpha\)</span> continua sendo o coeficiente de
+<p>Onde <span class="math inline">\(y_{i}\)</span> é a variável alvo, <span class="math inline">\(\alpha\)</span> continua sendo o coeficiente de
 intercepto e <span class="math inline">\(\beta x_{ip}\)</span> o é coeficiente angular da <span class="math inline">\(p\)</span>-ésima variável. Ambos
 os métodos podem ainda serem somados a um termo <span class="math inline">\(\epsilon\)</span> de erro.</p>
-<div id="cálculo-dos-coeficientes" class="section level3" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> Cálculo dos coeficientes</h3>
-<p>Existem diversas abordagens para se calcular os coeficientes de intercepto de
-inclinação da reta, as técnicas baseadas em mínimos quadrados oridinários e
-gradiente descendente são as mais comuns.</p>
+<div id="coeficientes-da-regressão-linear" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Coeficientes da regressão linear</h3>
+<p>Existem diversas abordagens para se calcular os coeficientes <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>
+da equação da regressão linear, as técnicas baseadas em mínimos quadrados
+oridinários e gradiente descendente são as mais comuns. A seguir serão
+apresentados os funcionamentos dessas abordagens.</p>
 <div id="métodos-dos-quadrados-ordinários" class="section level4" number="3.1.1.1">
 <h4><span class="header-section-number">3.1.1.1</span> Métodos dos quadrados ordinários</h4>
 <p>O Método dos quadrados ordinários (MQO) ou método dos mínimos quadrados (MMQ),
 busca encontrar o melhor valor para os coeficientes citados anteriormente, de
 tal forma que a diferença absoluta entre o valor real e o predito pela função
 seja a menor possível entre todos os pontos. A Figura <a href="regressão.html#fig:ols">3.3</a> mostra um
-exmplo de regressão linar utilizando o MQO para um conjunto de pontos com força
-de correlação de 0,9.</p>
+exmplo de regressão linar utilizando o MQO para o conjunto pontos descritos na
+tabela a seguir:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Variável independente</th>
+<th>Variável dependente</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.75</td>
+<td>5.78</td>
+</tr>
+<tr class="even">
+<td>1.90</td>
+<td>10.25</td>
+</tr>
+<tr class="odd">
+<td>1.46</td>
+<td>7.93</td>
+</tr>
+<tr class="even">
+<td>1.20</td>
+<td>7.13</td>
+</tr>
+<tr class="odd">
+<td>0.31</td>
+<td>5.18</td>
+</tr>
+<tr class="even">
+<td>0.31</td>
+<td>3.02</td>
+</tr>
+<tr class="odd">
+<td>0.12</td>
+<td>2.62</td>
+</tr>
+<tr class="even">
+<td>1.73</td>
+<td>8.63</td>
+</tr>
+<tr class="odd">
+<td>1.20</td>
+<td>6.59</td>
+</tr>
+<tr class="even">
+<td>1.42</td>
+<td>8.56</td>
+</tr>
+</tbody>
+</table>
 <div class="figure" style="text-align: center"><span id="fig:ols"></span>
 <img src="assets/ols.png" alt="Exemplo do método dos quadrados ordinários."  />
 <p class="caption">
 Figure 3.3: Exemplo do método dos quadrados ordinários.
 </p>
 </div>
-<p>Considerando a Imagem <a href="regressão.html#fig:ols">3.3</a>, uma amostra de 10 pontos como exemplo, que
-será chamada de <span class="math inline">\(A\)</span>, ou seja, <span class="math inline">\(A = \{(x_{i}, y_{i}):i=1, ..., 10\}\)</span>. O MQO tem
-como objetivo estibular os coeficientes da função, de tal forma que a soma
-quadrática dos erros absolutos <span class="math inline">\(E^{2}\)</span> seja a menor possível:</p>
-<p><span class="math display" id="eq:error-ols">\[\begin{equation} 
-    E^{2} = \sum_{i=1}^{n=10}(y_{i}-(\alpha+\beta x_{i}))^{2}
-\tag{3.3}
-\end{equation}\]</span></p>
-<p>Expandindo a equação fica:</p>
-<p><span class="math display" id="eq:expanded-error-ols">\[\begin{equation} 
-    E = ((y_{1}-(\alpha+\beta x_{1}))^{2}+(y_{2}-(\alpha+\beta x_{2}))^{2}+ ... + (y_{10}-(\alpha+\beta x_{10}))^{2})^{2}
-\tag{3.4}
-\end{equation}\]</span></p>
-<p>Após isso, é teremos uma função com duas variáveis, e para encontrar seus
-valores e igualar a zero, a fim de se obter os pontos críticos, é necessário
-calcular as derivadas parciais em relação a <span class="math inline">\(\alpha\)</span> (Equação
-<a href="regressão.html#eq:partial-alpha">(3.5)</a> e <span class="math inline">\(\beta\)</span> (Equação <a href="regressão.html#eq:partial-beta">(3.6)</a>.</p>
-<!-- = 2(y_{1}-\alpha+\beta x_{1})\times1+2(y_{2}-\alpha+\beta x_{2})\times1+ ... + 2(y_{10}-\alpha+\beta x_{10})\times1 = 0 -->
-<p><span class="math display" id="eq:partial-alpha">\[\begin{equation} 
-    \frac{\partial E^{2}}{\partial \alpha} = (y_{1}-(\alpha+\beta x_{1}))^{2}+(y_{2}-(\alpha+\beta x_{2}))^{2}+ ... + (y_{10}-(\alpha+\beta x_{10}))^{2} = 0
-\tag{3.5}
-\end{equation}\]</span></p>
-<p><span class="math display" id="eq:partial-beta">\[\begin{equation} 
-    \frac{\partial E^{2}}{\partial \beta} = (y_{1}-(\alpha+\beta x_{1}))^{2}+(y_{2}-(\alpha+\beta x_{2}))^{2}+ ... + (y_{10}-(\alpha+\beta x_{10}))^{2} = 0
-\tag{3.6}
-\end{equation}\]</span></p>
-<p>Após calcular as derivadas parcias, teremos duas equações, das quais podemos
-encontrar os valores das duas variáveis utilizando um sistema de equações
-lineares. Após encontrar as variáveis e realizar as devidas substituições,
-teremos a equação da reta, ou seja, a regressão linear.</p>
+<p>Para se chegar no resultado apresentado na Figura <a href="regressão.html#fig:ols">3.3</a>, os
+coeficientes da regressão linear foram ajustados, de tal tal forma que o erro
+quadrático médio entre entre a função e cada um dos pontos fossem a menor
+possível. A Figura <a href="regressão.html#fig:ols-steps">3.4</a> mostra o ajuste dos coeficientes da
+equação em relação a cada ponto.</p>
+<div class="figure" style="text-align: center"><span id="fig:ols-steps"></span>
+<img src="assets/ols-steps.png" alt="Ajuste da regressão linear por método dos quadrados ordinários."  />
+<p class="caption">
+Figure 3.4: Ajuste da regressão linear por método dos quadrados ordinários.
+</p>
+</div>
 </div>
 <div id="gradiente-descendente" class="section level4" number="3.1.1.2">
 <h4><span class="header-section-number">3.1.1.2</span> Gradiente descendente</h4>
 <p>O método do gradiente descendente (GD) é uma das técnicas mais utilizadas para
-otimização de modelos de ML. O GD é um método interativo que busca encontrar os
-coeficiente <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span> através da minimuzação de uma função de custo,
-normalmente o erro quadrático médio (MSE - sigla do inglês,
-<em>mean squared error</em>). O MSE pode ser definido pela Equação <a href="regressão.html#eq:mse">(3.7)</a>, onde
-<span class="math inline">\(e_{i}\)</span> é a diferença entre o valor real de <span class="math inline">\(y_{i}\)</span> e o valor previsto pela
-equação.</p>
-<p><span class="math display" id="eq:mse">\[\begin{equation} 
-    MSE = \frac{1}{n} \sum^{n}_{i=1}e_{i}^{2}
-\tag{3.7}
-\end{equation}\]</span></p>
-<p>O GD deve ajustar os coeficientes até que o MSE seja o menor possível e cada
-intereação. A atualização dos coeficiente é feita com base em uma taxa de
-aprendizado, normalmente definida em 0,0001. Uma taxa de aprendizado muito
-grande o GD pode cair em um mínimo local, já um valor muito baixo, o modelo pode
-demorar muito mais tempo para chegar em um mínimo local, necessitando de muito
-mais tempo e processamento, conforme ilustrado na Figura
-<a href="regressão.html#fig:learning-rate">3.4</a>.</p>
+otimização de modelos de ML. Este é um método interativo que busca encontrar os
+coeficiente <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span> através da minimização de uma função de custo,
+que normalmente é o erro quadrático médio (MSE - sigla do inglês,
+<em>mean squared error</em>).</p>
+<p>O GD funciona de forma iterativa e inicializa os coeficientes com um valor
+predefinido ou aleatório. Em cada iteração é obtido o somatório do erro entre
+todos os valores das variáveis dependentes e valores calculados pela função. Com
+base nesse erro e em uma taxa de aprendizagem do modelo predefinida, os valores
+dos coeficientes da função são atualizados para a próxima iteração. A taxa de
+aprendizagem deve ser definda com um valor equilibrado. A definição de um valor
+muito alto para a taxa de aprendizagem pode levar o modelo a cair em um mínimo
+local, ou seja, o modelo não consegue chegar em seu melhor ajuste. Já quando a
+taxa de aprendizagem é definida com um valor muito baixo, o modelo demora mais
+tempo para chegar no ajuste ideal, necessitando de muito mais tempo e
+processamento até que haja a convergência. A Figura <a href="regressão.html#fig:learning-rate">3.5</a>
+mostra o comportamento do GD com diferentes categorias de valores mencionadas
+para a taxa de aprendizagem.</p>
 <div class="figure" style="text-align: center"><span id="fig:learning-rate"></span>
 <img src="assets/learning-rate-gd.png" alt="Problemas na taxa de aprendizado do gradiente descendente."  />
 <p class="caption">
-Figure 3.4: Problemas na taxa de aprendizado do gradiente descendente.
+Figure 3.5: Problemas na taxa de aprendizado do gradiente descendente.
 </p>
 </div>
 
