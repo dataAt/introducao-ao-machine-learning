@@ -39,3 +39,5 @@ vignettes/*.pdf
 .Renviron
 
 _index.Rmd
+
+notebooks/

@@ -6,7 +6,7 @@
 cd src
 Rscript compile.R
 cd ../docs
-cp introducao.html index.html
+cp introdução.html index.html
 
 
 # development
@@ -15,4 +15,4 @@ cp introducao.html index.html
 # R -e "bookdown::render_book('index.Rmd', bookdown::gitbook(lib_dir = 'libs'))"
 # cd ..
 # cp docs/introducao.html docs/index.html
-# google-chrome docs/index.html
+# brave-browser file:///home/adriano/introducao-ao-machine-learning/docs/regress%C3%A3o.html
