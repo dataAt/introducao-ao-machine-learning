@@ -343,47 +343,48 @@ melhor performance quando os dados possuem muitas dimensões.</p>
 <p>A regressão linear pode ser aplicada em uma vasta variedade de problemas, mas
 como foi apresentado ao longo desta seção, é necessário que os dados possuam uma
 alta correlação. Este algoritmo está disponível na biblioteca <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">Scikit-learn</a>
-par ser utilizado em Python.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="regressão.html#cb2-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
-<span id="cb2-2"><a href="regressão.html#cb2-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-3"><a href="regressão.html#cb2-3"></a></span>
-<span id="cb2-4"><a href="regressão.html#cb2-4"></a></span>
-<span id="cb2-5"><a href="regressão.html#cb2-5"></a><span class="co"># Definição dos valores de uma única variável preditora</span></span>
-<span id="cb2-6"><a href="regressão.html#cb2-6"></a>x <span class="op">=</span> [[<span class="dv">0</span>], [<span class="dv">1</span>], [<span class="dv">2</span>], [<span class="dv">3</span>]] </span>
-<span id="cb2-7"><a href="regressão.html#cb2-7"></a></span>
-<span id="cb2-8"><a href="regressão.html#cb2-8"></a><span class="co"># Definição dos valores das variáveis alvo</span></span>
-<span id="cb2-9"><a href="regressão.html#cb2-9"></a>y <span class="op">=</span> [<span class="fl">1.3</span>, <span class="fl">2.2</span>, <span class="fl">2.6</span>, <span class="fl">3.3</span>] </span>
-<span id="cb2-10"><a href="regressão.html#cb2-10"></a></span>
-<span id="cb2-11"><a href="regressão.html#cb2-11"></a><span class="co"># Instanciando regressão linear e ajustando-a aos dados</span></span>
-<span id="cb2-12"><a href="regressão.html#cb2-12"></a>lr <span class="op">=</span> LinearRegression().fit(x, y) </span>
-<span id="cb2-13"><a href="regressão.html#cb2-13"></a></span>
-<span id="cb2-14"><a href="regressão.html#cb2-14"></a><span class="co"># Obtendo os valores aproximados da variável alvo</span></span>
-<span id="cb2-15"><a href="regressão.html#cb2-15"></a>y_regression <span class="op">=</span> [lr.predict([xi])[<span class="dv">0</span>] <span class="cf">for</span> xi <span class="kw">in</span> x] </span>
-<span id="cb2-16"><a href="regressão.html#cb2-16"></a></span>
-<span id="cb2-17"><a href="regressão.html#cb2-17"></a><span class="co"># Criando novos pontos somente com valores da variável preditora</span></span>
-<span id="cb2-18"><a href="regressão.html#cb2-18"></a>x_test <span class="op">=</span> [[<span class="op">-</span><span class="dv">1</span>], [<span class="fl">2.75</span>], [<span class="fl">4.3</span>]]</span>
-<span id="cb2-19"><a href="regressão.html#cb2-19"></a></span>
-<span id="cb2-20"><a href="regressão.html#cb2-20"></a><span class="co"># Aplicando regressão linear para prever os valores da variável alvo</span></span>
-<span id="cb2-21"><a href="regressão.html#cb2-21"></a>y_test <span class="op">=</span> lr.predict(x_test)</span>
-<span id="cb2-22"><a href="regressão.html#cb2-22"></a></span>
-<span id="cb2-23"><a href="regressão.html#cb2-23"></a><span class="co"># Concatenando dados de treino e teste</span></span>
-<span id="cb2-24"><a href="regressão.html#cb2-24"></a>y_regression <span class="op">=</span> [<span class="op">*</span>y_regression, <span class="op">*</span>y_test]</span>
-<span id="cb2-25"><a href="regressão.html#cb2-25"></a>x_regression <span class="op">=</span> [<span class="op">*</span>x, <span class="op">*</span>x_test]</span>
-<span id="cb2-26"><a href="regressão.html#cb2-26"></a></span>
-<span id="cb2-27"><a href="regressão.html#cb2-27"></a><span class="co"># Exibindo dados de treino</span></span>
-<span id="cb2-28"><a href="regressão.html#cb2-28"></a>plt.scatter(x, y, color<span class="op">=</span><span class="st">&#39;gray&#39;</span>, label<span class="op">=</span><span class="st">&#39;Dados de treino&#39;</span>) </span>
-<span id="cb2-29"><a href="regressão.html#cb2-29"></a></span>
-<span id="cb2-30"><a href="regressão.html#cb2-30"></a><span class="co"># Exibindo dados de teste</span></span>
-<span id="cb2-31"><a href="regressão.html#cb2-31"></a>plt.scatter(x_test, y_test, color<span class="op">=</span><span class="st">&#39;red&#39;</span>, label<span class="op">=</span><span class="st">&#39;Dados de teste&#39;</span>)</span>
-<span id="cb2-32"><a href="regressão.html#cb2-32"></a></span>
-<span id="cb2-33"><a href="regressão.html#cb2-33"></a><span class="co"># Exibindo reta da regressão linear</span></span>
-<span id="cb2-34"><a href="regressão.html#cb2-34"></a>plt.plot(x_regression, y_regression, color<span class="op">=</span><span class="st">&#39;black&#39;</span>, label<span class="op">=</span><span class="st">&#39;Regressão linear&#39;</span>)</span>
-<span id="cb2-35"><a href="regressão.html#cb2-35"></a></span>
-<span id="cb2-36"><a href="regressão.html#cb2-36"></a><span class="co">#Configurações do gráfico</span></span>
-<span id="cb2-37"><a href="regressão.html#cb2-37"></a>plt.xlabel(<span class="st">&#39;Variável preditora ($x$)&#39;</span>)</span>
-<span id="cb2-38"><a href="regressão.html#cb2-38"></a>plt.ylabel(<span class="st">&#39;Variável alvo ($y$)&#39;</span>)</span>
-<span id="cb2-39"><a href="regressão.html#cb2-39"></a>plt.legend()</span>
-<span id="cb2-40"><a href="regressão.html#cb2-40"></a>plt.show()</span></code></pre></div>
+par ser utilizado em Python. Um exemplo utilizando a regressão linear é
+apresentado no código a seguir:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="regressão.html#cb5-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb5-2"><a href="regressão.html#cb5-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-3"><a href="regressão.html#cb5-3"></a></span>
+<span id="cb5-4"><a href="regressão.html#cb5-4"></a></span>
+<span id="cb5-5"><a href="regressão.html#cb5-5"></a><span class="co"># Definição dos valores de uma única variável preditora</span></span>
+<span id="cb5-6"><a href="regressão.html#cb5-6"></a>x <span class="op">=</span> [[<span class="dv">0</span>], [<span class="dv">1</span>], [<span class="dv">2</span>], [<span class="dv">3</span>]] </span>
+<span id="cb5-7"><a href="regressão.html#cb5-7"></a></span>
+<span id="cb5-8"><a href="regressão.html#cb5-8"></a><span class="co"># Definição dos valores das variáveis alvo</span></span>
+<span id="cb5-9"><a href="regressão.html#cb5-9"></a>y <span class="op">=</span> [<span class="fl">1.3</span>, <span class="fl">2.2</span>, <span class="fl">2.6</span>, <span class="fl">3.3</span>] </span>
+<span id="cb5-10"><a href="regressão.html#cb5-10"></a></span>
+<span id="cb5-11"><a href="regressão.html#cb5-11"></a><span class="co"># Instanciando regressão linear e ajustando-a aos dados</span></span>
+<span id="cb5-12"><a href="regressão.html#cb5-12"></a>lr <span class="op">=</span> LinearRegression().fit(x, y) </span>
+<span id="cb5-13"><a href="regressão.html#cb5-13"></a></span>
+<span id="cb5-14"><a href="regressão.html#cb5-14"></a><span class="co"># Obtendo os valores aproximados da variável alvo</span></span>
+<span id="cb5-15"><a href="regressão.html#cb5-15"></a>y_regression <span class="op">=</span> [lr.predict([xi])[<span class="dv">0</span>] <span class="cf">for</span> xi <span class="kw">in</span> x] </span>
+<span id="cb5-16"><a href="regressão.html#cb5-16"></a></span>
+<span id="cb5-17"><a href="regressão.html#cb5-17"></a><span class="co"># Criando novos pontos somente com valores da variável preditora</span></span>
+<span id="cb5-18"><a href="regressão.html#cb5-18"></a>x_test <span class="op">=</span> [[<span class="op">-</span><span class="dv">1</span>], [<span class="fl">2.75</span>], [<span class="fl">4.3</span>]]</span>
+<span id="cb5-19"><a href="regressão.html#cb5-19"></a></span>
+<span id="cb5-20"><a href="regressão.html#cb5-20"></a><span class="co"># Aplicando regressão linear para prever os valores da variável alvo</span></span>
+<span id="cb5-21"><a href="regressão.html#cb5-21"></a>y_test <span class="op">=</span> lr.predict(x_test)</span>
+<span id="cb5-22"><a href="regressão.html#cb5-22"></a></span>
+<span id="cb5-23"><a href="regressão.html#cb5-23"></a><span class="co"># Concatenando dados de treino e teste</span></span>
+<span id="cb5-24"><a href="regressão.html#cb5-24"></a>y_regression <span class="op">=</span> [<span class="op">*</span>y_regression, <span class="op">*</span>y_test]</span>
+<span id="cb5-25"><a href="regressão.html#cb5-25"></a>x_regression <span class="op">=</span> [<span class="op">*</span>x, <span class="op">*</span>x_test]</span>
+<span id="cb5-26"><a href="regressão.html#cb5-26"></a></span>
+<span id="cb5-27"><a href="regressão.html#cb5-27"></a><span class="co"># Exibindo dados de treino</span></span>
+<span id="cb5-28"><a href="regressão.html#cb5-28"></a>plt.scatter(x, y, color<span class="op">=</span><span class="st">&#39;gray&#39;</span>, label<span class="op">=</span><span class="st">&#39;Dados de treino&#39;</span>) </span>
+<span id="cb5-29"><a href="regressão.html#cb5-29"></a></span>
+<span id="cb5-30"><a href="regressão.html#cb5-30"></a><span class="co"># Exibindo dados de teste</span></span>
+<span id="cb5-31"><a href="regressão.html#cb5-31"></a>plt.scatter(x_test, y_test, color<span class="op">=</span><span class="st">&#39;red&#39;</span>, label<span class="op">=</span><span class="st">&#39;Dados de teste&#39;</span>)</span>
+<span id="cb5-32"><a href="regressão.html#cb5-32"></a></span>
+<span id="cb5-33"><a href="regressão.html#cb5-33"></a><span class="co"># Exibindo reta da regressão linear</span></span>
+<span id="cb5-34"><a href="regressão.html#cb5-34"></a>plt.plot(x_regression, y_regression, color<span class="op">=</span><span class="st">&#39;black&#39;</span>, label<span class="op">=</span><span class="st">&#39;Regressão linear&#39;</span>)</span>
+<span id="cb5-35"><a href="regressão.html#cb5-35"></a></span>
+<span id="cb5-36"><a href="regressão.html#cb5-36"></a><span class="co">#Configurações do gráfico</span></span>
+<span id="cb5-37"><a href="regressão.html#cb5-37"></a>plt.xlabel(<span class="st">&#39;Variável preditora ($x$)&#39;</span>)</span>
+<span id="cb5-38"><a href="regressão.html#cb5-38"></a>plt.ylabel(<span class="st">&#39;Variável alvo ($y$)&#39;</span>)</span>
+<span id="cb5-39"><a href="regressão.html#cb5-39"></a>plt.legend()</span>
+<span id="cb5-40"><a href="regressão.html#cb5-40"></a>plt.show()</span></code></pre></div>
 <p><img src="intro-ao-machine-learning_files/figure-html/unnamed-chunk-2-1.png" /><!-- --></p>
 
 </div>
