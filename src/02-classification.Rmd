@@ -9,4 +9,400 @@ header-includes:
 
 # Classificação
 
-Lorem ipsum dolor sit amet
+*"Nossas características nos fazem igualmente diferentes" - Autor desconhecido*
+
+<!-- - A classificação é um processo feito em duas etapas, aprendizado e previsão. -->
+
+<p align="justify">
+Os algoritmos de Aprendizado de Máquina (AM) supervisionado, apresentados anteriormente, podem ser aplicados para a solução de problemas de Classificação e Regressão. Neste capítulo, serão apresenados os algoritmos de AM para as tarefas de classificação. Para começar, precisamos definir o que é classificação e quais problemas essa pode ser utilizada para resolver. Podemos dizer que classificação é
+</p>
+
+<!-- ToDo: Buscar uma ideia/pensamento mais simples para explicar essa parte -->
+> Processo que busca, através de características já conhecidas de uma entidade, determinar qual sua classe (ou categoria).
+
+<p align="justify">
+Com isso, ao trabalhar com algoritmos de classificação, no contexto de AM supervisionado, estamos preocupados em utilizar algoritmos que permitam com que características já conhecidas sobre um determinado fenômeno possam ser utilizados para a classificação de novos fenômenos em diferentes contextos de uso e aplicação. Essas características fazem com que os algoritmos de classificação sejam empregados nas mais diversas áreas. [@Aggarwal2015] apresenta diversos contextos onde a classificação pode ser utilizada, como a análise de dados biológicos, reconhecimento e filtro de documentos e *e-mails*, além da possibilidade do reconhecimento e diagnóstico de doenças. 
+</p>
+
+<!-- ToDo: Falar de mais caracteríticas gerais dessa classde algoritmos ? Sim, falar da existência de um processo de treino e teste neste tipo de algoritmo -->
+<!-- Se ao final do processo, eu perceber que a descrição de características 'gerais' ajudar no entendimento dos algoritmos, eu coloco aqui um fluxo 'padrão'. Só não coloquei pq não sei a ideia que vou acabar aplicando para a explicação dos algoritmos -->
+
+<p align="justify">
+Dito isto, é importante considerar que, os algoritmos de AM que são empregados para a realização da classificação podem fazer isto através de diferentes técnicas, o que faz com que exista uma gama de diferentes tipos de algoritmos, que através de técnicas variadas, fazem com que o aprendizado acontece e então que a classificação possa ser aplicada. Neste livro, serão apresentados os algoritmos que aplicam técnicas `Probabilísticos`, `Árvores de decisão` e `Instance-based Learning`. 
+</p>
+
+<!-- O texto que coloquei aqui é apenas um esboço e ainda será refatorado. Isso foi criado desta forma, para que eu consiga desenvolver a apresentação dos algoritmos tendo uma ideia do que tem de ser colocado aqui. -->
+
+<!-- Figura com ícones de probabilidade, árvore de decisão e instance-based learning -->
+
+<!-- Somente três serão apresentados -->
+<!-- Acho que isso aqui pode ser substituído por uma figura e então, comentários em cima dela podem ser feitos-->
+<!-- Classes de algoritmos: (Modelos probabilisticos; Decision Trees; *Instance-based Learning*) -->
+<!-- ***Instance-based Learning*** -->
+
+## *k*-Nearest Neighbors
+
+*"Você é definido pelas pessoas com quem anda"* - Adaptação de ditado popular
+
+<!-- ToDo: Refatorar -->
+
+<p align="justify">
+Para começar, o primeiro algoritmo que vamos tratar será o *k*-Nearest Neighbors (kNN), um algoritmo de classificação *lazzy learning*, que através da análise de vizinhança de amostras de um determinado conjunto de treinamento, define o rótulo de classe das amostras do conjunto de teste. De maneira geral, o que o algoritmo faz é buscar os elementos que estão próximos à amostra que está sendo classificada, e com base nessas amostras que estão próximas faz a classificação. Então, aqui temos uma mistura de conceitos, vamos começar primeiro resumindo o algoritmo em uma frase:
+</p>
+
+> Me diga com quem tu andas, que eu digo quem tu és
+
+<p align="justify">
+Essa frase ajuda muito a assimilar a ideia geral do algoritmo, mantenha ela em mente durante essa seção. Agora, precisamos entender que o kNN é dividido em duas partes principais: (i) Análise de vizinhança; (ii) Determinação do rótulo da classe. Vamos começar pela primeira parte.
+</p>
+
+- (i) Análise de vizinhança; 
+
+<p align="justify">
+Nesta parte do algoritmo o que se busca é determinar quem são as amostras do conjunto de treinamento que estão mais próximas da amostra de teste que está sendo classificada. Certo, mas nesse caso, o que é "estar próximo" ? De maneira intuitiva, a ideia de proximidade está relacionada a distância, e é exatamente dessa forma que o algoritmo, nesta etapa, faz a determinação dos elementos próximos, para isso, utiliza várias funções de distância. Um exemplo de função de distância é a `Distância Euclidiana`, sim! a mesma que utilizamos para várias partes de nossas vidas para manipulação de elementos no espaço euclidiano. Você lembra de usar ela para calcular a distância entre dois pontos ? Vamos olhar a fórmula para relembrar
+</p>
+
+Então, a `Distância euclidiana` é apresentada da seguinte forma
+
+<center>
+$\sqrt{\sum_{i = 1}^{n} (p_i - q_i)^2}$
+</center>
+
+<p align="justify">
+Assim, através dessa função o algoritmo determina os elementos que estão mais próximos de uma determinada amostra. Cabe lembrar que, essa não é a única função, várias outras podem ser utilizadas. Agora, podemos ir para a segunda parte, vamos lá!
+</p>
+
+- (ii) Determinação do rótulo da classe.
+
+> Para entender esta segunda parte, devemos nos lembrar que, esse algoritmo é um algoritmo supervisionado, então, quando estamos falando do conjunto amostral de treino, estamos assumindo que esses dados já possuem um rótulo definido e que esses rótulos serão utilizados no processo de classificação dos dados que não tem rótulo. Feito esse lembrete, vamos continuar!
+
+<p align="justify">
+Nesta parte do algoritmo, após calcular a distância de cada um dos pontos, ele escolhe os *k* elementos mais próximos. Com a determinação desses elementos mais próximos, o algoritmo analisa e contabiliza, por classe, quantos são os elementos que compoem a vizinhança, dessa forma, ao final desse processo, o algoritmo sabe quais são as classes vizinhas da amostra a ser classificada e quantos elementos de cada uma dessas classes estão presentes na vizinhança. Feito isso, o algoritmo vai determinar o rótulo da amostra a ser classificada como sendo igual a classe, que na vizinhança possui a maior quantidade de elementos. Somente isso! Viu que interessante, esse é um algoritmo simples e que pode ser muito eficiente dependendo do contexto de uso. 
+</p>
+
+<p align="justify">
+Mas espera ai, você pode estar se perguntando, "E a ideia do treino e teste que foi falada antes?", bem, esse é um algoritmo de classificação *lazzy learning* lembra ? Ou seja, a parte de treinamento é resumida em apenas organizar ou armazenar os dados, de modo a deixar eles pronto para o uso.
+</p>
+
+<!-- Melhorar a explicação dessa parte inicial, falando dos problemas de k vizinhos e etc-->
+<!-- Acho que aqui, antes de apresentar um exemplo visual, deve vir uma explicação do algoritmo, tipo: (i) Calcula tal coisa; (ii) Faça outra coisa... Isso ajuda a deixar mais palpável o exemplo visual que está sendo apresentado -->
+<!-- A explicação das distâncias também precisa vir aqui, acredito ser bem importante (Falar e mostrar a euclidiana e alguma outra e então, indicar que para cada tipo de problema e dado pode ser aplicada alguma técnica) -->
+<!-- Falar aqui da ideia de já ter dados classificados (Facilita para a explicação da clusterização) -->
+<!-- *k*-Nearest Neighbors (kNN) é um algoritmo de classificação *lazzy learning*, que utilizando das características de vizinhança do elemento que está sendo classificado, atribui a este uma classe. A ideia utilizada para a criação e aplicação dessa técnica é baseada na suposição de que, dados registrados sobre um determinado fenômeno, quando próximos, tendem a representam eventos semelhantes. -->
+
+<!-- ToDo: Fazer referência cruzada e parar de usar essa coisa de 'a figura abaixo'-->
+<!-- Para tornar todo o entendimento desse algoritmo mais palpável, vamos considerar um pequeno conjunto de dados de exemplo, este apresentado em um plano cartesiano bidimensional. Nesses dados, apresentados na Figura abaixo, as coordenadas $x$ e $y$ representam as características de um determinado ponto e a cor representa a classe. -->
+
+<p align="justify">
+Agora, com o objetivo de deixar tudo mais claro, vamos para um exemplo visual, passo a passo da execução do algoritmo! Então, vamos começar considerando que o nosso conjunto amostral é formado por um grupo de pontos de várias cores, onde as cores representam os rótulos de cada um desses pontos e então, a ideia vai ser aplicar o kNN para determinar o rótulo de um novo ponto com base nesse conjunto já existente.
+</p>
+
+> Veja aqui que os pontos que já existem representam o conjunto de treino, e o ponto que será classificado, representa o conjunto de teste
+
+Os pontos de treinamento são apresentados abaixo
+
+```{r fig:class_knn1, echo=FALSE, fig.align='center', out.width = "50%", fig.cap='Espaço euclidiano 1 - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/1_knn/knn_01.png")
+```
+
+<p align="justify">
+Beleza! Então, com esse conjunto de dados, vamos adicionar um novo ponto, este é representado pelo ponto vermelho na figura abaixo. Perceba que, este é uma amostra que representa o conjunto de teste, e que, ao ser inserido neste espaço, ele não possui nenhum rótulo definido.
+</p>
+
+```{r fig:class_knn2, echo=FALSE, fig.align='center', out.width = "50%", fig.cap='Espaço euclidiano 2 - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/1_knn/knn_02.png")
+```
+
+<p align="justify">
+Certo! Então já temos nosso problema de classificação definido, vamos resolver ele com o kNN. Aqui, o valor de *k* = 5 (Não se preocupe, vamos voltar nesse valor de *k* depois), ou seja, na primeira parte do algoritmo, análise de vizinhança, vamos buscar os 5 elementos mais próximos ao ponto vermelho.
+</p>
+
+<p align="justify">
+Feito essas considerações, vamos de maneira manual fazer a aplicação do algoritmo, começando com o primeiro passo, de análise de vizinhança, feito com o cálculo das distâncias. Aqui, você vai perceber que a distância utilizada foi a euclidiana, que apresentamos anteriormente.
+</p>
+
+```{r fig:class_knn3, echo=FALSE, fig.align='center', out.width = "50%", fig.cap='Calculo de distância - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/1_knn/knn_03.png")
+```
+
+<p align="justify">
+Com as distâncias calculadas a segunda parte do algoritmo, de determinação do rótulo com base nos vizinhos pode ser iniciada. Para isso, primeiro faz-se a seleção dos 5 elementos mais próximos.
+</p>
+
+```{r fig:class_knn4, echo=FALSE, fig.align='center', out.width = "50%", fig.cap='Seleção dos vizinhos mais próximos - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/1_knn/knn_04.png")
+```
+
+<p align="justify">
+Com os vizinhos mais próximos determinados, é feito a contagem desses, separando cada um desses por rótulo, de modo que, a vizinhança é sumarizada em quantidade de elementos por rótulo, como apresentado abaixo.
+</p>
+
+```{r fig:class_knn5, echo=FALSE, fig.align='center', out.width = "70%", fig.cap='Contagem dos vizinhos mais próximos - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/1_knn/knn_05.png")
+```
+
+<p align="justify">
+Então, é feita a determinação do rótulo do ponto que está sendo classificado, que como podemos ver, vai receber o rótulo laranja, uma vez que, esta é a classe que mais aparece na vizinhança do ponto vermelho.
+</p>
+
+```{r fig:class_knn6, echo=FALSE, fig.align='center', out.width = "70%", fig.cap='Definição da classe - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/1_knn/knn_06.png")
+```
+
+<p align="justify">
+É desta forma que os passos que vimos do algoritmo kNN são materializados frente a um conjunto de dados. Viu que legal! O que o algoritmo faz é exatamente aquilo que está na frase que apresentamos antes.
+</p>
+
+### Escolha do valor de K
+
+<!--hyperparâmetros, isso já vai ter cido apresentado ao leitor antes ? -->
+<!-- Usar da ideia do treino/teste, por isso, esse vai precisar ser adicionado lá em cima -->
+<p align="justify">
+Legal! Então o algoritmo é deveras muito simples de ser entendido, tem uma quantidade pequena de passos, todos compreensíveis. Mas uma pergunta pode ter surgido durante a explicação do algoritmo, como determinar o valor de *k*. E bem, para esta pergunta existem várias respostas, aqui, será adotada a abordagem da seleção considerando o melhor resultado, assim, durante o processo de treinamento e definição dos hyperparâmetros do kNN, opta-se pela escolha do valor de *k* que apresenta o melhor resultado entre os elementos com classe já conhecida e o resultado que o algoritmo está apresentando. 
+</p>
+
+<p align="justify">
+Outras abordagens baseadas em otimizações também podem ser uma saída para este caso, mas essas, não serão abordadas neste livro introdutório.
+</p>
+
+### Complexidade
+
+<p align="justify">
+Como você pode ter pensando, esse pode não ser um algoritmo computacionalmente muito barato, já que, o cálculo de distância nesse algoritmo que apresentamos, é sempre calculado entre todos os pontos do conjunto de treinamento com o conjunto de teste, o que se pensarmos em apenas poucas quantidades de pontos pode não ser um problema, mas que, com a crescente na quantidade, pode ser inviável. Para isso, considere a Figura abaixo, imagina que o ponto vermelho vai ser classificado, a distância dele para todos os outros pontos terá de ser determinada.
+</p>
+
+```{r fig:class_knn7, echo=FALSE, fig.align='center', out.width = "89%", fig.cap='Níveis de complexidade - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/1_knn/knn_07.png")
+```
+
+<p align="justify">
+Como forma de reduzir essa complexidade e a quantidade de elementos que precisam ser contabilizados no cálculo da distância, várias implementações aplicam passos de indexação dos dados, com estruturas de dados como a KD-Tree ou a Quad-Tree, como é o caso do scikit-learn. Essa abordagem de implementação evita com que todos os pontos tenham de ser calculados, possibilitando assim com que apenas os necessários, neste caso, os mais próximos sejam utilizados nos cálculos de distância.
+</p>
+
+### Exemplos
+
+<!-- ToDo: Verificar e mover para a introdução -->
+<!-- 
+Como foi possível perceber o kNN é um algoritmo simples e pode ser implementado facilmente em linguagens como Python e R, mas, não há a necessidade da implementação do zero desse e dos demais algoritmos apresentados neste livro, há diversas bibliotecas que podem ser utilizadas para facilitar todo o processo aplicação do algoritmo. Assim, esta seção vai fazer o uso da biblioteca scikit-learn e do pacote class para realizar a aplicação do kNN.
+
+Para começar, os dados utilizados estão disponíveis no arquivo knnpoints.csv e a visualização desses está disponível na Figura abaixo
+
+<center>
+![](assets/1_classification/1_knn/examples/pointviz.png)
+</center>
+
+Abaixo é apresentado a maneira a qual o scikit-learn é importado para ser utilizado
+
+```{python}
+from sklearn.neighbors import KNeighborsClassifier
+```
+
+#### Exemplo 1
+
+```{python}
+
+```
+
+<center>
+![](assets/1_classification/1_knn/examples/test_1.png)
+</center>
+
+#### Exemplo 2
+
+<center>
+![](assets/1_classification/1_knn/examples/test_2.png)
+</center>
+
+#### Exemplo 3
+
+<center>
+![](assets/1_classification/1_knn/examples/test_3.png)
+</center>
+-->
+
+<!-- ToDo: Adicionar três figuras nessa parte: (i) Pouca quantidade de pontos; (ii) Quantidade média de pontos; (iii) Grande quantidade de pontos -->
+<!-- Isso ajuda a pessoa a entender a escala de crescimento da complexidade -->
+<!-- Escolha do K -->
+<!-- Visualização do funcionamento -->
+<!-- Exemplos de uso  -->
+  <!-- Páginas do Kaggle -->
+
+## Árvore de decisão
+
+*"O importante é não deixar de fazer perguntas"* - Albert Einstein
+
+<p align="justify">
+A árvore de decisão é um dos algoritmos mais utilizados na área de Aprendizado de Máquina, isso por apresentar bons resultados em diversos contextos e por ser considerado um método *transparente*, por deixar explícito as regras que estão sendo utilizadas para a tomada das decisões e geração dos resultados. No capítulo anterior, esta classe de algoritmos foi apresentada para a solução dos problemas de regressão, aqui, eles serão postos no contexto de classificação.
+</p>
+
+### Conceitos gerais
+
+<p align="justify">
+As árvores de decisão são fundamentalmente formas de representação de conhecimento através de uma estrutura hierarquica de perguntas na forma *if-then-else*. Isso faz com que a estrutura das árvores de decisão sejam semelhantes a um fluxograma, onde existem nós que são utilizados para representar as perguntas e desses são derivados outros nós, que podem representar a resposta ou mesmo outra pergunta. Essa estrutura é apresentada na Figura \@ref(fig:class_dt1).
+</p>
+
+```{r fig:class_dt1, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Árvore de decisão - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/2_decision-tree/01_dt.png")
+```
+
+<p align="justify">
+Para nos familiarizarmos com os conceitos que estão envolvidos nessa representação, vamos olhar com calma cada um dos detalhes presentes na figura. Primeiro, a leitura desse tipo de árvore é feita sempre de cima para baixo já que a raiz da árvore está sempre no topo, como é o caso da `Pergunta 1` neste exemplo. Além disso, note também que nessa estrutura existem dois tipos de elementos, as `Perguntas` e as `Respostas`, onde, das `Perguntas` podem sair outras dessas ou mesmo `Respostas`. As `Respostas` representam elementos finais e quando aparecem nada pode ser inserido abaixo. Outra coisa importante de ser citada é a característica recursiva das árvores de decisão, nessas, para cada ramo que é seguido após uma pergunta há uma nova árvore, que é criada através das mesmas regras de definição aplicadas na árvore anterior.
+</p>
+
+<p align="justify">
+Antes da aplicação em larga escala dos algoritmos de AM, essas estruturas já eram utilizadas, porém, com a diferença de que toda a sua criação era feita manualmente, através da aplicação do conhecimento vindo de pesquisas e experimentos empíricos. Por exemplo, um banco, antes do Aprendizado de Máquina, ao querer ser mais acertivo nos empréstimos e diminuir a inadimplência, poderia utilizar de seu histórico de empréstimos e criar regras consultáveis que poderiam ser utilizadas como auxílio aos operadores que realizam empréstimos. A representação das regras definidas poderia ser feita através de uma árvore de decisão sem problemas, mas, isso não caracterizada nada de aprendizado de máquina, já que todo o 'processo de aprendizado' foi feito manualmente por pessoas.
+</p>
+
+<p align="justify">
+Ao contrário disto, as árvores de decisão no contexto de AM são as responsáveis em olhar para os dados e decidir quais são as perguntas mais adequadas para uma determinada resposta. Isso é feito no algoritmo através de sucessivas divisões no conjunto de dados, de modo que, em cada divisão tem-se novos elementos adicionados na árvore. Para essa ideia ficar clara, vamos começar com um exemplo, neste, há um conjunto de pontos, onde cada cor representa uma classe. A árvore de decisão será treinada com esses dados de modo que novas classificações com base neste treinamento possam ser realizadas. O conjunto de dados e a representação da árvore são feitos na Figura \@ref(fig:class_dt2).
+</p>
+
+```{r fig:class_dt2, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Conjunto de dados 1 - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/2_decision-tree/02_dt.png")
+```
+
+<p align="justify">
+Com o conjunto de dados definido, o primeiro passo realizado pela árvore é avaliar quais são as características que melhor definem uma determinada classe. Após fazer isso, a árvore cria uma pergunta que faz com que essa característica identificada como a melhor possa ser utilizada para a divisão do conjunto de dados. Neste caso, a árvore identificou que o conjunto de pontos da classe `Vermelha` estão majoritariamente nas posições com X acima de 10, então, é criada uma pergunta na árvore que verifica quais elementos são maiores que dez, ao fazer isso a divisão do conjunto de dados é realizada e então novos nós são adicionados na árvore, veja na Figura \@ref(fig:class_dt3).
+</p>
+
+```{r fig:class_dt3, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Conjunto de dados 2 - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/2_decision-tree/03_dt.png")
+```
+<p align="justify">
+Se lembrarmos a definição feita anteriormente, temos que as árvores de decisão são estruturas recursivas, então, a mesma lógica de busca do elemento que melhor descreve um conjunto de dados e então a divisão é aplicado nos nós resultantes, isso é feito até que não haja mais elementos suficientes para a divisão ou quando em um nó, todos os elementos pertencem a apenas uma classe. Na Figura \@ref(fig:class_dt4) uma divisão é feita no nó esquerdo, gerado anteriormente, e no nó esquerdo não é feito mais nada.
+</p>
+
+```{r fig:class_dt4, echo=FALSE, fig.align='center', out.width = "79%", fig.cap='Conjunto de dados 3 - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/2_decision-tree/04_dt.png")
+```
+<p align="justify">
+Vamos supor agora que a árvore apresentada na Figura \ref@(fig:class_dt4) finalizou seu treinamento, de modo que classificações podem ser iniciadas. Você pode se perguntar, mas em alguns nós da árvore há uma mistura de elementos, como ele vai fazer a identificação da classe ? Bem, este é um problema recorrente na aplicação das árvores de decisão, nem sempre, as regras escolhidas vão criar grupos de dados 100% puros (de uma única classe). Mais regras poderia ser adicionadas, mas ai, caimos no problema de *overfitting*, onde a árvore começa a criar regras específicas para os dados que estão sendo utilizados no treinamento, o que faz seu desempenho ser muito ruim com dados que não sejam do conjunto utilizado no treino. Com relação a definição da classe, o que é feito é definir a classe do nó gerado, considerando a classe mais representativa de cada nó, então, se formos classificar um novo ponto e ele tem X > 10, ele vai ser colocado como classe `Vermelha` no conjunto de dados.
+</p>
+
+Agora que temos uma visão geral do algoritmo, vamos dar ir adiante a frente e ver como os passos apresentados acima são feitos no algoritmo.
+
+### Funcionamento
+
+<!-- ToDo: Adicionar informação de que existem diversos algoritmos para a construção da árvore de decisão: ID3, CARTx... -->
+
+<p align="justify">
+Nesta seção, vamos materializar as ideias que foram apresentadas na seção de `Visão Geral`, descrevendo os passos envolvidos em cada uma das etapas do treinamento da árvore de decisão que foi apresentado anteriormente. Se lembrarmos dos passos que vimos anteriormente, temos que a criação da árvore ocorre em três etapas
+</p>
+
+- 1. Seleção do melhor atributo para a divisão dos registros
+- 2. Utilização deste atributo para a divisão do conjunto de dados, gerando novos nós na árvore
+- 3. Para cada nó gerado no passo 2, aplica, recursivamente o algoritmo de construção, iniciando no passo 1. O algoritmo deve parar a recursão e não dividir mais os nós quando: 
+  - (i) Todos os dados do nó pertencerem a uma mesma classe; 
+  - (ii) Não há dados suficientes para a divisão; ou 
+  - (iii) Todos os atributos disponíveis nos dados já foram utilizados.
+
+<p align="justify">
+Agora, para que seja possível entender os conceitos utilizados na construção da árvore de decisão, vamos passar por cada um dos tópicos listados anteriormente.
+</p>
+
+#### Seleção do melhor atributo e divisão dos dados
+
+<p align="justify">
+Como foi apresentado na visão geral, a primeira etapa do algoritmo de criação de uma árvore de decisão é a seleção do atributo que melhor divide o conjunto de dados. Naquele caso, o algoritmo decidiu fazer o uso do atributo `X` como base para a divisão, considerando também que o valor deste deveria ser menor que 10. Ambas essas decisões foram tomadas seguindo alguns critérios, que ajudaram a definir as perguntas que melhor dividem os dados. Esses critérios são apresentados nessa seção.
+</p>
+
+<p align="justify">
+Vamos começar com a seleção de atributos. Existem diversas métricas que podem auxiliar o algoritmo de criação da árvore de decisão a escolher os melhores atributos, sendo alguns deles o `Índice GINI` e o `Ganho de informação`. Neste documento, vamos considerar o uso da métrica de ganho de informação, neste, as divisões no conjunto de dados são feitas considerando a diminuição da entropia que esta vai causar no conjunto de dados.
+</p>
+
+<p align="justify">
+Calma, eu sei, é muito coisa de uma vez só, mas vamos por partes. Primeiro, a entropia é um conceito utilizado para determinar o grau de desordem do conjunto de dados. Antes de apresentar a fórmula, vamos dar uma olhada em diferentes conjuntos de dados e seus níveis de entropia.
+</p>
+
+```{r fig:class_dt5, echo=FALSE, fig.align='center', out.width = "79%", fig.cap='Níveis de entropia - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/2_decision-tree/05_dt.png")
+```
+
+<p align="justify">
+Perceba que, nos conjuntos de dados apresentados na Figura \@ref(fig:class_dt5), quando menos mistura (Entenda como confusão neste caso) eu tenho no conjunto de dados, menor é a entropia do sistema. Então, a ideia base do ganho de informação é ir fazendo divisões de modo que os espaços resultantes da divisão tenham a menor entropia possível. Agora que já sabemos o que é, vejamos a fórmula da entropia.
+</p>
+
+$E\:=-\:\sum _{i=1}^{^N}\left(p_i\cdot log_2\cdot p_i\right)\:$, onde
+
+- $N$ = Quantidade total de elementos no conjunto de dados,
+- $p_i$ = Probabilidade de aparição da classe $i$ no conjunto de dados
+
+<p align="justify">
+Usando dessas duas informações a entropia do sistema pode ser gerada! Bem, e o `Ganho de informação` ? Então, ele representa a vantagem que um determinado atributo tem de ser utilizado para a divisão, onde essa vantagem representa o grau de diminuição da entropia do conjunto de dados. O ganho de informação é definido como:
+</p>
+
+$GI\left(Q\right)=E_0-\sum _{i=1}^q\left(\frac{N_i}{N}E_i\right)\:$, onde
+
+- $E_0$ = Entropia do nó pai (Nó atual)
+- $E_i$ = Entropia do filho a ser gerado
+- $q$ = Quantidade de nós filho
+- $N$ = Quantidade total de elementos no conjunto de dados
+- $N_i$ = Quantidade de dados a ser inserido no nó filho $i$
+
+<p align="justify">
+Uma vez tendo esses conceitos definidos, cabe deixar claro que, o ganho de informação será o elemento base utilizado no processo de seleção do atributo que melhor divide o conjunto de dados (Que tem maior ganho de informação), e uma vez que este atributo é selecionado, ele passa a ser utilizado para a realização da divisão dos dados. Neste processo de divisão, mais passos podem ser considerados, mas o objetivo deste documento é de apenas apresentar a intuição geral por trás da árvore de decisão e seu processo de treinamento.
+</p>
+
+#### Exemplo de construção da árvore
+
+<p align="justify">
+Para fechar essa parte mais téorica do funcionamento da árvore de decisão e podermos iniciar a parte prática, vamos fazer um exemplo passo a passo da criação de uma árvore de decisão. Neste exemplo, vamos utilizar os dados que estão apresentados na tabela abaixo, esses que foram postos com valores categóricos de maneira a tornar mais simples todo o cálculo passo a passo que será realizado.
+</p>
+
+| Está chovendo ? | Está com tempo ? | Transporte (Classe) |
+|:---------------:|:----------------:|:-------------------:|
+|       Sim       |        Sim       |        Ônibus       |
+|       Sim       |        Não       |        Ônibus       |
+|       Não       |        Sim       |      Caminhada      |
+|       Não       |        Não       |        Ônibus       |
+
+<p align="justify">
+Bom, nesta primeira etapa nossa árvore nem existe, é preciso definir para ela um ponto de partida, um atributo que será utilizada para dividir o conjunto de dados e então ir criando os ramos de decisão. Como vimos na seção anterior, vamos utilizar o `Ganho de informação` para realizar essa decisão. Então, para começar, vamos calcular o ganho de informação para cada uma dos atributos, afinal, se quisermos saber qual a melhor, precisamos testar todas.
+</p>
+
+<p align="justify">
+Para calcular o ganho de informação, precisamos primeiro calcular as entropias para os nós filhos que serão gerados caso este atributo seja o selecionado para a divisão. Para isso, aplicamos a divisão considerando o atributo e então, para cada nó gerado, calculamos a entropia. Por exemplo, no caso do atributo `Está chovendo?`, a divisão gerou dois nós. Um para o valor `Sim` e outro para o `Não`. Dentro desses dois nós é feita a inserção dos elementos correspondentes. No caso de quando `Está chovendo?` for `Sim`, o único transporte possível é o `Ônibus`, então, ele é o único inserido no nó resultante. O mesmo vale para quando a resposta é `Não`, mas para esta resposta, são possíveis os transportes `Ônibus` e `Caminhada`. A Figura \@ref(fig:class_dt6) apresenta a aplicação desta lógica em ambas os atributos (`Está chovendo?` e `Está com tempo?`)
+</p>
+
+```{r fig:class_dt6, echo=FALSE, fig.align='center', out.width = "100%", fig.cap='Entropia dos nós filhos - Fonte: Produção do autor'}
+knitr::include_graphics("assets/1_classification/2_decision-tree/06_dt.png")
+```
+
+<p align="justify">
+Com a entropia contabilizada para cada nó filho, de cada um dos atributos, o ganho de informação pode ser calculado. Vamos então começar calculando a entropia do nó pai, que como visto anteriormente, basicamente representa a entropia da divisão atual dos dados, que neste primeiro momento vai considerar todo o conjunto de dados. Lembre-se de que o calculo é feito considerando o atributo de classe, neste caso `Transporte`.
+</p>
+
+$E_0=-\left(\left(\frac{3}{4}\cdot log_2\frac{3}{4}\right)+\left(\frac{1}{4}\cdot log_2\frac{1}{4}\right)\right)\:\:\approx \:0.81$
+
+Beleza! Com isso calculado, vejamos o ganho de informação para cada atributo
+
+<!-- ToDo: Validar -->
+* `Está chovendo?`
+
+$GI\left(EstaChovendo?\right)\:=\:0.81\:-\:\sum _{n=1}^q\:\left(\frac{N_i}{N}E_i\right)=0.31$
+
+* `Está com tempo?`
+
+$GI\left(EstaComTempo?\right)\:=\:0.81\:-\:\sum _{n=1}^q\:\left(\frac{N_i}{N}E_i\right)=0.31$
+
+<p align="justify">
+Opa! Olha que interessante, no final das contas os dois atributos tem a mesma quantidade de ganho de informação, o que indica que, ao selecionar um ou outro, a qualidade da divisão vai acabar sendo a mesma. Neste caso, outros critérios podem ser aplicados para o desempate, mas esses não serão tratados aqui. O ponto para este exercício é que, com os ganhos de informação calculados pode-se fazer a seleção do atributo para iniciar a divisão dos dados e assim começar a construção da árvore de decisão.
+</p>
+
+<p align="justify">
+Bem, é básicamente assim que a árvore de decisão aprende, nos passos seguintes a este, utilizando a propriedade recursiva, citada anteriormente, estes passos vão sendo aplicados até atingir os critérios de parada já apresentados também. Com isso, você sabe agora o processo base que é utilizado para no processo de treinamento de uma árvore de decisão. Uma vez que a árvore é criada, é possível iniciar o processo de classificação dos dados, onde, as instâncias que precisam ser classificadas são colocadas na estrutura da árvore e então a classe é definida pela aplicação das regras, exatamente como vimos no exemplo de visão geral apresentado.
+</p>
+
+<p align="justify">
+Acho que agora você consegue perceber o motivo deste ser um dos métodos de aprendizado de máquina mais utilizados que existe, sua simplicidade de implementação, interpretação junto a seu alto poder de generalização fazem com que este seja aplicado em diversos casos.
+</p>
+
+### Problemas com overfitting
+
+<p align="justify">
+Assim como qualquer outro algoritmo, de aprendizado de máquina ou não, as árvores de decisão apresentam alguns problemas, o que não as torna "balas de prata" para todos os contextos. Um dos principais problemas que vem junto às árvores de decisão é o *overfitting*, neste, a árvore, durante o processo de treinamento, começa a criar regras que consideram características que são muito específicas dos dados que estão sendo utilizados no processo de treinamento, isso faz com que ao ser aplicada em outros dados, que não os de treinamento, problemas com a identificação e classificação acabem surgindo. Então, ao utilizar a árvore de decisão tome cuidado com a quantidade de regras e do tamanho da árvore que está sendo gerado. Isso tudo pode ser controlado durante o processo de implementação, controlando os parâmetros de criação da árvore, como os limites de altura e de quantidade de nós resultados.
+</p>
+
+### Exemplos
+
+<!-- Páginas do Kaggle -->
