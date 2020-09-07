@@ -101,7 +101,7 @@ Agora, com o objetivo de deixar tudo mais claro, vamos para um exemplo visual, p
 
 Os pontos de treinamento são apresentados abaixo
 
-```{r fig:class_knn1, echo=FALSE, fig.align='center', out.width = "50%", fig.cap='Espaço euclidiano 1 - Fonte: Produção do autor'}
+```{r class_knn1, echo=FALSE, fig.align='center', out.width = "50%", fig.cap='Espaço euclidiano 1 - Fonte: Produção do autor'}
 knitr::include_graphics("assets/1_classification/1_knn/knn_01.png")
 ```
 
@@ -109,7 +109,7 @@ knitr::include_graphics("assets/1_classification/1_knn/knn_01.png")
 Beleza! Então, com esse conjunto de dados, vamos adicionar um novo ponto, este é representado pelo ponto vermelho na figura abaixo. Perceba que, este é uma amostra que representa o conjunto de teste, e que, ao ser inserido neste espaço, ele não possui nenhum rótulo definido.
 </p>
 
-```{r fig:class_knn2, echo=FALSE, fig.align='center', out.width = "50%", fig.cap='Espaço euclidiano 2 - Fonte: Produção do autor'}
+```{r class_knn2, echo=FALSE, fig.align='center', out.width = "50%", fig.cap='Espaço euclidiano 2 - Fonte: Produção do autor'}
 knitr::include_graphics("assets/1_classification/1_knn/knn_02.png")
 ```
 
@@ -121,7 +121,7 @@ Certo! Então já temos nosso problema de classificação definido, vamos resolv
 Feito essas considerações, vamos de maneira manual fazer a aplicação do algoritmo, começando com o primeiro passo, de análise de vizinhança, feito com o cálculo das distâncias. Aqui, você vai perceber que a distância utilizada foi a euclidiana, que apresentamos anteriormente.
 </p>
 
-```{r fig:class_knn3, echo=FALSE, fig.align='center', out.width = "50%", fig.cap='Calculo de distância - Fonte: Produção do autor'}
+```{r class_knn3, echo=FALSE, fig.align='center', out.width = "50%", fig.cap='Calculo de distância - Fonte: Produção do autor'}
 knitr::include_graphics("assets/1_classification/1_knn/knn_03.png")
 ```
 
@@ -129,7 +129,7 @@ knitr::include_graphics("assets/1_classification/1_knn/knn_03.png")
 Com as distâncias calculadas a segunda parte do algoritmo, de determinação do rótulo com base nos vizinhos pode ser iniciada. Para isso, primeiro faz-se a seleção dos 5 elementos mais próximos.
 </p>
 
-```{r fig:class_knn4, echo=FALSE, fig.align='center', out.width = "50%", fig.cap='Seleção dos vizinhos mais próximos - Fonte: Produção do autor'}
+```{r class_knn4, echo=FALSE, fig.align='center', out.width = "50%", fig.cap='Seleção dos vizinhos mais próximos - Fonte: Produção do autor'}
 knitr::include_graphics("assets/1_classification/1_knn/knn_04.png")
 ```
 
@@ -137,7 +137,7 @@ knitr::include_graphics("assets/1_classification/1_knn/knn_04.png")
 Com os vizinhos mais próximos determinados, é feito a contagem desses, separando cada um desses por rótulo, de modo que, a vizinhança é sumarizada em quantidade de elementos por rótulo, como apresentado abaixo.
 </p>
 
-```{r fig:class_knn5, echo=FALSE, fig.align='center', out.width = "70%", fig.cap='Contagem dos vizinhos mais próximos - Fonte: Produção do autor'}
+```{r class_knn5, echo=FALSE, fig.align='center', out.width = "70%", fig.cap='Contagem dos vizinhos mais próximos - Fonte: Produção do autor'}
 knitr::include_graphics("assets/1_classification/1_knn/knn_05.png")
 ```
 
@@ -145,7 +145,7 @@ knitr::include_graphics("assets/1_classification/1_knn/knn_05.png")
 Então, é feita a determinação do rótulo do ponto que está sendo classificado, que como podemos ver, vai receber o rótulo laranja, uma vez que, esta é a classe que mais aparece na vizinhança do ponto vermelho.
 </p>
 
-```{r fig:class_knn6, echo=FALSE, fig.align='center', out.width = "70%", fig.cap='Definição da classe - Fonte: Produção do autor'}
+```{r class_knn6, echo=FALSE, fig.align='center', out.width = "70%", fig.cap='Definição da classe - Fonte: Produção do autor'}
 knitr::include_graphics("assets/1_classification/1_knn/knn_06.png")
 ```
 
@@ -171,7 +171,7 @@ Outras abordagens baseadas em otimizações também podem ser uma saída para es
 Como você pode ter pensando, esse pode não ser um algoritmo computacionalmente muito barato, já que, o cálculo de distância nesse algoritmo que apresentamos, é sempre calculado entre todos os pontos do conjunto de treinamento com o conjunto de teste, o que se pensarmos em apenas poucas quantidades de pontos pode não ser um problema, mas que, com a crescente na quantidade, pode ser inviável. Para isso, considere a Figura abaixo, imagina que o ponto vermelho vai ser classificado, a distância dele para todos os outros pontos terá de ser determinada.
 </p>
 
-```{r fig:class_knn7, echo=FALSE, fig.align='center', out.width = "89%", fig.cap='Níveis de complexidade - Fonte: Produção do autor'}
+```{r class_knn7, echo=FALSE, fig.align='center', out.width = "89%", fig.cap='Níveis de complexidade - Fonte: Produção do autor'}
 knitr::include_graphics("assets/1_classification/1_knn/knn_07.png")
 ```
 
@@ -241,7 +241,7 @@ A árvore de decisão é um dos algoritmos mais utilizados na área de Aprendiza
 As árvores de decisão são fundamentalmente formas de representação de conhecimento através de uma estrutura hierarquica de perguntas na forma *if-then-else*. Isso faz com que a estrutura das árvores de decisão sejam semelhantes a um fluxograma, onde existem nós que são utilizados para representar as perguntas e desses são derivados outros nós, que podem representar a resposta ou mesmo outra pergunta. Essa estrutura é apresentada na Figura \@ref(fig:class_dt1).
 </p>
 
-```{r fig:class_dt1, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Árvore de decisão - Fonte: Produção do autor'}
+```{r class_dt1, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Árvore de decisão - Fonte: Produção do autor'}
 knitr::include_graphics("assets/1_classification/2_decision-tree/01_dt.png")
 ```
 
@@ -257,7 +257,7 @@ Antes da aplicação em larga escala dos algoritmos de AM, essas estruturas já 
 Ao contrário disto, as árvores de decisão no contexto de AM são as responsáveis em olhar para os dados e decidir quais são as perguntas mais adequadas para uma determinada resposta. Isso é feito no algoritmo através de sucessivas divisões no conjunto de dados, de modo que, em cada divisão tem-se novos elementos adicionados na árvore. Para essa ideia ficar clara, vamos começar com um exemplo, neste, há um conjunto de pontos, onde cada cor representa uma classe. A árvore de decisão será treinada com esses dados de modo que novas classificações com base neste treinamento possam ser realizadas. O conjunto de dados e a representação da árvore são feitos na Figura \@ref(fig:class_dt2).
 </p>
 
-```{r fig:class_dt2, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Conjunto de dados 1 - Fonte: Produção do autor'}
+```{r class_dt2, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Conjunto de dados 1 - Fonte: Produção do autor'}
 knitr::include_graphics("assets/1_classification/2_decision-tree/02_dt.png")
 ```
 
@@ -265,14 +265,14 @@ knitr::include_graphics("assets/1_classification/2_decision-tree/02_dt.png")
 Com o conjunto de dados definido, o primeiro passo realizado pela árvore é avaliar quais são as características que melhor definem uma determinada classe. Após fazer isso, a árvore cria uma pergunta que faz com que essa característica identificada como a melhor possa ser utilizada para a divisão do conjunto de dados. Neste caso, a árvore identificou que o conjunto de pontos da classe `Vermelha` estão majoritariamente nas posições com X acima de 10, então, é criada uma pergunta na árvore que verifica quais elementos são maiores que dez, ao fazer isso a divisão do conjunto de dados é realizada e então novos nós são adicionados na árvore, veja na Figura \@ref(fig:class_dt3).
 </p>
 
-```{r fig:class_dt3, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Conjunto de dados 2 - Fonte: Produção do autor'}
+```{r class_dt3, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Conjunto de dados 2 - Fonte: Produção do autor'}
 knitr::include_graphics("assets/1_classification/2_decision-tree/03_dt.png")
 ```
 <p align="justify">
 Se lembrarmos a definição feita anteriormente, temos que as árvores de decisão são estruturas recursivas, então, a mesma lógica de busca do elemento que melhor descreve um conjunto de dados e então a divisão é aplicado nos nós resultantes, isso é feito até que não haja mais elementos suficientes para a divisão ou quando em um nó, todos os elementos pertencem a apenas uma classe. Na Figura \@ref(fig:class_dt4) uma divisão é feita no nó esquerdo, gerado anteriormente, e no nó esquerdo não é feito mais nada.
 </p>
 
-```{r fig:class_dt4, echo=FALSE, fig.align='center', out.width = "79%", fig.cap='Conjunto de dados 3 - Fonte: Produção do autor'}
+```{r class_dt4, echo=FALSE, fig.align='center', out.width = "79%", fig.cap='Conjunto de dados 3 - Fonte: Produção do autor'}
 knitr::include_graphics("assets/1_classification/2_decision-tree/04_dt.png")
 ```
 <p align="justify">
@@ -314,7 +314,7 @@ Vamos começar com a seleção de atributos. Existem diversas métricas que pode
 Calma, eu sei, é muito coisa de uma vez só, mas vamos por partes. Primeiro, a entropia é um conceito utilizado para determinar o grau de desordem do conjunto de dados. Antes de apresentar a fórmula, vamos dar uma olhada em diferentes conjuntos de dados e seus níveis de entropia.
 </p>
 
-```{r fig:class_dt5, echo=FALSE, fig.align='center', out.width = "79%", fig.cap='Níveis de entropia - Fonte: Produção do autor'}
+```{r class_dt5, echo=FALSE, fig.align='center', out.width = "79%", fig.cap='Níveis de entropia - Fonte: Produção do autor'}
 knitr::include_graphics("assets/1_classification/2_decision-tree/05_dt.png")
 ```
 
@@ -364,7 +364,7 @@ Bom, nesta primeira etapa nossa árvore nem existe, é preciso definir para ela 
 Para calcular o ganho de informação, precisamos primeiro calcular as entropias para os nós filhos que serão gerados caso este atributo seja o selecionado para a divisão. Para isso, aplicamos a divisão considerando o atributo e então, para cada nó gerado, calculamos a entropia. Por exemplo, no caso do atributo `Está chovendo?`, a divisão gerou dois nós. Um para o valor `Sim` e outro para o `Não`. Dentro desses dois nós é feita a inserção dos elementos correspondentes. No caso de quando `Está chovendo?` for `Sim`, o único transporte possível é o `Ônibus`, então, ele é o único inserido no nó resultante. O mesmo vale para quando a resposta é `Não`, mas para esta resposta, são possíveis os transportes `Ônibus` e `Caminhada`. A Figura \@ref(fig:class_dt6) apresenta a aplicação desta lógica em ambas os atributos (`Está chovendo?` e `Está com tempo?`)
 </p>
 
-```{r fig:class_dt6, echo=FALSE, fig.align='center', out.width = "100%", fig.cap='Entropia dos nós filhos - Fonte: Produção do autor'}
+```{r class_dt6, echo=FALSE, fig.align='center', out.width = "100%", fig.cap='Entropia dos nós filhos - Fonte: Produção do autor'}
 knitr::include_graphics("assets/1_classification/2_decision-tree/06_dt.png")
 ```
 
