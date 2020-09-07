@@ -66,3 +66,13 @@ conjuntos de dados disponíveis ou em experiências passadas [@bhavsar2017machin
 pioneiros do assunto, o aprendizado de máquina é “*um campo de estudo que 
 oferece aos computadores a capacidade de aprender sem serem explicitamente 
 programados*”.
+
+
+## Tipos de aprendizado
+lorem ipsum
+
+### Aprendizado supervisionado
+lorem ipsum
+
+### Aprendizado Não supervisionado
+lorem ipsum
