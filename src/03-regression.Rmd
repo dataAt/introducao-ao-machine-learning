@@ -317,10 +317,10 @@ conjunto de dados ajustado com hiperplanos lineares e não lineares.
 A abordagem utilizando os *kernels* é uma das principais características desse 
 modelo de ML, pois faz com que o hiperplano seja ajustado em uma dimensão 
 superior, utilizando equações de polinômios de maior grau. A Figura 
-\@ref(kernels-plot) mostra graficamente como é realizada essa manipulação. 
+\@ref(fig:kernels-plot) mostra graficamente como é realizada essa manipulação. 
 
 ```{r kernels-plot, echo=FALSE, fig.align="center", fig.cap='Representação gráfica dos dados e da função não linear.'}
-  knitr::include_graphics("assets/kernels.png")
+  knitr::include_graphics("assets/kernels-plot.png")
 ```
 
 A utilização de *kernels* é uma das principais características do SVM e faz com 
@@ -329,11 +329,12 @@ técnicas mais complexas.
 
 ### *Kernels*
 A utilização dos *kernels* em SVM foram introduzidos por @boser1992training. 
-Esses componentes *kernels* nada mais são do que uma função que serão 
-responsáveis por maximizar as margens dos vetores de suporte. A maioria das 
-bibliotecas de ML, já possuem *kernels* implementados e também permitem a 
-integração de outras funções customizadas. A lista a seguir aprensenta 
-brevemente algunso dos principais *kernels* utilizados.
+Esses componentes *kernels* são responsáveis por criar uma transformação dos 
+dados a partir de uma função, que são responsáveis por maximizar as margens dos 
+vetores de suporte. A maioria das bibliotecas de ML, já possuem *kernels* 
+implementados e também permitem a integração de outras funções customizadas. A 
+lista a seguir aprensenta brevemente algunso dos principais *kernels* 
+utilizados.
 
 - **Linear: ** Como mencionado anteriormente, é eficiente somente para problemas 
 linearmente separáveis, uma vez que seu ajuste se da através da equação de uma 
@@ -355,16 +356,37 @@ a variável $d$ que indica o seu grau, como definido pela equação:
 (\#eq:polynomial-kernel)
 \end{equation} 
 
-- **Função gaussiana de base radial: ** Esse *kernel* é recomendado quando não 
-se tem um conhecimento prévio a cerca dos dados. Esse *kernel* é definido pela 
-seguinte equação:
+- **Função gaussiana de base radial: ** Os *kernels* RBF 
+(*radial basis function*), como também são chamados, são recomendados quando não 
+se tem um conhecimento prévio a cerca dos dados. Esse *kernel* realiza uma 
+transformação dos pontos utilizando uma função gaussiana, definida por:
 
 \begin{equation} 
     k(\vec{x_{i}}, \vec{x_{j}}) = exp \left(-\frac{\lVert\vec{x_{i}} - \vec{x_{j}}\rVert^2}{2\sigma^2} \right)
 (\#eq:rbf-kernel)
 \end{equation} 
 
+### Regressão com máquinas de suporte de vetores
+Embora as SVM sejam aplicadas principalmente para tarefas de classificação, ou 
+seja, um cálculo de um valor inteiro, ela também pode ser utilizada para tarefas 
+de regressão, calculando valores reais. Essas abordagens são chamadas de 
+regressão por vetores de suporte (SVR - sigla do inglês, 
+*support vector regression*) e foram propostas por @drucker1997support. 
+Diferente de modelos tradicionais como as técnicas de regressão apresentadas na 
+seção anterior, que utilizam derivadas para os cálculos dos intervalos de 
+confiança, no SVR os valores são previstos através dos hiperplanos.
 
+Este método utiliza para a regressão a abordagem de classificação apresentada
+anteriormente, porém com uma pequena variação na função objetivo, que agora 
+busca comportar dentro das margens comportar a maior quantidade de pontos. As 
+margens ($\epsilon$) representam os intervalos de confiança e os vetores de 
+suporte que as delimitam, representam os limites para os erros positivos ($\xi$) 
+e negativos ($\xi^{\ast}$). A Figura \@ref(fig:svr) mostra uma representação de 
+um hiperplano não linear traçado para a regressão de dados.
+
+```{r svr, echo=FALSE, fig.align="center", fig.cap='Representação de hiperplano não linear para regressão. Adaptado de @drucker1997support.'}
+  knitr::include_graphics("assets/svr.png")
+```
 
 
 
