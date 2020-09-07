@@ -3,6 +3,7 @@ install.packages('reticulate')
 library(reticulate)
 use_python("/home/adriano/anaconda3/bin/python")
 ```
+
 ---
 output: bookdown::html_document2
 bibliography: bibfile.bib

@@ -31,7 +31,6 @@
   
 <link rel="prev" href="introdução.html"/>
 <link rel="next" href="regressão.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,30 +48,28 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -81,9 +78,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -128,30 +125,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
-<ul>
+<li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
 <li class="chapter" data-level="1.1" data-path="introdução.html"><a href="introdução.html#machine-learning"><i class="fa fa-check"></i><b>1.1</b> Machine learning</a></li>
 </ul></li>
+
 <li class="chapter" data-level="2" data-path="classificação.html"><a href="classificação.html"><i class="fa fa-check"></i><b>2</b> Classificação</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="classificação.html"><a href="classificação.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-Nearest Neighbors</a>
 <ul>
+
 <li class="chapter" data-level="2.1.1" data-path="classificação.html"><a href="classificação.html#escolha-do-valor-de-k"><i class="fa fa-check"></i><b>2.1.1</b> Escolha do valor de K</a></li>
 <li class="chapter" data-level="2.1.2" data-path="classificação.html"><a href="classificação.html#complexidade"><i class="fa fa-check"></i><b>2.1.2</b> Complexidade</a></li>
 <li class="chapter" data-level="2.1.3" data-path="classificação.html"><a href="classificação.html#exemplos"><i class="fa fa-check"></i><b>2.1.3</b> Exemplos</a></li>
 </ul></li>
+
 <li class="chapter" data-level="2.2" data-path="classificação.html"><a href="classificação.html#árvore-de-decisão"><i class="fa fa-check"></i><b>2.2</b> Árvore de decisão</a>
 <ul>
+
 <li class="chapter" data-level="2.2.1" data-path="classificação.html"><a href="classificação.html#conceitos-gerais"><i class="fa fa-check"></i><b>2.2.1</b> Conceitos gerais</a></li>
 <li class="chapter" data-level="2.2.2" data-path="classificação.html"><a href="classificação.html#funcionamento"><i class="fa fa-check"></i><b>2.2.2</b> Funcionamento</a></li>
 <li class="chapter" data-level="2.2.3" data-path="classificação.html"><a href="classificação.html#problemas-com-overfitting"><i class="fa fa-check"></i><b>2.2.3</b> Problemas com overfitting</a></li>
 <li class="chapter" data-level="2.2.4" data-path="classificação.html"><a href="classificação.html#exemplos-1"><i class="fa fa-check"></i><b>2.2.4</b> Exemplos</a></li>
 </ul></li>
 </ul></li>
+
 <li class="chapter" data-level="3" data-path="regressão.html"><a href="regressão.html"><i class="fa fa-check"></i><b>3</b> Regressão</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="regressão.html"><a href="regressão.html#regressão-linear"><i class="fa fa-check"></i><b>3.1</b> Regressão Linear</a>
 <ul>
+
 <li class="chapter" data-level="3.1.1" data-path="regressão.html"><a href="regressão.html#coeficientes-da-regressão-linear"><i class="fa fa-check"></i><b>3.1.1</b> Coeficientes da regressão linear</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="regressão.html"><a href="regressão.html#máquinas-de-vetores-de-suporte"><i class="fa fa-check"></i><b>3.2</b> Máquinas de vetores de suporte</a>
@@ -159,7 +161,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.1" data-path="regressão.html"><a href="regressão.html#kernels"><i class="fa fa-check"></i><b>3.2.1</b> <em>Kernels</em></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="agrupamento.html"><a href="agrupamento.html"><i class="fa fa-check"></i><b>4</b> Agrupamento</a></li>
+<li class="chapter" data-level="4" data-path="agrupamento.html"><a href="agrupamento.html"><i class="fa fa-check"></i><b>4</b> Agrupamento</a><ul>
+<li class="chapter" data-level="4.1" data-path="agrupamento.html"><a href="agrupamento.html#o-que-é-um-agrupamento"><i class="fa fa-check"></i><b>4.1</b> O que é um agrupamento?</a></li>
+<li class="chapter" data-level="4.2" data-path="agrupamento.html"><a href="agrupamento.html#técnicas-de-agrupamento"><i class="fa fa-check"></i><b>4.2</b> Técnicas de agrupamento</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="agrupamento.html"><a href="agrupamento.html#técnicas-baseadas-em-partição"><i class="fa fa-check"></i><b>4.2.1</b> Técnicas baseadas em Partição</a></li>
+<li class="chapter" data-level="4.2.2" data-path="agrupamento.html"><a href="agrupamento.html#técnicas-baseadas-em-hierarquia"><i class="fa fa-check"></i><b>4.2.2</b> Técnicas baseadas em Hierarquia</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="agrupamento.html"><a href="agrupamento.html#kmeans"><i class="fa fa-check"></i><b>4.3</b> Kmeans</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="agrupamento.html"><a href="agrupamento.html#como-avaliar-o-kmeans"><i class="fa fa-check"></i><b>4.3.1</b> Como avaliar o Kmeans?</a></li>
+<li class="chapter" data-level="4.3.2" data-path="agrupamento.html"><a href="agrupamento.html#como-definir-a-quantidade-de-grupos"><i class="fa fa-check"></i><b>4.3.2</b> Como definir a quantidade de grupos?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="agrupamento.html"><a href="agrupamento.html#agrupamento-hierarquico---método-aglomerativo"><i class="fa fa-check"></i><b>4.4</b> Agrupamento Hierarquico - Método Aglomerativo</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="agrupamento.html"><a href="agrupamento.html#qual-método-de-ligação-deve-ser-usado"><i class="fa fa-check"></i><b>4.4.1</b> Qual método de ligação deve ser usado?</a></li>
+<li class="chapter" data-level="4.4.2" data-path="agrupamento.html"><a href="agrupamento.html#como-definir-a-quantidade-de-grupos-1"><i class="fa fa-check"></i><b>4.4.2</b> Como definir a quantidade de grupos?</a></li>
+<li class="chapter" data-level="4.4.3" data-path="classificação.html"><a href="classificação.html#exemplos"><i class="fa fa-check"></i><b>4.4.3</b> Exemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="agrupamento.html"><a href="agrupamento.html#saiba-mais"><i class="fa fa-check"></i><b>4.5</b> Saiba mais</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="considerações-finais.html"><a href="considerações-finais.html"><i class="fa fa-check"></i><b>5</b> Considerações finais</a></li>
 <li class="chapter" data-level="6" data-path="referências-bibliográficas.html"><a href="referências-bibliográficas.html"><i class="fa fa-check"></i><b>6</b> Referências Bibliográficas</a></li>
 </ul>
@@ -179,7 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="classificação" class="section level1" number="2">
+<div id="classificação" class="section level1">
 <h1><span class="header-section-number">2</span> Classificação</h1>
 <p><em>“Nossas características nos fazem igualmente diferentes” - Autor desconhecido</em></p>
 <!-- - A classificação é um processo feito em duas etapas, aprendizado e previsão. -->
@@ -204,7 +222,9 @@ Dito isto, é importante considerar que, os algoritmos de AM que são empregados
 <!-- Acho que isso aqui pode ser substituído por uma figura e então, comentários em cima dela podem ser feitos-->
 <!-- Classes de algoritmos: (Modelos probabilisticos; Decision Trees; *Instance-based Learning*) -->
 <!-- ***Instance-based Learning*** -->
+
 <div id="k-nearest-neighbors" class="section level2" number="2.1">
+
 <h2><span class="header-section-number">2.1</span> <em>k</em>-Nearest Neighbors</h2>
 <p><em>“Você é definido pelas pessoas com quem anda”</em> - Adaptação de ditado popular</p>
 <!-- ToDo: Refatorar -->
@@ -317,7 +337,9 @@ Então, é feita a determinação do rótulo do ponto que está sendo classifica
 <p align="justify">
 É desta forma que os passos que vimos do algoritmo kNN são materializados frente a um conjunto de dados. Viu que legal! O que o algoritmo faz é exatamente aquilo que está na frase que apresentamos antes.
 </p>
+
 <div id="escolha-do-valor-de-k" class="section level3" number="2.1.1">
+
 <h3><span class="header-section-number">2.1.1</span> Escolha do valor de K</h3>
 <!--hyperparâmetros, isso já vai ter cido apresentado ao leitor antes ? -->
 <!-- Usar da ideia do treino/teste, por isso, esse vai precisar ser adicionado lá em cima -->
@@ -328,7 +350,9 @@ Legal! Então o algoritmo é deveras muito simples de ser entendido, tem uma qua
 Outras abordagens baseadas em otimizações também podem ser uma saída para este caso, mas essas, não serão abordadas neste livro introdutório.
 </p>
 </div>
+
 <div id="complexidade" class="section level3" number="2.1.2">
+
 <h3><span class="header-section-number">2.1.2</span> Complexidade</h3>
 <p align="justify">
 Como você pode ter pensando, esse pode não ser um algoritmo computacionalmente muito barato, já que, o cálculo de distância nesse algoritmo que apresentamos, é sempre calculado entre todos os pontos do conjunto de treinamento com o conjunto de teste, o que se pensarmos em apenas poucas quantidades de pontos pode não ser um problema, mas que, com a crescente na quantidade, pode ser inviável. Para isso, considere a Figura abaixo, imagina que o ponto vermelho vai ser classificado, a distância dele para todos os outros pontos terá de ser determinada.
@@ -343,7 +367,9 @@ Como você pode ter pensando, esse pode não ser um algoritmo computacionalmente
 Como forma de reduzir essa complexidade e a quantidade de elementos que precisam ser contabilizados no cálculo da distância, várias implementações aplicam passos de indexação dos dados, com estruturas de dados como a KD-Tree ou a Quad-Tree, como é o caso do scikit-learn. Essa abordagem de implementação evita com que todos os pontos tenham de ser calculados, possibilitando assim com que apenas os necessários, neste caso, os mais próximos sejam utilizados nos cálculos de distância.
 </p>
 </div>
+
 <div id="exemplos" class="section level3" number="2.1.3">
+
 <h3><span class="header-section-number">2.1.3</span> Exemplos</h3>
 <!-- ToDo: Verificar e mover para a introdução -->
 <!-- 
@@ -390,13 +416,17 @@ from sklearn.neighbors import KNeighborsClassifier
 <p><!-- Páginas do Kaggle --></p>
 </div>
 </div>
+
 <div id="árvore-de-decisão" class="section level2" number="2.2">
+
 <h2><span class="header-section-number">2.2</span> Árvore de decisão</h2>
 <p><em>“O importante é não deixar de fazer perguntas”</em> - Albert Einstein</p>
 <p align="justify">
 A árvore de decisão é um dos algoritmos mais utilizados na área de Aprendizado de Máquina, isso por apresentar bons resultados em diversos contextos e por ser considerado um método <em>transparente</em>, por deixar explícito as regras que estão sendo utilizadas para a tomada das decisões e geração dos resultados. No capítulo anterior, esta classe de algoritmos foi apresentada para a solução dos problemas de regressão, aqui, eles serão postos no contexto de classificação.
 </p>
+
 <div id="conceitos-gerais" class="section level3" number="2.2.1">
+
 <h3><span class="header-section-number">2.2.1</span> Conceitos gerais</h3>
 <p align="justify">
 As árvores de decisão são fundamentalmente formas de representação de conhecimento através de uma estrutura hierarquica de perguntas na forma <em>if-then-else</em>. Isso faz com que a estrutura das árvores de decisão sejam semelhantes a um fluxograma, onde existem nós que são utilizados para representar as perguntas e desses são derivados outros nós, que podem representar a resposta ou mesmo outra pergunta. Essa estrutura é apresentada na Figura @ref(fig:class_dt1).
@@ -445,7 +475,9 @@ Vamos supor agora que a árvore apresentada na Figura (fig:class_dt4) finalizou 
 </p>
 <p>Agora que temos uma visão geral do algoritmo, vamos dar ir adiante a frente e ver como os passos apresentados acima são feitos no algoritmo.</p>
 </div>
+
 <div id="funcionamento" class="section level3" number="2.2.2">
+
 <h3><span class="header-section-number">2.2.2</span> Funcionamento</h3>
 <!-- ToDo: Adicionar informação de que existem diversos algoritmos para a construção da árvore de decisão: ID3, CARTx... -->
 <p align="justify">
@@ -476,7 +508,9 @@ Nesta seção, vamos materializar as ideias que foram apresentadas na seção de
 <p align="justify">
 Agora, para que seja possível entender os conceitos utilizados na construção da árvore de decisão, vamos passar por cada um dos tópicos listados anteriormente.
 </p>
+
 <div id="seleção-do-melhor-atributo-e-divisão-dos-dados" class="section level4" number="2.2.2.1">
+
 <h4><span class="header-section-number">2.2.2.1</span> Seleção do melhor atributo e divisão dos dados</h4>
 <p align="justify">
 Como foi apresentado na visão geral, a primeira etapa do algoritmo de criação de uma árvore de decisão é a seleção do atributo que melhor divide o conjunto de dados. Naquele caso, o algoritmo decidiu fazer o uso do atributo <code>X</code> como base para a divisão, considerando também que o valor deste deveria ser menor que 10. Ambas essas decisões foram tomadas seguindo alguns critérios, que ajudaram a definir as perguntas que melhor dividem os dados. Esses critérios são apresentados nessa seção.
@@ -516,7 +550,9 @@ Usando dessas duas informações a entropia do sistema pode ser gerada! Bem, e o
 Uma vez tendo esses conceitos definidos, cabe deixar claro que, o ganho de informação será o elemento base utilizado no processo de seleção do atributo que melhor divide o conjunto de dados (Que tem maior ganho de informação), e uma vez que este atributo é selecionado, ele passa a ser utilizado para a realização da divisão dos dados. Neste processo de divisão, mais passos podem ser considerados, mas o objetivo deste documento é de apenas apresentar a intuição geral por trás da árvore de decisão e seu processo de treinamento.
 </p>
 </div>
+
 <div id="exemplo-de-construção-da-árvore" class="section level4" number="2.2.2.2">
+
 <h4><span class="header-section-number">2.2.2.2</span> Exemplo de construção da árvore</h4>
 <p align="justify">
 Para fechar essa parte mais téorica do funcionamento da árvore de decisão e podermos iniciar a parte prática, vamos fazer um exemplo passo a passo da criação de uma árvore de decisão. Neste exemplo, vamos utilizar os dados que estão apresentados na tabela abaixo, esses que foram postos com valores categóricos de maneira a tornar mais simples todo o cálculo passo a passo que será realizado.
@@ -589,12 +625,15 @@ Acho que agora você consegue perceber o motivo deste ser um dos métodos de apr
 </p>
 </div>
 </div>
+
 <div id="problemas-com-overfitting" class="section level3" number="2.2.3">
+
 <h3><span class="header-section-number">2.2.3</span> Problemas com overfitting</h3>
 <p align="justify">
 Assim como qualquer outro algoritmo, de aprendizado de máquina ou não, as árvores de decisão apresentam alguns problemas, o que não as torna “balas de prata” para todos os contextos. Um dos principais problemas que vem junto às árvores de decisão é o <em>overfitting</em>, neste, a árvore, durante o processo de treinamento, começa a criar regras que consideram características que são muito específicas dos dados que estão sendo utilizados no processo de treinamento, isso faz com que ao ser aplicada em outros dados, que não os de treinamento, problemas com a identificação e classificação acabem surgindo. Então, ao utilizar a árvore de decisão tome cuidado com a quantidade de regras e do tamanho da árvore que está sendo gerado. Isso tudo pode ser controlado durante o processo de implementação, controlando os parâmetros de criação da árvore, como os limites de altura e de quantidade de nós resultados.
 </p>
 </div>
+
 <div id="exemplos-1" class="section level3" number="2.2.4">
 <h3><span class="header-section-number">2.2.4</span> Exemplos</h3>
 <!-- Páginas do Kaggle -->
@@ -604,6 +643,7 @@ Assim como qualquer outro algoritmo, de aprendizado de máquina ou não, as árv
 ## 	OK (linked cache)</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="classificação.html#cb3-1"></a><span class="kw">library</span>(reticulate)</span>
 <span id="cb3-2"><a href="classificação.html#cb3-2"></a><span class="kw">use_python</span>(<span class="st">&quot;/home/adriano/anaconda3/bin/python&quot;</span>)</span></code></pre></div>
+
 </div>
 </div>
 </div>
