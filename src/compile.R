@@ -1,3 +1,4 @@
+# Ver se vamos tirar o renv
 #Instalação do pacote renv
 # if (!require("renv")) {
 #   if (!require("remotes"))
