@@ -136,13 +136,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="classificação.html"><a href="classificação.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-Nearest Neighbors</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="classificação.html"><a href="classificação.html#escolha-do-valor-de-k"><i class="fa fa-check"></i><b>2.1.1</b> Escolha do valor de K</a></li>
 <li class="chapter" data-level="2.1.2" data-path="classificação.html"><a href="classificação.html#complexidade"><i class="fa fa-check"></i><b>2.1.2</b> Complexidade</a></li>
-<li class="chapter" data-level="2.1.3" data-path="classificação.html"><a href="classificação.html#exemplos"><i class="fa fa-check"></i><b>2.1.3</b> Exemplos</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="classificação.html"><a href="classificação.html#árvore-de-decisão"><i class="fa fa-check"></i><b>2.2</b> Árvore de decisão</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="classificação.html"><a href="classificação.html#conceitos-gerais"><i class="fa fa-check"></i><b>2.2.1</b> Conceitos gerais</a></li>
 <li class="chapter" data-level="2.2.2" data-path="classificação.html"><a href="classificação.html#funcionamento"><i class="fa fa-check"></i><b>2.2.2</b> Funcionamento</a></li>
 <li class="chapter" data-level="2.2.3" data-path="classificação.html"><a href="classificação.html#problemas-com-overfitting"><i class="fa fa-check"></i><b>2.2.3</b> Problemas com overfitting</a></li>
-<li class="chapter" data-level="2.2.4" data-path="classificação.html"><a href="classificação.html#exemplos-1"><i class="fa fa-check"></i><b>2.2.4</b> Exemplos</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="regressão.html"><a href="regressão.html"><i class="fa fa-check"></i><b>3</b> Regressão</a><ul>
@@ -151,6 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="regressão.html"><a href="regressão.html#máquinas-de-vetores-de-suporte"><i class="fa fa-check"></i><b>3.2</b> Máquinas de vetores de suporte</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="regressão.html"><a href="regressão.html#kernels"><i class="fa fa-check"></i><b>3.2.1</b> <em>Kernels</em></a></li>
+<li class="chapter" data-level="3.2.2" data-path="regressão.html"><a href="regressão.html#regressão-com-máquinas-de-suporte-de-vetores"><i class="fa fa-check"></i><b>3.2.2</b> Regressão com máquinas de suporte de vetores</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="agrupamento.html"><a href="agrupamento.html"><i class="fa fa-check"></i><b>4</b> Agrupamento</a><ul>
@@ -165,8 +164,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="agrupamento.html"><a href="agrupamento.html#agrupamento-hierarquico---método-aglomerativo"><i class="fa fa-check"></i><b>4.4</b> Agrupamento Hierarquico - Método Aglomerativo</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="agrupamento.html"><a href="agrupamento.html#qual-método-de-ligação-deve-ser-usado"><i class="fa fa-check"></i><b>4.4.1</b> Qual método de ligação deve ser usado?</a></li>
-<li class="chapter" data-level="4.4.2" data-path="agrupamento.html"><a href="agrupamento.html#como-definir-a-quantidade-de-grupos-1"><i class="fa fa-check"></i><b>4.4.2</b> Como definir a quantidade de grupos?</a></li>
-<li class="chapter" data-level="4.4.3" data-path="classificação.html"><a href="classificação.html#exemplos"><i class="fa fa-check"></i><b>4.4.3</b> Exemplos</a></li>
+<li class="chapter" data-level="4.4.2" data-path="agrupamento.html"><a href="agrupamento.html#como-visualizar-os-grupos-no-dendrograma"><i class="fa fa-check"></i><b>4.4.2</b> Como visualizar os grupos no dendrograma?</a></li>
+<li class="chapter" data-level="4.4.3" data-path="agrupamento.html"><a href="agrupamento.html#exemplos"><i class="fa fa-check"></i><b>4.4.3</b> Exemplos</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="agrupamento.html"><a href="agrupamento.html#saiba-mais"><i class="fa fa-check"></i><b>4.5</b> Saiba mais</a></li>
 </ul></li>
@@ -212,7 +211,7 @@ expectativa de vida age como variável independente, dessa forma pode ser
 observada uma tendência de expectativa de vida maior em países com alto índice
 de felicidade, com uma força de correlação de 0,77.</p>
 <div class="figure" style="text-align: center"><span id="fig:happinessWorld"></span>
-<img src="assets/happiness_world.png" alt="Relação entre o índice de felicidade e expectativa de vida. Fonte: [@helliwell2020social]"  />
+<img src="assets/happiness_world.png" alt="Relação entre o índice de felicidade e expectativa de vida. Fonte: [@helliwell2020social]" width="1847" />
 <p class="caption">
 Figure 3.1: Relação entre o índice de felicidade e expectativa de vida. Fonte: <span class="citation">(Helliwell et al. 2020)</span>
 </p>
@@ -233,7 +232,7 @@ de variáveis com diferentes correlações.</p>
 \tag{3.1}
 \end{equation}\]</span></p>
 <div class="figure" style="text-align: center"><span id="fig:scatterCorrelations"></span>
-<img src="assets/correlations.png" alt="Diferentes correlações entre variáveis. Fonte: [@helliwell2020social]"  />
+<img src="assets/correlations.png" alt="Diferentes correlações entre variáveis. Fonte: [@helliwell2020social]" width="2014" />
 <p class="caption">
 Figure 3.2: Diferentes correlações entre variáveis. Fonte: <span class="citation">(Helliwell et al. 2020)</span>
 </p>
@@ -295,7 +294,7 @@ tabela a seguir:</p>
 | 0.59 | 6.93 |
 | 0.38 | 6.98 |</p>
 <div class="figure" style="text-align: center"><span id="fig:ols"></span>
-<img src="assets/ols.png" alt="Exemplo do método dos quadrados ordinários."  />
+<img src="assets/ols.png" alt="Exemplo do método dos quadrados ordinários." width="1220" />
 <p class="caption">
 Figure 3.3: Exemplo do método dos quadrados ordinários.
 </p>
@@ -306,7 +305,7 @@ de tal tal forma que o erro quadrático médio entre entre a função e cada um 
 pontos fossem a menor possível. A Figura <a href="regressão.html#fig:ols-steps">3.4</a> mostra o ajuste
 dos coeficientes da equação em relação a cada ponto.</p>
 <div class="figure" style="text-align: center"><span id="fig:ols-steps"></span>
-<img src="assets/ols-steps.png" alt="Ajuste da regressão linear por método dos quadrados ordinários."  />
+<img src="assets/ols-steps.png" alt="Ajuste da regressão linear por método dos quadrados ordinários." width="2390" />
 <p class="caption">
 Figure 3.4: Ajuste da regressão linear por método dos quadrados ordinários.
 </p>
@@ -333,7 +332,7 @@ processamento até que haja a convergência. A Figura <a href="regressão.html#f
 mostra o comportamento do GD com diferentes categorias de valores mencionadas
 para a taxa de aprendizagem.</p>
 <div class="figure" style="text-align: center"><span id="fig:learning-rate"></span>
-<img src="assets/learning-rate-gd.png" alt="Problemas na taxa de aprendizado do gradiente descendente."  />
+<img src="assets/learning-rate-gd.png" alt="Problemas na taxa de aprendizado do gradiente descendente." width="3410" />
 <p class="caption">
 Figure 3.5: Problemas na taxa de aprendizado do gradiente descendente.
 </p>
@@ -346,7 +345,7 @@ função, custo e os coeficientes <span class="math inline">\(\alpha\)</span> e 
 taxa de aprendizado muito baixa. Nessa figura pode ser observado que as
 iterações finalizam antes da convergência do modelo.</p>
 <div class="figure" style="text-align: center"><span id="fig:gd-example1"></span>
-<img src="assets/gradient-descendent-small.png" alt="Regressão linear com taxa de aprendizagem baixa no gradiente descendente."  />
+<img src="assets/gradient-descendent-small.png" alt="Regressão linear com taxa de aprendizagem baixa no gradiente descendente." width="2440" />
 <p class="caption">
 Figure 3.6: Regressão linear com taxa de aprendizagem baixa no gradiente descendente.
 </p>
@@ -356,7 +355,7 @@ interfere no ajuste dos coeficientes, uma vez o modelo não consegue atingir o
 mínimo global. A Figura <a href="regressão.html#fig:gd-example2">3.7</a> mostra o resultado da execução da
 regressão linear utilizando uma taxa de aprendizagem muito grande no GD.</p>
 <div class="figure" style="text-align: center"><span id="fig:gd-example2"></span>
-<img src="assets/gradient-descendent-large.png" alt="Regressão linear com taxa de aprendizagem alta no gradiente descendente."  />
+<img src="assets/gradient-descendent-large.png" alt="Regressão linear com taxa de aprendizagem alta no gradiente descendente." width="2422" />
 <p class="caption">
 Figure 3.7: Regressão linear com taxa de aprendizagem alta no gradiente descendente.
 </p>
@@ -368,7 +367,7 @@ equilibrada. Como os valores iniciais dos coeficientes são definidos de forma
 aleatória, nas primeiras iterações o gradiente apresenta uma alta pertubação,
 que vai se atenuando ao longo das épocas.</p>
 <div class="figure" style="text-align: center"><span id="fig:gd-example3"></span>
-<img src="assets/gradient-descendent.png" alt="Regressão linear com taxa de aprendizagem equilibrada no gradiente descendente."  />
+<img src="assets/gradient-descendent.png" alt="Regressão linear com taxa de aprendizagem equilibrada no gradiente descendente." width="2422" />
 <p class="caption">
 Figure 3.8: Regressão linear com taxa de aprendizagem equilibrada no gradiente descendente.
 </p>
@@ -422,7 +421,7 @@ apresentado no código a seguir:</p>
 <a class="sourceLine" id="cb1-38" data-line-number="38">plt.ylabel(<span class="st">&#39;Variável alvo ($y$)&#39;</span>)</a>
 <a class="sourceLine" id="cb1-39" data-line-number="39">plt.legend()</a>
 <a class="sourceLine" id="cb1-40" data-line-number="40">plt.show()</a></code></pre></div>
-<p><img src="intro-ao-machine-learning_files/figure-html/unnamed-chunk-3-1.png" /><!-- --></p>
+<p><img src="intro-ao-machine-learning_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 </div>
 </div>
@@ -466,7 +465,7 @@ caracterizado pela linha contínua, os vetores de suporte são as linhas
 tracejadas que interceptam os pontos com contorno destacado, e o espaço entre
 eles são as margens.</p>
 <div class="figure" style="text-align: center"><span id="fig:linear-svm"></span>
-<img src="assets/linear-svm.png" alt="SVM para conjunto de dados linearmente separáveis."  />
+<img src="assets/linear-svm.png" alt="SVM para conjunto de dados linearmente separáveis." width="995" />
 <p class="caption">
 Figure 3.9: SVM para conjunto de dados linearmente separáveis.
 </p>
@@ -479,7 +478,7 @@ os pontos de cores diferentes. Uma alternativa para esse problema é aumentar as
 dimensões para a representação do hiperplano. Essa tarefa é feita com a
 introdução de um conceito definido <em>kernel</em>.</p>
 <div class="figure" style="text-align: center"><span id="fig:kernels-problem"></span>
-<img src="assets/kernels-problem.png" alt="Conjunto de dados não linearmente separáveis."  />
+<img src="assets/kernels-problem.png" alt="Conjunto de dados não linearmente separáveis." width="910" />
 <p class="caption">
 Figure 3.10: Conjunto de dados não linearmente separáveis.
 </p>
@@ -488,7 +487,7 @@ Figure 3.10: Conjunto de dados não linearmente separáveis.
 ajustar melhor os vetores de suporte aos dados. A Figura <a href="regressão.html#kernels">3.2.1</a> mostra o
 conjunto de dados ajustado com hiperplanos lineares e não lineares.</p>
 <div class="figure" style="text-align: center"><span id="fig:kernels"></span>
-<img src="assets/kernels.png" alt="Hiperplanos utilizando *kernels* com funções lineares e não lineares."  />
+<img src="assets/kernels.png" alt="Hiperplanos utilizando *kernels* com funções lineares e não lineares." width="1925" />
 <p class="caption">
 Figure 3.11: Hiperplanos utilizando <em>kernels</em> com funções lineares e não lineares.
 </p>
@@ -496,9 +495,9 @@ Figure 3.11: Hiperplanos utilizando <em>kernels</em> com funções lineares e n�
 <p>A abordagem utilizando os <em>kernels</em> é uma das principais características desse
 modelo de ML, pois faz com que o hiperplano seja ajustado em uma dimensão
 superior, utilizando equações de polinômios de maior grau. A Figura
-<a href="#kernels-plot"><strong>??</strong></a> mostra graficamente como é realizada essa manipulação.</p>
+<a href="regressão.html#fig:kernels-plot">3.12</a> mostra graficamente como é realizada essa manipulação.</p>
 <div class="figure" style="text-align: center"><span id="fig:kernels-plot"></span>
-<img src="assets/kernels.png" alt="Representação gráfica dos dados e da função não linear."  />
+<img src="assets/kernels-plot.png" alt="Representação gráfica dos dados e da função não linear." width="1816" />
 <p class="caption">
 Figure 3.12: Representação gráfica dos dados e da função não linear.
 </p>
@@ -509,11 +508,12 @@ técnicas mais complexas.</p>
 <div id="kernels" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> <em>Kernels</em></h3>
 <p>A utilização dos <em>kernels</em> em SVM foram introduzidos por <span class="citation">Boser, Guyon, and Vapnik (1992)</span>.
-Esses componentes <em>kernels</em> nada mais são do que uma função que serão
-responsáveis por maximizar as margens dos vetores de suporte. A maioria das
-bibliotecas de ML, já possuem <em>kernels</em> implementados e também permitem a
-integração de outras funções customizadas. A lista a seguir aprensenta
-brevemente algunso dos principais <em>kernels</em> utilizados.</p>
+Esses componentes <em>kernels</em> são responsáveis por criar uma transformação dos
+dados a partir de uma função, que são responsáveis por maximizar as margens dos
+vetores de suporte. A maioria das bibliotecas de ML, já possuem <em>kernels</em>
+implementados e também permitem a integração de outras funções customizadas. A
+lista a seguir aprensenta brevemente algunso dos principais <em>kernels</em>
+utilizados.</p>
 <ul>
 <li><strong>Linear: </strong> Como mencionado anteriormente, é eficiente somente para problemas
 linearmente separáveis, uma vez que seu ajuste se da através da equação de uma
@@ -535,14 +535,137 @@ a variável <span class="math inline">\(d\)</span> que indica o seu grau, como d
 \tag{3.6}
 \end{equation}\]</span></p>
 <ul>
-<li><strong>Função gaussiana de base radial: </strong> Esse <em>kernel</em> é recomendado quando não
-se tem um conhecimento prévio a cerca dos dados. Esse <em>kernel</em> é definido pela
-seguinte equação:</li>
+<li><strong>Função gaussiana de base radial: </strong> Os <em>kernels</em> RBF
+(<em>radial basis function</em>), como também são chamados, são recomendados quando não
+se tem um conhecimento prévio a cerca dos dados. Esse <em>kernel</em> realiza uma
+transformação dos pontos utilizando uma função gaussiana, definida por:</li>
 </ul>
 <p><span class="math display" id="eq:rbf-kernel">\[\begin{equation} 
     k(\vec{x_{i}}, \vec{x_{j}}) = exp \left(-\frac{\lVert\vec{x_{i}} - \vec{x_{j}}\rVert^2}{2\sigma^2} \right)
 \tag{3.7}
 \end{equation}\]</span></p>
+</div>
+<div id="regressão-com-máquinas-de-suporte-de-vetores" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Regressão com máquinas de suporte de vetores</h3>
+<p>Embora as SVM sejam aplicadas principalmente para tarefas de classificação, ou
+seja, um cálculo de um valor inteiro, ela também pode ser utilizada para tarefas
+de regressão, calculando valores reais. Essas abordagens são chamadas de
+regressão por vetores de suporte (SVR - sigla do inglês,
+<em>support vector regression</em>) e foram propostas por <span class="citation">Drucker et al. (1997)</span>.
+Diferente de modelos tradicionais como as técnicas de regressão apresentadas na
+seção anterior, que utilizam derivadas para os cálculos dos intervalos de
+confiança, no SVR os valores são previstos através dos hiperplanos.</p>
+<p>Este método utiliza para a regressão a abordagem de classificação apresentada
+anteriormente, porém com uma pequena variação na função objetivo, que agora
+busca comportar dentro das margens comportar a maior quantidade de pontos. As
+margens (<span class="math inline">\(\epsilon\)</span>) representam os intervalos de confiança e os vetores de
+suporte que as delimitam, representam os limites para os erros positivos (<span class="math inline">\(\xi\)</span>)
+e negativos (<span class="math inline">\(\xi^{\ast}\)</span>). A Figura <a href="regressão.html#fig:svr">3.13</a> mostra uma representação de
+um hiperplano não linear traçado para a regressão de dados.</p>
+<div class="figure" style="text-align: center"><span id="fig:svr"></span>
+<img src="assets/svr.png" alt="Representação de hiperplano não linear para regressão. Adaptado de @drucker1997support." width="992" />
+<p class="caption">
+Figure 3.13: Representação de hiperplano não linear para regressão. Adaptado de <span class="citation">Drucker et al. (1997)</span>.
+</p>
+</div>
+<p>Assim como para a regressão linear, a biblioteca <em>scikit-learn</em> também possui a
+implementação dos modelos baseados em máquinas de vetores de suporte e os
+principais <em>kernels</em>. O código a seguir mostra a implementação do SVR usando a
+<em>scikit-learn</em> utilizando os <em>kernels</em> linear, polinomial de graus 2, 3, e 4 e
+a função gaussiana de base radial.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np<span class="op">;</span> np.random.seed(<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="im">from</span> sklearn.svm <span class="im">import</span> SVR</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co"># Criação dos dados de teste</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">x <span class="op">=</span> np.sort(<span class="dv">2</span> <span class="op">-</span> <span class="dv">3</span> <span class="op">*</span> np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">50</span>))</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">y <span class="op">=</span> x <span class="op">-</span> <span class="dv">2</span> <span class="op">*</span> (x <span class="op">**</span> <span class="dv">2</span>) <span class="op">+</span> <span class="fl">0.5</span> <span class="op">*</span> (x <span class="op">**</span> <span class="dv">3</span>) <span class="op">+</span> np.random.normal(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">x <span class="op">=</span> np.expand_dims(x, axis<span class="op">=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">x_test <span class="op">=</span> [[<span class="op">-</span><span class="fl">6.3</span>], [<span class="dv">1</span>], [<span class="fl">7.8</span>]]</a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co"># Criação das instâncias dos modelos</span></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12">svr_linear <span class="op">=</span> SVR(kernel<span class="op">=</span><span class="st">&#39;linear&#39;</span>).fit(x, y)</a>
+<a class="sourceLine" id="cb2-13" data-line-number="13">svr_polyd2 <span class="op">=</span> SVR(kernel<span class="op">=</span><span class="st">&#39;poly&#39;</span>, degree<span class="op">=</span><span class="dv">2</span>).fit(x, y)</a>
+<a class="sourceLine" id="cb2-14" data-line-number="14">svr_polyd3 <span class="op">=</span> SVR(kernel<span class="op">=</span><span class="st">&#39;poly&#39;</span>, degree<span class="op">=</span><span class="dv">3</span>).fit(x, y)</a>
+<a class="sourceLine" id="cb2-15" data-line-number="15">svr_polyd4 <span class="op">=</span> SVR(kernel<span class="op">=</span><span class="st">&#39;poly&#39;</span>, degree<span class="op">=</span><span class="dv">4</span>).fit(x, y)</a>
+<a class="sourceLine" id="cb2-16" data-line-number="16">svr_rbf <span class="op">=</span> SVR(kernel<span class="op">=</span><span class="st">&#39;rbf&#39;</span>).fit(x, y)</a>
+<a class="sourceLine" id="cb2-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb2-18" data-line-number="18"><span class="co"># Calculado hiperplanos</span></a>
+<a class="sourceLine" id="cb2-19" data-line-number="19">y_linear <span class="op">=</span> svr_linear.predict(x)</a>
+<a class="sourceLine" id="cb2-20" data-line-number="20">y_polyd2 <span class="op">=</span> svr_polyd2.predict(x)</a>
+<a class="sourceLine" id="cb2-21" data-line-number="21">y_polyd3 <span class="op">=</span> svr_polyd3.predict(x)</a>
+<a class="sourceLine" id="cb2-22" data-line-number="22">y_polyd4 <span class="op">=</span> svr_polyd4.predict(x)</a>
+<a class="sourceLine" id="cb2-23" data-line-number="23">y_rbf <span class="op">=</span> svr_rbf.predict(x)</a>
+<a class="sourceLine" id="cb2-24" data-line-number="24"></a>
+<a class="sourceLine" id="cb2-25" data-line-number="25"><span class="co"># Calculando variáveis de teste</span></a>
+<a class="sourceLine" id="cb2-26" data-line-number="26">linear_test <span class="op">=</span> svr_linear.predict(x_test)</a>
+<a class="sourceLine" id="cb2-27" data-line-number="27">polyd2_test <span class="op">=</span> svr_polyd2.predict(x_test)</a>
+<a class="sourceLine" id="cb2-28" data-line-number="28">polyd3_test <span class="op">=</span> svr_polyd3.predict(x_test)</a>
+<a class="sourceLine" id="cb2-29" data-line-number="29">polyd4_test <span class="op">=</span> svr_polyd4.predict(x_test)</a>
+<a class="sourceLine" id="cb2-30" data-line-number="30">rbf_test <span class="op">=</span> svr_rbf.predict(x_test)</a>
+<a class="sourceLine" id="cb2-31" data-line-number="31"></a>
+<a class="sourceLine" id="cb2-32" data-line-number="32"><span class="co"># Exibindo aplicação do SVR com kernel linear</span></a>
+<a class="sourceLine" id="cb2-33" data-line-number="33">fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">17</span>, <span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb2-34" data-line-number="34">ax[<span class="dv">0</span>].set_title(<span class="st">&#39;SVR com kernel linear&#39;</span>, fontdict<span class="op">=</span><span class="bu">dict</span>(fontsize<span class="op">=</span><span class="dv">16</span>))</a>
+<a class="sourceLine" id="cb2-35" data-line-number="35">ax[<span class="dv">0</span>].set_xlabel(<span class="st">&#39;Variável dependente ($x$)&#39;</span>, fontdict<span class="op">=</span><span class="bu">dict</span>(fontsize<span class="op">=</span><span class="dv">14</span>))</a>
+<a class="sourceLine" id="cb2-36" data-line-number="36">ax[<span class="dv">0</span>].set_ylabel(<span class="st">&#39;Variável dependente ($y$)&#39;</span>, fontdict<span class="op">=</span><span class="bu">dict</span>(fontsize<span class="op">=</span><span class="dv">14</span>))</a>
+<a class="sourceLine" id="cb2-37" data-line-number="37">ax[<span class="dv">0</span>].scatter(x, y, c<span class="op">=</span><span class="st">&#39;k&#39;</span>, alpha<span class="op">=</span>.<span class="dv">6</span>, ec<span class="op">=</span><span class="st">&#39;k&#39;</span>, label<span class="op">=</span><span class="st">&#39;Dados de treino&#39;</span>)</a>
+<a class="sourceLine" id="cb2-38" data-line-number="38">ax[<span class="dv">0</span>].plot(x, y_linear, c<span class="op">=</span><span class="st">&#39;r&#39;</span>, lw<span class="op">=</span><span class="st">&#39;2&#39;</span>, label<span class="op">=</span><span class="st">&#39;Kernel linear&#39;</span>)</a>
+<a class="sourceLine" id="cb2-39" data-line-number="39">ax[<span class="dv">0</span>].scatter(x_test, linear_test, c<span class="op">=</span><span class="st">&#39;orange&#39;</span>, label<span class="op">=</span><span class="st">&#39;Dados de test&#39;</span>, zorder<span class="op">=</span><span class="dv">5</span>, alpha<span class="op">=</span>.<span class="dv">75</span>, ec<span class="op">=</span><span class="st">&#39;k&#39;</span>)</a>
+<a class="sourceLine" id="cb2-40" data-line-number="40">_ <span class="op">=</span> ax[<span class="dv">0</span>].set_xticks([])</a>
+<a class="sourceLine" id="cb2-41" data-line-number="41">_ <span class="op">=</span> ax[<span class="dv">0</span>].set_yticks([])</a>
+<a class="sourceLine" id="cb2-42" data-line-number="42">ax[<span class="dv">0</span>].legend(loc<span class="op">=</span><span class="st">&quot;lower right&quot;</span>)</a>
+<a class="sourceLine" id="cb2-43" data-line-number="43"></a>
+<a class="sourceLine" id="cb2-44" data-line-number="44"><span class="co"># Exibindo aplicação do SVR com kernels polinomiais de graus 2, 3 e 4</span></a></code></pre></div>
+<pre><code>## &lt;matplotlib.legend.Legend object at 0x7fe06423f110&gt;</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1">ax[<span class="dv">1</span>].set_title(<span class="st">&#39;SVR com kernel polinomial&#39;</span>, fontdict<span class="op">=</span><span class="bu">dict</span>(fontsize<span class="op">=</span><span class="dv">16</span>))</a></code></pre></div>
+<pre><code>## Text(0.5, 1.0, &#39;SVR com kernel polinomial&#39;)</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1">ax[<span class="dv">1</span>].set_xlabel(<span class="st">&#39;Variável dependente ($x$)&#39;</span>, fontdict<span class="op">=</span><span class="bu">dict</span>(fontsize<span class="op">=</span><span class="dv">14</span>))</a></code></pre></div>
+<pre><code>## Text(0.5, 0, &#39;Variável dependente ($x$)&#39;)</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1">ax[<span class="dv">1</span>].set_ylabel(<span class="st">&#39;Variável dependente ($y$)&#39;</span>, fontdict<span class="op">=</span><span class="bu">dict</span>(fontsize<span class="op">=</span><span class="dv">14</span>))</a></code></pre></div>
+<pre><code>## Text(0, 0.5, &#39;Variável dependente ($y$)&#39;)</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" data-line-number="1">ax[<span class="dv">1</span>].scatter(x, y, c<span class="op">=</span><span class="st">&#39;k&#39;</span>, alpha<span class="op">=</span>.<span class="dv">6</span>, ec<span class="op">=</span><span class="st">&#39;k&#39;</span>, label<span class="op">=</span><span class="st">&#39;Dados de treino&#39;</span>)</a></code></pre></div>
+<pre><code>## &lt;matplotlib.collections.PathCollection object at 0x7fe0643106d0&gt;</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" data-line-number="1">ax[<span class="dv">1</span>].plot(x, y_polyd2, c<span class="op">=</span><span class="st">&#39;r&#39;</span>, lw<span class="op">=</span><span class="st">&#39;2&#39;</span>, label<span class="op">=</span><span class="st">&#39;Kernel polinomial grau 2&#39;</span>)</a></code></pre></div>
+<pre><code>## [&lt;matplotlib.lines.Line2D object at 0x7fe06422cf90&gt;]</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" data-line-number="1">ax[<span class="dv">1</span>].plot(x, y_polyd3, c<span class="op">=</span><span class="st">&#39;g&#39;</span>, lw<span class="op">=</span><span class="st">&#39;2&#39;</span>, label<span class="op">=</span><span class="st">&#39;Kernel polinomial grau 3&#39;</span>)</a></code></pre></div>
+<pre><code>## [&lt;matplotlib.lines.Line2D object at 0x7fe06423f490&gt;]</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" data-line-number="1">ax[<span class="dv">1</span>].plot(x, y_polyd4, c<span class="op">=</span><span class="st">&#39;b&#39;</span>, lw<span class="op">=</span><span class="st">&#39;2&#39;</span>, label<span class="op">=</span><span class="st">&#39;Kernel polinomial grau 4&#39;</span>)</a></code></pre></div>
+<pre><code>## [&lt;matplotlib.lines.Line2D object at 0x7fe06424b910&gt;]</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" data-line-number="1">ax[<span class="dv">1</span>].scatter(x_test, polyd2_test, c<span class="op">=</span><span class="st">&#39;orange&#39;</span>, marker<span class="op">=</span><span class="st">&#39;s&#39;</span>, label<span class="op">=</span><span class="st">&#39;Dados de test grau 2&#39;</span>, </a>
+<a class="sourceLine" id="cb18-2" data-line-number="2">              zorder<span class="op">=</span><span class="dv">5</span>, alpha<span class="op">=</span>.<span class="dv">75</span>, ec<span class="op">=</span><span class="st">&#39;k&#39;</span>)</a></code></pre></div>
+<pre><code>## &lt;matplotlib.collections.PathCollection object at 0x7fe06d544390&gt;</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" data-line-number="1">ax[<span class="dv">1</span>].scatter(x_test, polyd3_test, c<span class="op">=</span><span class="st">&#39;orange&#39;</span>, marker<span class="op">=</span><span class="st">&#39;d&#39;</span>, label<span class="op">=</span><span class="st">&#39;Dados de test grau 3&#39;</span>, </a>
+<a class="sourceLine" id="cb20-2" data-line-number="2">              zorder<span class="op">=</span><span class="dv">5</span>, alpha<span class="op">=</span>.<span class="dv">75</span>, ec<span class="op">=</span><span class="st">&#39;k&#39;</span>)</a></code></pre></div>
+<pre><code>## &lt;matplotlib.collections.PathCollection object at 0x7fe06424be90&gt;</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" data-line-number="1">ax[<span class="dv">1</span>].scatter(x_test, polyd4_test, c<span class="op">=</span><span class="st">&#39;orange&#39;</span>, marker<span class="op">=</span><span class="st">&#39;o&#39;</span>, label<span class="op">=</span><span class="st">&#39;Dados de test grau 4&#39;</span>, </a>
+<a class="sourceLine" id="cb22-2" data-line-number="2">              zorder<span class="op">=</span><span class="dv">5</span>, alpha<span class="op">=</span>.<span class="dv">75</span>, ec<span class="op">=</span><span class="st">&#39;k&#39;</span>)</a></code></pre></div>
+<pre><code>## &lt;matplotlib.collections.PathCollection object at 0x7fe0643ce150&gt;</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" data-line-number="1">_ <span class="op">=</span> ax[<span class="dv">1</span>].set_xticks([])</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">_ <span class="op">=</span> ax[<span class="dv">1</span>].set_yticks([])</a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">ax[<span class="dv">1</span>].legend(loc<span class="op">=</span><span class="st">&quot;lower right&quot;</span>,)</a>
+<a class="sourceLine" id="cb24-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb24-5" data-line-number="5"><span class="co"># Exibindo aplicação do SVR com kernel RBF</span></a></code></pre></div>
+<pre><code>## &lt;matplotlib.legend.Legend object at 0x7fe06d4e7750&gt;</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" data-line-number="1">ax[<span class="dv">2</span>].set_title(<span class="st">&#39;SVR com kernel RBF&#39;</span>, fontdict<span class="op">=</span><span class="bu">dict</span>(fontsize<span class="op">=</span><span class="dv">16</span>))</a></code></pre></div>
+<pre><code>## Text(0.5, 1.0, &#39;SVR com kernel RBF&#39;)</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" data-line-number="1">ax[<span class="dv">2</span>].set_xlabel(<span class="st">&#39;Variável dependente ($x$)&#39;</span>, fontdict<span class="op">=</span><span class="bu">dict</span>(fontsize<span class="op">=</span><span class="dv">14</span>))</a></code></pre></div>
+<pre><code>## Text(0.5, 0, &#39;Variável dependente ($x$)&#39;)</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" data-line-number="1">ax[<span class="dv">2</span>].set_ylabel(<span class="st">&#39;Variável dependente ($y$)&#39;</span>, fontdict<span class="op">=</span><span class="bu">dict</span>(fontsize<span class="op">=</span><span class="dv">14</span>))</a></code></pre></div>
+<pre><code>## Text(0, 0.5, &#39;Variável dependente ($y$)&#39;)</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" data-line-number="1">ax[<span class="dv">2</span>].scatter(x, y, c<span class="op">=</span><span class="st">&#39;k&#39;</span>, alpha<span class="op">=</span>.<span class="dv">6</span>, ec<span class="op">=</span><span class="st">&#39;k&#39;</span>, label<span class="op">=</span><span class="st">&#39;Dados de treino&#39;</span>)</a></code></pre></div>
+<pre><code>## &lt;matplotlib.collections.PathCollection object at 0x7fe06d4e72d0&gt;</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" data-line-number="1">ax[<span class="dv">2</span>].plot(x, y_rbf, c<span class="op">=</span><span class="st">&#39;r&#39;</span>, lw<span class="op">=</span><span class="st">&#39;2&#39;</span>, label<span class="op">=</span><span class="st">&#39;Kernel com função gaussiana&#39;</span>)</a></code></pre></div>
+<pre><code>## [&lt;matplotlib.lines.Line2D object at 0x7fe06d4e77d0&gt;]</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" data-line-number="1">ax[<span class="dv">2</span>].scatter(x_test, rbf_test, c<span class="op">=</span><span class="st">&#39;orange&#39;</span>, marker<span class="op">=</span><span class="st">&#39;o&#39;</span>, label<span class="op">=</span><span class="st">&#39;Kernel RBF&#39;</span>,</a>
+<a class="sourceLine" id="cb36-2" data-line-number="2">              zorder<span class="op">=</span><span class="dv">5</span>, alpha<span class="op">=</span>.<span class="dv">75</span>, ec<span class="op">=</span><span class="st">&#39;k&#39;</span>)</a></code></pre></div>
+<pre><code>## &lt;matplotlib.collections.PathCollection object at 0x7fe06d4f07d0&gt;</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" data-line-number="1">_ <span class="op">=</span> ax[<span class="dv">2</span>].set_xticks([])</a>
+<a class="sourceLine" id="cb38-2" data-line-number="2">_ <span class="op">=</span> ax[<span class="dv">2</span>].set_yticks([])</a>
+<a class="sourceLine" id="cb38-3" data-line-number="3">ax[<span class="dv">2</span>].legend(loc<span class="op">=</span><span class="st">&quot;lower right&quot;</span>)</a></code></pre></div>
+<pre><code>## &lt;matplotlib.legend.Legend object at 0x7fe06d503b90&gt;</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" data-line-number="1">plt.show()</a></code></pre></div>
+<p><img src="intro-ao-machine-learning_files/figure-html/unnamed-chunk-4-1.png" width="1632" /></p>
 
 <!-- TODO: usar imagem desse livro na apresentação https://mhweber.github.io/AWRA_2020_R_Spatial/ -->
 <!-- TODO: pensando em add a citação de que o termo cluster apareceu em um artigo 

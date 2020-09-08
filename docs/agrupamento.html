@@ -136,13 +136,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="classificação.html"><a href="classificação.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>2.1</b> <em>k</em>-Nearest Neighbors</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="classificação.html"><a href="classificação.html#escolha-do-valor-de-k"><i class="fa fa-check"></i><b>2.1.1</b> Escolha do valor de K</a></li>
 <li class="chapter" data-level="2.1.2" data-path="classificação.html"><a href="classificação.html#complexidade"><i class="fa fa-check"></i><b>2.1.2</b> Complexidade</a></li>
-<li class="chapter" data-level="2.1.3" data-path="classificação.html"><a href="classificação.html#exemplos"><i class="fa fa-check"></i><b>2.1.3</b> Exemplos</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="classificação.html"><a href="classificação.html#árvore-de-decisão"><i class="fa fa-check"></i><b>2.2</b> Árvore de decisão</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="classificação.html"><a href="classificação.html#conceitos-gerais"><i class="fa fa-check"></i><b>2.2.1</b> Conceitos gerais</a></li>
 <li class="chapter" data-level="2.2.2" data-path="classificação.html"><a href="classificação.html#funcionamento"><i class="fa fa-check"></i><b>2.2.2</b> Funcionamento</a></li>
 <li class="chapter" data-level="2.2.3" data-path="classificação.html"><a href="classificação.html#problemas-com-overfitting"><i class="fa fa-check"></i><b>2.2.3</b> Problemas com overfitting</a></li>
-<li class="chapter" data-level="2.2.4" data-path="classificação.html"><a href="classificação.html#exemplos-1"><i class="fa fa-check"></i><b>2.2.4</b> Exemplos</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="regressão.html"><a href="regressão.html"><i class="fa fa-check"></i><b>3</b> Regressão</a><ul>
@@ -151,6 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="regressão.html"><a href="regressão.html#máquinas-de-vetores-de-suporte"><i class="fa fa-check"></i><b>3.2</b> Máquinas de vetores de suporte</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="regressão.html"><a href="regressão.html#kernels"><i class="fa fa-check"></i><b>3.2.1</b> <em>Kernels</em></a></li>
+<li class="chapter" data-level="3.2.2" data-path="regressão.html"><a href="regressão.html#regressão-com-máquinas-de-suporte-de-vetores"><i class="fa fa-check"></i><b>3.2.2</b> Regressão com máquinas de suporte de vetores</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="agrupamento.html"><a href="agrupamento.html"><i class="fa fa-check"></i><b>4</b> Agrupamento</a><ul>
@@ -165,8 +164,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="agrupamento.html"><a href="agrupamento.html#agrupamento-hierarquico---método-aglomerativo"><i class="fa fa-check"></i><b>4.4</b> Agrupamento Hierarquico - Método Aglomerativo</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="agrupamento.html"><a href="agrupamento.html#qual-método-de-ligação-deve-ser-usado"><i class="fa fa-check"></i><b>4.4.1</b> Qual método de ligação deve ser usado?</a></li>
-<li class="chapter" data-level="4.4.2" data-path="agrupamento.html"><a href="agrupamento.html#como-definir-a-quantidade-de-grupos-1"><i class="fa fa-check"></i><b>4.4.2</b> Como definir a quantidade de grupos?</a></li>
-<li class="chapter" data-level="4.4.3" data-path="classificação.html"><a href="classificação.html#exemplos"><i class="fa fa-check"></i><b>4.4.3</b> Exemplos</a></li>
+<li class="chapter" data-level="4.4.2" data-path="agrupamento.html"><a href="agrupamento.html#como-visualizar-os-grupos-no-dendrograma"><i class="fa fa-check"></i><b>4.4.2</b> Como visualizar os grupos no dendrograma?</a></li>
+<li class="chapter" data-level="4.4.3" data-path="agrupamento.html"><a href="agrupamento.html#exemplos"><i class="fa fa-check"></i><b>4.4.3</b> Exemplos</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="agrupamento.html"><a href="agrupamento.html#saiba-mais"><i class="fa fa-check"></i><b>4.5</b> Saiba mais</a></li>
 </ul></li>
@@ -224,9 +223,9 @@ organização foi possível encontrar diversos <strong>grupos</strong> de livros
 gênero, como apresentado na Figura <a href="agrupamento.html#fig:clustering-book">4.1</a>.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:clustering-book"></span>
-<img src="assets/clustering.png" alt="Antes e depois da organização da prateleira de livros por grupos baseados em gênero."  />
+<img src="assets/clustering.png" alt="Antes e depois da organização da prateleira de livros em grupos baseados em gênero." width="246" />
 <p class="caption">
-Figure 4.1: Antes e depois da organização da prateleira de livros por grupos baseados em gênero.
+Figure 4.1: Antes e depois da organização da prateleira de livros em grupos baseados em gênero.
 </p>
 </div>
 <blockquote>
@@ -248,7 +247,7 @@ grupo.
 Em aprendizado de máquina, o ato de separar objetos em <strong>grupos</strong> (em inglês,
 <em>clusters</em>) por meio de determinadas características de um conjunto de dados é
 conhecido como <strong>agrupamento</strong> (em inglês, <em>clustering</em>), e a maneira com que esses grupos
-são formados é chamado de <strong>técnicas</strong> ou <strong>métodos</strong> de <strong>agrupamento</strong>. De
+são separados é chamado de <strong>técnicas</strong> ou <strong>métodos</strong> de <strong>agrupamento</strong>. De
 modo oposto do que vimos nos capítulos anteriores, as técnicas de agrupamento possuem o aprendizado não supervisionado, ou seja, usam conjuntos de dados não rotulados para criarem seus modelos.
 </p>
 <p align="justify">
@@ -257,7 +256,7 @@ fontes, como radares, redes sociais e <em>smartphones</em>, torna-se cada
 vez mais difícil obter conjuntos de dados rotulados, pois, por vezes, é
 necessária a presença de um especialista para criar ou gerenciar esses rótulos.
 Desta forma, o uso de técnicas de agrupamento pode auxiliar no processo de
-descoberta de conhecimento e criação dos rótulos a partir dos grupos gerados.
+descoberta de padrões e na criação de novos rótulos a partir dos grupos gerados.
 </p>
 <p align="justify">
 Técnicas de agrupamento caem como luva na mão de cientistas e analista de dados,
@@ -291,8 +290,7 @@ Figure 4.2: Exemplo de dois agrupamentos em um plano com duas dimensões (X,Y). 
 </p>
 </div>
 <p align="justify">
-De acordo com <span class="citation">Jain (2010)</span>, um dos grandes estudiosos da área de
-<em>machine learning</em>, o uso de técnicas agrupamento podem ser divididos em três principais aplicações:
+De acordo com <span class="citation">Jain (2010)</span>, um dos grandes estudiosos da área de aprendizado de máquina, o uso de técnicas agrupamento podem ser divididos em três principais aplicações:
 </p>
 <p align="justify">
 <ul>
@@ -326,15 +324,15 @@ subseção vamos mostrar algumas técnicas de agrupamento e quais as principais 
 Como vimos anteriormente, cada técnica de agrupamento possui uma abordagem para
 criar grupos em um conjunto de dados, por exemplo, algumas técnicas são baseadas
 em pontos centrais de cada grupo (centróide); em outras os grupos são criados
-seguindo uma hierarquia presente nos dados. Neste minicurso, vamos mostrar três
+seguindo uma hierarquia presente nos dados. Neste minicurso, vamos mostrar duas
 abordagens de técnicas de agrupamento: <strong>baseadas em partição</strong> e <strong>hierarquia</strong>. A seguir vamos comentar de maneira bem resumida cada uma.
 </p>
 <div id="técnicas-baseadas-em-partição" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Técnicas baseadas em Partição</h3>
 <!-- técnicas baseadas em partição-->
 <p align="justify">
-Nas técnicas <strong>baseadas em partição</strong>, cada grupo representa uma partição, e o
-número de grupos é definido pelo usuário. Desta forma, cada partição deve conter
+Nas técnicas <strong>baseadas em partição</strong> cada grupo representa uma partição, sendo
+que o número de grupos é definido pelo usuário. Desta forma, cada partição deve conter
 pelo menos um objeto, e cada objeto deve pertencer somente a um grupo, o que
 é conhecido como <strong>separação exclusiva de grupos</strong> (em inglês,
 <em>exclusive cluster separation</em> ou <em>hard cluster</em>). Existem métodos que
@@ -345,15 +343,15 @@ de agrupamento nebulosas (em inglês, <em>fuzzy clustering</em>). A Figura
 as linhas pretas demarcam cada partição.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:centroid-based"></span>
-<img src="assets/centroid_bases.png" alt="Exemplo de um agrupamento beaseado em partição. As linhas pretas demarcam as partições e as figuras preenchidas os centróides. Adaptado de @google2020"  />
+<img src="assets/centroid_bases.png" alt="Exemplo de um agrupamento beaseado em partição. As linhas pretas demarcam as partições e as formas geométricas preenchidas os centróides. Adaptado de @google2020" width="260" />
 <p class="caption">
-Figure 4.3: Exemplo de um agrupamento beaseado em partição. As linhas pretas demarcam as partições e as figuras preenchidas os centróides. Adaptado de <span class="citation">Developers (2020)</span>
+Figure 4.3: Exemplo de um agrupamento beaseado em partição. As linhas pretas demarcam as partições e as formas geométricas preenchidas os centróides. Adaptado de <span class="citation">Developers (2020)</span>
 </p>
 </div>
 <p align="justify">
 Além das características mencionadas acima, grande parte das técnicas baseadas
 em partição usam medidas de distâncias para determinar o grau de similaridade de
-cada grupo. Outra característica importante de mencionar, é a representação de
+cada grupo. Outra característica importante de mencionar é a representação de
 cada grupo, o centróide (Figura <a href="agrupamento.html#fig:centroid-based">4.3</a>, que pode ser definido
 pela média ou qualquer outra medida estatística Um dos algoritmos mais
 utilizados baseados em partição é o <em>Kmeans</em> - vamos explicá-lo na subseção
@@ -368,11 +366,11 @@ As técnicas baseadas em hierarquia, diferente dos que vimos nas técnicas de
 partição, não é requerido que o especialista especifique o número de grupos,
 pois seu algoritmo busca por correlações entre os objetos do conjunto de dados
 para criar os grupos. Os métodos hierárquicos podem ser divididos em
-<strong>aglomerativos</strong> ou <strong>divisivos</strong>, baseado no modo em que sua decomposição hierárquica é formada. No método <strong>aglomerativo</strong>, também conhecidos como
-AGNES (<em>Agglomerative Nesting</em>), considera-se, inicialmente, que cada objeto seja seu próprio grupo, e a cada iteração, os dois grupos mais parecidos são juntados, desta forma, formando um novo um grupo, esse processo é repetido até que todos os objetos estejam em um único grupo. De modo oposto, o método <strong>divisivo</strong>, também conhecidos como DIANA (<em>Divise Analysis</em>), considera-se que todos objetos pertencem a um único grupo, e posteriormente, divide-se o único grupo até obter-se um grupo para cada objeto ou até que um critério de párada seja atendido <span class="citation">(Han, Pei, and Kamber 2011)</span>.
+<strong>aglomerativos</strong> ou <strong>divisivos</strong>, baseado no modo em que sua decomposição hierárquica é formada. No método <strong>aglomerativo</strong>, também conhecido como
+AGNES (<em>Agglomerative Nesting</em>), considera-se, inicialmente, que cada objeto seja seu próprio grupo, e a cada iteração, os dois grupos mais parecidos são juntados, desta forma, formando um novo um grupo, esse processo é repetido até que todos os objetos estejam em um único grupo. De modo oposto, o método <strong>divisivo</strong>, também conhecido como DIANA (<em>Divise Analysis</em>), considera-se que todos objetos pertencem a um único grupo, e posteriormente, divide-se o único grupo até obter-se um grupo para cada objeto ou até que um critério de párada seja atendido <span class="citation">(Han, Pei, and Kamber 2011)</span>.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:hierarquical-based"></span>
-<img src="assets/metodo_hierarquico.png" alt="Exemplo do processo de criação de grupos baseado nas técnicas de agrupamento hierarquicas. - Fonte: @han2011data"  />
+<img src="assets/metodo_hierarquico.png" alt="Exemplo do processo de criação de grupos baseado nas técnicas de agrupamento hierarquicas. - Fonte: @han2011data" width="281" />
 <p class="caption">
 Figure 4.4: Exemplo do processo de criação de grupos baseado nas técnicas de agrupamento hierarquicas. - Fonte: <span class="citation">Han, Pei, and Kamber (2011)</span>
 </p>
@@ -382,15 +380,15 @@ Na Figura <a href="agrupamento.html#fig:hierarquical-based">4.4</a> é possível
 processo de criação de grupos dos dois métodos mencionados, AGNES e DIANA, com
 base em um conjunto de dados com cinco objetos <span class="math inline">\(a, b, c, d, e\)</span>. Por exemplo,
 no método aglomerativo, o objeto <span class="math inline">\(a\)</span> junta-se com o objeto <span class="math inline">\(b\)</span> no mesmo grupo,
-pois possuem maior semelhança se comparados com outros objetos, o mesmo processo acontece com os objetos <span class="math inline">\(d\)</span> e <span class="math inline">\(e\)</span>. Por outro lado, o método de divisão inicia
+pois possuem maior semelhança se comparados com outros objetos, o mesmo processo acontece com os objetos <span class="math inline">\(d\)</span> e <span class="math inline">\(e\)</span>. Por outro lado, o método divisivo inicia-se
 com todos os objetos pertencendo a um grupo, e a cada passo vai se dividindo com
 base na semelhança dos objetos dentro do grupo.
 </p>
 <p align="justify">
-Uma técnica que auxilia na interpretação dos agrupamentos hierárquicos é o dendrograma, apresentado na Figura <a href="agrupamento.html#fig:dend-based">4.5</a>, representando em forma de árvore, nele é possível obter informações sobre a estrutura do agrupamento realizado. No nível 0 é possível observar os objetos em seus próprios grupos, e, conforme o nível da árvore aumenta em relação a sua raiz, menor são as similaridades entre os objetos do mesmo grupo <span class="citation">(Han, Pei, and Kamber 2011)</span>.
+Uma técnica que auxilia na interpretação dos agrupamentos hierárquicos é o dendrograma, apresentado na Figura <a href="agrupamento.html#fig:dend-based">4.5</a>, representado em forma de árvore, nele é possível obter informações sobre a estrutura do agrupamento realizado. No nível 0 é possível observar os objetos em seus próprios grupos, e, conforme o nível da árvore aumenta em relação a sua raiz, menor são as similaridades entre os objetos do mesmo grupo <span class="citation">(Han, Pei, and Kamber 2011)</span>.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:dend-based"></span>
-<img src="assets/den_eg_1.png" alt="Exemplo de representação do agrupamento hierarquico. - Fonte: @han2011data"  />
+<img src="assets/den_eg_1.png" alt="Exemplo de representação do agrupamento hierarquico. - Fonte: @han2011data" width="234" />
 <p class="caption">
 Figure 4.5: Exemplo de representação do agrupamento hierarquico. - Fonte: <span class="citation">Han, Pei, and Kamber (2011)</span>
 </p>
@@ -420,7 +418,7 @@ apresentado na Figura <a href="agrupamento.html#fig:kmeans-dataset">4.6</a>, no 
 objetos em um plano cartesiano (X,Y).
 </p>
 <div class="figure" style="text-align: center"><span id="fig:kmeans-dataset"></span>
-<img src="assets/kmeans_conjunto_de_dados.png" alt="Conjunto de dados utilizado como exemplo."  />
+<img src="assets/kmeans_conjunto_de_dados.png" alt="Conjunto de dados utilizado como exemplo." width="176" />
 <p class="caption">
 Figure 4.6: Conjunto de dados utilizado como exemplo.
 </p>
@@ -440,7 +438,7 @@ centróide, assim, o objeto é atribuído ao grupo em que possui a menor distân
 com seu centróide.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:kmeans-algorithm"></span>
-<img src="assets/kmeans_algoritmo.png" alt="Exemplo de funcionamento do algoritmo Kmeans."  />
+<img src="assets/kmeans_algoritmo.png" alt="Exemplo de funcionamento do algoritmo Kmeans." width="390" />
 <p class="caption">
 Figure 4.7: Exemplo de funcionamento do algoritmo Kmeans.
 </p>
@@ -475,11 +473,10 @@ objeto é atribuído ao grupo deste centróide. Após a atribuição, o centrói
 recalculado com base nos objetos do grupo (Figura <a href="agrupamento.html#fig:kmeans-algorithm-2">4.8</a>),
 como foi dito anteriormente, podemos usar medidas estatísticas, como a média para
 achar a nova posição do centróide. Caso, não haja alterações nos valores dos
-centróides, o algoritmo pára. Caso não, o processo se repete: atualização dos
-centróides e atribuição dos objetos a cada grupo.
+centróides, o algoritmo pára. Caso não, o processo se repete: os centróides são atualizados e os objetos são atribuídos a cada grupo.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:kmeans-algorithm-2"></span>
-<img src="assets/kmeans_algoritmo_2.png" alt="Exemplo de funcionamento do algoritmo Kmeans."  />
+<img src="assets/kmeans_algoritmo_2.png" alt="Exemplo de funcionamento do algoritmo Kmeans." width="412" />
 <p class="caption">
 Figure 4.8: Exemplo de funcionamento do algoritmo Kmeans.
 </p>
@@ -496,7 +493,7 @@ o algoritmo pára.</li>
 <p align="justify">
 <blockquote>
 <p>Lembrando que, outro critério de párada é o número de iterações, pois nem
-sempre é possível convergir para o ótimo local com poucas iterações. Ainda mais
+sempre é possível obter grupos homogêneos com poucas iterações. Ainda mais
 com conjuntos de dados de aplicações reais. Outro fato a mencionar, é o sorteio de centróides, pois existem diversas métricas que podem ser utilizadas em relação a inicialização dos centróides, por exemplo, k-means++.</p>
 </blockquote>
 </p>
@@ -512,17 +509,14 @@ Como mencionado anteriormente, o objetivo do kmeans é minimizar a variação
 intra-grupos, vimos que isso é feito com base na atualização dos centróides em cada iteração
 do algoritmo, até que não haja mudança na atualização dos centróides. Então,
 para verificarmos o erro de cada grupo, podemos usar a soma das diferenças
-quadráticas (do ingles, <em>sum of squared error</em>) entre cada objeto e o centróide do seu grupo. Por exemplo, na Figura <a href="agrupamento.html#fig:kmeans-algorithm-2">4.8</a> para calcularmos o
+quadráticas (do ingles, <em>sum of squared error</em>) entre cada objeto e o centróide do seu grupo. Por exemplo, na Figura <a href="agrupamento.html#fig:kmeans-algorithm-2">4.8</a>, para calcularmos o
 erro quadrático do <strong>Grupo 1</strong>, temos a seguinte equação:
 </p>
 <span class="math display">\[
 SSE(grupo_{1}) = \sum_{x_i \in grupo_{1}} dist(x_i - c_1)^2
 \]</span>
 <p align="justify">
-Em que <span class="math inline">\(x_i\)</span> representa cada objeto do grupo, <span class="math inline">\(c_1\)</span> representa o centróide do
-grupo 1 e <span class="math inline">\(dist\)</span> a medida de distância utilizada. Logo, o <span class="math inline">\(SSE(grupo_1) \approx 1.9\)</span>, em outras palavras, o erro quadrático do grupo 1 é a distância de todos os
-objetos em relação seu centróide. Então, para calcularmos o erro total dos grupos,
-basta fazermos um somatório de cada SSE:
+Em que <span class="math inline">\(x_i\)</span> representa cada objeto do <strong>Grupo 1</strong>, <span class="math inline">\(c_1\)</span> representa o centróide deste mesmo grupo e <span class="math inline">\(dist\)</span> a medida de distância utilizada. Logo, o <span class="math inline">\(SSE(grupo_1) \approx 1.9\)</span>, em outras palavras, o erro quadrático do <strong>Grupó 1</strong> é a soma da distância de todos os objetos em relação seu centróide. Então, para calcularmos o erro total dos grupos, basta fazermos um somatório de cada SSE:
 </p>
 <span class="math display">\[
 SSE_{total} = SSE(grupo_1) + SSE(grupo_2) + SSE(grupo_3)
@@ -533,9 +527,11 @@ Então, para este agrupamento apresentado no exemplo acima, temos o
 é representado pela soma dos erros quadráticos de cada grupo.
 </p>
 <p align="justify">
-Agora que vimos como calcular o erro do nosso agrupamento, só nos resta uma
+<blockquote>
+<p>Agora que vimos como calcular o erro do nosso agrupamento, só nos resta uma
 forma de “descobrir” qual a quantidade ideal de grupos para cada agrupamento e
-é que vamos ver na próxima subseção.
+é que vamos ver na próxima subseção.</p>
+</blockquote>
 </p>
 </div>
 <div id="como-definir-a-quantidade-de-grupos" class="section level3">
@@ -547,19 +543,19 @@ sendo eles: <strong>Método do Cotovelo</strong> e <strong>Método da Silhueta</
 <p align="justify">
 <blockquote>
 <p>É recomendado perguntar ao especialista sobre a quantidade de grupos, no caso
-da ausencia de um, podemos optar pelo uso de heurísticas. Duas deles são apresentadas abaixo.</p>
+da ausência de um, podemos optar pelo uso de heurísticas. Duas delas são apresentadas abaixo.</p>
 </blockquote>
 </p>
 <div id="método-do-cotovelo" class="section level4">
 <h4><span class="header-section-number">4.3.2.1</span> Método do cotovelo</h4>
 <p align="justify">
 O método do cotovelo (do inglês, <em>elbow</em>) usa o somatório do erro total dos
-grupos em cada agrupamento para determinar o número, como apresentado na Figura <a href="agrupamento.html#fig:kmeans-elbow">4.9</a>. Então, a ideia deste método é gerar diversos agrupamentos
+grupos em cada agrupamento para determinar o número de <strong>K</strong>, como apresentado na Figura <a href="agrupamento.html#fig:kmeans-elbow">4.9</a>. Então, a ideia deste método é gerar diversos agrupamentos
 com diferentes números de grupos, com o incremento do número de grupos, o erro total tende a diminuir, até que o erro se aproxime de zero, que é quando terá um
 objeto por grupo.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:kmeans-elbow"></span>
-<img src="assets/metodo_cotovelo.png" alt="Método do cotovelo aplicado no conjunto de dados de exemplo."  />
+<img src="assets/metodo_cotovelo.png" alt="Método do cotovelo aplicado no conjunto de dados de exemplo." width="403" />
 <p class="caption">
 Figure 4.9: Método do cotovelo aplicado no conjunto de dados de exemplo.
 </p>
@@ -567,7 +563,7 @@ Figure 4.9: Método do cotovelo aplicado no conjunto de dados de exemplo.
 <p align="justify">
 De acordo com o método, o número ideal de grupos se dá quando o ponto forma uma
 curva semelhante de um cotovelo, que é o ponto considerado ideal. Pois os pontos
-acima do cotovelo estão em uma região em que <em>underfitting</em> e abaixo dele em <em>overfitting</em>.
+acima do cotovelo estão em uma região de <em>underfitting</em> e abaixo dele em <em>overfitting</em>.
 </p>
 </div>
 <div id="método-de-silhueta" class="section level4">
@@ -576,13 +572,13 @@ acima do cotovelo estão em uma região em que <em>underfitting</em> e abaixo de
 O método de Silhueta determina o quão bem cada objeto está alocado em um grupo, ou seja, a homogeneidade de um grupo. O índice de Silhueta varia de -1 a 1. Valores próximos a 1 indicam que o objeto possui semelhança com objetos de seu grupo e dessemelhança com objetos de outros grupos.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:kmeans-silhueta"></span>
-<img src="assets/indice_silhueta.png" alt="Método de Silhueta aplicado no conjunto de dados de exemplo."  />
+<img src="assets/indice_silhueta.png" alt="Método de Silhueta aplicado no conjunto de dados de exemplo." width="320" />
 <p class="caption">
 Figure 4.10: Método de Silhueta aplicado no conjunto de dados de exemplo.
 </p>
 </div>
 <p align="justify">
-A Figura <a href="agrupamento.html#fig:kmeans-silhueta">4.10</a> mostra um exemplo de aplicação do método de Silhueta, o número ideal de grupos é escolhido com base na média do maior do índice de Silhueta, ou seja, com 3 grupos foi possível obter grupos com objetos semelhantes entre si, e dissemelhante se comparados com objetos de outros grupos.
+A Figura <a href="agrupamento.html#fig:kmeans-silhueta">4.10</a> mostra um exemplo de aplicação do método de Silhueta, o número ideal de grupos é escolhido com base na maior média do índice de Silhueta, ou seja, neste exemplo apresentado acima, com 3 grupos foi possível obter grupos com objetos semelhantes entre si, e dissemelhante se comparados com objetos de outros grupos.
 </p>
 <p align="justify">
 Agora que entendemos os fundamentos da técnica de agrupamento <strong>Kmeans</strong> e
@@ -598,27 +594,26 @@ algumas técnicas de estimativas de grupos, vamos apresentar alguns exemplos pr�
 <p align="justify">
 Os métodos de agrupamento hierárquicos que pertencem à categoria de
 aglomerativos baseia na junção de grupos até que apenas um grupo englobe
-todos os outros, esse chamado de raiz. Os objetos no método aglomerativo são comparadas com base em uma medida de distância, como vimos no <strong>Kmeans</strong>, em que foi usado a distância euclidiana. No entanto, neste método, os grupos também são comparados, para que a união entre eles também seja realizada. Para compararmos a similaridade entre cada grupo usamos as medidas de ligação (do inglês, <em>linkage measures</em>). As medidas de ligação mais conhecidos são:
+todos os outros, esse chamado de raiz. No método aglomerativo, os objetos são comparadas com base em uma medida de distância, assim como vimos no <strong>Kmeans</strong>,
+em que foi usado a distância euclidiana. No entanto, neste método, os grupos também são comparados, para que a união entre eles seja realizada. Para compararmos a similaridade entre cada grupo usamos as medidas de ligação (do inglês, <em>linkage measures</em>). As medidas de ligação mais conhecidos são:
 </p>
 <p align="justify">
 <ul>
 <li><strong>Ligação completa ou distância máxima</strong>: Em inglês, <em>complete linkage</em>,
-determina como medida de similaridade os pares mais distantes entre dois
-grupos.</li>
+determina como distância entre dois grupos os pares de objetos mais distantes.</li>
 </ul>
 </p>
 <p><span class="math display">\[dist_{max}(g_1, g_2) = \underset{obj_{g_1} \in g_1,obj_{g_2} \in g_2}{\max \{|obj_1 - obj_2|\}}\]</span></p>
 <p>Em que <span class="math inline">\(g_1\)</span> e <span class="math inline">\(g_2\)</span> correspondem aos grupos 1 e 2, respectivamente.</p>
 <p align="justify">
 <ul>
-<li><strong>Ligação única ou distância mínima</strong>: Em inglês, <em>single linkage</em>, determina como medida de similaridade os para mais próximo entre dois grupos.</li>
+<li><strong>Ligação única ou distância mínima</strong>: Em inglês, <em>single linkage</em>, determina como distância entre dois grupos os pares de objetos mais próximos.</li>
 </ul>
 </p>
 <p><span class="math display">\[dist_{min}(g_1, g_2) = \underset{obj_{g_1} \in g_1,obj_{g_2} \in g_2}{\min \{|obj_1 - obj_2|\}}\]</span></p>
 <p align="justify">
 <ul>
-<li><strong>Distância baseada em média</strong>: Em inglês, <em>average method</em>, determina a
-distância entre cada grupo com base na média de todos os pares de objetos.</li>
+<li><strong>Distância baseada em média</strong>: Em inglês, <em>average method</em>, determina como distância entre dois grupos a média das distâncias entre os pares objetos.</li>
 </ul>
 </p>
 <p><span class="math display">\[dist_{avg} = \frac{1}{|g_1||g_2|} \sum_{i = 1}^{g_1}\sum_{j=1}^{g_2}dist(obj_i, obj_j)\]</span></p>
@@ -631,18 +626,18 @@ no qual é possível observar 6 objetos (A,B,C,E,F) em um plano cartesiano (X,Y)
 <p>Os objetos foram marcados para facilitar a visualização do dendograma.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span id="fig:hierarquico-dataset"></span>
-<img src="assets/dataset_hierarquico.png" alt="Conjunto de dados utilizado como exemplo."  />
+<img src="assets/dataset_hierarquico.png" alt="Conjunto de dados utilizado como exemplo." width="176" />
 <p class="caption">
 Figure 4.11: Conjunto de dados utilizado como exemplo.
 </p>
 </div>
 <p align="justify">
 Como foi mencionado, os métodos aglomerativos iniciam de forma em que cada objeto
-seja seu próprio grupo, e com isso, a cada iteração os grupos vão se juntando e
-combinando os objetos dentro deles. O primeiro passo do algoritmos hierárquicos, abrangendo às duas categorias, divisivos e aglomerativo, é calcular a matriz de distância entre todos os objetos. A Figura <a href="agrupamento.html#fig:hierarquico-alg-0">4.12</a> mostra um exemplo do cálculo da distância do objeto <strong>A</strong> entre os outros.
+seja seu próprio grupo, e, com isso, a cada iteração os grupos vão se juntando e
+combinando os objetos dentro deles. O primeiro passo dos algoritmos hierárquicos, abrangendo às duas categorias, divisivos e aglomerativo, é calcular a matriz de distância entre todos os objetos. A Figura <a href="agrupamento.html#fig:hierarquico-alg-0">4.12</a> mostra um exemplo do cálculo da distância do objeto <strong>A</strong> entre os outros.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:hierarquico-alg-0"></span>
-<img src="assets/dendograma_0.png" alt="Conjunto de dados utilizado como exemplo."  />
+<img src="assets/dendograma_0.png" alt="Conjunto de dados utilizado como exemplo." width="176" />
 <p class="caption">
 Figure 4.12: Conjunto de dados utilizado como exemplo.
 </p>
@@ -653,7 +648,7 @@ Figure 4.12: Conjunto de dados utilizado como exemplo.
 </blockquote>
 </p>
 <p align="justify">
-Então, seguindo com o algoritmo, o próximo passo consiste na junção dos objetos em grupos, como foi dito, cada objeto inicialmente pertence ao seu próprio grupo. A etapa de junção dos objetos aos grupos segue a mesma ideia do que vimos no Kmeans, só que aqui estamos comparando dois objetos, e não os objetos com seus centróides. Então, os objetos mais próximos se juntam em um grupo, como apresentado na Figura <a href="agrupamento.html#fig:hierarquico-alg-1">4.13</a>. A junção
+Então, seguindo com o algoritmo do método aglomerativo, o próximo passo consiste na junção dos objetos em grupos, como foi dito, cada objeto inicialmente pertence ao seu próprio grupo. A etapa de junção dos objetos aos grupos segue a mesma ideia do que vimos no Kmeans, só que aqui estamos comparando dois objetos, e não os objetos com seus centróides. Então, os objetos mais próximos se juntam em um grupo, como apresentado na Figura <a href="agrupamento.html#fig:hierarquico-alg-1">4.13</a>. A junção
 segue uma ordem, os objetos com as menores distâncias se juntam primeiro, então,
 neste exemplo, primeiro vamos juntar os objetos <strong>E</strong> e <strong>F</strong> que estão em 1
 unidade de distância, depois juntamos os objetos <strong>A</strong> e <strong>B</strong>, como mostrado na
@@ -662,7 +657,7 @@ juntamos os objetos <strong>D</strong> e <strong>C</strong> que possuem a distâ
 Dendrograma é possível observar essas distância no eixo de <strong>Altura</strong>.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:hierarquico-alg-1"></span>
-<img src="assets/dendograma_1.png" alt="Etapa de junção dos objetos."  />
+<img src="assets/dendograma_1.png" alt="Etapa de junção dos objetos." width="390" />
 <p class="caption">
 Figure 4.13: Etapa de junção dos objetos.
 </p>
@@ -671,10 +666,10 @@ Figure 4.13: Etapa de junção dos objetos.
 Depois de juntarmos todos os pares de objetos em um grupo, que até então estavam em seus próprios grupos, é hora de juntarmos os grupos. Nesta etapa de junção dos grupos, vamos utilizar as abordagens de ligação que foram mencionadas acima. A
 Figura <a href="agrupamento.html#fig:hierarquico-alg-2">4.14</a> apresenta o funcionamento dos métodos de
 ligação mencionados, em <strong>A)</strong> temos a ligação completa, que visa juntar os dois grupos mais próximos pelos objetos mais distantes; em <strong>B)</strong> temos a ligação
-única, que faz a junção de modo oposto do que vimos em <strong>A)</strong>, usando os objetos mais próximos de cada grupo, e em <strong>C)</strong>, temos a ligação pela média, que visa realizar a junção por meio da média das distâncias entre cada objeto dos dois grupos.
+única, que faz a junção de modo oposto do que vimos em <strong>A)</strong>, usando os objetos mais próximos de cada grupo, e em <strong>C)</strong> temos a ligação pela média, que visa realizar a junção por meio da média das distâncias entre cada objeto dos dois grupos.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:hierarquico-alg-2"></span>
-<img src="assets/dendograma_2.png" alt="Etapa de junção dos grupos."  />
+<img src="assets/dendograma_2.png" alt="Etapa de junção dos grupos." width="366" />
 <p class="caption">
 Figure 4.14: Etapa de junção dos grupos.
 </p>
@@ -690,7 +685,7 @@ ligação única e por média. Lembrando que o dendrograma mostra a distância e
 </blockquote>
 </p>
 <div class="figure" style="text-align: center"><span id="fig:hierarquico-alg-3"></span>
-<img src="assets/dendograma_3.png" alt="Etapa de junção dos grupos - Parte 2."  />
+<img src="assets/dendograma_3.png" alt="Etapa de junção dos grupos - Parte 2." width="390" />
 <p class="caption">
 Figure 4.15: Etapa de junção dos grupos - Parte 2.
 </p>
@@ -707,13 +702,15 @@ Resumidamente, podemos descrever o algoritmo do método aglomerativo conforme as
 objetos.</li>
 </ul>
 <p align="justify">
-Agora que entendemos como funciona o método aglomerativo, você deve estar se
-perguntando: “Qual método de ligação devo usar?” e é isso é o que vamos ver agora.
+<blockquote>
+<p>Agora que entendemos como funciona o método aglomerativo, você deve estar se
+perguntando: “Qual método de ligação devo usar?” e é isso é o que vamos ver agora.</p>
+</blockquote>
 </p>
 <div id="qual-método-de-ligação-deve-ser-usado" class="section level3">
 <h3><span class="header-section-number">4.4.1</span> Qual método de ligação deve ser usado?</h3>
 <p align="justify">
-Assim como a escolha do número de grupos no <em>Kmeans</em>, a escolha do método de ligação também é essencial, no entanto, cabe ao usuário testar os diversos métodos de ligação para determinar qual se adequa melhor ao seu caso. Vamos listar algumas vantagens e desvantagens dos métodos menionados acima retirados do material dos professores <span class="citation">Gao and Zhang (2012)</span>.
+Assim como a escolha do número de grupos no <em>Kmeans</em>, a escolha do método de ligação também é essencial, no entanto, cabe ao usuário testar os diversos métodos de ligação para determinar qual se adequa melhor ao seu caso. Vamos listar algumas vantagens e desvantagens dos métodos mencionados acima com base do material dos professores <span class="citation">Gao and Zhang (2012)</span>.
 </p>
 <table>
 <colgroup>
@@ -762,14 +759,14 @@ Assim como a escolha do número de grupos no <em>Kmeans</em>, a escolha do méto
 </blockquote>
 </p>
 </div>
-<div id="como-definir-a-quantidade-de-grupos-1" class="section level3">
-<h3><span class="header-section-number">4.4.2</span> Como definir a quantidade de grupos?</h3>
+<div id="como-visualizar-os-grupos-no-dendrograma" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Como visualizar os grupos no dendrograma?</h3>
 <p align="justify">
-Como vimos, o dendrograma mostra a hierarquia do nosso agrupamento com o formato de árvores, aos que estão familiarizados com estrutura de dados, especificamente uma árvore binária. Assim, podemos fazer um corte nessa árvore e selecionar os grupos que desejamos de acordo com a altura especificada. Por exemplo, a Figura
+Como vimos, o dendrograma mostra a hierarquia do nosso agrupamento com o formato de árvores, aos que estão familiarizados com estrutura de dados, especificamente, uma árvore binária. Assim, podemos fazer um corte nessa árvore e selecionar os grupos que desejamos de acordo com a altura especificada. Por exemplo, a Figura
 <a href="agrupamento.html#fig:hierarquico-cut">4.16</a> mostra a aplicação do método aglomerativo por meio de ligação completa no conjunto de dados utilizado no exemplo do Kmeans, os <span class="math inline">\(K\)</span> em cada dendrograma é o nível em que o corte foi realizado. Desta forma, cortando um nível abaixo da raiz, ou seja, <span class="math inline">\(k = 2\)</span>, obteve-se dois grupos, com <span class="math inline">\(k = 5\)</span>, obteve-se cinco grupos, e assim por diante. O corte no dendrograma nos dá uma visão dos grupos intrínsecos em cada nó da árvore, o que pode auxiliar no entendimento do conjunto de dados
 </p>
 <div class="figure" style="text-align: center"><span id="fig:hierarquico-cut"></span>
-<img src="assets/dendograma_cut.png" alt="Cortes nos dendrogramas para visualização dos grupos."  />
+<img src="assets/dendograma_cut.png" alt="Cortes nos dendrogramas para visualização dos grupos." width="484" />
 <p class="caption">
 Figure 4.16: Cortes nos dendrogramas para visualização dos grupos.
 </p>
