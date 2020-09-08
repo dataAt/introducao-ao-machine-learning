@@ -1,4 +1,5 @@
 ---
+title: Regressão
 output: bookdown::html_document2
 bibliography: bibfile.bib
 fig_caption: yes
@@ -31,7 +32,7 @@ observada uma tendência de expectativa de vida maior em países com alto índic
 de felicidade, com uma força de correlação de 0,77. 
 
 ```{r happinessWorld, echo=FALSE, fig.align="center", fig.cap='Relação entre o índice de felicidade e expectativa de vida. Fonte: [@helliwell2020social]'}
-  knitr::include_graphics("assets/happiness_world.png")
+  knitr::include_graphics("assets/03_regression/happiness_world.png")
 ```
 
 As relações entre as variáveis dependentes e independetes são feitas através de 
@@ -53,7 +54,7 @@ de variáveis com diferentes correlações.
 
 
 ```{r scatterCorrelations, echo=FALSE, fig.align="center", fig.cap='Diferentes correlações entre variáveis. Fonte: [@helliwell2020social]'}
-  knitr::include_graphics("assets/correlations.png")
+  knitr::include_graphics("assets/03_regression/correlations.png")
 ```
 
 Os métodos de regressão se utilizam dessas correlações entre as variáveis para 
@@ -123,7 +124,7 @@ tabela a seguir:
 |	0.38	|	6.98	|
 
 ```{r ols, echo=FALSE, fig.align="center", fig.cap='Exemplo do método dos quadrados ordinários.'}
-  knitr::include_graphics("assets/ols.png")
+  knitr::include_graphics("assets/03_regression/ols.png")
 ```
 
 Para se chegar no resultado apresentado na Figura \@ref(fig:ols), os 
@@ -133,7 +134,7 @@ pontos fossem a menor possível. A Figura \@ref(fig:ols-steps) mostra o ajuste
 dos coeficientes da equação em relação a cada ponto.
 
 ```{r ols-steps, echo=FALSE, fig.align="center", fig.cap='Ajuste da regressão linear por método dos quadrados ordinários.'}
-  knitr::include_graphics("assets/ols-steps.png")
+  knitr::include_graphics("assets/03_regression/ols-steps.png")
 ```
 
 #### Gradiente descendente
@@ -158,7 +159,7 @@ mostra o comportamento do GD com diferentes categorias de valores mencionadas
 para a taxa de aprendizagem.
 
 ```{r learning-rate, echo=FALSE, fig.align="center", fig.cap='Problemas na taxa de aprendizado do gradiente descendente.'}
-  knitr::include_graphics("assets/learning-rate-gd.png")
+  knitr::include_graphics("assets/03_regression/learning-rate-gd.png")
 ```
 
 Os prinicipais parâmetros a serem definidos nessa abordagem são a taxa de 
@@ -170,7 +171,7 @@ taxa de aprendizado muito baixa. Nessa figura pode ser observado que as
 iterações finalizam antes da convergência do modelo. 
 
 ```{r gd-example1, echo=FALSE, fig.align="center", fig.cap='Regressão linear com taxa de aprendizagem baixa no gradiente descendente.'}
-  knitr::include_graphics("assets/gradient-descendent-small.png")
+  knitr::include_graphics("assets/03_regression/gradient-descendent-small.png")
 ```
 
 Como mencionado anteriormente, uma taxa de aprendizagem muito grande também 
@@ -179,7 +180,7 @@ mínimo global. A Figura \@ref(fig:gd-example2) mostra o resultado da execução
 regressão linear utilizando uma taxa de aprendizagem muito grande no GD.
 
 ```{r gd-example2, echo=FALSE, fig.align="center", fig.cap='Regressão linear com taxa de aprendizagem alta no gradiente descendente.'}
-  knitr::include_graphics("assets/gradient-descendent-large.png")
+  knitr::include_graphics("assets/03_regression/gradient-descendent-large.png")
 ```
 
 Já com uma taxa de aprendizagem equilibrada, o GD é capaz de ajustar os 
@@ -190,7 +191,7 @@ aleatória, nas primeiras iterações o gradiente apresenta uma alta pertubaçã
 que vai se atenuando ao longo das épocas.
 
 ```{r gd-example3, echo=FALSE, fig.align="center", fig.cap='Regressão linear com taxa de aprendizagem equilibrada no gradiente descendente.'}
-  knitr::include_graphics("assets/gradient-descendent.png")
+  knitr::include_graphics("assets/03_regression/gradient-descendent.png")
 ```
 
 Para dados com poucas dimensões, ou seja, poucas variáveis preditoras, o MQO é 
@@ -291,7 +292,7 @@ tracejadas que interceptam os pontos com contorno destacado, e o espaço entre
 eles são as margens.
 
 ```{r linear-svm, echo=FALSE, fig.align="center", fig.cap='SVM para conjunto de dados linearmente separáveis.'}
-  knitr::include_graphics("assets/linear-svm.png")
+  knitr::include_graphics("assets/03_regression/linear-svm.png")
 ```
 
 As primeiras versões das SVM eram limitadas somente para resolução de problemas 
@@ -303,7 +304,7 @@ dimensões para a representação do hiperplano. Essa tarefa é feita com a
 introdução de um conceito definido *kernel*.
 
 ```{r kernels-problem, echo=FALSE, fig.align="center", fig.cap='Conjunto de dados não linearmente separáveis.'}
-  knitr::include_graphics("assets/kernels-problem.png")
+  knitr::include_graphics("assets/03_regression/kernels-problem.png")
 ```
 
 Ao traçar um hiperplano não linear com a utilização de *kernels* é possível 
@@ -311,7 +312,7 @@ ajustar melhor os vetores de suporte aos dados. A Figura \@ref(kernels) mostra o
 conjunto de dados ajustado com hiperplanos lineares e não lineares.
 
 ```{r kernels, echo=FALSE, fig.align="center", fig.cap='Hiperplanos utilizando *kernels* com funções lineares e não lineares.'}
-  knitr::include_graphics("assets/kernels.png")
+  knitr::include_graphics("assets/03_regression/kernels.png")
 ```
 
 A abordagem utilizando os *kernels* é uma das principais características desse 
@@ -320,7 +321,7 @@ superior, utilizando equações de polinômios de maior grau. A Figura
 \@ref(fig:kernels-plot) mostra graficamente como é realizada essa manipulação. 
 
 ```{r kernels-plot, echo=FALSE, fig.align="center", fig.cap='Representação gráfica dos dados e da função não linear.'}
-  knitr::include_graphics("assets/kernels-plot.png")
+  knitr::include_graphics("assets/03_regression/kernels-plot.png")
 ```
 
 A utilização de *kernels* é uma das principais características do SVM e faz com 
@@ -385,7 +386,7 @@ e negativos ($\xi^{\ast}$). A Figura \@ref(fig:svr) mostra uma representação d
 um hiperplano não linear traçado para a regressão de dados.
 
 ```{r svr, echo=FALSE, fig.align="center", fig.cap='Representação de hiperplano não linear para regressão. Adaptado de @drucker1997support.'}
-  knitr::include_graphics("assets/svr.png")
+  knitr::include_graphics("assets/03_regression/svr.png")
 ```
 
 Assim como para a regressão linear, a biblioteca *scikit-learn* também possui a
@@ -471,10 +472,3 @@ ax[2].legend(loc="lower right")
 
 plt.show()
 ```
-
- 
-
-
-
-
-

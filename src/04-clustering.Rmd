@@ -1,4 +1,5 @@
 ---
+title: Agrupamento
 output: 
     bookdown::html_document2: default
     bookdown::pdf_document2: default
@@ -53,8 +54,7 @@ gênero, como apresentado na Figura \@ref(fig:clustering-book).
 </p>
 
 ```{r clustering-book, echo=FALSE, fig.align="center", fig.show = "hold", fig.cap='Antes e depois da organização da prateleira de livros em grupos baseados em gênero.'}
-# refazer essa figura
-knitr::include_graphics("./assets/clustering.png") 
+knitr::include_graphics("./assets/04_clustering/clustering.png") 
 ```
 
 > Utilizamos cores para dividir os gêneros na Figura \@ref(fig:clustering-book) 
@@ -119,7 +119,7 @@ do conjunto de dados, conforme ilustrado, em que um objeto no
 
 ```{r agrup-exemplo, echo=FALSE, fig.align="center", fig.show = "hold", out.width = "50%", fig.cap='Exemplo de dois agrupamentos em um plano com duas dimensões (X,Y). Observam-se 3 grupos em a) e 8 grupos em b). Adaptado de @esling2012time '}
 # refazer essa figura
-knitr::include_graphics(c("./assets/clust_1_ex.png", "./assets/clust_2_ex.png")) 
+knitr::include_graphics(c("./assets/04_clustering/clust_1_ex.png", "./assets/04_clustering/clust_2_ex.png")) 
 ```
 
 <p align="justify">
@@ -152,45 +152,6 @@ Agora que entendemos o que é um agrupamento e suas aplicações, na próxima
 subseção vamos mostrar algumas técnicas de agrupamento e quais as principais diferenças entre elas.
 </p>
 
-```{r graph-types-datasets, echo=FALSE, fig.align="center", fig.cap='Exemplos', fig.height=4, fig.width=10, cache=TRUE}
-
-  # set.seed(10)
-  # x <- cbind(c(runif(20, min = -2, max = 2),
-  #              runif(20, min = 6, max = 10),
-  #              runif(20, min = 0, max = 6)))
-  #
-  # y <- cbind(c(runif(20, min = -2, max = 2),
-  #              runif(20, min = -2, max = 2),
-  #              runif(20, min = -10, max = -4)))
-  #
-  #
-  # df <- data.frame(x,y)
-  # plot(df$x, df$y)
-  # df_clust <- pam(df, k = 3)
-  # plot(df_clust)
-
-  # classes <- c(rep("1", 20), rep("2", 20), rep("3", 20))
-  # colors <- c("#00AFBB", "#E7B800", "#FC4E07")
-  # colors <- colors[as.numeric(classes)]
-  #
-  # shapes = c(16, 17, 18)
-  # shapes <- shapes[as.numeric(classes)]
-  #
-  # df <- data.frame(x, y, classes)
-  #
-  # par(mfrow = c(1,2))
-  #
-  # plot(df$x, df$y, type = "p", col = colors, pch = shapes,
-  #      xlab = "", ylab = "", main = "(a) Supervisionado")
-  #
-  # legend("bottomright", legend = levels(df$classes),
-  #     col =  c("#00AFBB", "#E7B800", "#FC4E07"),
-  #     pch = c(16, 17, 18))
-  #
-  #  plot(df$x, df$y, type = "p",
-  #      xlab = "", ylab = "", pch = 19, main = "(b) Não Supervisionado")
-```
-
 ## Técnicas de agrupamento
 <p align="justify">
 Como vimos anteriormente, cada técnica de agrupamento possui uma abordagem para 
@@ -217,7 +178,7 @@ as linhas pretas demarcam cada partição.
 </p>
 
 ```{r centroid-based, echo=FALSE, fig.align="center", fig.show = "hold", fig.cap='Exemplo de um agrupamento beaseado em partição. As linhas pretas demarcam as partições e as formas geométricas preenchidas os centróides. Adaptado de @google2020'}
-knitr::include_graphics("./assets/centroid_bases.png") 
+knitr::include_graphics("./assets/04_clustering/centroid_bases.png") 
 ```
 
 
@@ -243,7 +204,7 @@ AGNES (*Agglomerative Nesting*), considera-se, inicialmente, que cada objeto sej
 </p>
 
 ```{r hierarquical-based, echo=FALSE, fig.align="center", fig.show = "hold", fig.cap='Exemplo do processo de criação de grupos baseado nas técnicas de agrupamento hierarquicas. - Fonte: @han2011data'}
-knitr::include_graphics("./assets/metodo_hierarquico.png") 
+knitr::include_graphics("./assets/04_clustering/metodo_hierarquico.png") 
 ```
 
 <p align="justify">
@@ -261,7 +222,7 @@ Uma técnica que auxilia na interpretação dos agrupamentos hierárquicos é o 
 </p>
 
 ```{r dend-based, echo=FALSE, fig.align="center", fig.show = "hold", fig.cap='Exemplo de representação do agrupamento hierarquico. - Fonte: @han2011data'}
-knitr::include_graphics("./assets/den_eg_1.png") 
+knitr::include_graphics("./assets/04_clustering/den_eg_1.png") 
 ```
 
 <p align="justify">
@@ -290,7 +251,7 @@ objetos em um plano cartesiano (X,Y).
 
 
 ```{r kmeans-dataset, echo=FALSE ,fig.align="center", fig.cap='Conjunto de dados utilizado como exemplo.'}
-  knitr::include_graphics("assets/kmeans_conjunto_de_dados.png")
+  knitr::include_graphics("assets/04_clustering/kmeans_conjunto_de_dados.png")
 ```
 
 <p align="justify">
@@ -310,7 +271,7 @@ com seu centróide.
 
 
 ```{r kmeans-algorithm, echo=FALSE ,fig.align="center", fig.cap='Exemplo de funcionamento do algoritmo Kmeans.'}
-  knitr::include_graphics("assets/kmeans_algoritmo.png")
+  knitr::include_graphics("assets/04_clustering/kmeans_algoritmo.png")
 ```
 
 <p align="justify">
@@ -349,7 +310,7 @@ centróides, o algoritmo pára. Caso não, o processo se repete: os centróides 
 </p>
 
 ```{r kmeans-algorithm-2, echo=FALSE ,fig.align="center", fig.cap='Exemplo de funcionamento do algoritmo Kmeans.'}
-  knitr::include_graphics("assets/kmeans_algoritmo_2.png")
+  knitr::include_graphics("assets/04_clustering/kmeans_algoritmo_2.png")
 ```
 
 Resumidamente, podemos descrever o algoritmo do Kmeans conforme as etapas abaixo:
@@ -433,7 +394,7 @@ objeto por grupo.
 
 
 ```{r kmeans-elbow, echo=FALSE ,fig.align="center", fig.cap='Método do cotovelo aplicado no conjunto de dados de exemplo.'}
-  knitr::include_graphics("assets/metodo_cotovelo.png")
+  knitr::include_graphics("assets/04_clustering/metodo_cotovelo.png")
 ```
 
 <p align="justify">
@@ -449,7 +410,7 @@ acima do cotovelo estão em uma região de *underfitting* e abaixo dele em *over
 O método de Silhueta determina o quão bem cada objeto está alocado em um grupo, ou seja, a homogeneidade de um grupo. O índice de Silhueta varia de -1 a 1. Valores próximos a 1 indicam que o objeto possui semelhança com objetos de seu grupo e dessemelhança com objetos de outros grupos.  
 </p>
 ```{r kmeans-silhueta, echo=FALSE ,fig.align="center", fig.cap='Método de Silhueta aplicado no conjunto de dados de exemplo.'}
-  knitr::include_graphics("assets/indice_silhueta.png")
+  knitr::include_graphics("assets/04_clustering/indice_silhueta.png")
 ```
 
 <p align="justify">
@@ -502,7 +463,7 @@ no qual é possível observar 6 objetos (A,B,C,E,F) em um plano cartesiano (X,Y)
 > Os objetos foram marcados para facilitar a visualização do dendograma.
 
 ```{r hierarquico-dataset, echo=FALSE ,fig.align="center", fig.cap='Conjunto de dados utilizado como exemplo.'}
-  knitr::include_graphics("assets/dataset_hierarquico.png")
+  knitr::include_graphics("assets/04_clustering/dataset_hierarquico.png")
 ```
 
 <p align="justify">
@@ -512,7 +473,7 @@ combinando os objetos dentro deles. O primeiro passo dos algoritmos hierárquico
 </p>
 
 ```{r hierarquico-alg-0, echo=FALSE ,fig.align="center", fig.cap='Conjunto de dados utilizado como exemplo.'}
-  knitr::include_graphics("assets/dendograma_0.png")
+  knitr::include_graphics("assets/04_clustering/dendograma_0.png")
 ```
 
 <p align="justify">
@@ -533,7 +494,7 @@ Dendrograma é possível observar essas distância no eixo de **Altura**.
 
 
 ```{r hierarquico-alg-1, echo=FALSE ,fig.align="center", fig.cap='Etapa de junção dos objetos.'}
-  knitr::include_graphics("assets/dendograma_1.png")
+  knitr::include_graphics("assets/04_clustering/dendograma_1.png")
 ```
 
 <p align="justify">
@@ -544,7 +505,7 @@ ligação mencionados, em **A)** temos a ligação completa, que visa juntar os 
 </p>
 
 ```{r hierarquico-alg-2, echo=FALSE ,fig.align="center", fig.cap='Etapa de junção dos grupos.'}
-  knitr::include_graphics("assets/dendograma_2.png")
+  knitr::include_graphics("assets/04_clustering/dendograma_2.png")
 ```
 
 
@@ -559,7 +520,7 @@ ligação única e por média. Lembrando que o dendrograma mostra a distância e
 
 </p>
 ```{r hierarquico-alg-3, echo=FALSE ,fig.align="center", fig.cap='Etapa de junção dos grupos - Parte 2.'}
-  knitr::include_graphics("assets/dendograma_3.png")
+  knitr::include_graphics("assets/04_clustering/dendograma_3.png")
 ```
 
 <p align="justify">
@@ -605,7 +566,7 @@ Como vimos, o dendrograma mostra a hierarquia do nosso agrupamento com o formato
 </p>
 
 ```{r hierarquico-cut, echo=FALSE ,fig.align="center", fig.cap='Cortes nos dendrogramas para visualização dos grupos.'}
-  knitr::include_graphics("assets/dendograma_cut.png")
+  knitr::include_graphics("assets/04_clustering/dendograma_cut.png")
 ```
 
 <p align="justify">
@@ -624,4 +585,3 @@ Agora que entendemos os fundamentos da técnica de agrupamento aglomerativa e co
 ### Exemplos
 
 ## Saiba mais
-
