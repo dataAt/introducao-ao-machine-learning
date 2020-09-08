@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Classificação | 01-introduction.split</title>
-  <meta name="description" content="" />
+  <title>2 Classificação | Introdução</title>
+  <meta name="description" content="2 Classificação | Introdução" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Classificação | 01-introduction.split" />
+  <meta property="og:title" content="2 Classificação | Introdução" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Classificação | 01-introduction.split" />
+  <meta name="twitter:title" content="2 Classificação | Introdução" />
   
   
   
@@ -180,7 +180,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introdução</a>
           </h1>
         </div>
 
@@ -202,7 +202,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <p>Para o uso dos algoritmos que realizam as atividades de <strong>Classificação</strong>, por eles pertencerem ao grupo de algoritmos supervisionados, o que precisamos é criar de um conjunto de <em>e-mails</em> SPAM e então treinar o algoritmo para aprender as características mais relevantes dos SPAMs. Uma vez treinado, o algoritmo pode ser utilizado para identificar <em>e-mails</em> nunca antes vistos, já que ele mapeou as principais características, diferente da nossa ideia inicia de código, onde estávamos trabalhando com características específicas.</p>
 <div class="figure" style="text-align: center"><span id="fig:emailClassifier"></span>
-<img src="assets/1_classification/email_classifier.png" alt="Classificação de e-mails com ML - Fonte: Produção do autor" width="70%" />
+<img src="assets/02_classification/email_classifier.png" alt="Classificação de e-mails com ML - Fonte: Produção do autor" width="70%" />
 <p class="caption">
 Figure 2.1: Classificação de e-mails com ML - Fonte: Produção do autor
 </p>
@@ -244,14 +244,14 @@ Figure 2.1: Classificação de e-mails com ML - Fonte: Produção do autor
 </blockquote>
 <p>Os pontos de treinamento são apresentados na Figura <a href="classificação.html#fig:classKnn1">2.2</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:classKnn1"></span>
-<img src="assets/1_classification/1_knn/knn_01.png" alt="Espaço euclidiano 1 - Fonte: Produção do autor" width="45%" />
+<img src="assets/02_classification/1_knn/knn_01.png" alt="Espaço euclidiano 1 - Fonte: Produção do autor" width="45%" />
 <p class="caption">
 Figure 2.2: Espaço euclidiano 1 - Fonte: Produção do autor
 </p>
 </div>
 <p>Beleza! Então, com esse conjunto de dados, vamos adicionar um novo ponto, este é representado pelo ponto vermelho na figura abaixo. Perceba que, este é uma amostra que representa o conjunto de teste, e que, ao ser inserido neste espaço, ele não possui nenhum rótulo definido.</p>
 <div class="figure" style="text-align: center"><span id="fig:classKnn2"></span>
-<img src="assets/1_classification/1_knn/knn_02.png" alt="Espaço euclidiano 2 - Fonte: Produção do autor" width="45%" />
+<img src="assets/02_classification/1_knn/knn_02.png" alt="Espaço euclidiano 2 - Fonte: Produção do autor" width="45%" />
 <p class="caption">
 Figure 2.3: Espaço euclidiano 2 - Fonte: Produção do autor
 </p>
@@ -259,28 +259,28 @@ Figure 2.3: Espaço euclidiano 2 - Fonte: Produção do autor
 <p>Certo! Então já temos nosso problema de classificação definido, vamos resolver ele com o kNN. Aqui, o valor de <em>k</em> = 5 (Não se preocupe, vamos voltar nesse valor de <em>k</em> depois), ou seja, na primeira parte do algoritmo, análise de vizinhança, vamos buscar os 5 elementos mais próximos ao ponto vermelho.</p>
 <p>Feito essas considerações, vamos de maneira manual fazer a aplicação do algoritmo, começando com o primeiro passo, de análise de vizinhança, feito com o cálculo das distâncias. Aqui, você vai perceber que a distância utilizada foi a euclidiana, que apresentamos anteriormente.</p>
 <div class="figure" style="text-align: center"><span id="fig:classKnn3"></span>
-<img src="assets/1_classification/1_knn/knn_03.png" alt="Calculo de distância - Fonte: Produção do autor" width="45%" />
+<img src="assets/02_classification/1_knn/knn_03.png" alt="Calculo de distância - Fonte: Produção do autor" width="45%" />
 <p class="caption">
 Figure 2.4: Calculo de distância - Fonte: Produção do autor
 </p>
 </div>
 <p>Com as distâncias calculadas a segunda parte do algoritmo, de determinação do rótulo com base nos vizinhos pode ser iniciada. Para isso, primeiro faz-se a seleção dos 5 elementos mais próximos.</p>
 <div class="figure" style="text-align: center"><span id="fig:classKnn4"></span>
-<img src="assets/1_classification/1_knn/knn_04.png" alt="Seleção dos vizinhos mais próximos - Fonte: Produção do autor" width="45%" />
+<img src="assets/02_classification/1_knn/knn_04.png" alt="Seleção dos vizinhos mais próximos - Fonte: Produção do autor" width="45%" />
 <p class="caption">
 Figure 2.5: Seleção dos vizinhos mais próximos - Fonte: Produção do autor
 </p>
 </div>
 <p>Com os vizinhos mais próximos determinados, é feito a contagem desses, separando cada um desses por rótulo, de modo que, a vizinhança é sumarizada em quantidade de elementos por rótulo, como apresentado na Figura <a href="classificação.html#fig:classKnn5">2.6</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:classKnn5"></span>
-<img src="assets/1_classification/1_knn/knn_05.png" alt="Contagem dos vizinhos mais próximos - Fonte: Produção do autor" width="70%" />
+<img src="assets/02_classification/1_knn/knn_05.png" alt="Contagem dos vizinhos mais próximos - Fonte: Produção do autor" width="70%" />
 <p class="caption">
 Figure 2.6: Contagem dos vizinhos mais próximos - Fonte: Produção do autor
 </p>
 </div>
 <p>Então, é feita a determinação do rótulo do ponto que está sendo classificado, que como podemos ver, vai receber o rótulo laranja, uma vez que, esta é a classe que mais aparece na vizinhança do ponto vermelho.</p>
 <div class="figure" style="text-align: center"><span id="fig:classKnn6"></span>
-<img src="assets/1_classification/1_knn/knn_06.png" alt="Definição da classe - Fonte: Produção do autor" width="70%" />
+<img src="assets/02_classification/1_knn/knn_06.png" alt="Definição da classe - Fonte: Produção do autor" width="70%" />
 <p class="caption">
 Figure 2.7: Definição da classe - Fonte: Produção do autor
 </p>
@@ -295,7 +295,7 @@ Figure 2.7: Definição da classe - Fonte: Produção do autor
 <p>Bem, essa é uma boa pergunta e mais que isso, é uma pergunta importante! Fazer a escolha da quantidade vizinhos que o kNN vai utilizar, determina o quão bem o algoritmo vai generalizar aos dados futuros. A escolha pelo valor de <span class="math inline">\(K\)</span> deve ser feita considerando um equilíbrio entre um valor grande ou pequeno, isso porque cada um deles tem influências diferentes na maneira a qual o algoritmo vai reconhecer os dados <span class="citation">(Lantz 2013)</span>.</p>
 <p>Segundo <span class="citation">Lantz (2013)</span>, quando valores muito grandes de <span class="math inline">\(K\)</span> são escolhidos, tem-se uma redução do impacto causado por dados ruidosos, mas, pode fazer com que o algoritmo deixe de considerar características sucintas que estão nos dados, mas que são importantes para a correta determinação dos rótulos. Por outro lado, valores de <span class="math inline">\(K\)</span> menores permitem o entendimento de características mais sofisticadas dos dados, mas sofrem muita influência de dados ruidosos. A Figura <a href="classificação.html#fig:chooseKinKnn">2.8</a> faz uma representação da maneira como o processo de decisão para a determinação da classe pode ser tomado, neste, é possível perceber que os valores de <span class="math inline">\(K\)</span> .</p>
 <div class="figure" style="text-align: center"><span id="fig:chooseKinKnn"></span>
-<img src="assets/1_classification/choose_k.png" alt="Definição da classe - Fonte: Adaptado de @lantz2013machine" width="70%" />
+<img src="assets/02_classification/choose_k.png" alt="Definição da classe - Fonte: Adaptado de @lantz2013machine" width="70%" />
 <p class="caption">
 Figure 2.8: Definição da classe - Fonte: Adaptado de <span class="citation">Lantz (2013)</span>
 </p>
@@ -306,7 +306,7 @@ Figure 2.8: Definição da classe - Fonte: Adaptado de <span class="citation">La
 <h3><span class="header-section-number">2.1.2</span> Complexidade</h3>
 <p>Como você pode ter pensando, esse pode não ser um algoritmo computacionalmente muito barato, já que, o cálculo de distância nesse algoritmo que apresentamos, é sempre calculado entre todos os pontos do conjunto de treinamento com o conjunto de teste, o que se pensarmos em apenas poucas quantidades de pontos pode não ser um problema, mas que, com a crescente na quantidade, pode ser inviável. Para isso, considere a Figura <a href="classificação.html#fig:classKnn7">2.9</a>, imagina que o ponto vermelho vai ser classificado, a distância dele para todos os outros pontos terá de ser determinada.</p>
 <div class="figure" style="text-align: center"><span id="fig:classKnn7"></span>
-<img src="assets/1_classification/1_knn/knn_07.png" alt="Níveis de complexidade - Fonte: Produção do autor" width="89%" />
+<img src="assets/02_classification/1_knn/knn_07.png" alt="Níveis de complexidade - Fonte: Produção do autor" width="89%" />
 <p class="caption">
 Figure 2.9: Níveis de complexidade - Fonte: Produção do autor
 </p>
@@ -320,7 +320,7 @@ Como foi possível perceber o kNN é um algoritmo simples e pode ser implementad
 Para começar, os dados utilizados estão disponíveis no arquivo knnpoints.csv e a visualização desses está disponível na Figura abaixo
 
 <center>
-![](assets/1_classification/1_knn/examples/pointviz.png)
+![](assets/02_classification/1_knn/examples/pointviz.png)
 </center>
 
 Abaixo é apresentado a maneira a qual o scikit-learn é importado para ser utilizado
@@ -335,19 +335,19 @@ from sklearn.neighbors import KNeighborsClassifier
 
 
 <center>
-![](assets/1_classification/1_knn/examples/test_1.png)
+![](assets/02_classification/1_knn/examples/test_1.png)
 </center>
 
 #### Exemplo 2
 
 <center>
-![](assets/1_classification/1_knn/examples/test_2.png)
+![](assets/02_classification/1_knn/examples/test_2.png)
 </center>
 
 #### Exemplo 3
 
 <center>
-![](assets/1_classification/1_knn/examples/test_3.png)
+![](assets/02_classification/1_knn/examples/test_3.png)
 </center>
 -->
 <!-- ToDo: Adicionar três figuras nessa parte: (i) Pouca quantidade de pontos; (ii) Quantidade média de pontos; (iii) Grande quantidade de pontos -->
@@ -366,7 +366,7 @@ from sklearn.neighbors import KNeighborsClassifier
 <h3><span class="header-section-number">2.2.1</span> Conceitos gerais</h3>
 <p>As árvores de decisão são fundamentalmente formas de representação de conhecimento através de uma estrutura hierarquica de perguntas na forma <em>if-then-else</em>. Isso faz com que a estrutura das árvores de decisão sejam semelhantes a um fluxograma, onde existem nós que são utilizados para representar as perguntas e desses são derivados outros nós, que podem representar a resposta ou mesmo outra pergunta. Essa estrutura é apresentada na Figura <a href="classificação.html#fig:classDt1">2.10</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:classDt1"></span>
-<img src="assets/1_classification/2_decision-tree/01_dt.png" alt="Árvore de decisão - Fonte: Produção do autor" width="75%" />
+<img src="assets/02_classification/2_decision-tree/01_dt.png" alt="Árvore de decisão - Fonte: Produção do autor" width="75%" />
 <p class="caption">
 Figure 2.10: Árvore de decisão - Fonte: Produção do autor
 </p>
@@ -375,21 +375,21 @@ Figure 2.10: Árvore de decisão - Fonte: Produção do autor
 <p>Antes da aplicação em larga escala dos algoritmos de AM, essas estruturas já eram utilizadas, porém, com a diferença de que toda a sua criação era feita manualmente, através da aplicação do conhecimento vindo de pesquisas e experimentos empíricos. Por exemplo, um banco, antes do Aprendizado de Máquina, ao querer ser mais acertivo nos empréstimos e diminuir a inadimplência, poderia utilizar de seu histórico de empréstimos e criar regras consultáveis que poderiam ser utilizadas como auxílio aos operadores que realizam empréstimos. A representação das regras definidas poderia ser feita através de uma árvore de decisão sem problemas, mas, isso não caracterizada nada de aprendizado de máquina, já que todo o ‘processo de aprendizado’ foi feito manualmente por pessoas.</p>
 <p>Ao contrário disto, as árvores de decisão no contexto de AM são as responsáveis em olhar para os dados e decidir quais são as perguntas mais adequadas para uma determinada resposta. Isso é feito no algoritmo através de sucessivas divisões no conjunto de dados, de modo que, em cada divisão tem-se novos elementos adicionados na árvore. Para essa ideia ficar clara, vamos começar com um exemplo, neste, há um conjunto de pontos, onde cada cor representa uma classe. A árvore de decisão será treinada com esses dados de modo que novas classificações com base neste treinamento possam ser realizadas. O conjunto de dados e a representação da árvore são feitos na Figura <a href="classificação.html#fig:classDt2">2.11</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:classDt2"></span>
-<img src="assets/1_classification/2_decision-tree/02_dt.png" alt="Conjunto de dados 1 - Fonte: Produção do autor" width="75%" />
+<img src="assets/02_classification/2_decision-tree/02_dt.png" alt="Conjunto de dados 1 - Fonte: Produção do autor" width="75%" />
 <p class="caption">
 Figure 2.11: Conjunto de dados 1 - Fonte: Produção do autor
 </p>
 </div>
 <p>Com o conjunto de dados definido, o primeiro passo realizado pela árvore é avaliar quais são as características que melhor definem uma determinada classe. Após fazer isso, a árvore cria uma pergunta que faz com que essa característica identificada como a melhor possa ser utilizada para a divisão do conjunto de dados. Neste caso, a árvore identificou que o conjunto de pontos da classe <code>Vermelha</code> estão majoritariamente nas posições com X acima de 10, então, é criada uma pergunta na árvore que verifica quais elementos são maiores que dez, ao fazer isso a divisão do conjunto de dados é realizada e então novos nós são adicionados na árvore, veja na Figura <a href="classificação.html#fig:classDt3">2.12</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:classDt3"></span>
-<img src="assets/1_classification/2_decision-tree/03_dt.png" alt="Conjunto de dados 2 - Fonte: Produção do autor" width="75%" />
+<img src="assets/02_classification/2_decision-tree/03_dt.png" alt="Conjunto de dados 2 - Fonte: Produção do autor" width="75%" />
 <p class="caption">
 Figure 2.12: Conjunto de dados 2 - Fonte: Produção do autor
 </p>
 </div>
 <p>Se lembrarmos a definição feita anteriormente, temos que as árvores de decisão são estruturas recursivas, então, a mesma lógica de busca do elemento que melhor descreve um conjunto de dados e então a divisão é aplicado nos nós resultantes, isso é feito até que não haja mais elementos suficientes para a divisão ou quando em um nó, todos os elementos pertencem a apenas uma classe. Na Figura <a href="classificação.html#fig:classDt4">2.13</a> uma divisão é feita no nó esquerdo, gerado anteriormente, e no nó esquerdo não é feito mais nada.</p>
 <div class="figure" style="text-align: center"><span id="fig:classDt4"></span>
-<img src="assets/1_classification/2_decision-tree/04_dt.png" alt="Conjunto de dados 3 - Fonte: Produção do autor" width="79%" />
+<img src="assets/02_classification/2_decision-tree/04_dt.png" alt="Conjunto de dados 3 - Fonte: Produção do autor" width="79%" />
 <p class="caption">
 Figure 2.13: Conjunto de dados 3 - Fonte: Produção do autor
 </p>
@@ -430,7 +430,7 @@ Figure 2.13: Conjunto de dados 3 - Fonte: Produção do autor
 <p>Vamos começar com a seleção de atributos. Existem diversas métricas que podem auxiliar o algoritmo de criação da árvore de decisão a escolher os melhores atributos, sendo alguns deles o <code>Índice GINI</code> e o <code>Ganho de informação</code>. Neste documento, vamos considerar o uso da métrica de ganho de informação, neste, as divisões no conjunto de dados são feitas considerando a diminuição da entropia que esta vai causar no conjunto de dados.</p>
 <p>Calma, eu sei, é muito coisa de uma vez só, mas vamos por partes. Primeiro, a entropia é um conceito utilizado para determinar o grau de desordem do conjunto de dados. Antes de apresentar a fórmula, vamos dar uma olhada em diferentes conjuntos de dados e seus níveis de entropia.</p>
 <div class="figure" style="text-align: center"><span id="fig:classDt5"></span>
-<img src="assets/1_classification/2_decision-tree/05_dt.png" alt="Níveis de entropia - Fonte: Produção do autor" width="79%" />
+<img src="assets/02_classification/2_decision-tree/05_dt.png" alt="Níveis de entropia - Fonte: Produção do autor" width="79%" />
 <p class="caption">
 Figure 2.14: Níveis de entropia - Fonte: Produção do autor
 </p>
@@ -497,7 +497,7 @@ Figure 2.14: Níveis de entropia - Fonte: Produção do autor
 <p>Bom, nesta primeira etapa nossa árvore nem existe, é preciso definir para ela um ponto de partida, um atributo que será utilizada para dividir o conjunto de dados e então ir criando os ramos de decisão. Como vimos na seção anterior, vamos utilizar o <code>Ganho de informação</code> para realizar essa decisão. Então, para começar, vamos calcular o ganho de informação para cada uma dos atributos, afinal, se quisermos saber qual a melhor, precisamos testar todas.</p>
 <p>Para calcular o ganho de informação, precisamos primeiro calcular as entropias para os nós filhos que serão gerados caso este atributo seja o selecionado para a divisão. Para isso, aplicamos a divisão considerando o atributo e então, para cada nó gerado, calculamos a entropia. Por exemplo, no caso do atributo <code>Está chovendo?</code>, a divisão gerou dois nós. Um para o valor <code>Sim</code> e outro para o <code>Não</code>. Dentro desses dois nós é feita a inserção dos elementos correspondentes. No caso de quando <code>Está chovendo?</code> for <code>Sim</code>, o único transporte possível é o <code>Ônibus</code>, então, ele é o único inserido no nó resultante. O mesmo vale para quando a resposta é <code>Não</code>, mas para esta resposta, são possíveis os transportes <code>Ônibus</code> e <code>Caminhada</code>. A Figura <a href="classificação.html#fig:classDt6">2.15</a> apresenta a aplicação desta lógica em ambas os atributos (<code>Está chovendo?</code> e <code>Está com tempo?</code>)</p>
 <div class="figure" style="text-align: center"><span id="fig:classDt6"></span>
-<img src="assets/1_classification/2_decision-tree/06_dt.png" alt="Entropia dos nós filhos - Fonte: Produção do autor" width="100%" />
+<img src="assets/02_classification/2_decision-tree/06_dt.png" alt="Entropia dos nós filhos - Fonte: Produção do autor" width="100%" />
 <p class="caption">
 Figure 2.15: Entropia dos nós filhos - Fonte: Produção do autor
 </p>
@@ -532,7 +532,7 @@ Figure 2.15: Entropia dos nós filhos - Fonte: Produção do autor
 <h3><span class="header-section-number">2.2.3</span> Problemas com overfitting</h3>
 <p>Assim como qualquer outro algoritmo de ML supervisiondo, as árvores de decisão podem sofrer com fenômeno de <em>Overfitting</em> e <em>Underfitting</em>. Com um algoritmo de treinamento de caracter ganancioso, as árvores de decisão, no momento em que estão sendo geradas, podem acabar criando uma quantidade enorme de nós de decisão para minimizar a entropia de seus nós <span class="citation">(Aggarwal, n.d.)</span>. O contrário disso acaba gerando regras que não são o suficiente para caracterizar os dados e então generalizar as operações. A Figura <a href="classificação.html#fig:classDtOverUnder">2.16</a> faz a ilustração desses fenômenos considerando a necessidade de identificação de um lenhador.</p>
 <div class="figure" style="text-align: center"><span id="fig:classDtOverUnder"></span>
-<img src="assets/1_classification/decisionoverfitting.png" alt="Representação do Overfitting e Underfitting - Fonte: Produção do autor" width="70%" />
+<img src="assets/02_classification/decisionoverfitting.png" alt="Representação do Overfitting e Underfitting - Fonte: Produção do autor" width="70%" />
 <p class="caption">
 Figure 2.16: Representação do Overfitting e Underfitting - Fonte: Produção do autor
 </p>

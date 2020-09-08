@@ -53,7 +53,7 @@ organização foi possível encontrar diversos **grupos** de livros separados po
 gênero, como apresentado na Figura \@ref(fig:clustering-book).
 </p>
 
-```{r clustering-book, echo=FALSE, fig.align="center", fig.show = "hold", fig.cap='Antes e depois da organização da prateleira de livros em grupos baseados em gênero.'}
+```{r clustering-book, echo=FALSE, fig.align="center", fig.show = "hold", out.width="100%", fig.cap='Antes e depois da organização da prateleira de livros em grupos baseados em gênero.'}
 knitr::include_graphics("./assets/04_clustering/clustering.png") 
 ```
 
@@ -117,7 +117,7 @@ do conjunto de dados, conforme ilustrado, em que um objeto no
 **Grupo 8** possui os valores de $X = 8$ e $Y = 8$.
 </p>
 
-```{r agrup-exemplo, echo=FALSE, fig.align="center", fig.show = "hold", out.width = "50%", fig.cap='Exemplo de dois agrupamentos em um plano com duas dimensões (X,Y). Observam-se 3 grupos em a) e 8 grupos em b). Adaptado de @esling2012time '}
+```{r agrup-exemplo, echo=FALSE, fig.align="center", fig.show = "hold", out.width = "70%", fig.cap='Exemplo de dois agrupamentos em um plano com duas dimensões (X,Y). Observam-se 3 grupos em a) e 8 grupos em b). Adaptado de @esling2012time '}
 # refazer essa figura
 knitr::include_graphics(c("./assets/04_clustering/clust_1_ex.png", "./assets/04_clustering/clust_2_ex.png")) 
 ```
@@ -177,7 +177,7 @@ de agrupamento nebulosas (em inglês, *fuzzy clustering*). A Figura
 as linhas pretas demarcam cada partição.
 </p>
 
-```{r centroid-based, echo=FALSE, fig.align="center", fig.show = "hold", fig.cap='Exemplo de um agrupamento beaseado em partição. As linhas pretas demarcam as partições e as formas geométricas preenchidas os centróides. Adaptado de @google2020'}
+```{r centroid-based, echo=FALSE, fig.align="center", fig.show = "hold", out.width="100%", fig.cap='Exemplo de um agrupamento beaseado em partição. As linhas pretas demarcam as partições e as formas geométricas preenchidas os centróides. Adaptado de @google2020'}
 knitr::include_graphics("./assets/04_clustering/centroid_bases.png") 
 ```
 
@@ -203,7 +203,7 @@ para criar os grupos. Os métodos hierárquicos podem ser divididos em
 AGNES (*Agglomerative Nesting*), considera-se, inicialmente, que cada objeto seja seu próprio grupo, e a cada iteração, os dois grupos mais parecidos são juntados, desta forma, formando um novo um grupo, esse processo é repetido até que todos os objetos estejam em um único grupo. De modo oposto, o método **divisivo**, também conhecido como DIANA (*Divise Analysis*), considera-se que todos objetos pertencem a um único grupo, e posteriormente, divide-se o único grupo até obter-se um grupo para cada objeto ou até que um critério de párada seja atendido [@han2011data].
 </p>
 
-```{r hierarquical-based, echo=FALSE, fig.align="center", fig.show = "hold", fig.cap='Exemplo do processo de criação de grupos baseado nas técnicas de agrupamento hierarquicas. - Fonte: @han2011data'}
+```{r hierarquical-based, echo=FALSE, fig.align="center", fig.show = "hold", out.width="100%", fig.cap='Exemplo do processo de criação de grupos baseado nas técnicas de agrupamento hierarquicas. - Fonte: @han2011data'}
 knitr::include_graphics("./assets/04_clustering/metodo_hierarquico.png") 
 ```
 
@@ -221,7 +221,7 @@ base na semelhança dos objetos dentro do grupo.
 Uma técnica que auxilia na interpretação dos agrupamentos hierárquicos é o dendrograma, apresentado na Figura \@ref(fig:dend-based), representado em forma de árvore, nele é possível obter informações sobre a estrutura do agrupamento realizado. No nível 0 é possível observar os objetos em seus próprios grupos, e, conforme o nível da árvore aumenta em relação a sua raiz, menor são as similaridades entre os objetos do mesmo grupo [@han2011data]. 
 </p>
 
-```{r dend-based, echo=FALSE, fig.align="center", fig.show = "hold", fig.cap='Exemplo de representação do agrupamento hierarquico. - Fonte: @han2011data'}
+```{r dend-based, echo=FALSE, fig.align="center", fig.show = "hold", out.width="100%", fig.cap='Exemplo de representação do agrupamento hierarquico. - Fonte: @han2011data'}
 knitr::include_graphics("./assets/04_clustering/den_eg_1.png") 
 ```
 
@@ -250,7 +250,7 @@ objetos em um plano cartesiano (X,Y).
 </p>
 
 
-```{r kmeans-dataset, echo=FALSE ,fig.align="center", fig.cap='Conjunto de dados utilizado como exemplo.'}
+```{r kmeans-dataset, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Conjunto de dados utilizado como exemplo.'}
   knitr::include_graphics("assets/04_clustering/kmeans_conjunto_de_dados.png")
 ```
 
@@ -270,7 +270,7 @@ com seu centróide.
 </p>
 
 
-```{r kmeans-algorithm, echo=FALSE ,fig.align="center", fig.cap='Exemplo de funcionamento do algoritmo Kmeans.'}
+```{r kmeans-algorithm, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Exemplo de funcionamento do algoritmo Kmeans.'}
   knitr::include_graphics("assets/04_clustering/kmeans_algoritmo.png")
 ```
 
@@ -309,7 +309,7 @@ achar a nova posição do centróide. Caso, não haja alterações nos valores d
 centróides, o algoritmo pára. Caso não, o processo se repete: os centróides são atualizados e os objetos são atribuídos a cada grupo.
 </p>
 
-```{r kmeans-algorithm-2, echo=FALSE ,fig.align="center", fig.cap='Exemplo de funcionamento do algoritmo Kmeans.'}
+```{r kmeans-algorithm-2, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Exemplo de funcionamento do algoritmo Kmeans.'}
   knitr::include_graphics("assets/04_clustering/kmeans_algoritmo_2.png")
 ```
 
@@ -393,7 +393,7 @@ objeto por grupo.
 </p>
 
 
-```{r kmeans-elbow, echo=FALSE ,fig.align="center", fig.cap='Método do cotovelo aplicado no conjunto de dados de exemplo.'}
+```{r kmeans-elbow, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Método do cotovelo aplicado no conjunto de dados de exemplo.'}
   knitr::include_graphics("assets/04_clustering/metodo_cotovelo.png")
 ```
 
@@ -409,7 +409,7 @@ acima do cotovelo estão em uma região de *underfitting* e abaixo dele em *over
 <p align="justify">
 O método de Silhueta determina o quão bem cada objeto está alocado em um grupo, ou seja, a homogeneidade de um grupo. O índice de Silhueta varia de -1 a 1. Valores próximos a 1 indicam que o objeto possui semelhança com objetos de seu grupo e dessemelhança com objetos de outros grupos.  
 </p>
-```{r kmeans-silhueta, echo=FALSE ,fig.align="center", fig.cap='Método de Silhueta aplicado no conjunto de dados de exemplo.'}
+```{r kmeans-silhueta, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Método de Silhueta aplicado no conjunto de dados de exemplo.'}
   knitr::include_graphics("assets/04_clustering/indice_silhueta.png")
 ```
 
@@ -462,7 +462,7 @@ no qual é possível observar 6 objetos (A,B,C,E,F) em um plano cartesiano (X,Y)
 
 > Os objetos foram marcados para facilitar a visualização do dendograma.
 
-```{r hierarquico-dataset, echo=FALSE ,fig.align="center", fig.cap='Conjunto de dados utilizado como exemplo.'}
+```{r hierarquico-dataset, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Conjunto de dados utilizado como exemplo.'}
   knitr::include_graphics("assets/04_clustering/dataset_hierarquico.png")
 ```
 
@@ -472,7 +472,7 @@ seja seu próprio grupo, e, com isso, a cada iteração os grupos vão se juntan
 combinando os objetos dentro deles. O primeiro passo dos algoritmos hierárquicos, abrangendo às duas categorias, divisivos e aglomerativo, é calcular a matriz de distância entre todos os objetos. A Figura \@ref(fig:hierarquico-alg-0) mostra um exemplo do cálculo da distância do objeto **A** entre os outros.
 </p>
 
-```{r hierarquico-alg-0, echo=FALSE ,fig.align="center", fig.cap='Conjunto de dados utilizado como exemplo.'}
+```{r hierarquico-alg-0, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Conjunto de dados utilizado como exemplo.'}
   knitr::include_graphics("assets/04_clustering/dendograma_0.png")
 ```
 
@@ -493,7 +493,7 @@ Dendrograma é possível observar essas distância no eixo de **Altura**.
 
 
 
-```{r hierarquico-alg-1, echo=FALSE ,fig.align="center", fig.cap='Etapa de junção dos objetos.'}
+```{r hierarquico-alg-1, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Etapa de junção dos objetos.'}
   knitr::include_graphics("assets/04_clustering/dendograma_1.png")
 ```
 
@@ -504,7 +504,7 @@ ligação mencionados, em **A)** temos a ligação completa, que visa juntar os 
 única, que faz a junção de modo oposto do que vimos em **A)**, usando os objetos mais próximos de cada grupo, e em **C)** temos a ligação pela média, que visa realizar a junção por meio da média das distâncias entre cada objeto dos dois grupos. 
 </p>
 
-```{r hierarquico-alg-2, echo=FALSE ,fig.align="center", fig.cap='Etapa de junção dos grupos.'}
+```{r hierarquico-alg-2, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Etapa de junção dos grupos.'}
   knitr::include_graphics("assets/04_clustering/dendograma_2.png")
 ```
 
@@ -519,7 +519,7 @@ final apenas um grupo engloba todo os objetos. Na junção do grupo que engloba 
 ligação única e por média. Lembrando que o dendrograma mostra a distância entre os grupos por meio do eixo de altura. Desta forma, o dendrograma varia com o método de ligação. Por exemplo, o dendrograma do método de ligação única é mais achatado, visto que a maior altura corresponde a 2.06.
 
 </p>
-```{r hierarquico-alg-3, echo=FALSE ,fig.align="center", fig.cap='Etapa de junção dos grupos - Parte 2.'}
+```{r hierarquico-alg-3, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Etapa de junção dos grupos - Parte 2.'}
   knitr::include_graphics("assets/04_clustering/dendograma_3.png")
 ```
 
@@ -565,7 +565,7 @@ Como vimos, o dendrograma mostra a hierarquia do nosso agrupamento com o formato
 \@ref(fig:hierarquico-cut) mostra a aplicação do método aglomerativo por meio de ligação completa no conjunto de dados utilizado no exemplo do Kmeans, os $K$ em cada dendrograma é o nível em que o corte foi realizado. Desta forma, cortando um nível abaixo da raiz, ou seja, $k = 2$, obteve-se dois grupos, com $k = 5$, obteve-se cinco grupos, e assim por diante. O corte no dendrograma nos dá uma visão dos grupos intrínsecos em cada nó da árvore, o que pode auxiliar no entendimento do conjunto de dados
 </p>
 
-```{r hierarquico-cut, echo=FALSE ,fig.align="center", fig.cap='Cortes nos dendrogramas para visualização dos grupos.'}
+```{r hierarquico-cut, echo=FALSE ,fig.align="center", out.width="100%",fig.cap='Cortes nos dendrogramas para visualização dos grupos.'}
   knitr::include_graphics("assets/04_clustering/dendograma_cut.png")
 ```
 

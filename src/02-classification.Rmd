@@ -25,7 +25,7 @@ Complicado né ? Felizmente para tarefas em que o problema é a identificação 
 Para o uso dos algoritmos que realizam as atividades de **Classificação**, por eles pertencerem ao grupo de algoritmos supervisionados, o que precisamos é criar de um conjunto de *e-mails* SPAM e então treinar o algoritmo para aprender as características mais relevantes dos SPAMs. Uma vez treinado, o algoritmo pode ser utilizado para identificar *e-mails* nunca antes vistos, já que ele mapeou as principais características, diferente da nossa ideia inicia de código, onde estávamos trabalhando com características específicas. 
 
 ```{r emailClassifier, echo=FALSE, fig.align='center', out.width = "70%", fig.cap='Classificação de e-mails com ML - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/email_classifier.png")
+knitr::include_graphics("assets/02_classification/email_classifier.png")
 ```
 
 Esta seção busca apresentar alguns dos principais algoritmos de ML supervisionado que podem ser utilizados para a realização das atividades de classificação. Serão apresentados os algoritmos `k-Nearest Neighbors` e `Árvore de Decisão`.
@@ -68,13 +68,13 @@ Agora, com o objetivo de deixar tudo mais claro, vamos para um exemplo visual, p
 Os pontos de treinamento são apresentados na Figura \@ref(fig:classKnn1).
 
 ```{r classKnn1, echo=FALSE, fig.align='center', out.width = "45%", fig.cap='Espaço euclidiano 1 - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/1_knn/knn_01.png")
+knitr::include_graphics("assets/02_classification/1_knn/knn_01.png")
 ```
 
 Beleza! Então, com esse conjunto de dados, vamos adicionar um novo ponto, este é representado pelo ponto vermelho na figura abaixo. Perceba que, este é uma amostra que representa o conjunto de teste, e que, ao ser inserido neste espaço, ele não possui nenhum rótulo definido.
 
 ```{r classKnn2, echo=FALSE, fig.align='center', out.width = "45%", fig.cap='Espaço euclidiano 2 - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/1_knn/knn_02.png")
+knitr::include_graphics("assets/02_classification/1_knn/knn_02.png")
 ```
 
 Certo! Então já temos nosso problema de classificação definido, vamos resolver ele com o kNN. Aqui, o valor de *k* = 5 (Não se preocupe, vamos voltar nesse valor de *k* depois), ou seja, na primeira parte do algoritmo, análise de vizinhança, vamos buscar os 5 elementos mais próximos ao ponto vermelho.
@@ -82,25 +82,25 @@ Certo! Então já temos nosso problema de classificação definido, vamos resolv
 Feito essas considerações, vamos de maneira manual fazer a aplicação do algoritmo, começando com o primeiro passo, de análise de vizinhança, feito com o cálculo das distâncias. Aqui, você vai perceber que a distância utilizada foi a euclidiana, que apresentamos anteriormente.
 
 ```{r classKnn3, echo=FALSE, fig.align='center', out.width = "45%", fig.cap='Calculo de distância - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/1_knn/knn_03.png")
+knitr::include_graphics("assets/02_classification/1_knn/knn_03.png")
 ```
 
 Com as distâncias calculadas a segunda parte do algoritmo, de determinação do rótulo com base nos vizinhos pode ser iniciada. Para isso, primeiro faz-se a seleção dos 5 elementos mais próximos.
 
 ```{r classKnn4, echo=FALSE, fig.align='center', out.width = "45%", fig.cap='Seleção dos vizinhos mais próximos - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/1_knn/knn_04.png")
+knitr::include_graphics("assets/02_classification/1_knn/knn_04.png")
 ```
 
 Com os vizinhos mais próximos determinados, é feito a contagem desses, separando cada um desses por rótulo, de modo que, a vizinhança é sumarizada em quantidade de elementos por rótulo, como apresentado na Figura \@ref(fig:classKnn5).
 
 ```{r classKnn5, echo=FALSE, fig.align='center', out.width = "70%", fig.cap='Contagem dos vizinhos mais próximos - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/1_knn/knn_05.png")
+knitr::include_graphics("assets/02_classification/1_knn/knn_05.png")
 ```
 
 Então, é feita a determinação do rótulo do ponto que está sendo classificado, que como podemos ver, vai receber o rótulo laranja, uma vez que, esta é a classe que mais aparece na vizinhança do ponto vermelho.
 
 ```{r classKnn6, echo=FALSE, fig.align='center', out.width = "70%", fig.cap='Definição da classe - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/1_knn/knn_06.png")
+knitr::include_graphics("assets/02_classification/1_knn/knn_06.png")
 ```
 
 É desta forma que os passos que vimos do algoritmo kNN são materializados frente a um conjunto de dados. Viu que legal! O que o algoritmo faz é exatamente aquilo que está na frase que apresentamos antes.
@@ -116,7 +116,7 @@ Bem, essa é uma boa pergunta e mais que isso, é uma pergunta importante! Fazer
 Segundo @lantz2013machine, quando valores muito grandes de $K$ são escolhidos, tem-se uma redução do impacto causado por dados ruidosos, mas, pode fazer com que o algoritmo deixe de considerar características sucintas que estão nos dados, mas que são importantes para a correta determinação dos rótulos. Por outro lado, valores de $K$ menores permitem o entendimento de características mais sofisticadas dos dados, mas sofrem muita influência de dados ruidosos. A Figura \@ref(fig:chooseKinKnn) faz uma representação da maneira como o processo de decisão para a determinação da classe pode ser tomado, neste, é possível perceber que os valores de $K$ .
 
 ```{r chooseKinKnn, echo=FALSE, fig.align='center', out.width = "70%", fig.cap='Definição da classe - Fonte: Adaptado de @lantz2013machine'}
-knitr::include_graphics("assets/1_classification/choose_k.png")
+knitr::include_graphics("assets/02_classification/choose_k.png")
 ```
 
 Desta forma, a determinação do valor de $K$ deve ser feita considerando os dados e as características que precisam ser mapeadas desses.
@@ -126,7 +126,7 @@ Desta forma, a determinação do valor de $K$ deve ser feita considerando os dad
 Como você pode ter pensando, esse pode não ser um algoritmo computacionalmente muito barato, já que, o cálculo de distância nesse algoritmo que apresentamos, é sempre calculado entre todos os pontos do conjunto de treinamento com o conjunto de teste, o que se pensarmos em apenas poucas quantidades de pontos pode não ser um problema, mas que, com a crescente na quantidade, pode ser inviável. Para isso, considere a Figura \@ref(fig:classKnn7), imagina que o ponto vermelho vai ser classificado, a distância dele para todos os outros pontos terá de ser determinada.
 
 ```{r classKnn7, echo=FALSE, fig.align='center', out.width = "89%", fig.cap='Níveis de complexidade - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/1_knn/knn_07.png")
+knitr::include_graphics("assets/02_classification/1_knn/knn_07.png")
 ```
 
 Como forma de reduzir essa complexidade e a quantidade de elementos que precisam ser contabilizados no cálculo da distância, várias implementações aplicam passos de indexação, com estruturas de dados como a KD-Tree e Quad-Tree, como é o caso do [scikit-learn](https://scikit-learn.org/). Essa abordagem de implementação evita com que todos os pontos tenham de ser calculados, possibilitando assim que apenas os pontos necessários sejam contabilizados nos cálculos de distância.
@@ -140,7 +140,7 @@ Como foi possível perceber o kNN é um algoritmo simples e pode ser implementad
 Para começar, os dados utilizados estão disponíveis no arquivo knnpoints.csv e a visualização desses está disponível na Figura abaixo
 
 <center>
-![](assets/1_classification/1_knn/examples/pointviz.png)
+![](assets/02_classification/1_knn/examples/pointviz.png)
 </center>
 
 Abaixo é apresentado a maneira a qual o scikit-learn é importado para ser utilizado
@@ -156,19 +156,19 @@ from sklearn.neighbors import KNeighborsClassifier
 ```
 
 <center>
-![](assets/1_classification/1_knn/examples/test_1.png)
+![](assets/02_classification/1_knn/examples/test_1.png)
 </center>
 
 #### Exemplo 2
 
 <center>
-![](assets/1_classification/1_knn/examples/test_2.png)
+![](assets/02_classification/1_knn/examples/test_2.png)
 </center>
 
 #### Exemplo 3
 
 <center>
-![](assets/1_classification/1_knn/examples/test_3.png)
+![](assets/02_classification/1_knn/examples/test_3.png)
 </center>
 -->
 
@@ -191,7 +191,7 @@ As árvores de decisão são fundamentalmente formas de representação de conhe
 
 
 ```{r classDt1, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Árvore de decisão - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/2_decision-tree/01_dt.png")
+knitr::include_graphics("assets/02_classification/2_decision-tree/01_dt.png")
 ```
 
 Para nos familiarizarmos com os conceitos que estão envolvidos nessa representação, vamos olhar com calma cada um dos detalhes presentes na figura. Primeiro, a leitura desse tipo de árvore é feita sempre de cima para baixo já que a raiz da árvore está sempre no topo, como é o caso da `Pergunta 1` neste exemplo. Além disso, note também que nessa estrutura existem dois tipos de elementos, as `Perguntas` e as `Respostas`, onde, das `Perguntas` podem sair outras dessas ou mesmo `Respostas`. As `Respostas` representam elementos finais e quando aparecem nada pode ser inserido abaixo. Outra coisa importante de ser citada é a característica recursiva das árvores de decisão, nessas, para cada ramo que é seguido após uma pergunta há uma nova árvore, que é criada através das mesmas regras de definição aplicadas na árvore anterior.
@@ -202,21 +202,21 @@ Ao contrário disto, as árvores de decisão no contexto de AM são as responsá
 
 
 ```{r classDt2, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Conjunto de dados 1 - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/2_decision-tree/02_dt.png")
+knitr::include_graphics("assets/02_classification/2_decision-tree/02_dt.png")
 ```
 
 Com o conjunto de dados definido, o primeiro passo realizado pela árvore é avaliar quais são as características que melhor definem uma determinada classe. Após fazer isso, a árvore cria uma pergunta que faz com que essa característica identificada como a melhor possa ser utilizada para a divisão do conjunto de dados. Neste caso, a árvore identificou que o conjunto de pontos da classe `Vermelha` estão majoritariamente nas posições com X acima de 10, então, é criada uma pergunta na árvore que verifica quais elementos são maiores que dez, ao fazer isso a divisão do conjunto de dados é realizada e então novos nós são adicionados na árvore, veja na Figura \@ref(fig:classDt3).
 
 
 ```{r classDt3, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Conjunto de dados 2 - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/2_decision-tree/03_dt.png")
+knitr::include_graphics("assets/02_classification/2_decision-tree/03_dt.png")
 ```
 
 
 Se lembrarmos a definição feita anteriormente, temos que as árvores de decisão são estruturas recursivas, então, a mesma lógica de busca do elemento que melhor descreve um conjunto de dados e então a divisão é aplicado nos nós resultantes, isso é feito até que não haja mais elementos suficientes para a divisão ou quando em um nó, todos os elementos pertencem a apenas uma classe. Na Figura \@ref(fig:classDt4) uma divisão é feita no nó esquerdo, gerado anteriormente, e no nó esquerdo não é feito mais nada.
 
 ```{r classDt4, echo=FALSE, fig.align='center', out.width = "79%", fig.cap='Conjunto de dados 3 - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/2_decision-tree/04_dt.png")
+knitr::include_graphics("assets/02_classification/2_decision-tree/04_dt.png")
 ```
 Vamos supor agora que a árvore apresentada na Figura \ref@(fig:class_dt4) finalizou seu treinamento, de modo que classificações podem ser iniciadas. Você pode se perguntar, mas em alguns nós da árvore há uma mistura de elementos, como ele vai fazer a identificação da classe ? Bem, este é um problema recorrente na aplicação das árvores de decisão, nem sempre, as regras escolhidas vão criar grupos de dados 100% puros (de uma única classe). Mais regras poderia ser adicionadas, mas ai, caimos no problema de *overfitting*, onde a árvore começa a criar regras específicas para os dados que estão sendo utilizados no treinamento, o que faz seu desempenho ser muito ruim com dados que não sejam do conjunto utilizado no treino. Com relação a definição da classe, o que é feito é definir a classe do nó gerado, considerando a classe mais representativa de cada nó, então, se formos classificar um novo ponto e ele tem X > 10, ele vai ser colocado como classe `Vermelha` no conjunto de dados.
 
@@ -247,7 +247,7 @@ Calma, eu sei, é muito coisa de uma vez só, mas vamos por partes. Primeiro, a 
 
 
 ```{r classDt5, echo=FALSE, fig.align='center', out.width = "79%", fig.cap='Níveis de entropia - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/2_decision-tree/05_dt.png")
+knitr::include_graphics("assets/02_classification/2_decision-tree/05_dt.png")
 ```
 
 Perceba que, nos conjuntos de dados apresentados na Figura \@ref(fig:classDt5), quando menos mistura (Entenda como confusão neste caso) eu tenho no conjunto de dados, menor é a entropia do sistema. Então, a ideia base do ganho de informação é ir fazendo divisões de modo que os espaços resultantes da divisão tenham a menor entropia possível. Agora que já sabemos o que é, vejamos a fórmula da entropia:
@@ -296,7 +296,7 @@ Para calcular o ganho de informação, precisamos primeiro calcular as entropias
 
 
 ```{r classDt6, echo=FALSE, fig.align='center', out.width = "100%", fig.cap='Entropia dos nós filhos - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/2_decision-tree/06_dt.png")
+knitr::include_graphics("assets/02_classification/2_decision-tree/06_dt.png")
 ```
 
 Com a entropia contabilizada para cada nó filho, de cada um dos atributos, o ganho de informação pode ser calculado. Vamos então começar calculando a entropia do nó pai, que como visto anteriormente, basicamente representa a entropia da divisão atual dos dados, que neste primeiro momento vai considerar todo o conjunto de dados. Lembre-se de que o calculo é feito considerando o atributo de classe, neste caso `Transporte`.
@@ -334,7 +334,7 @@ Acho que agora você consegue perceber o motivo deste ser um dos métodos de apr
 Assim como qualquer outro algoritmo de ML supervisiondo, as árvores de decisão podem sofrer com fenômeno de *Overfitting* e *Underfitting*. Com um algoritmo de treinamento de caracter ganancioso, as árvores de decisão, no momento em que estão sendo geradas, podem acabar criando uma quantidade enorme de nós de decisão para minimizar a entropia de seus nós [@Aggarwal2015]. O contrário disso acaba gerando regras que não são o suficiente para caracterizar os dados e então generalizar as operações. A Figura \@ref(fig:classDtOverUnder) faz a ilustração desses fenômenos considerando a necessidade de identificação de um lenhador. 
 
 ```{r classDtOverUnder, echo=FALSE, fig.align='center', out.width = "70%", fig.cap='Representação do Overfitting e Underfitting - Fonte: Produção do autor'}
-knitr::include_graphics("assets/1_classification/decisionoverfitting.png")
+knitr::include_graphics("assets/02_classification/decisionoverfitting.png")
 ```
 
 Note na Figura \@ref(fig:classDtOverUnder) que, para o caso de *Overfitting*, uma maior quantidade de regras vai ser gerada, fazendo com que a árvore de decisão aprenda sobre coisas que não são relevantes para a identificação, com o estilo do chapeu do lenhador. Por outro lado, no caso do *Overfitting*, tem-se que as regras criadas não conseguem capturar as informações úteis dos dados.

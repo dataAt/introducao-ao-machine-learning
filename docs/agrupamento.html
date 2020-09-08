@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Agrupamento | 01-introduction.split</title>
-  <meta name="description" content="" />
+  <title>4 Agrupamento | Introdução</title>
+  <meta name="description" content="4 Agrupamento | Introdução" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Agrupamento | 01-introduction.split" />
+  <meta property="og:title" content="4 Agrupamento | Introdução" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Agrupamento | 01-introduction.split" />
+  <meta name="twitter:title" content="4 Agrupamento | Introdução" />
   
   
   
@@ -180,7 +180,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introdução</a>
           </h1>
         </div>
 
@@ -223,7 +223,7 @@ organização foi possível encontrar diversos <strong>grupos</strong> de livros
 gênero, como apresentado na Figura <a href="agrupamento.html#fig:clustering-book">4.1</a>.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:clustering-book"></span>
-<img src="assets/clustering.png" alt="Antes e depois da organização da prateleira de livros em grupos baseados em gênero." width="246" />
+<img src="assets/04_clustering/clustering.png" alt="Antes e depois da organização da prateleira de livros em grupos baseados em gênero." width="100%" />
 <p class="caption">
 Figure 4.1: Antes e depois da organização da prateleira de livros em grupos baseados em gênero.
 </p>
@@ -284,7 +284,7 @@ do conjunto de dados, conforme ilustrado, em que um objeto no
 <strong>Grupo 8</strong> possui os valores de <span class="math inline">\(X = 8\)</span> e <span class="math inline">\(Y = 8\)</span>.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:agrup-exemplo"></span>
-<img src="assets/clust_1_ex.png" alt="Exemplo de dois agrupamentos em um plano com duas dimensões (X,Y). Observam-se 3 grupos em a) e 8 grupos em b). Adaptado de @esling2012time " width="50%" /><img src="assets/clust_2_ex.png" alt="Exemplo de dois agrupamentos em um plano com duas dimensões (X,Y). Observam-se 3 grupos em a) e 8 grupos em b). Adaptado de @esling2012time " width="50%" />
+<img src="assets/04_clustering/clust_1_ex.png" alt="Exemplo de dois agrupamentos em um plano com duas dimensões (X,Y). Observam-se 3 grupos em a) e 8 grupos em b). Adaptado de @esling2012time " width="70%" /><img src="assets/04_clustering/clust_2_ex.png" alt="Exemplo de dois agrupamentos em um plano com duas dimensões (X,Y). Observam-se 3 grupos em a) e 8 grupos em b). Adaptado de @esling2012time " width="70%" />
 <p class="caption">
 Figure 4.2: Exemplo de dois agrupamentos em um plano com duas dimensões (X,Y). Observam-se 3 grupos em a) e 8 grupos em b). Adaptado de <span class="citation">Esling and Agon (2012)</span>
 </p>
@@ -343,7 +343,7 @@ de agrupamento nebulosas (em inglês, <em>fuzzy clustering</em>). A Figura
 as linhas pretas demarcam cada partição.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:centroid-based"></span>
-<img src="assets/centroid_bases.png" alt="Exemplo de um agrupamento beaseado em partição. As linhas pretas demarcam as partições e as formas geométricas preenchidas os centróides. Adaptado de @google2020" width="260" />
+<img src="assets/04_clustering/centroid_bases.png" alt="Exemplo de um agrupamento beaseado em partição. As linhas pretas demarcam as partições e as formas geométricas preenchidas os centróides. Adaptado de @google2020" width="100%" />
 <p class="caption">
 Figure 4.3: Exemplo de um agrupamento beaseado em partição. As linhas pretas demarcam as partições e as formas geométricas preenchidas os centróides. Adaptado de <span class="citation">Developers (2020)</span>
 </p>
@@ -370,7 +370,7 @@ para criar os grupos. Os métodos hierárquicos podem ser divididos em
 AGNES (<em>Agglomerative Nesting</em>), considera-se, inicialmente, que cada objeto seja seu próprio grupo, e a cada iteração, os dois grupos mais parecidos são juntados, desta forma, formando um novo um grupo, esse processo é repetido até que todos os objetos estejam em um único grupo. De modo oposto, o método <strong>divisivo</strong>, também conhecido como DIANA (<em>Divise Analysis</em>), considera-se que todos objetos pertencem a um único grupo, e posteriormente, divide-se o único grupo até obter-se um grupo para cada objeto ou até que um critério de párada seja atendido <span class="citation">(Han, Pei, and Kamber 2011)</span>.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:hierarquical-based"></span>
-<img src="assets/metodo_hierarquico.png" alt="Exemplo do processo de criação de grupos baseado nas técnicas de agrupamento hierarquicas. - Fonte: @han2011data" width="281" />
+<img src="assets/04_clustering/metodo_hierarquico.png" alt="Exemplo do processo de criação de grupos baseado nas técnicas de agrupamento hierarquicas. - Fonte: @han2011data" width="100%" />
 <p class="caption">
 Figure 4.4: Exemplo do processo de criação de grupos baseado nas técnicas de agrupamento hierarquicas. - Fonte: <span class="citation">Han, Pei, and Kamber (2011)</span>
 </p>
@@ -388,7 +388,7 @@ base na semelhança dos objetos dentro do grupo.
 Uma técnica que auxilia na interpretação dos agrupamentos hierárquicos é o dendrograma, apresentado na Figura <a href="agrupamento.html#fig:dend-based">4.5</a>, representado em forma de árvore, nele é possível obter informações sobre a estrutura do agrupamento realizado. No nível 0 é possível observar os objetos em seus próprios grupos, e, conforme o nível da árvore aumenta em relação a sua raiz, menor são as similaridades entre os objetos do mesmo grupo <span class="citation">(Han, Pei, and Kamber 2011)</span>.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:dend-based"></span>
-<img src="assets/den_eg_1.png" alt="Exemplo de representação do agrupamento hierarquico. - Fonte: @han2011data" width="234" />
+<img src="assets/04_clustering/den_eg_1.png" alt="Exemplo de representação do agrupamento hierarquico. - Fonte: @han2011data" width="100%" />
 <p class="caption">
 Figure 4.5: Exemplo de representação do agrupamento hierarquico. - Fonte: <span class="citation">Han, Pei, and Kamber (2011)</span>
 </p>
@@ -418,7 +418,7 @@ apresentado na Figura <a href="agrupamento.html#fig:kmeans-dataset">4.6</a>, no 
 objetos em um plano cartesiano (X,Y).
 </p>
 <div class="figure" style="text-align: center"><span id="fig:kmeans-dataset"></span>
-<img src="assets/kmeans_conjunto_de_dados.png" alt="Conjunto de dados utilizado como exemplo." width="176" />
+<img src="assets/04_clustering/kmeans_conjunto_de_dados.png" alt="Conjunto de dados utilizado como exemplo." width="100%" />
 <p class="caption">
 Figure 4.6: Conjunto de dados utilizado como exemplo.
 </p>
@@ -438,7 +438,7 @@ centróide, assim, o objeto é atribuído ao grupo em que possui a menor distân
 com seu centróide.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:kmeans-algorithm"></span>
-<img src="assets/kmeans_algoritmo.png" alt="Exemplo de funcionamento do algoritmo Kmeans." width="390" />
+<img src="assets/04_clustering/kmeans_algoritmo.png" alt="Exemplo de funcionamento do algoritmo Kmeans." width="100%" />
 <p class="caption">
 Figure 4.7: Exemplo de funcionamento do algoritmo Kmeans.
 </p>
@@ -476,7 +476,7 @@ achar a nova posição do centróide. Caso, não haja alterações nos valores d
 centróides, o algoritmo pára. Caso não, o processo se repete: os centróides são atualizados e os objetos são atribuídos a cada grupo.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:kmeans-algorithm-2"></span>
-<img src="assets/kmeans_algoritmo_2.png" alt="Exemplo de funcionamento do algoritmo Kmeans." width="412" />
+<img src="assets/04_clustering/kmeans_algoritmo_2.png" alt="Exemplo de funcionamento do algoritmo Kmeans." width="100%" />
 <p class="caption">
 Figure 4.8: Exemplo de funcionamento do algoritmo Kmeans.
 </p>
@@ -555,7 +555,7 @@ com diferentes números de grupos, com o incremento do número de grupos, o erro
 objeto por grupo.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:kmeans-elbow"></span>
-<img src="assets/metodo_cotovelo.png" alt="Método do cotovelo aplicado no conjunto de dados de exemplo." width="403" />
+<img src="assets/04_clustering/metodo_cotovelo.png" alt="Método do cotovelo aplicado no conjunto de dados de exemplo." width="100%" />
 <p class="caption">
 Figure 4.9: Método do cotovelo aplicado no conjunto de dados de exemplo.
 </p>
@@ -572,7 +572,7 @@ acima do cotovelo estão em uma região de <em>underfitting</em> e abaixo dele e
 O método de Silhueta determina o quão bem cada objeto está alocado em um grupo, ou seja, a homogeneidade de um grupo. O índice de Silhueta varia de -1 a 1. Valores próximos a 1 indicam que o objeto possui semelhança com objetos de seu grupo e dessemelhança com objetos de outros grupos.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:kmeans-silhueta"></span>
-<img src="assets/indice_silhueta.png" alt="Método de Silhueta aplicado no conjunto de dados de exemplo." width="320" />
+<img src="assets/04_clustering/indice_silhueta.png" alt="Método de Silhueta aplicado no conjunto de dados de exemplo." width="100%" />
 <p class="caption">
 Figure 4.10: Método de Silhueta aplicado no conjunto de dados de exemplo.
 </p>
@@ -626,7 +626,7 @@ no qual é possível observar 6 objetos (A,B,C,E,F) em um plano cartesiano (X,Y)
 <p>Os objetos foram marcados para facilitar a visualização do dendograma.</p>
 </blockquote>
 <div class="figure" style="text-align: center"><span id="fig:hierarquico-dataset"></span>
-<img src="assets/dataset_hierarquico.png" alt="Conjunto de dados utilizado como exemplo." width="176" />
+<img src="assets/04_clustering/dataset_hierarquico.png" alt="Conjunto de dados utilizado como exemplo." width="100%" />
 <p class="caption">
 Figure 4.11: Conjunto de dados utilizado como exemplo.
 </p>
@@ -637,7 +637,7 @@ seja seu próprio grupo, e, com isso, a cada iteração os grupos vão se juntan
 combinando os objetos dentro deles. O primeiro passo dos algoritmos hierárquicos, abrangendo às duas categorias, divisivos e aglomerativo, é calcular a matriz de distância entre todos os objetos. A Figura <a href="agrupamento.html#fig:hierarquico-alg-0">4.12</a> mostra um exemplo do cálculo da distância do objeto <strong>A</strong> entre os outros.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:hierarquico-alg-0"></span>
-<img src="assets/dendograma_0.png" alt="Conjunto de dados utilizado como exemplo." width="176" />
+<img src="assets/04_clustering/dendograma_0.png" alt="Conjunto de dados utilizado como exemplo." width="100%" />
 <p class="caption">
 Figure 4.12: Conjunto de dados utilizado como exemplo.
 </p>
@@ -657,7 +657,7 @@ juntamos os objetos <strong>D</strong> e <strong>C</strong> que possuem a distâ
 Dendrograma é possível observar essas distância no eixo de <strong>Altura</strong>.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:hierarquico-alg-1"></span>
-<img src="assets/dendograma_1.png" alt="Etapa de junção dos objetos." width="390" />
+<img src="assets/04_clustering/dendograma_1.png" alt="Etapa de junção dos objetos." width="100%" />
 <p class="caption">
 Figure 4.13: Etapa de junção dos objetos.
 </p>
@@ -669,7 +669,7 @@ ligação mencionados, em <strong>A)</strong> temos a ligação completa, que vi
 única, que faz a junção de modo oposto do que vimos em <strong>A)</strong>, usando os objetos mais próximos de cada grupo, e em <strong>C)</strong> temos a ligação pela média, que visa realizar a junção por meio da média das distâncias entre cada objeto dos dois grupos.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:hierarquico-alg-2"></span>
-<img src="assets/dendograma_2.png" alt="Etapa de junção dos grupos." width="366" />
+<img src="assets/04_clustering/dendograma_2.png" alt="Etapa de junção dos grupos." width="100%" />
 <p class="caption">
 Figure 4.14: Etapa de junção dos grupos.
 </p>
@@ -685,7 +685,7 @@ ligação única e por média. Lembrando que o dendrograma mostra a distância e
 </blockquote>
 </p>
 <div class="figure" style="text-align: center"><span id="fig:hierarquico-alg-3"></span>
-<img src="assets/dendograma_3.png" alt="Etapa de junção dos grupos - Parte 2." width="390" />
+<img src="assets/04_clustering/dendograma_3.png" alt="Etapa de junção dos grupos - Parte 2." width="100%" />
 <p class="caption">
 Figure 4.15: Etapa de junção dos grupos - Parte 2.
 </p>
@@ -766,7 +766,7 @@ Como vimos, o dendrograma mostra a hierarquia do nosso agrupamento com o formato
 <a href="agrupamento.html#fig:hierarquico-cut">4.16</a> mostra a aplicação do método aglomerativo por meio de ligação completa no conjunto de dados utilizado no exemplo do Kmeans, os <span class="math inline">\(K\)</span> em cada dendrograma é o nível em que o corte foi realizado. Desta forma, cortando um nível abaixo da raiz, ou seja, <span class="math inline">\(k = 2\)</span>, obteve-se dois grupos, com <span class="math inline">\(k = 5\)</span>, obteve-se cinco grupos, e assim por diante. O corte no dendrograma nos dá uma visão dos grupos intrínsecos em cada nó da árvore, o que pode auxiliar no entendimento do conjunto de dados
 </p>
 <div class="figure" style="text-align: center"><span id="fig:hierarquico-cut"></span>
-<img src="assets/dendograma_cut.png" alt="Cortes nos dendrogramas para visualização dos grupos." width="484" />
+<img src="assets/04_clustering/dendograma_cut.png" alt="Cortes nos dendrogramas para visualização dos grupos." width="100%" />
 <p class="caption">
 Figure 4.16: Cortes nos dendrogramas para visualização dos grupos.
 </p>
