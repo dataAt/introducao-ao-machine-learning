@@ -317,10 +317,10 @@ conjunto de dados ajustado com hiperplanos lineares e não lineares.
 A abordagem utilizando os *kernels* é uma das principais características desse 
 modelo de ML, pois faz com que o hiperplano seja ajustado em uma dimensão 
 superior, utilizando equações de polinômios de maior grau. A Figura 
-\@ref(kernels-plot) mostra graficamente como é realizada essa manipulação. 
+\@ref(fig:kernels-plot) mostra graficamente como é realizada essa manipulação. 
 
 ```{r kernels-plot, echo=FALSE, fig.align="center", fig.cap='Representação gráfica dos dados e da função não linear.'}
-  knitr::include_graphics("assets/kernels.png")
+  knitr::include_graphics("assets/kernels-plot.png")
 ```
 
 A utilização de *kernels* é uma das principais características do SVM e faz com 
@@ -329,11 +329,12 @@ técnicas mais complexas.
 
 ### *Kernels*
 A utilização dos *kernels* em SVM foram introduzidos por @boser1992training. 
-Esses componentes *kernels* nada mais são do que uma função que serão 
-responsáveis por maximizar as margens dos vetores de suporte. A maioria das 
-bibliotecas de ML, já possuem *kernels* implementados e também permitem a 
-integração de outras funções customizadas. A lista a seguir aprensenta 
-brevemente algunso dos principais *kernels* utilizados.
+Esses componentes *kernels* são responsáveis por criar uma transformação dos 
+dados a partir de uma função, que são responsáveis por maximizar as margens dos 
+vetores de suporte. A maioria das bibliotecas de ML, já possuem *kernels* 
+implementados e também permitem a integração de outras funções customizadas. A 
+lista a seguir aprensenta brevemente algunso dos principais *kernels* 
+utilizados.
 
 - **Linear: ** Como mencionado anteriormente, é eficiente somente para problemas 
 linearmente separáveis, uma vez que seu ajuste se da através da equação de uma 
@@ -355,18 +356,121 @@ a variável $d$ que indica o seu grau, como definido pela equação:
 (\#eq:polynomial-kernel)
 \end{equation} 
 
-- **Função gaussiana de base radial: ** Esse *kernel* é recomendado quando não 
-se tem um conhecimento prévio a cerca dos dados. Esse *kernel* é definido pela 
-seguinte equação:
+- **Função gaussiana de base radial: ** Os *kernels* RBF 
+(*radial basis function*), como também são chamados, são recomendados quando não 
+se tem um conhecimento prévio a cerca dos dados. Esse *kernel* realiza uma 
+transformação dos pontos utilizando uma função gaussiana, definida por:
 
 \begin{equation} 
     k(\vec{x_{i}}, \vec{x_{j}}) = exp \left(-\frac{\lVert\vec{x_{i}} - \vec{x_{j}}\rVert^2}{2\sigma^2} \right)
 (\#eq:rbf-kernel)
 \end{equation} 
 
+### Regressão com máquinas de suporte de vetores
+Embora as SVM sejam aplicadas principalmente para tarefas de classificação, ou 
+seja, um cálculo de um valor inteiro, ela também pode ser utilizada para tarefas 
+de regressão, calculando valores reais. Essas abordagens são chamadas de 
+regressão por vetores de suporte (SVR - sigla do inglês, 
+*support vector regression*) e foram propostas por @drucker1997support. 
+Diferente de modelos tradicionais como as técnicas de regressão apresentadas na 
+seção anterior, que utilizam derivadas para os cálculos dos intervalos de 
+confiança, no SVR os valores são previstos através dos hiperplanos.
+
+Este método utiliza para a regressão a abordagem de classificação apresentada
+anteriormente, porém com uma pequena variação na função objetivo, que agora 
+busca comportar dentro das margens comportar a maior quantidade de pontos. As 
+margens ($\epsilon$) representam os intervalos de confiança e os vetores de 
+suporte que as delimitam, representam os limites para os erros positivos ($\xi$) 
+e negativos ($\xi^{\ast}$). A Figura \@ref(fig:svr) mostra uma representação de 
+um hiperplano não linear traçado para a regressão de dados.
+
+```{r svr, echo=FALSE, fig.align="center", fig.cap='Representação de hiperplano não linear para regressão. Adaptado de @drucker1997support.'}
+  knitr::include_graphics("assets/svr.png")
+```
+
+Assim como para a regressão linear, a biblioteca *scikit-learn* também possui a
+implementação dos modelos baseados em máquinas de vetores de suporte e os 
+principais *kernels*. O código a seguir mostra a implementação do SVR usando a 
+*scikit-learn* utilizando os *kernels* linear, polinomial de graus 2, 3, e 4 e
+a função gaussiana de base radial.
+
+```{python}
+import numpy as np; np.random.seed(5)
+from sklearn.svm import SVR
+import matplotlib.pyplot as plt
+
+# Criação dos dados de teste
+x = np.sort(2 - 3 * np.random.normal(0, 1, 50))
+y = x - 2 * (x ** 2) + 0.5 * (x ** 3) + np.random.normal(-5, 5, 50)
+x = np.expand_dims(x, axis=1)
+x_test = [[-6.3], [1], [7.8]]
+
+# Criação das instâncias dos modelos
+svr_linear = SVR(kernel='linear').fit(x, y)
+svr_polyd2 = SVR(kernel='poly', degree=2).fit(x, y)
+svr_polyd3 = SVR(kernel='poly', degree=3).fit(x, y)
+svr_polyd4 = SVR(kernel='poly', degree=4).fit(x, y)
+svr_rbf = SVR(kernel='rbf').fit(x, y)
+
+# Calculado hiperplanos
+y_linear = svr_linear.predict(x)
+y_polyd2 = svr_polyd2.predict(x)
+y_polyd3 = svr_polyd3.predict(x)
+y_polyd4 = svr_polyd4.predict(x)
+y_rbf = svr_rbf.predict(x)
+
+# Calculando variáveis de teste
+linear_test = svr_linear.predict(x_test)
+polyd2_test = svr_polyd2.predict(x_test)
+polyd3_test = svr_polyd3.predict(x_test)
+polyd4_test = svr_polyd4.predict(x_test)
+rbf_test = svr_rbf.predict(x_test)
+
+# Exibindo aplicação do SVR com kernel linear
+fig, ax = plt.subplots(1, 3, figsize=(17, 5))
+ax[0].set_title('SVR com kernel linear', fontdict=dict(fontsize=16))
+ax[0].set_xlabel('Variável dependente ($x$)', fontdict=dict(fontsize=14))
+ax[0].set_ylabel('Variável dependente ($y$)', fontdict=dict(fontsize=14))
+ax[0].scatter(x, y, c='k', alpha=.6, ec='k', label='Dados de treino')
+ax[0].plot(x, y_linear, c='r', lw='2', label='Kernel linear')
+ax[0].scatter(x_test, linear_test, c='orange', label='Dados de test', zorder=5, alpha=.75, ec='k')
+_ = ax[0].set_xticks([])
+_ = ax[0].set_yticks([])
+ax[0].legend(loc="lower right")
+
+# Exibindo aplicação do SVR com kernels polinomiais de graus 2, 3 e 4
+ax[1].set_title('SVR com kernel polinomial', fontdict=dict(fontsize=16))
+ax[1].set_xlabel('Variável dependente ($x$)', fontdict=dict(fontsize=14))
+ax[1].set_ylabel('Variável dependente ($y$)', fontdict=dict(fontsize=14))
+ax[1].scatter(x, y, c='k', alpha=.6, ec='k', label='Dados de treino')
+ax[1].plot(x, y_polyd2, c='r', lw='2', label='Kernel polinomial grau 2')
+ax[1].plot(x, y_polyd3, c='g', lw='2', label='Kernel polinomial grau 3')
+ax[1].plot(x, y_polyd4, c='b', lw='2', label='Kernel polinomial grau 4')
+ax[1].scatter(x_test, polyd2_test, c='orange', marker='s', label='Dados de test grau 2', 
+              zorder=5, alpha=.75, ec='k')
+ax[1].scatter(x_test, polyd3_test, c='orange', marker='d', label='Dados de test grau 3', 
+              zorder=5, alpha=.75, ec='k')
+ax[1].scatter(x_test, polyd4_test, c='orange', marker='o', label='Dados de test grau 4', 
+              zorder=5, alpha=.75, ec='k')
+_ = ax[1].set_xticks([])
+_ = ax[1].set_yticks([])
+ax[1].legend(loc="lower right",)
+
+# Exibindo aplicação do SVR com kernel RBF
+ax[2].set_title('SVR com kernel RBF', fontdict=dict(fontsize=16))
+ax[2].set_xlabel('Variável dependente ($x$)', fontdict=dict(fontsize=14))
+ax[2].set_ylabel('Variável dependente ($y$)', fontdict=dict(fontsize=14))
+ax[2].scatter(x, y, c='k', alpha=.6, ec='k', label='Dados de treino')
+ax[2].plot(x, y_rbf, c='r', lw='2', label='Kernel com função gaussiana')
+ax[2].scatter(x_test, rbf_test, c='orange', marker='o', label='Kernel RBF',
+              zorder=5, alpha=.75, ec='k')
+_ = ax[2].set_xticks([])
+_ = ax[2].set_yticks([])
+ax[2].legend(loc="lower right")
 
 
-
+plt.show()
+```
 
  
 
