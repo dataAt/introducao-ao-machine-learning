@@ -388,7 +388,89 @@ um hiperplano não linear traçado para a regressão de dados.
   knitr::include_graphics("assets/svr.png")
 ```
 
+Assim como para a regressão linear, a biblioteca *scikit-learn* também possui a
+implementação dos modelos baseados em máquinas de vetores de suporte e os 
+principais *kernels*. O código a seguir mostra a implementação do SVR usando a 
+*scikit-learn* utilizando os *kernels* linear, polinomial de graus 2, 3, e 4 e
+a função gaussiana de base radial.
 
+```{python}
+import numpy as np; np.random.seed(5)
+from sklearn.svm import SVR
+import matplotlib.pyplot as plt
+
+# Criação dos dados de teste
+x = np.sort(2 - 3 * np.random.normal(0, 1, 50))
+y = x - 2 * (x ** 2) + 0.5 * (x ** 3) + np.random.normal(-5, 5, 50)
+x = np.expand_dims(x, axis=1)
+x_test = [[-6.3], [1], [7.8]]
+
+# Criação das instâncias dos modelos
+svr_linear = SVR(kernel='linear').fit(x, y)
+svr_polyd2 = SVR(kernel='poly', degree=2).fit(x, y)
+svr_polyd3 = SVR(kernel='poly', degree=3).fit(x, y)
+svr_polyd4 = SVR(kernel='poly', degree=4).fit(x, y)
+svr_rbf = SVR(kernel='rbf').fit(x, y)
+
+# Calculado hiperplanos
+y_linear = svr_linear.predict(x)
+y_polyd2 = svr_polyd2.predict(x)
+y_polyd3 = svr_polyd3.predict(x)
+y_polyd4 = svr_polyd4.predict(x)
+y_rbf = svr_rbf.predict(x)
+
+# Calculando variáveis de teste
+linear_test = svr_linear.predict(x_test)
+polyd2_test = svr_polyd2.predict(x_test)
+polyd3_test = svr_polyd3.predict(x_test)
+polyd4_test = svr_polyd4.predict(x_test)
+rbf_test = svr_rbf.predict(x_test)
+
+# Exibindo aplicação do SVR com kernel linear
+fig, ax = plt.subplots(1, 3, figsize=(17, 5))
+ax[0].set_title('SVR com kernel linear', fontdict=dict(fontsize=16))
+ax[0].set_xlabel('Variável dependente ($x$)', fontdict=dict(fontsize=14))
+ax[0].set_ylabel('Variável dependente ($y$)', fontdict=dict(fontsize=14))
+ax[0].scatter(x, y, c='k', alpha=.6, ec='k', label='Dados de treino')
+ax[0].plot(x, y_linear, c='r', lw='2', label='Kernel linear')
+ax[0].scatter(x_test, linear_test, c='orange', label='Dados de test', zorder=5, alpha=.75, ec='k')
+_ = ax[0].set_xticks([])
+_ = ax[0].set_yticks([])
+ax[0].legend(loc="lower right")
+
+# Exibindo aplicação do SVR com kernels polinomiais de graus 2, 3 e 4
+ax[1].set_title('SVR com kernel polinomial', fontdict=dict(fontsize=16))
+ax[1].set_xlabel('Variável dependente ($x$)', fontdict=dict(fontsize=14))
+ax[1].set_ylabel('Variável dependente ($y$)', fontdict=dict(fontsize=14))
+ax[1].scatter(x, y, c='k', alpha=.6, ec='k', label='Dados de treino')
+ax[1].plot(x, y_polyd2, c='r', lw='2', label='Kernel polinomial grau 2')
+ax[1].plot(x, y_polyd3, c='g', lw='2', label='Kernel polinomial grau 3')
+ax[1].plot(x, y_polyd4, c='b', lw='2', label='Kernel polinomial grau 4')
+ax[1].scatter(x_test, polyd2_test, c='orange', marker='s', label='Dados de test grau 2', 
+              zorder=5, alpha=.75, ec='k')
+ax[1].scatter(x_test, polyd3_test, c='orange', marker='d', label='Dados de test grau 3', 
+              zorder=5, alpha=.75, ec='k')
+ax[1].scatter(x_test, polyd4_test, c='orange', marker='o', label='Dados de test grau 4', 
+              zorder=5, alpha=.75, ec='k')
+_ = ax[1].set_xticks([])
+_ = ax[1].set_yticks([])
+ax[1].legend(loc="lower right",)
+
+# Exibindo aplicação do SVR com kernel RBF
+ax[2].set_title('SVR com kernel RBF', fontdict=dict(fontsize=16))
+ax[2].set_xlabel('Variável dependente ($x$)', fontdict=dict(fontsize=14))
+ax[2].set_ylabel('Variável dependente ($y$)', fontdict=dict(fontsize=14))
+ax[2].scatter(x, y, c='k', alpha=.6, ec='k', label='Dados de treino')
+ax[2].plot(x, y_rbf, c='r', lw='2', label='Kernel com função gaussiana')
+ax[2].scatter(x_test, rbf_test, c='orange', marker='o', label='Kernel RBF',
+              zorder=5, alpha=.75, ec='k')
+_ = ax[2].set_xticks([])
+_ = ax[2].set_yticks([])
+ax[2].legend(loc="lower right")
+
+
+plt.show()
+```
 
  
 
