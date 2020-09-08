@@ -1,7 +1,3 @@
-```{r, ech=FALSE}
-library(reticulate)
-use_python("/home/adriano/anaconda3/bin/python")
-```
 ---
 output: bookdown::html_document2
 bibliography: bibfile.bib
@@ -41,10 +37,20 @@ de felicidade, com uma força de correlação de 0,77.
 As relações entre as variáveis dependentes e independetes são feitas através de 
 algum coeficiente de correlação. Uma das métricas de correlação mais utilizadas 
 é o coeficiente de Pearson, que mede a associação linear entre duas variáveis 
-[@kirck2008pearson]. Os valores do coeficiente de Pearson variam entre -1 e 1, 
-de tal forma que quanto mais próximos desses extremos, melhor correlacionado 
-estão as variáveis. A Figura \@ref(fig:scatterCorrelations) mostra alguns 
-exemplos com gráficos de disperssão de variáveis com diferentes correlações.
+[@kirck2008pearson]. Esse coeficiente de correlação pode ser definido pela 
+Equação \@ref(eq:corr-pearson), onde $n$ é o total de amostras, $\overline{x}$
+e $\overline{y}$ são as médias aritméticas de ambas as variáveis. Os valores do 
+coeficiente de Pearson variam entre -1 e 1, de tal forma que quanto mais 
+próximos desses extremos, melhor correlacionado estão as variáveis. A Figura 
+\@ref(fig:scatterCorrelations) mostra alguns exemplos com gráficos de disperssão 
+de variáveis com diferentes correlações. 
+
+\begin{equation} 
+    r_{xy} = \frac{{}\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
+    {\sqrt{\sum_{i=1}^{n} (x_i - \overline{x})^2(y_i - \overline{y})^2}}
+(\#eq:corr-pearson)
+\end{equation} 
+
 
 ```{r scatterCorrelations, echo=FALSE, fig.align="center", fig.cap='Diferentes correlações entre variáveis. Fonte: [@helliwell2020social]'}
   knitr::include_graphics("assets/correlations.png")
@@ -121,10 +127,10 @@ tabela a seguir:
 ```
 
 Para se chegar no resultado apresentado na Figura \@ref(fig:ols), os 
-coeficientes da regressão linear foram ajustados, de tal tal forma que o erro 
-quadrático médio entre entre a função e cada um dos pontos fossem a menor 
-possível. A Figura \@ref(fig:ols-steps) mostra o ajuste dos coeficientes da 
-equação em relação a cada ponto.
+coeficientes da regressão linear foram ajustados utilizando derivadas parciais, 
+de tal tal forma que o erro quadrático médio entre entre a função e cada um dos 
+pontos fossem a menor possível. A Figura \@ref(fig:ols-steps) mostra o ajuste 
+dos coeficientes da equação em relação a cada ponto.
 
 ```{r ols-steps, echo=FALSE, fig.align="center", fig.cap='Ajuste da regressão linear por método dos quadrados ordinários.'}
   knitr::include_graphics("assets/ols-steps.png")
@@ -172,7 +178,7 @@ interfere no ajuste dos coeficientes, uma vez o modelo não consegue atingir o
 mínimo global. A Figura \@ref(fig:gd-example2) mostra o resultado da execução da
 regressão linear utilizando uma taxa de aprendizagem muito grande no GD.
 
-```{r gd-example2, echo=FALSE, fig.align="center", fig.cap='Regressão linear com taxa de aprendizagem baixa no gradiente descendente.'}
+```{r gd-example2, echo=FALSE, fig.align="center", fig.cap='Regressão linear com taxa de aprendizagem alta no gradiente descendente.'}
   knitr::include_graphics("assets/gradient-descendent-large.png")
 ```
 
@@ -183,7 +189,7 @@ equilibrada. Como os valores iniciais dos coeficientes são definidos de forma
 aleatória, nas primeiras iterações o gradiente apresenta uma alta pertubação, 
 que vai se atenuando ao longo das épocas.
 
-```{r gd-example3, echo=FALSE, fig.align="center", fig.cap='Regressão linear com taxa de aprendizagem baixa no gradiente descendente.'}
+```{r gd-example3, echo=FALSE, fig.align="center", fig.cap='Regressão linear com taxa de aprendizagem equilibrada no gradiente descendente.'}
   knitr::include_graphics("assets/gradient-descendent.png")
 ```
 
@@ -241,7 +247,122 @@ plt.legend()
 plt.show()
 ```
 
+## Máquinas de vetores de suporte
 
+As máquinas de vetores de suporte (SVM - sigla do inglês, 
+*support vector machine*) são modelos de aprendizado de máquina supervisionado 
+concebido a partir de um conceito inicialmente proposto por @vapnik1965class. 
+As SVM podem ser utilizadas tanto para tarefas de classificação, quanto para 
+tarefas de regressão, sendo uma ótima alteranativa aos modelos de redes neurais 
+artificiais profundas que exigem um custo computacional muito superior em dados 
+com muitas dimensões. Outra vantagem na utilização dos modelos baseados em SVM é
+que eles não são sensíveis aos *outliers*, ou seja, valores extremos não causam 
+ruído no treinamento.
+
+O funcionamento básico das SVM consiste em ajustar a equação de uma reta, 
+denominada hiperplano de tal forma que a distância entre ela e os pontos com 
+características diferentes seja maximizada. Um conjunto de $n$ pontos é definido
+como $(\vec{x_{1}}, y_{1}), (\vec{x_{2}}, y_{2}), ..., (\vec{x_{n}}, y_{n})$, 
+onde $\vec{x_{i}}$ são as variáveis independentes representadas por um vetor de 
+$d$-dimensões e $y_{i}$ são as variáveis dependentes. A distância maximizada 
+entre o hiperplano e as fronteiras são definidas como margens e os pontos que 
+estão no limite dessa margem são os vetores de suporte. Esses componentes podem 
+ser modelados da seguinte forma:
+
+\begin{equation} 
+    \vec{w}\cdot\vec{x}-b =
+      \begin{cases}
+        & -1, & \text{primeiro vetor de suporte} \\
+        & 0, & \text{hiperplano} \\
+        & 1, & \text{segundo vetor de suporte}
+      \end{cases}
+(\#eq:svm-components)
+\end{equation} 
+
+Onde $\vec{w}$ é um vetor perpendicular aos pontos, $\vec{x}$ é o vetor do 
+conjunto de pontos é $b$ é uma constante opcional que pode ser usada como uma 
+*bias*. Quando o resultado dessa equação é igual a $1$ ou $-1$ trata-se de um 
+dos vetores de suporte, quando o resultado é um valor maior que $0$ e menor que 
+$1$ ou menor que $0$ e maior que $-1$ trata-se de um espaço da margem. A Figura 
+\@ref(fig:linear-svm) mostra um exemplo da aplicação do algoritmo SVM em um 
+conjunto de dados linearmente separáveis. Nessa figura, o hiperplano é 
+caracterizado pela linha contínua, os vetores de suporte são as linhas 
+tracejadas que interceptam os pontos com contorno destacado, e o espaço entre 
+eles são as margens.
+
+```{r linear-svm, echo=FALSE, fig.align="center", fig.cap='SVM para conjunto de dados linearmente separáveis.'}
+  knitr::include_graphics("assets/linear-svm.png")
+```
+
+As primeiras versões das SVM eram limitadas somente para resolução de problemas 
+linearmente separáveis, como mostrado no exemplo anterior, mas a grande maioria
+dos problemas não são linearmente separáveis. Considerando a Figura 
+\@ref(fig:kernels-problem) é muito difícil traçar um hiperplano que separe bem 
+os pontos de cores diferentes. Uma alternativa para esse problema é aumentar as 
+dimensões para a representação do hiperplano. Essa tarefa é feita com a 
+introdução de um conceito definido *kernel*.
+
+```{r kernels-problem, echo=FALSE, fig.align="center", fig.cap='Conjunto de dados não linearmente separáveis.'}
+  knitr::include_graphics("assets/kernels-problem.png")
+```
+
+Ao traçar um hiperplano não linear com a utilização de *kernels* é possível 
+ajustar melhor os vetores de suporte aos dados. A Figura \@ref(kernels) mostra o 
+conjunto de dados ajustado com hiperplanos lineares e não lineares.
+
+```{r kernels, echo=FALSE, fig.align="center", fig.cap='Hiperplanos utilizando *kernels* com funções lineares e não lineares.'}
+  knitr::include_graphics("assets/kernels.png")
+```
+
+A abordagem utilizando os *kernels* é uma das principais características desse 
+modelo de ML, pois faz com que o hiperplano seja ajustado em uma dimensão 
+superior, utilizando equações de polinômios de maior grau. A Figura 
+\@ref(kernels-plot) mostra graficamente como é realizada essa manipulação. 
+
+```{r kernels-plot, echo=FALSE, fig.align="center", fig.cap='Representação gráfica dos dados e da função não linear.'}
+  knitr::include_graphics("assets/kernels.png")
+```
+
+A utilização de *kernels* é uma das principais características do SVM e faz com 
+que os modelos baseados nessa abordagem, sejam tão robustos quanto outras 
+técnicas mais complexas.
+
+### *Kernels*
+A utilização dos *kernels* em SVM foram introduzidos por @boser1992training. 
+Esses componentes *kernels* nada mais são do que uma função que serão 
+responsáveis por maximizar as margens dos vetores de suporte. A maioria das 
+bibliotecas de ML, já possuem *kernels* implementados e também permitem a 
+integração de outras funções customizadas. A lista a seguir aprensenta 
+brevemente algunso dos principais *kernels* utilizados.
+
+- **Linear: ** Como mencionado anteriormente, é eficiente somente para problemas 
+linearmente separáveis, uma vez que seu ajuste se da através da equação de uma 
+reta. O *kernel* linear é definido apenas pelo produto entre duas amostras 
+$\vec{x_{i}}$ e $\vec{x_{j}}$:
+
+\begin{equation} 
+    k(\vec{x_{i}}, \vec{x_{j}}) = \vec{x_{i}} \cdot \vec{x_{j}}
+(\#eq:linear-kernel)
+\end{equation} 
+
+- **Polinominal: ** Os *kernels* polinomiais popularmente utilizados em tarefas 
+de processamento de imagens, permitem adicionar curvas aos hiperplanos. Além das
+amostras $\vec{x_{i}}$ e $\vec{x_{j}}$, o *kernel* polinominal também recebe o 
+a variável $d$ que indica o seu grau, como definido pela equação:
+
+\begin{equation} 
+    k(\vec{x_{i}}, \vec{x_{j}}) = (\vec{x_{i}} \cdot \vec{x_{j}} + 1)^{d}
+(\#eq:polynomial-kernel)
+\end{equation} 
+
+- **Função gaussiana de base radial: ** Esse *kernel* é recomendado quando não 
+se tem um conhecimento prévio a cerca dos dados. Esse *kernel* é definido pela 
+seguinte equação:
+
+\begin{equation} 
+    k(\vec{x_{i}}, \vec{x_{j}}) = exp \left(-\frac{\lVert\vec{x_{i}} - \vec{x_{j}}\rVert^2}{2\sigma^2} \right)
+(\#eq:rbf-kernel)
+\end{equation} 
 
 
 
