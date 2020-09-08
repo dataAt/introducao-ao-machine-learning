@@ -1,4 +1,5 @@
 ---
+title: Introdução
 output: 
     bookdown::html_document2: default
     bookdown::pdf_document2: default
@@ -26,7 +27,7 @@ passou no teste. A Figura \@ref(fig:turing-test-schema) mostra o esquema básico
 desse teste.
 
 ```{r turing-test-schema, echo=FALSE ,fig.align="center", fig.cap='Esquema do teste de Turing clássico.'}
-  knitr::include_graphics("assets/turing_test.png")
+  knitr::include_graphics("assets/01_introduction/turing_test.png")
 ```
 
 Diversas derivações desse teste surgiram posteriormente, o mais 
