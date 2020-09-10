@@ -1,0 +1,32 @@
+---
+title: Exemplos
+output: 
+    bookdown::html_document2: default
+    bookdown::pdf_document2: default
+bibliography: bibfile.bib
+fig_caption: yes
+header-includes:
+- \usepackage{float}
+- \floatsetup[table]{capposition=bot}
+---
+
+<!-- TODO: Descrever o kaggle-->
+A plataforma kaggle ....
+
+Links dos exemplos de Classificação:
+- [Exemplo de uso do KNN](https://www.kaggle.com/phelpsmemo/intro-ml-python-knn-worcap2020)
+- [Exemplo de uso da Árvore de Decisão](https://www.kaggle.com/phelpsmemo/intro-ml-python-decisiontree-worcap2020)
+
+Links dos exemplos de Regressão:
+- [Exemplo de uso de Regressão Linear](https://www.kaggle.com/lordadriano/mc2-worcap-2020-linear-regression)
+- [Exemplo de uso da SVR ](https://www.kaggle.com/lordadriano/mc2-worcap-2020-svr)
+
+Links dos exemplos de Agrupamento:
+- [Exemplo de uso do KNN](https://www.kaggle.com/oldlipe/intro-ml-r-kmeans-worcap2020)
+- [Exemplo de uso da Árvore de Decisão](https://www.kaggle.com/oldlipe/intro-ml-r-hiererquico-worcap2020)
+
+
+
+
+
+
