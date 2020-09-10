@@ -23,14 +23,14 @@ em 1959 -->
 
 <p align="justify">
 Vimos até agora que os métodos de classificação e regressão usam conjuntos de
-dados rotulados e usamos tais métodos para encontrarmos modelos que descrevam
-nossos dados. Em resumo, os métodos de classificação realizam a predição de dados categóricos, de modo oposto, os métodos de regressão fazem a predição de dados contínuos, sendo que ambos precisam dos rótulos para criarem seus modelos.
+dados rotulados e usamos tais métodos para encontrarmos modelos que descrevem
+nossos dados. Em resumo, os métodos de classificação realizam a predição de dados categóricos, de modo oposto, os métodos de regressão fazem a predição de dados contínuos, sendo que ambos precisam à priori dos rótulos para criarem seus modelos.
 </p>
 
 <p align="justify">
 As técnicas de agrupamento operam de modo diferente do que foi visto até então, 
-pois usam conjunto de dados não rotulados, o que modifica à forma com que os 
-métodos aprendem e é isso que vamos ver neste capítulo!
+pois usam conjunto de dados não rotulados, o que modifica a forma com que os 
+métodos aprendem. É isso que vamos ver neste capítulo!
 </p>
 
 <p align="justify">
@@ -48,7 +48,7 @@ Digamos que você tenha um amigo que adora livros, e ele tem muitos deles, mas
 tem muitas dificuldades em organizá-los. Então, você, uma pessoa muito 
 disposta, sugere ao seu amigo algumas formas de como organizar esses livros, 
 por exemplo: **separá-los** por gênero, cores ou ordem alfabética. Aderindo às 
-suas dicas, seu amigo decidiu agrupá-los por gênero, assim, com essa nova 
+suas dicas, seu amigo decidiu agrupá-los por gênero. Assim, com essa nova 
 organização foi possível encontrar diversos **grupos** de livros separados por 
 gênero, como apresentado na Figura \@ref(fig:clustering-book).
 </p>
@@ -63,20 +63,13 @@ apenas para facilitar a vida do design.
 <p align="justify">
 A partir do exemplo acima, vimos que os **grupos** foram criados de acordo 
 com uma característica, neste caso, gênero, mas poderíamos ter **grupos** de 
-livros com mais de uma característica. Por exemplo, grupos com livros do mesmo 
-gênero e o mesmo ano de lançamento, ou do mesmo gênero e com a mesma cor, e 
-assim por diante. Assim, podemos concluir que livros pertencentes ao mesmo grupo
-são semelhantes entre si, ou seja, possuem características iguais ou parecidas,
-mas são diferentes se comparados com livros de outros grupos. Com isso, 
-aprendemos um conceito fundamental em agrupamento, que é a definição de um 
-grupo.
+livros organizados com mais de uma característica. Por exemplo, grupos com livros do mesmo gênero e o mesmo ano de lançamento, ou do mesmo gênero e com a mesma cor, e assim por diante. Assim, podemos concluir que livros pertencentes ao mesmo **grupo** são semelhantes entre si, ou seja, possuem características iguais ou parecidas, mas são diferentes se comparados com livros de outros grupos. Com isso, aprendemos um conceito fundamental em **Agrupamento**, que é a definição de um grupo.
 </p>
 
 <p align="justify">
 Em aprendizado de máquina, o ato de separar objetos em **grupos** (em inglês, 
 *clusters*) por meio de determinadas características de um conjunto de dados é 
-conhecido como **agrupamento** (em inglês, *clustering*), e a maneira com que esses grupos
-são separados é chamado de **técnicas** ou **métodos** de **agrupamento**. De 
+conhecido como **agrupamento** (em inglês, *clustering*), e a maneira com que esses grupos são separados é chamado de **técnicas** ou **métodos** de **agrupamento**. De 
 modo oposto do que vimos nos capítulos anteriores, as técnicas de agrupamento possuem o aprendizado não supervisionado, ou seja, usam conjuntos de dados não rotulados para criarem seus modelos. 
 </p>
 
@@ -86,7 +79,7 @@ fontes, como radares, redes sociais e *smartphones*, torna-se cada
 vez mais difícil obter conjuntos de dados rotulados, pois, por vezes, é 
 necessária a presença de um especialista para criar ou gerenciar esses rótulos. 
 Desta forma, o uso de técnicas de agrupamento pode auxiliar no processo de 
-descoberta de padrões e na criação de novos rótulos a partir dos grupos gerados. 
+descoberta de padrões e na criação de novos rótulos a partir de grupos gerados em um agrupamento. 
 </p>
 
 <p align="justify">
@@ -158,7 +151,7 @@ Como vimos anteriormente, cada técnica de agrupamento possui uma abordagem para
 criar grupos em um conjunto de dados, por exemplo, algumas técnicas são baseadas
 em pontos centrais de cada grupo (centróide); em outras os grupos são criados 
 seguindo uma hierarquia presente nos dados. Neste minicurso, vamos mostrar duas 
-abordagens de técnicas de agrupamento: **baseadas em partição** e **hierarquia**. A seguir vamos comentar de maneira bem resumida cada uma.
+abordagens de técnicas de agrupamento: **baseadas em partição** e **hierarquia**. A seguir vamos comentar de maneira geral cada uma.
 </p>
 
 ### Técnicas baseadas em Partição
@@ -177,7 +170,7 @@ de agrupamento nebulosas (em inglês, *fuzzy clustering*). A Figura
 as linhas pretas demarcam cada partição.
 </p>
 
-```{r centroid-based, echo=FALSE, fig.align="center", fig.show = "hold", out.width="100%", fig.cap='Exemplo de um agrupamento beaseado em partição. As linhas pretas demarcam as partições e as formas geométricas preenchidas os centróides. Adaptado de @google2020'}
+```{r centroid-based, echo=FALSE, fig.align="center", fig.show = "hold", out.width="100%", fig.cap='Exemplo de um agrupamento baseado em partição. As linhas pretas demarcam as partições e as formas geométricas preenchidas os centróides. Adaptado de @google2020'}
 knitr::include_graphics("./assets/04_clustering/centroid_bases.png") 
 ```
 
@@ -186,21 +179,17 @@ knitr::include_graphics("./assets/04_clustering/centroid_bases.png")
 Além das características mencionadas acima, grande parte das técnicas baseadas 
 em partição usam medidas de distâncias para determinar o grau de similaridade de 
 cada grupo. Outra característica importante de mencionar é a representação de 
-cada grupo, o centróide (Figura \@ref(fig:centroid-based), que pode ser definido
-pela média ou qualquer outra medida estatística Um dos algoritmos mais 
-utilizados baseados em partição é o *Kmeans* - vamos explicá-lo na subseção 
-seguinte.
+cada grupo, o centróide (Figura \@ref(fig:centroid-based)), que pode ser definido pela média ou qualquer outra medida estatística. Um dos algoritmos mais utilizados baseados em partição é o *Kmeans* - vamos explicá-lo nas próximas páginas.
 </p>
 <!-- técnicas baseadas em hierarquia-->
 ### Técnicas baseadas em Hierarquia
 
 <p align="justify">
-As técnicas baseadas em hierarquia, diferente dos que vimos nas técnicas de 
+Nas técnicas baseadas em hierarquia, diferente do que vimos nas técnicas de 
 partição, não é requerido que o especialista especifique o número de grupos, 
 pois seu algoritmo busca por correlações entre os objetos do conjunto de dados 
-para criar os grupos. Os métodos hierárquicos podem ser divididos em 
-**aglomerativos** ou **divisivos**, baseado no modo em que sua decomposição hierárquica é formada. No método **aglomerativo**, também conhecido como 
-AGNES (*Agglomerative Nesting*), considera-se, inicialmente, que cada objeto seja seu próprio grupo, e a cada iteração, os dois grupos mais parecidos são juntados, desta forma, formando um novo um grupo, esse processo é repetido até que todos os objetos estejam em um único grupo. De modo oposto, o método **divisivo**, também conhecido como DIANA (*Divise Analysis*), considera-se que todos objetos pertencem a um único grupo, e posteriormente, divide-se o único grupo até obter-se um grupo para cada objeto ou até que um critério de párada seja atendido [@han2011data].
+para criar os grupos. Baseado no modo em que sua decomposição hierárquica é formada, os métodos hierárquicos podem ser divididos em **aglomerativos** ou **divisivos**. No método **aglomerativo**, também conhecido como 
+AGNES (do inglês, *Agglomerative Nesting*), considera-se, inicialmente, que cada objeto seja seu próprio grupo, e a cada iteração, os dois grupos mais parecidos são unidos, assim, formando um novo um grupo. Esse processo é repetido até que todos os objetos estejam em um único grupo. De modo oposto, o método **divisivo**, também conhecido como DIANA (do inglês, *Divise Analysis*), considera-se que todos objetos pertencem a um único grupo, e posteriormente, o único grupo é dividido até obter-se um grupo para cada objeto ou até que um critério de párada seja atendido [@han2011data].
 </p>
 
 ```{r hierarquical-based, echo=FALSE, fig.align="center", fig.show = "hold", out.width="100%", fig.cap='Exemplo do processo de criação de grupos baseado nas técnicas de agrupamento hierarquicas. - Fonte: @han2011data'}
@@ -218,7 +207,7 @@ base na semelhança dos objetos dentro do grupo.
 </p>
 
 <p align="justify">
-Uma técnica que auxilia na interpretação dos agrupamentos hierárquicos é o dendrograma, apresentado na Figura \@ref(fig:dend-based), representado em forma de árvore, nele é possível obter informações sobre a estrutura do agrupamento realizado. No nível 0 é possível observar os objetos em seus próprios grupos, e, conforme o nível da árvore aumenta em relação a sua raiz, menor são as similaridades entre os objetos do mesmo grupo [@han2011data]. 
+Uma técnica que auxilia na interpretação dos agrupamentos hierárquicos é o dendrograma, apresentado na Figura \@ref(fig:dend-based), que faz representação em forma de árvore, nele é possível obter informações sobre a estrutura do agrupamento realizado. No nível 0 é possível observar os objetos em seus próprios grupos, e, conforme o nível da árvore aumenta em relação a sua raiz, menor são as similaridades entre os objetos do mesmo grupo [@han2011data]. 
 </p>
 
 ```{r dend-based, echo=FALSE, fig.align="center", fig.show = "hold", out.width="100%", fig.cap='Exemplo de representação do agrupamento hierarquico. - Fonte: @han2011data'}
@@ -236,11 +225,16 @@ conceitos podem ser aplicados no método divisivo.
 <p align="justify">
 Kmeans ou K-médias é uma técnica de agrupamento que usa o método de partição
 para dividir o conjunto de dados em $k$ grupos, em que o valor de $k$ é definido
-pelo usuário - posteriormente vamos apresentar algumas heurísticas que auxiliam na determinação do número de grupos. De forma geral, o algoritmo do Kmeans visa
+pelo usuário. De forma geral, o algoritmo do Kmeans visa
 diminuir a variação intra-grupos, ou seja, criar grupos em que os objetos sejam
-semelhantes entre si. Então, para que esse objetivo seja atendido, a cada
-iteração os centros de cada grupo são atualizados para refinar a qualidade dos
+semelhantes entre si. Então, para que esse objetivo seja atendido, em cada
+iteração os centróide de cada grupo são atualizados para refinar a qualidade dos
 grupos.
+</p>
+
+<p align="justify">
+> Posteriormente vamos apresentar algumas heurísticas que auxiliam na determinação do número de grupos
+
 </p>
 
 <p align="justify">
@@ -303,8 +297,7 @@ $$
 <p align="justify">
 Desta forma, a menor distância ($dist$) é dada pelo centróide $c_2$, então o
 objeto é atribuído ao grupo deste centróide. Após a atribuição, o centróide é
-recalculado com base nos objetos do grupo (Figura \@ref(fig:kmeans-algorithm-2)),
-como foi dito anteriormente, podemos usar medidas estatísticas, como a média para
+recalculado com base nos objetos do grupo (Figura \@ref(fig:kmeans-algorithm-2)). Como foi dito anteriormente, podemos usar medidas estatísticas, como a média para
 achar a nova posição do centróide. Caso, não haja alterações nos valores dos
 centróides, o algoritmo pára. Caso não, o processo se repete: os centróides são atualizados e os objetos são atribuídos a cada grupo.
 </p>
@@ -324,14 +317,13 @@ o algoritmo pára.
 
 <p align="justify">
 > Lembrando que, outro critério de párada é o número de iterações, pois nem
-sempre é possível obter grupos homogêneos com poucas iterações. Ainda mais
-com conjuntos de dados de aplicações reais. Outro fato a mencionar, é o sorteio de centróides, pois existem diversas métricas que podem ser utilizadas em relação a inicialização dos centróides, por exemplo, k-means++.
+sempre é possível obter grupos homogêneos com poucas iterações. Ainda mais se considermos conjuntos de dados de aplicações do mundo real. Outro fato a mencionar, é o sorteio de centróides, pois existem diversas métricas que podem ser utilizadas em relação a inicialização dos centróides, por exemplo, k-means++.
 
 </p>
 
 <p align="justify">
-Agora que entendemos mais de perto como o kmeans funciona. Talvez, você esteja 
-se perguntando,mas, como verificamos a eficiência do nosso agrupamento? Isso é o que vamos responder na próxima subseção. Também vamos comentar como podemos 
+Agora que entendemos mais de perto como o Kmeans funciona. Talvez, você esteja 
+se perguntando: "mas, como verificamos a eficiência do nosso agrupamento?" Isso é o que vamos responder na próxima subseção. Também vamos comentar como podemos 
 estimar o número de grupos em um conjunto de dados.
 </p>
 
@@ -339,18 +331,14 @@ estimar o número de grupos em um conjunto de dados.
 
 <p align="justify">
 Como mencionado anteriormente, o objetivo do kmeans é minimizar a variação
-intra-grupos, vimos que isso é feito com base na atualização dos centróides em cada iteração
-do algoritmo, até que não haja mudança na atualização dos centróides. Então,
-para verificarmos o erro de cada grupo, podemos usar a soma das diferenças
-quadráticas (do ingles, *sum of squared error*) entre cada objeto e o centróide do seu grupo. Por exemplo, na Figura \@ref(fig:kmeans-algorithm-2), para calcularmos o
-erro quadrático do **Grupo 1**, temos a seguinte equação:
+intra-grupos, vimos que isso é feito com base na atualização dos centróides em cada iteração do algoritmo, até que não haja mudança na atualização dos centróides. Então, para verificarmos o erro de cada grupo, podemos usar a soma das diferenças quadráticas (do ingles, *sum of squared error*) entre cada objeto e o centróide do seu grupo. Por exemplo, na Figura \@ref(fig:kmeans-algorithm-2), para calcularmos o erro quadrático do **Grupo 1**, temos a seguinte equação:
 </p>
 
 $$
 SSE(grupo_{1}) = \sum_{x_i \in grupo_{1}} dist(x_i - c_1)^2
 $$
 <p align="justify">
-Em que $x_i$ representa cada objeto do **Grupo 1**, $c_1$ representa o centróide deste mesmo grupo e $dist$ a medida de distância utilizada. Logo, o $SSE(grupo_1) \approx 1.9$, em outras palavras, o erro quadrático do **Grupó 1** é a soma da distância de todos os objetos em relação seu centróide. Então, para calcularmos o erro total dos grupos, basta fazermos um somatório de cada SSE:
+Em que $x_i$ representa cada objeto do **Grupo 1**, $c_1$ representa o centróide deste mesmo grupo e $dist$ a medida de distância utilizada. Logo, o $SSE(grupo_1) \approx 1.9$, em outras palavras, o erro quadrático do **Grupo 1** é a soma da distância de todos os objetos em relação seu centróide. Então, para calcularmos o erro total dos grupos, basta fazermos um somatório de cada SSE:
 </p>
 
 
@@ -358,7 +346,7 @@ $$
 SSE_{total} = SSE(grupo_1) + SSE(grupo_2) + SSE(grupo_3)
 $$
 <p align="justify">
-Então, para este agrupamento apresentado no exemplo acima, temos o 
+Desta forma, para este agrupamento apresentado no exemplo acima, temos o 
 $SSE_{total} \approx x$, em outras palavras, o erro total do nosso agrupamento, 
 é representado pela soma dos erros quadráticos de cada grupo. 
 </p>
@@ -422,7 +410,6 @@ Agora que entendemos os fundamentos da técnica de agrupamento **Kmeans** e
 algumas técnicas de estimativas de grupos, vamos apresentar alguns exemplos práticos na plataforma kaggle, os exemplos estão disponíveis nas linguagens R e Python.
 </p>
 
-<!-- ### Exemplos -->
 
 <!-- > Link para o kaggle -->
 
@@ -430,7 +417,7 @@ algumas técnicas de estimativas de grupos, vamos apresentar alguns exemplos pr�
 
 <p align="justify">
 Os métodos de agrupamento hierárquicos que pertencem à categoria de
-aglomerativos baseia na junção de grupos até que apenas um grupo englobe
+aglomerativos baseiam-se na junção de grupos até que apenas um grupo englobe
 todos os outros, esse chamado de raiz. No método aglomerativo, os objetos são comparadas com base em uma medida de distância, assim como vimos no **Kmeans**, 
 em que foi usado a distância euclidiana. No entanto, neste método, os grupos também são comparados, para que a união entre eles seja realizada. Para compararmos a similaridade entre cada grupo usamos as medidas de ligação (do inglês, *linkage measures*). As medidas de ligação mais conhecidos são:
 </p>
@@ -477,12 +464,13 @@ combinando os objetos dentro deles. O primeiro passo dos algoritmos hierárquico
 ```
 
 <p align="justify">
-> Vamos deixar como tarefa para que você calcule a distância euclidiana entre os outros objetos.
+
+> Repare que é necessário calcular as distâncias entre os outros objetos: $B -> C, B -> D, B -> E, B -> F$; $C -> D, C -> E, C -> F$; $D -> E, D -> F$ e $E -> F$. Vamos deixar como tarefa para que você calcule a distância euclidiana entre os outros objetos.
 
 </p>
 
 <p align="justify">
-Então, seguindo com o algoritmo do método aglomerativo, o próximo passo consiste na junção dos objetos em grupos, como foi dito, cada objeto inicialmente pertence ao seu próprio grupo. A etapa de junção dos objetos aos grupos segue a mesma ideia do que vimos no Kmeans, só que aqui estamos comparando dois objetos, e não os objetos com seus centróides. Então, os objetos mais próximos se juntam em um grupo, como apresentado na Figura \@ref(fig:hierarquico-alg-1). A junção
+Então, seguindo com o algoritmo do método aglomerativo, o próximo passo consiste na junção dos objetos em grupos, como foi dito, cada objeto inicialmente pertence ao seu próprio grupo. A etapa de junção dos objetos aos grupos segue a mesma ideia que vimos no Kmeans, só que aqui estamos comparando dois objetos, e não os objetos com seus centróides. Então, os objetos mais próximos se juntam em um grupo, como apresentado na Figura \@ref(fig:hierarquico-alg-1). A junção
 segue uma ordem, os objetos com as menores distâncias se juntam primeiro, então,
 neste exemplo, primeiro vamos juntar os objetos **E** e **F** que estão em 1
 unidade de distância, depois juntamos os objetos **A** e **B**, como mostrado na
@@ -561,8 +549,8 @@ Assim como a escolha do número de grupos no *Kmeans*, a escolha do método de l
 ### Como visualizar os grupos no dendrograma?
 
 <p align="justify">
-Como vimos, o dendrograma mostra a hierarquia do nosso agrupamento com o formato de árvores, aos que estão familiarizados com estrutura de dados, especificamente, uma árvore binária. Assim, podemos fazer um corte nessa árvore e selecionar os grupos que desejamos de acordo com a altura especificada. Por exemplo, a Figura
-\@ref(fig:hierarquico-cut) mostra a aplicação do método aglomerativo por meio de ligação completa no conjunto de dados utilizado no exemplo do Kmeans, os $K$ em cada dendrograma é o nível em que o corte foi realizado. Desta forma, cortando um nível abaixo da raiz, ou seja, $k = 2$, obteve-se dois grupos, com $k = 5$, obteve-se cinco grupos, e assim por diante. O corte no dendrograma nos dá uma visão dos grupos intrínsecos em cada nó da árvore, o que pode auxiliar no entendimento do conjunto de dados
+Como vimos, o dendrograma mostra a hierarquia do nosso agrupamento com o formato de árvores, aos que estão familiarizados com estrutura de dados, uma árvore binária. Assim, podemos fazer um corte nessa árvore e selecionar os grupos que desejamos de acordo com a altura especificada. Por exemplo, a Figura
+\@ref(fig:hierarquico-cut) mostra a aplicação do método aglomerativo por meio de ligação completa no conjunto de dados utilizado no exemplo do Kmeans, os $K$'s em cada dendrograma é o nível em que o corte foi realizado. Desta forma, cortando um nível abaixo da raiz, ou seja, $k = 2$, obteve-se dois grupos, com $k = 5$, obteve-se cinco grupos, e assim por diante. O corte no dendrograma nos dá uma visão dos grupos intrínsecos em cada nó da árvore, o que pode auxiliar no entendimento do conjunto de dados
 </p>
 
 ```{r hierarquico-cut, echo=FALSE ,fig.align="center", out.width="100%",fig.cap='Cortes nos dendrogramas para visualização dos grupos.'}
@@ -581,7 +569,5 @@ Você deve estar se perguntando: "Como faço para avaliar os grupos gerados no c
 <p align="justify">
 Agora que entendemos os fundamentos da técnica de agrupamento aglomerativa e como podemos definir os grupos, vamos apresentar alguns exemplos práticos na plataforma kaggle, os exemplos estão disponíveis nas linguagens R e Python.
 </p>
-
-### Exemplos
 
 ## Saiba mais
