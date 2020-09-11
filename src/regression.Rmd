@@ -1,12 +1,4 @@
----
-title: Regressão
-output: bookdown::html_document2
-bibliography: bibfile.bib
-fig_caption: yes
-header-includes:
-- \usepackage{float}
-- \floatsetup[table]{capposition=bot}
----
+# (PART) Aprendizado Supervisionado {-}
 
 # Regressão
 Todas as pessoas pelo menos uma vez na vida já sentiu ou sentirá a necessidade 

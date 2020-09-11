@@ -1,4 +1,16 @@
 book_filename: intro-ao-machine-learning
 output_dir: "../docs"
 delete_merged_file: true
-download: ["pdf"]
+
+rmd_files:
+  [
+    "index.Rmd",
+    "introduction.Rmd",
+    "regression.Rmd",
+    "classification.Rmd",
+    "clustering.Rmd",
+    "examples.Rmd",
+    "final-considerations.Rmd",
+    "appendix-kaggle.Rmd",
+    "references.Rmd",
+  ]

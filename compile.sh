@@ -6,7 +6,7 @@
 cd src
 Rscript compile.R
 cd ../docs
-cp introdução.html index.html
+#cp introdução.html index.html
 
 
 # development

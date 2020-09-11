@@ -1,0 +1,43 @@
+---
+knit: "bookdown::render_book"
+title: "Introdução ao Machine Learning"
+author: ["Adriano Almeida", "Felipe Carvalho", "Felipe Menino"]
+description: "Livro para alunos e alunas que querem iniciar o aprendizado em Machine Learning."
+url: 'https://dataat.github.io/introducao-ao-machine-learning/'
+github-repo: dataat/introducao-ao-machine-learning
+site: bookdown::bookdown_site
+bibliography: bibfile.bib
+fig_caption: yes
+header-includes:
+- \usepackage{float}
+- \usepackage{xcolor}
+- \floatsetup[table]{capposition=bot}
+link-citations: yes
+---
+
+
+# Prefácio {-}
+
+TODO: Editar essa página <------
+
+<!-- <a href="https://amzn.to/2WoabjB"><img src="./assets/banner_notebook.png" width="250" height="366" align="center" alt="Cover image" /></a> -->
+
+
+
+
+## Nossos livros {-}
+
+O Grupo DataAt possui diversos livros-texto, confira:
+
+* __"[Introdução à Análise de Dados](https://dataat.github.io/introducao-analise-de-dados/)"__ Livro-texto criado com o objeto de mostrar os conceito de análise de dados com exemplos práticos com **R** e **Python**.
+
+* __"[Introdução à análise de Dados Espaciais](https://dataat.github.io/introducao-analise-de-dados-espaciais/)"__ Livro-texto criado com objetivo de mostrar o uso de linguagens de programação na manipulação de dados espaciais.
+
+* __"[Introdução ao Docker](https://dataat.github.io/introducao-docker/)"__ feito pelo Felipe Menino, este livro almeja te ensinar os conceitos básicos sobre o Docker.
+
+
+## Licença {-}
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+
+Esta obra, como um todo, está licenciada sob uma <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
