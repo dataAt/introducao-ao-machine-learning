@@ -2,17 +2,17 @@
 
 > ***"Nossas características nos fazem igualmente diferentes" - Autor desconhecido***
 
-É muito provavel que você já tenha recebido algum tipo de SPAM em sua caixa de *e-mail*. Eles estão por toda parte, se disfarçando com os mais variados temas e assunto. Sua presença atrapalha, se não esvaziarmos nossa caixa de email com periodicidade, em pouco tempo estamos com a caixa de entrada lotada! E não é só isso, como apresentado por @Blanzieri2008, os SPAMs representam cerca de 75-80% de todos os emais que circulam na internet. E isso porque ainda nem entramos na extensa lista de problemas que os SPAMs causam diariamente.
+É muito provavel que você já tenha recebido algum tipo de SPAM em sua caixa de *e-mail*. Eles estão por toda parte, se disfarçando com os mais variados temas e assunto. Sua presença atrapalha se não esvaziarmos nossa caixa de email com periodicidade, em pouco tempo estamos com a caixa de entrada lotada! E não é só isso, como apresentado por @Blanzieri2008, os SPAMs representam cerca de 75-80% de todos os *e-mails* que circulam na *internet*. Isso porque ainda nem entramos na extensa lista de problemas que os SPAMs causam diariamente.
 
-Como acha que podemos resolver este problema ? Uma possível solução pode ser a criação de algum tipo de mecanismo que nos ajude a identificar os SPAMs, para que possamos eliminar eles. Fazendo isso, provavelmente vamos evitar todo tipo de problema que esses "simples" *e-mails* podem causar. Ai vem mais uma questão, como podemos fazer a criação desse tal mecanismo ?
+Como acha que podemos resolver este problema ? Uma possível solução pode ser a criação de algum tipo de mecanismo que nos ajude a identificar os SPAMs, para que possamos eliminá-los. Fazendo isso, provavelmente vamos evitar todo tipo de problema que esses "simples" *e-mails* podem causar. Aí vem mais uma questão, como podemos fazer a criação desse tal mecanismo ?
 
-Uma abordagem possível é criar um código que busque e identifique certos padrões nos emais e então indica se é ou não SPAM. Para um pensamento inicial parece ok, mas concorda que podem existir muitos padrões e que esse nosso código pode acabar ficando gigante ? E ainda, mesmo com muitas regras, ele pode acabar não identificando alguma característica. 
+Uma abordagem possível é criar um código que busque e identifique certos padrões nos *e-mails* e então indica se é ou não SPAM. Para um pensamento inicial parece ok, mas podem existir muitos padrões e que esse nosso código pode acabar ficando gigante ? E ainda mesmo com muitas regras, ele pode acabar não identificando alguma característica. 
 
-Complicado né ? Felizmente para tarefas em que o problema é a identificação de padrões os algoritmos de ML podem nos ajudar! Através do uso de algoritmos de ML de **Classificação** podemos resolver este problema!
+Complicado né ? Felizmente para tarefas em que o problema é a identificação de padrões os algoritmos de Aprendizado de Máquina (Do inglês, *Machine Learning* - ML) podem nos ajudar! Através do uso de algoritmos de **Classificação** podemos resolver este problema!
 
-> As tarefas de classificação são utilizadas para a identificação do rótulo de determinadas observações com base em características e informações previamente conhecidas [@lantz2013machine]
+> As técnicas de classificação são utilizadas para a identificação do rótulo de determinadas observações com base em características e informações previamente conhecidas [@lantz2013machine]
 
-Para o uso dos algoritmos que realizam as atividades de **Classificação**, por eles pertencerem ao grupo de algoritmos supervisionados, o que precisamos é criar de um conjunto de *e-mails* SPAM e então treinar o algoritmo para aprender as características mais relevantes dos SPAMs. Uma vez treinado, o algoritmo pode ser utilizado para identificar *e-mails* nunca antes vistos, já que ele mapeou as principais características, diferente da nossa ideia inicia de código, onde estávamos trabalhando com características específicas. 
+Para o uso dos algoritmos que realizam as atividades de **Classificação**, por eles pertencerem ao grupo de algoritmos supervisionados, o que precisamos é criar um conjunto de *e-mails* SPAM e então treinar o algoritmo para aprender as características mais relevantes dos SPAMs. Uma vez treinado, o algoritmo pode ser utilizado para identificar *e-mails* nunca antes vistos, já que ele mapeou as principais características, diferente da nossa ideia inicia de código, em que estávamos trabalhando com características específicas. 
 
 ```{r emailClassifier, echo=FALSE, fig.align='center', out.width = "70%", fig.cap='Classificação de e-mails com ML - Fonte: Produção do autor'}
 knitr::include_graphics("assets/02_classification/email_classifier.png")
@@ -21,6 +21,7 @@ knitr::include_graphics("assets/02_classification/email_classifier.png")
 Esta seção busca apresentar alguns dos principais algoritmos de ML supervisionado que podem ser utilizados para a realização das atividades de classificação. Serão apresentados os algoritmos `k-Nearest Neighbors` e `Árvore de Decisão`.
 
 ## *k*-Nearest Neighbors
+[![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/phelpsmemo/intro-ml-python-knn-worcap2020)
 
 <!-- *"Você é definido pelas pessoas com quem anda"* - Adaptação de ditado popular -->
 
@@ -32,15 +33,19 @@ Essa frase ajuda muito a assimilar a ideia geral do algoritmo, mantenha ela em m
 
 - (i) Análise de vizinhança; 
 
-Nesta parte do algoritmo o que se busca é determinar quem são as amostras do conjunto de treinamento que estão mais próximas da amostra de teste que está sendo classificada. Certo, mas nesse caso, o que é "estar próximo" ? De maneira intuitiva, a ideia de proximidade está relacionada a distância, e é exatamente dessa forma que o algoritmo, nesta etapa, faz a determinação dos elementos próximos, para isso, utiliza várias funções de distância. Um exemplo de função de distância é a `Distância Euclidiana`, sim! a mesma que utilizamos para várias partes de nossas vidas para manipulação de elementos no espaço euclidiano. Você lembra de usar ela para calcular a distância entre dois pontos ? Vamos olhar a fórmula para relembrar
+Nesta parte do algoritmo o que se busca é determinar quem são as amostras do conjunto de treinamento que estão mais próximas da amostra de teste que está sendo classificada. Mas nesse caso, o que é "estar próximo" ? De maneira intuitiva, a ideia de proximidade está relacionada a distância, e é exatamente dessa forma que o algoritmo, faz a determinação dos elementos próximos, para isso, utiliza várias funções de distância. Um exemplo de função de distância é a `Distância Euclidiana`, sim! a mesma que utilizamos para várias partes de nossas vidas para manipulação de elementos no espaço euclidiano. Você lembra que usamos ela para calcular a distância entre dois pontos ? Vamos olhar para relembrar
 
 Então, a `Distância euclidiana` é apresentada da seguinte forma
 
 \begin{equation} 
    \sqrt{\sum_{i = 1}^{n} (p_i - q_i)^2}
 (\#eq:disteuclid)
-\end{equation} 
+\end{equation}
 
+Em que:
+   $p_i = $ Posição de uma determinada dimensão dos pontos
+   $q_i = $ Posição de outra dimensão que não a tratada em $p_i$
+   
 Assim, através dessa função o algoritmo determina os elementos que estão mais próximos de uma determinada amostra. Cabe lembrar que, essa não é a única função, várias outras podem ser utilizadas. Agora, podemos ir para a segunda parte, vamos lá!
 
 - (ii) Determinação do rótulo da classe.
@@ -51,9 +56,9 @@ Nesta parte do algoritmo, após calcular a distância de cada um dos pontos, ele
 
 Mas espera ai, você pode estar se perguntando, "E a ideia do treino e teste que foi falada antes?", bem, esse é um algoritmo de classificação *lazzy learning*, ou seja, a parte de treinamento é resumida em apenas organizar ou armazenar os dados, de modo a deixar eles pronto para o uso.
 
-Agora, com o objetivo de deixar tudo mais claro, vamos para um exemplo visual, passo a passo da execução do algoritmo! Então, vamos começar considerando que o nosso conjunto amostral é formado por um grupo de pontos de várias cores, onde as cores representam os rótulos de cada um desses pontos e então, a ideia vai ser aplicar o kNN para determinar o rótulo de um novo ponto com base nesse conjunto já existente.
+Agora, com o objetivo de deixar tudo mais claro, vamos para um exemplo visual, passo a passo da execução do algoritmo! Então, vamos começar considerando que o nosso conjunto amostral é formado por um grupo de pontos de várias cores, em que as cores representam os rótulos de cada um desses pontos e então, a ideia vai ser aplicar o kNN para determinar o rótulo de um novo ponto com base nesse conjunto já existente.
 
-> Veja aqui que os pontos que já existem representam o conjunto de treino, e o ponto que será classificado, representa o conjunto de teste
+> Veja, aqui que os pontos que já existem representam o conjunto de treino, e o ponto que será classificado, representa o conjunto de teste
 
 Os pontos de treinamento são apresentados na Figura \@ref(fig:classKnn1).
 
@@ -67,7 +72,7 @@ Beleza! Então, com esse conjunto de dados, vamos adicionar um novo ponto, este 
 knitr::include_graphics("assets/02_classification/1_knn/knn_02.png")
 ```
 
-Certo! Então já temos nosso problema de classificação definido, vamos resolver ele com o kNN. Aqui, o valor de *k* = 5 (Não se preocupe, vamos voltar nesse valor de *k* depois), ou seja, na primeira parte do algoritmo, análise de vizinhança, vamos buscar os 5 elementos mais próximos ao ponto vermelho.
+Certo! Então já temos nosso problema de classificação definido, vamos resolver ele com o kNN. Aqui, o valor de *k* = 5 (Não se preocupe, vamos voltar nesse valor de *k* depois), ou seja, vamos buscar os 5 elementos mais próximos ao ponto vermelho.
 
 Feito essas considerações, vamos de maneira manual fazer a aplicação do algoritmo, começando com o primeiro passo, de análise de vizinhança, feito com o cálculo das distâncias. Aqui, você vai perceber que a distância utilizada foi a euclidiana, que apresentamos anteriormente.
 
@@ -93,15 +98,15 @@ Então, é feita a determinação do rótulo do ponto que está sendo classifica
 knitr::include_graphics("assets/02_classification/1_knn/knn_06.png")
 ```
 
-É desta forma que os passos que vimos do algoritmo kNN são materializados frente a um conjunto de dados. Viu que legal! O que o algoritmo faz é exatamente aquilo que está na frase que apresentamos antes.
+É desta forma que os passos que vimos do algoritmo kNN são materializados frente a um conjunto de dados. Viu, que legal! O que o algoritmo faz é exatamente aquilo que está na frase que apresentamos antes.
 
-### Escolha do valor de K
+### Como determinar o valor de K ?
 
-Legal! Então o algoritmo é deveras muito simples de ser entendido, tem uma quantidade pequena de passos, todos compreensíveis. Mas uma pergunta pode ter surgido durante a explicação do algoritmo:
+Legal! Então o algoritmo é simples de ser entendido, tem uma quantidade pequena de passos, todos compreensíveis. Mas uma pergunta pode ter surgido durante a explicação do algoritmo:
 
 > Como determinar o valor de $K$ ?
 
-Bem, essa é uma boa pergunta e mais que isso, é uma pergunta importante! Fazer a escolha da quantidade vizinhos que o kNN vai utilizar, determina o quão bem o algoritmo vai generalizar aos dados futuros. A escolha pelo valor de $K$ deve ser feita considerando um equilíbrio entre um valor grande ou pequeno, isso porque cada um deles tem influências diferentes na maneira a qual o algoritmo vai reconhecer os dados [@lantz2013machine].
+Bem, essa é uma boa pergunta e mais que isso, é uma pergunta importante! Fazer a escolha da quantidade vizinhos que o kNN vai utilizar, determina o quão bem o algoritmo vai generalizar aos dados futuros. A escolha pelo valor de $K$ deve ser feita considerando um equilíbrio entre um valor grande ou pequeno, isso porque cada um deles tem fluências diretas na maneira a qual o algoritmo vai reconhecer os dados [@lantz2013machine].
 
 Segundo @lantz2013machine, quando valores muito grandes de $K$ são escolhidos, tem-se uma redução do impacto causado por dados ruidosos, mas, pode fazer com que o algoritmo deixe de considerar características sucintas que estão nos dados, mas que são importantes para a correta determinação dos rótulos. Por outro lado, valores de $K$ menores permitem o entendimento de características mais sofisticadas dos dados, mas sofrem muita influência de dados ruidosos. A Figura \@ref(fig:chooseKinKnn) faz uma representação da maneira como o processo de decisão para a determinação da classe pode ser tomado, neste, é possível perceber que os valores de $K$ .
 
@@ -170,6 +175,7 @@ from sklearn.neighbors import KNeighborsClassifier
   <!-- Páginas do Kaggle -->
 
 ## Árvore de decisão
+[![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/phelpsmemo/intro-ml-python-decisiontree-worcap2020)
 
 <!-- *"O importante é não deixar de fazer perguntas"* - Albert Einstein -->
 
@@ -177,18 +183,18 @@ A árvore de decisão é um dos algoritmos mais utilizados na área de ML, isso 
 
 ### Conceitos gerais
 
-As árvores de decisão são fundamentalmente formas de representação de conhecimento através de uma estrutura hierarquica de perguntas na forma *if-then-else*. Isso faz com que a estrutura das árvores de decisão sejam semelhantes a um fluxograma, onde existem nós que são utilizados para representar as perguntas e desses são derivados outros nós, que podem representar a resposta ou mesmo outra pergunta. Essa estrutura é apresentada na Figura \@ref(fig:classDt1).
+As árvores de decisão são fundamentalmente formas de representação de conhecimento através de uma estrutura hierarquica de perguntas na forma *if-then-else*. Isso faz com que a estrutura das árvores de decisão sejam semelhantes a um fluxograma, em que existem nós que são utilizados para representar as perguntas e desses são derivados outros nós, que podem representar a resposta ou mesmo outra pergunta. Essa estrutura é apresentada na Figura \@ref(fig:classDt1).
 
 
 ```{r classDt1, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Árvore de decisão - Fonte: Produção do autor'}
 knitr::include_graphics("assets/02_classification/2_decision-tree/01_dt.png")
 ```
 
-Para nos familiarizarmos com os conceitos que estão envolvidos nessa representação, vamos olhar com calma cada um dos detalhes presentes na figura. Primeiro, a leitura desse tipo de árvore é feita sempre de cima para baixo já que a raiz da árvore está sempre no topo, como é o caso da `Pergunta 1` neste exemplo. Além disso, note também que nessa estrutura existem dois tipos de elementos, as `Perguntas` e as `Respostas`, onde, das `Perguntas` podem sair outras dessas ou mesmo `Respostas`. As `Respostas` representam elementos finais e quando aparecem nada pode ser inserido abaixo. Outra coisa importante de ser citada é a característica recursiva das árvores de decisão, nessas, para cada ramo que é seguido após uma pergunta há uma nova árvore, que é criada através das mesmas regras de definição aplicadas na árvore anterior.
+Para nos familiarizarmos com os conceitos que estão envolvidos nessa representação, vamos olhar com calma cada um dos detalhes presentes na figura. Primeiro, a leitura desse tipo de árvore é feita sempre de cima para baixo já que a raiz da árvore está sempre no topo, como é o caso da `Pergunta 1` neste exemplo. Além disso, note também que nessa estrutura existem dois tipos de elementos, as `Perguntas` e as `Respostas`, em que, das `Perguntas` podem sair outras dessas ou mesmo `Respostas`. As `Respostas` representam elementos finais e quando aparecem nada pode ser inserido abaixo. Outra coisa importante de ser citada é a característica recursiva das árvores de decisão, nessas, para cada ramo que é seguido após uma pergunta há uma nova árvore, que é criada através das mesmas regras de definição aplicadas na árvore anterior.
 
-Antes da aplicação em larga escala dos algoritmos de AM, essas estruturas já eram utilizadas, porém, com a diferença de que toda a sua criação era feita manualmente, através da aplicação do conhecimento vindo de pesquisas e experimentos empíricos. Por exemplo, um banco, antes do Aprendizado de Máquina, ao querer ser mais acertivo nos empréstimos e diminuir a inadimplência, poderia utilizar de seu histórico de empréstimos e criar regras consultáveis que poderiam ser utilizadas como auxílio aos operadores que realizam empréstimos. A representação das regras definidas poderia ser feita através de uma árvore de decisão sem problemas, mas, isso não caracterizada nada de aprendizado de máquina, já que todo o 'processo de aprendizado' foi feito manualmente por pessoas.
+Antes da aplicação em larga escala dos algoritmos de AM, essas estruturas já eram utilizadas, porém, com a diferença de que toda a sua criação era feita manualmente, através da aplicação do conhecimento vindo de pesquisas e experimentos empíricos. Por exemplo, um banco, antes do ML, ao querer ser mais acertivo nos empréstimos e diminuir a inadimplência, poderia utilizar de seu histórico de empréstimos e criar regras consultáveis que poderiam ser utilizadas como auxílio aos operadores que realizam empréstimos. A representação das regras definidas poderia ser feita através de uma árvore de decisão sem problemas, mas, isso não caracterizada nada de ML, já que todo o 'processo de aprendizado' foi feito manualmente por pessoas.
 
-Ao contrário disto, as árvores de decisão no contexto de AM são as responsáveis em olhar para os dados e decidir quais são as perguntas mais adequadas para uma determinada resposta. Isso é feito no algoritmo através de sucessivas divisões no conjunto de dados, de modo que, em cada divisão tem-se novos elementos adicionados na árvore. Para essa ideia ficar clara, vamos começar com um exemplo, neste, há um conjunto de pontos, onde cada cor representa uma classe. A árvore de decisão será treinada com esses dados de modo que novas classificações com base neste treinamento possam ser realizadas. O conjunto de dados e a representação da árvore são feitos na Figura \@ref(fig:classDt2).
+Ao contrário disto, as árvores de decisão no contexto de ML são as responsáveis em olhar para os dados e decidir quais são as perguntas mais adequadas para uma determinada resposta. Isso é feito no algoritmo através de sucessivas divisões no conjunto de dados, de modo que, em cada divisão tem-se novos elementos adicionados na árvore. Para essa ideia ficar clara, vamos começar com um exemplo, neste, há um conjunto de pontos, em, cada cor representa uma classe. A árvore de decisão será treinada com esses dados de modo que novas classificações com base neste treinamento possam ser realizadas. O conjunto de dados e a representação da árvore são feitos na Figura \@ref(fig:classDt2).
 
 
 ```{r classDt2, echo=FALSE, fig.align='center', out.width = "75%", fig.cap='Conjunto de dados 1 - Fonte: Produção do autor'}
@@ -203,12 +209,14 @@ knitr::include_graphics("assets/02_classification/2_decision-tree/03_dt.png")
 ```
 
 
-Se lembrarmos a definição feita anteriormente, temos que as árvores de decisão são estruturas recursivas, então, a mesma lógica de busca do elemento que melhor descreve um conjunto de dados e então a divisão é aplicado nos nós resultantes, isso é feito até que não haja mais elementos suficientes para a divisão ou quando em um nó, todos os elementos pertencem a apenas uma classe. Na Figura \@ref(fig:classDt4) uma divisão é feita no nó esquerdo, gerado anteriormente, e no nó esquerdo não é feito mais nada.
+Se lembrarmos a definição feita anteriormente, temos que as árvores de decisão são estruturas recursivas, então, a mesma lógica de busca do elemento que melhor descreve um conjunto de dados e então a divisão é aplicado nos nós resultantes, isso é feito até que não haja mais elementos suficientes para a divisão ou quando em um nó todos os elementos pertencem a apenas uma classe. Na Figura \@ref(fig:classDt4) uma divisão é feita no nó esquerdo, gerado anteriormente, e no nó esquerdo não é feito mais nada.
 
 ```{r classDt4, echo=FALSE, fig.align='center', out.width = "79%", fig.cap='Conjunto de dados 3 - Fonte: Produção do autor'}
 knitr::include_graphics("assets/02_classification/2_decision-tree/04_dt.png")
 ```
-Vamos supor agora que a árvore apresentada na Figura \ref@(fig:class_dt4) finalizou seu treinamento, de modo que classificações podem ser iniciadas. Você pode se perguntar, mas em alguns nós da árvore há uma mistura de elementos, como ele vai fazer a identificação da classe ? Bem, este é um problema recorrente na aplicação das árvores de decisão, nem sempre, as regras escolhidas vão criar grupos de dados 100% puros (de uma única classe). Mais regras poderia ser adicionadas, mas ai, caimos no problema de *overfitting*, onde a árvore começa a criar regras específicas para os dados que estão sendo utilizados no treinamento, o que faz seu desempenho ser muito ruim com dados que não sejam do conjunto utilizado no treino. Com relação a definição da classe, o que é feito é definir a classe do nó gerado, considerando a classe mais representativa de cada nó, então, se formos classificar um novo ponto e ele tem X > 10, ele vai ser colocado como classe `Vermelha` no conjunto de dados.
+Vamos supor agora que a árvore apresentada na Figura \@ref(fig:class_dt4) finalizou seu treinamento, de modo que classificações podem ser iniciadas. Você pode se perguntar, "mas em alguns nós da árvore há uma mistura de elementos, como ele vai fazer a identificação da classe ?" Bem, este é um problema recorrente na aplicação das árvores de decisão, nem sempre as regras escolhidas vão criar grupos de dados 100% puros (de uma única classe). Mais regras poderia ser adicionadas, mas aí, caimos no problema de *overfitting*, em que a árvore começa a criar regras específicas para os dados que estão sendo utilizados no treinamento, o que faz seu desempenho ser muito ruim com dados que não sejam do conjunto utilizado no treino. Com relação a definição da classe, é feito a definição da classe aos nós.
+
+é definir a classe do nó gerado, considerando a classe mais representativa de cada nó, então, se formos classificar um novo ponto e ele tem X > 10, ele vai ser colocado como classe `Vermelha` no conjunto de dados.
 
 Agora que temos uma visão geral do algoritmo, vamos dar ir adiante a frente e ver como os passos apresentados acima são feitos no algoritmo.
 
@@ -220,7 +228,7 @@ Nesta seção, vamos materializar as ideias que foram apresentadas na seção de
 
 - 1. Seleção do melhor atributo para a divisão dos registros
 - 2. Utilização deste atributo para a divisão do conjunto de dados, gerando novos nós na árvore
-- 3. Para cada nó gerado no passo 2, aplica, recursivamente o algoritmo de construção, iniciando no passo 1. O algoritmo deve parar a recursão e não dividir mais os nós quando: 
+- 3. Para cada nó gerado no passo 2, aplica-se recursivamente, o algoritmo de construção, iniciando no passo 1. O algoritmo deve parar a recursão e não dividir mais os nós quando: 
   - (i) Todos os dados do nó pertencerem a uma mesma classe; 
   - (ii) Não há dados suficientes para a divisão; ou 
   - (iii) Todos os atributos disponíveis nos dados já foram utilizados.
@@ -267,7 +275,7 @@ Onde,
 - $N$ = Quantidade total de elementos no conjunto de dados
 - $N_i$ = Quantidade de dados a ser inserido no nó filho $i$
 
-Uma vez tendo esses conceitos definidos, cabe deixar claro que, o ganho de informação será o elemento base utilizado no processo de seleção do atributo que melhor divide o conjunto de dados (Que tem maior ganho de informação), e uma vez que este atributo é selecionado, ele passa a ser utilizado para a realização da divisão dos dados. Neste processo de divisão, mais passos podem ser considerados, mas o objetivo deste documento é de apenas apresentar a intuição geral por trás da árvore de decisão e seu processo de treinamento.
+Uma vez tendo esses conceitos definidos, cabe deixar claro que, o ganho de informação será o elemento base utilizado no processo de seleção do atributo que melhor divide o conjunto de dados (que tem maior ganho de informação), e uma vez que este atributo é selecionado, ele passa a ser utilizado para a realização da divisão dos dados. Neste processo de divisão, mais passos podem ser considerados, mas o objetivo deste documento é de apenas apresentar a intuição geral por trás da árvore de decisão e seu processo de treinamento.
 
 #### Exemplo de construção da árvore
 
@@ -280,9 +288,9 @@ Para fechar essa parte mais téorica do funcionamento da árvore de decisão e p
 |       Não       |        Sim       |      Caminhada      |
 |       Não       |        Não       |        Ônibus       |
 
-Bom, nesta primeira etapa nossa árvore nem existe, é preciso definir para ela um ponto de partida, um atributo que será utilizada para dividir o conjunto de dados e então ir criando os ramos de decisão. Como vimos na seção anterior, vamos utilizar o `Ganho de informação` para realizar essa decisão. Então, para começar, vamos calcular o ganho de informação para cada uma dos atributos, afinal, se quisermos saber qual a melhor, precisamos testar todas.
+Bom, nesta primeira etapa nossa árvore nem existe, é preciso definir para ela um ponto de partida, um atributo que será utilizada para dividir o conjunto de dados e então ir criando os ramos de decisão. Como vimos na seção anterior, vamos utilizar o `Ganho de informação` para realizar essa decisão. Então, para começar, vamos calcular o ganho de informação para cada um dos atributos, afinal, se quisermos saber qual a melhor, precisamos testar todas.
 
-Para calcular o ganho de informação, precisamos primeiro calcular as entropias para os nós filhos que serão gerados caso este atributo seja o selecionado para a divisão. Para isso, aplicamos a divisão considerando o atributo e então, para cada nó gerado, calculamos a entropia. Por exemplo, no caso do atributo `Está chovendo?`, a divisão gerou dois nós. Um para o valor `Sim` e outro para o `Não`. Dentro desses dois nós é feita a inserção dos elementos correspondentes. No caso de quando `Está chovendo?` for `Sim`, o único transporte possível é o `Ônibus`, então, ele é o único inserido no nó resultante. O mesmo vale para quando a resposta é `Não`, mas para esta resposta, são possíveis os transportes `Ônibus` e `Caminhada`. A Figura \@ref(fig:classDt6) apresenta a aplicação desta lógica em ambas os atributos (`Está chovendo?` e `Está com tempo?`)
+Para calcular o ganho de informação, precisamos primeiro calcular as entropias para os nós filhos que serão gerados caso este atributo seja o selecionado para a divisão. Para isso, aplicamos a divisão considerando o atributo e então, para cada nó gerado, calculamos a entropia. Por exemplo, no caso do atributo `Está chovendo?`, a divisão gerou dois nós. Um para o valor `Sim` e outro para o `Não`. Dentro desses dois nós é feita a inserção dos elementos correspondentes. No caso de quando `Está chovendo?` for `Sim`, o único transporte possível é o `Ônibus`, então, ele é o único inserido no nó resultante. O mesmo vale para quando a resposta é `Sim`, mas para esta resposta, são possíveis os transportes `Ônibus` e `Caminhada`. A Figura \@ref(fig:classDt6) apresenta a aplicação desta lógica em ambas os atributos (`Está chovendo?` e `Está com tempo?`)
 
 
 ```{r classDt6, echo=FALSE, fig.align='center', out.width = "100%", fig.cap='Entropia dos nós filhos - Fonte: Produção do autor'}
@@ -321,7 +329,7 @@ Acho que agora você consegue perceber o motivo deste ser um dos métodos de apr
 
 ### Problemas com overfitting
 
-Assim como qualquer outro algoritmo de ML supervisiondo, as árvores de decisão podem sofrer com fenômeno de *Overfitting* e *Underfitting*. Com um algoritmo de treinamento de caracter ganancioso, as árvores de decisão, no momento em que estão sendo geradas, podem acabar criando uma quantidade enorme de nós de decisão para minimizar a entropia de seus nós [@Aggarwal2015]. O contrário disso acaba gerando regras que não são o suficiente para caracterizar os dados e então generalizar as operações. A Figura \@ref(fig:classDtOverUnder) faz a ilustração desses fenômenos considerando a necessidade de identificação de um lenhador. 
+Assim como qualquer outro algoritmo de ML supervisiondo, as árvores de decisão podem sofrer com fenômeno de *Overfitting* e *Underfitting*. Com um algoritmo de treinamento que trabalha sempre com a melhora em cert, as árvores de decisão, no momento em que estão sendo geradas, podem acabar criando uma quantidade enorme de nós de decisão para minimizar a entropia de seus nós [@Aggarwal2015]. O contrário disso acaba gerando regras que não são o suficiente para caracterizar os dados e então generalizar as operações. A Figura \@ref(fig:classDtOverUnder) faz a ilustração desses fenômenos considerando a necessidade de identificação de um lenhador. 
 
 ```{r classDtOverUnder, echo=FALSE, fig.align='center', out.width = "70%", fig.cap='Representação do Overfitting e Underfitting - Fonte: Produção do autor'}
 knitr::include_graphics("assets/02_classification/decisionoverfitting.png")

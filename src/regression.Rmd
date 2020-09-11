@@ -60,6 +60,7 @@ abordados neste capítulo serão `Regressão linear`,
 `Máquina de vetores de suporte` e `Árvores de decisão`.
 
 ## Regressão Linear
+[![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/lordadriano/mc2-worcap-2020-linear-regression)
 
 A regressão linear é um dos métodos mais intuitivos e utilizados para essa 
 finalidade. Esses métodos são dividos em dois grupos, a regressão linear simples
@@ -196,7 +197,14 @@ como foi apresentado ao longo desta seção, é necessário que os dados possuam
 alta correlação. Este algoritmo está disponível na biblioteca [Scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) 
 par ser utilizado em Python. 
 
+### Exemplos de aplicação do algoritmo
+
+Para você colocar me prática os conceitos vistos, abaixo há um exemplo de aplicação do algoritmo.
+
+- [Exemplo de Regressão Linear](https://www.kaggle.com/lordadriano/mc2-worcap-2020-linear-regression)
+
 ## Máquinas de vetores de suporte
+[![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/lordadriano/mc2-worcap-2020-svr)
 
 As máquinas de vetores de suporte (SVM - sigla do inglês, 
 *support vector machine*) são modelos de aprendizado de máquina supervisionado 
@@ -315,7 +323,7 @@ transformação dos pontos utilizando uma função gaussiana, definida por:
 (\#eq:rbf-kernel)
 \end{equation} 
 
-### Regressão com máquinas de suporte de vetores
+### Regressão com máquinas de vetores de suporte
 Embora as SVM sejam aplicadas principalmente para tarefas de classificação, ou 
 seja, um cálculo de um valor inteiro, ela também pode ser utilizada para tarefas 
 de regressão, calculando valores reais. Essas abordagens são chamadas de 

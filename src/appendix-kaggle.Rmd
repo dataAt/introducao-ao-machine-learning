@@ -12,7 +12,7 @@ Dado este contexto inicial, neste documento, serão abordados os primeiros passo
 
 ## Cadastro
 
-Para iniciar o processo de cadastro, acesse [Kaggle](https://www.kaggle.com/). Na página principal da plataforma, apresentada na Figura \@ref(fig:telacadastro), clique no ícone ${\textbf{Register}}^{\color{red}1 \ ou \ \color{red}3}$. Caso já tenha uma conta registrada, utilize a opção ${\textbf{Sign In}}^{\color{red}{2}}$.
+Para iniciar o processo de cadastro, acesse o [Kaggle](https://www.kaggle.com/). Na página principal da plataforma, apresentada na Figura \@ref(fig:telacadastro), clique no ícone ${\textbf{Register}}^{\color{red}1 \ ou \ \color{red}3}$. Caso já tenha uma conta registrada, utilize a opção ${\textbf{Sign In}}^{\color{red}{2}}$.
 
 
 ```{r telacadastro, echo=FALSE, fig.align='center', fig.cap='Tela inicial'}
@@ -20,10 +20,10 @@ knitr::include_graphics("assets/appendix-kaggle/tela_inicial.png")
 ```
 
 
-Após aceitar os termos de uso, é necessário inserir o código de segurança (Figura \@ref(fig:codigo), o qual foi enviado no email cadastrado. Caso não tenha recebido, verifique a caixa de \textit{Spam}.
+Após aceitar os termos de uso, é necessário inserir o código de segurança (Figura \@ref(fig:codigo)), o qual foi enviado no email cadastrado. Caso não tenha recebido, verifique a caixa de *Spam*.
 
 
-```{r codigo, echo=FALSE, fig.align='center', fig.cap='Tela de segurança'}
+```{r codigo, echo=FALSE, fig.align='center',  out.width="35%", fig.cap='Tela de segurança'}
 knitr::include_graphics("assets/appendix-kaggle/code_number_2.png")
 ```
 
@@ -32,16 +32,14 @@ knitr::include_graphics("assets/appendix-kaggle/code_number_2.png")
 
 Dentro da plataforma Kaggle, os ambientes para a execução dos códigos, chamados de `Notebooks`, são criados com o [Jupyter Notebook](https://jupyter.org/), uma ferramenta que possibilita a criação de documentos interativos, com códigos que podem ser executados e misturados com equações, visualização de dados e textos descritivos.
 
-Para criar um novo notebook, após o ingresso na plataforma, clique em ${\textbf{Notebooks}}^{\color{red}1}$, como apresentado na Figura \@ref(fig:telacriacao), em seguida clique em ${\textbf{New Notebook}}^{\color{red}2}$. Caso tenha dúvidas sobre a plataforma e queira saber mais detalhes, recomendamos a leitura da documentação em \textbf{Documentation}.
-
-
+Para criar um novo notebook, após o ingresso na plataforma, clique em ${\textbf{Notebooks}}^{\color{red}1}$, como apresentado na Figura \@ref(fig:telacriacao), em seguida clique em ${\textbf{New Notebook}}^{\color{red}2}$. Caso tenha dúvidas sobre a plataforma e queira saber mais detalhes, recomendamos a leitura da [documentação](https://www.kaggle.com/docs)
 
 ```{r telacriacao, echo=FALSE, fig.align='center', fig.cap='Criação de um novo notebook'}
 knitr::include_graphics("assets/appendix-kaggle/criacao_jupyter.png")
 ```
 
 
-Na tela de configurações de um novo notebook, presente na Figura \@ref(fig:telaconfig), é possível selecionar entre duas linguagens de programação${\textbf{}}^{\color{red}1}$, R e Python, assim como, o tipo de ambiente que deseja criar${\textbf{}}^{\color{red}2}$, neste curso, \textbf{Notebook}. O ambiente disponibiliza acesso a GPUs${\textbf{}}^{\color{red}3}$ e sincronização com os serviços Google Cloud, tais configurações não serão utilizadas neste curso.
+Na tela de configurações de um novo notebook, presente na Figura \@ref(fig:telaconfig), é possível selecionar entre duas linguagens de programação${\textbf{}}^{\color{red}1}$, R e Python, assim como, o tipo de ambiente que deseja criar${\textbf{}}^{\color{red}2}$, neste curso o *Notebook*. O ambiente disponibiliza acesso a GPUs${\textbf{}}^{\color{red}3}$ e sincronização com os serviços Google Cloud, tais configurações não serão utilizadas neste curso.
 
 ```{r telaconfig, echo=FALSE, fig.align='center', fig.cap='Criação de um novo notebook'}
 knitr::include_graphics("assets/appendix-kaggle/tela_criacao_2.png")

@@ -209,6 +209,7 @@ conceitos podem ser aplicados no método divisivo.
 </p>
 
 ## Kmeans
+[![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/oldlipe/intro-ml-r-kmeans-worcap2020)
 
 <p align="justify">
 Kmeans ou K-médias é uma técnica de agrupamento que usa o método de partição
@@ -402,6 +403,7 @@ algumas técnicas de estimativas de grupos, vamos apresentar alguns exemplos pr�
 <!-- > Link para o kaggle -->
 
 ## Agrupamento Hierarquico - Método Aglomerativo
+[![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/oldlipe/intro-ml-r-hiererquico-worcap2020)
 
 <p align="justify">
 Os métodos de agrupamento hierárquicos que pertencem à categoria de
