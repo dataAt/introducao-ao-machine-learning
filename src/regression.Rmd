@@ -197,12 +197,6 @@ como foi apresentado ao longo desta seção, é necessário que os dados possuam
 alta correlação. Este algoritmo está disponível na biblioteca [Scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) 
 par ser utilizado em Python. 
 
-### Exemplos de aplicação do algoritmo
-
-Para você colocar me prática os conceitos vistos, abaixo há um exemplo de aplicação do algoritmo.
-
-- [Exemplo de Regressão Linear](https://www.kaggle.com/lordadriano/mc2-worcap-2020-linear-regression)
-
 ## Máquinas de vetores de suporte
 [![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/lordadriano/mc2-worcap-2020-svr)
 
