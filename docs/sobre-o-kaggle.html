@@ -82,15 +82,16 @@
 <li class="chapter" data-level="2" data-path="regressão.html"><a href="regressão.html"><i class="fa fa-check"></i><b>2</b> Regressão</a><ul>
 <li class="chapter" data-level="2.1" data-path="regressão.html"><a href="regressão.html#regressão-linear"><i class="fa fa-check"></i><b>2.1</b> Regressão Linear</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="regressão.html"><a href="regressão.html#coeficientes-da-regressão-linear"><i class="fa fa-check"></i><b>2.1.1</b> Coeficientes da regressão linear</a></li>
+<li class="chapter" data-level="2.1.2" data-path="regressão.html"><a href="regressão.html#exemplos-de-aplicação-do-algoritmo"><i class="fa fa-check"></i><b>2.1.2</b> Exemplos de aplicação do algoritmo</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="regressão.html"><a href="regressão.html#máquinas-de-vetores-de-suporte"><i class="fa fa-check"></i><b>2.2</b> Máquinas de vetores de suporte</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="regressão.html"><a href="regressão.html#kernels"><i class="fa fa-check"></i><b>2.2.1</b> <em>Kernels</em></a></li>
-<li class="chapter" data-level="2.2.2" data-path="regressão.html"><a href="regressão.html#regressão-com-máquinas-de-suporte-de-vetores"><i class="fa fa-check"></i><b>2.2.2</b> Regressão com máquinas de suporte de vetores</a></li>
+<li class="chapter" data-level="2.2.2" data-path="regressão.html"><a href="regressão.html#regressão-com-máquinas-de-vetores-de-suporte"><i class="fa fa-check"></i><b>2.2.2</b> Regressão com máquinas de vetores de suporte</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="classificação.html"><a href="classificação.html"><i class="fa fa-check"></i><b>3</b> Classificação</a><ul>
 <li class="chapter" data-level="3.1" data-path="classificação.html"><a href="classificação.html#k-nearest-neighbors"><i class="fa fa-check"></i><b>3.1</b> <em>k</em>-Nearest Neighbors</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="classificação.html"><a href="classificação.html#escolha-do-valor-de-k"><i class="fa fa-check"></i><b>3.1.1</b> Escolha do valor de K</a></li>
+<li class="chapter" data-level="3.1.1" data-path="classificação.html"><a href="classificação.html#como-determinar-o-valor-de-k"><i class="fa fa-check"></i><b>3.1.1</b> Como determinar o valor de K ?</a></li>
 <li class="chapter" data-level="3.1.2" data-path="classificação.html"><a href="classificação.html#complexidade"><i class="fa fa-check"></i><b>3.1.2</b> Complexidade</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="classificação.html"><a href="classificação.html#árvore-de-decisão"><i class="fa fa-check"></i><b>3.2</b> Árvore de decisão</a><ul>
@@ -148,16 +149,16 @@
 <p>Dado este contexto inicial, neste documento, serão abordados os primeiros passos de uso da plataforma e os principais conceitos envolvidos em seu uso.</p>
 <div id="cadastro" class="section level2">
 <h2><span class="header-section-number">7.1</span> Cadastro</h2>
-<p>Para iniciar o processo de cadastro, acesse <a href="https://www.kaggle.com/">Kaggle</a>. Na página principal da plataforma, apresentada na Figura <a href="sobre-o-kaggle.html#fig:telacadastro">7.1</a>, clique no ícone <span class="math inline">\({\textbf{Register}}^{\color{red}1 \ ou \ \color{red}3}\)</span>. Caso já tenha uma conta registrada, utilize a opção <span class="math inline">\({\textbf{Sign In}}^{\color{red}{2}}\)</span>.</p>
+<p>Para iniciar o processo de cadastro, acesse o <a href="https://www.kaggle.com/">Kaggle</a>. Na página principal da plataforma, apresentada na Figura <a href="sobre-o-kaggle.html#fig:telacadastro">7.1</a>, clique no ícone <span class="math inline">\({\textbf{Register}}^{\color{red}1 \ ou \ \color{red}3}\)</span>. Caso já tenha uma conta registrada, utilize a opção <span class="math inline">\({\textbf{Sign In}}^{\color{red}{2}}\)</span>.</p>
 <div class="figure" style="text-align: center"><span id="fig:telacadastro"></span>
 <img src="assets/appendix-kaggle/tela_inicial.png" alt="Tela inicial" width="836" />
 <p class="caption">
 Figure 7.1: Tela inicial
 </p>
 </div>
-<p>Após aceitar os termos de uso, é necessário inserir o código de segurança (Figura <a href="sobre-o-kaggle.html#fig:codigo">7.2</a>, o qual foi enviado no email cadastrado. Caso não tenha recebido, verifique a caixa de .</p>
+<p>Após aceitar os termos de uso, é necessário inserir o código de segurança (Figura <a href="sobre-o-kaggle.html#fig:codigo">7.2</a>), o qual foi enviado no email cadastrado. Caso não tenha recebido, verifique a caixa de <em>Spam</em>.</p>
 <div class="figure" style="text-align: center"><span id="fig:codigo"></span>
-<img src="assets/appendix-kaggle/code_number_2.png" alt="Tela de segurança" width="164" />
+<img src="assets/appendix-kaggle/code_number_2.png" alt="Tela de segurança" width="35%" />
 <p class="caption">
 Figure 7.2: Tela de segurança
 </p>
@@ -166,14 +167,14 @@ Figure 7.2: Tela de segurança
 <div id="criação-de-um-notebook" class="section level2">
 <h2><span class="header-section-number">7.2</span> Criação de um notebook</h2>
 <p>Dentro da plataforma Kaggle, os ambientes para a execução dos códigos, chamados de <code>Notebooks</code>, são criados com o <a href="https://jupyter.org/">Jupyter Notebook</a>, uma ferramenta que possibilita a criação de documentos interativos, com códigos que podem ser executados e misturados com equações, visualização de dados e textos descritivos.</p>
-<p>Para criar um novo notebook, após o ingresso na plataforma, clique em <span class="math inline">\({\textbf{Notebooks}}^{\color{red}1}\)</span>, como apresentado na Figura <a href="sobre-o-kaggle.html#fig:telacriacao">7.3</a>, em seguida clique em <span class="math inline">\({\textbf{New Notebook}}^{\color{red}2}\)</span>. Caso tenha dúvidas sobre a plataforma e queira saber mais detalhes, recomendamos a leitura da documentação em .</p>
+<p>Para criar um novo notebook, após o ingresso na plataforma, clique em <span class="math inline">\({\textbf{Notebooks}}^{\color{red}1}\)</span>, como apresentado na Figura <a href="sobre-o-kaggle.html#fig:telacriacao">7.3</a>, em seguida clique em <span class="math inline">\({\textbf{New Notebook}}^{\color{red}2}\)</span>. Caso tenha dúvidas sobre a plataforma e queira saber mais detalhes, recomendamos a leitura da <a href="https://www.kaggle.com/docs">documentação</a></p>
 <div class="figure" style="text-align: center"><span id="fig:telacriacao"></span>
 <img src="assets/appendix-kaggle/criacao_jupyter.png" alt="Criação de um novo notebook" width="954" />
 <p class="caption">
 Figure 7.3: Criação de um novo notebook
 </p>
 </div>
-<p>Na tela de configurações de um novo notebook, presente na Figura <a href="sobre-o-kaggle.html#fig:telaconfig">7.4</a>, é possível selecionar entre duas linguagens de programação<span class="math inline">\({\textbf{}}^{\color{red}1}\)</span>, R e Python, assim como, o tipo de ambiente que deseja criar<span class="math inline">\({\textbf{}}^{\color{red}2}\)</span>, neste curso, . O ambiente disponibiliza acesso a GPUs<span class="math inline">\({\textbf{}}^{\color{red}3}\)</span> e sincronização com os serviços Google Cloud, tais configurações não serão utilizadas neste curso.</p>
+<p>Na tela de configurações de um novo notebook, presente na Figura <a href="sobre-o-kaggle.html#fig:telaconfig">7.4</a>, é possível selecionar entre duas linguagens de programação<span class="math inline">\({\textbf{}}^{\color{red}1}\)</span>, R e Python, assim como, o tipo de ambiente que deseja criar<span class="math inline">\({\textbf{}}^{\color{red}2}\)</span>, neste curso o <em>Notebook</em>. O ambiente disponibiliza acesso a GPUs<span class="math inline">\({\textbf{}}^{\color{red}3}\)</span> e sincronização com os serviços Google Cloud, tais configurações não serão utilizadas neste curso.</p>
 <div class="figure" style="text-align: center"><span id="fig:telaconfig"></span>
 <img src="assets/appendix-kaggle/tela_criacao_2.png" alt="Criação de um novo notebook" width="956" />
 <p class="caption">
