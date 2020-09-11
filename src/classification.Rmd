@@ -21,6 +21,7 @@ knitr::include_graphics("assets/02_classification/email_classifier.png")
 Esta seção busca apresentar alguns dos principais algoritmos de ML supervisionado que podem ser utilizados para a realização das atividades de classificação. Serão apresentados os algoritmos `k-Nearest Neighbors` e `Árvore de Decisão`.
 
 ## *k*-Nearest Neighbors
+[![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/phelpsmemo/intro-ml-python-knn-worcap2020)
 
 <!-- *"Você é definido pelas pessoas com quem anda"* - Adaptação de ditado popular -->
 
@@ -170,6 +171,7 @@ from sklearn.neighbors import KNeighborsClassifier
   <!-- Páginas do Kaggle -->
 
 ## Árvore de decisão
+[![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/phelpsmemo/intro-ml-python-decisiontree-worcap2020)
 
 <!-- *"O importante é não deixar de fazer perguntas"* - Albert Einstein -->
 
