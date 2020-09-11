@@ -564,4 +564,4 @@ Você deve estar se perguntando: "Como faço para avaliar os grupos gerados no c
 Agora que entendemos os fundamentos da técnica de agrupamento aglomerativa e como podemos definir os grupos, vamos apresentar alguns exemplos práticos na plataforma kaggle, os exemplos estão disponíveis nas linguagens R e Python.
 </p>
 
-## Saiba mais
+<!-- ## Saiba mais -->

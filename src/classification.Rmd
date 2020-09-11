@@ -43,8 +43,10 @@ Então, a `Distância euclidiana` é apresentada da seguinte forma
 \end{equation}
 
 Em que:
-   $p_i = $ Posição de uma determinada dimensão dos pontos
-   $q_i = $ Posição de outra dimensão que não a tratada em $p_i$
+   
+   $p_i =$ Posição de uma determinada dimensão dos pontos
+   
+   $q_i =$ Posição de outra dimensão que não a tratada em $p_i$
    
 Assim, através dessa função o algoritmo determina os elementos que estão mais próximos de uma determinada amostra. Cabe lembrar que, essa não é a única função, várias outras podem ser utilizadas. Agora, podemos ir para a segunda parte, vamos lá!
 
