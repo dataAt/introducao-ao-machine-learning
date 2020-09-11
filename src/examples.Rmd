@@ -1,14 +1,4 @@
----
-title: Exemplos
-output: 
-    bookdown::html_document2: default
-    bookdown::pdf_document2: default
-bibliography: bibfile.bib
-fig_caption: yes
-header-includes:
-- \usepackage{float}
-- \floatsetup[table]{capposition=bot}
----
+# Exemplos
 
 <!-- TODO: Descrever o kaggle-->
 A plataforma kaggle ....

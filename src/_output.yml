@@ -11,5 +11,13 @@ bookdown::gitbook:
             <li><a href="https://github.com/dataAt/introducao-ao-machile-learning" target="blank">Contribua com este material</a></li>
 bookdown::pdf_book:
     keep_tex: yes
+    dev: "cairo_pdf"
+    latex_engine: xelatex
+    citation_package: natbib
+    pandoc_args: ["--top-level-division=chapter", "--lua-filter=latex/sidebar.lua"]
+    template: null
+    quote_footer: ["\\hspace*{\\fill} ", ""]
+    toc_unnumbered: false
+    number_sections: true
 bookdown::html_book:
     css: custom.css

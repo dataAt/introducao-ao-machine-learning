@@ -1,23 +1,11 @@
----
-title: Agrupamento
-output: 
-    bookdown::html_document2: default
-    bookdown::pdf_document2: default
-bibliography: bibfile.bib
-fig_caption: yes
-header-includes:
-- \usepackage{float}
-- \usepackage{xcolor}
-- \floatsetup[table]{capposition=bot}
----
+# (PART) Aprendizado Não Supervisionado {-}
+
+# Agrupamento
 
 <!-- TODO: usar imagem desse livro na apresentação https://mhweber.github.io/AWRA_2020_R_Spatial/ -->
 
 <!-- TODO: pensando em add a citação de que o termo cluster apareceu em um artigo 
 em 1959 -->
-
-
-# Agrupamento
 
 > Afinal, todos nós nos enquadramos em um grupo. - (autor desconhecido) 
 
@@ -53,7 +41,7 @@ organização foi possível encontrar diversos **grupos** de livros separados po
 gênero, como apresentado na Figura \@ref(fig:clustering-book).
 </p>
 
-```{r clustering-book, echo=FALSE, fig.align="center", fig.show = "hold", out.width="100%", fig.cap='Antes e depois da organização da prateleira de livros em grupos baseados em gênero.'}
+```{r clustering-book, echo=FALSE, fig.align="center", out.width="60%", fig.show = "hold", fig.cap='Antes e depois da organização da prateleira de livros em grupos baseados em gênero.'}
 knitr::include_graphics("./assets/04_clustering/clustering.png") 
 ```
 
@@ -110,7 +98,7 @@ do conjunto de dados, conforme ilustrado, em que um objeto no
 **Grupo 8** possui os valores de $X = 8$ e $Y = 8$.
 </p>
 
-```{r agrup-exemplo, echo=FALSE, fig.align="center", fig.show = "hold", out.width = "70%", fig.cap='Exemplo de dois agrupamentos em um plano com duas dimensões (X,Y). Observam-se 3 grupos em a) e 8 grupos em b). Adaptado de @esling2012time '}
+```{r agrup-exemplo, echo=FALSE, fig.align="center", fig.show = "hold", out.width="50%", fig.cap='Exemplo de dois agrupamentos em um plano com duas dimensões (X,Y). Observam-se 3 grupos em a) e 8 grupos em b). Adaptado de @esling2012time '}
 # refazer essa figura
 knitr::include_graphics(c("./assets/04_clustering/clust_1_ex.png", "./assets/04_clustering/clust_2_ex.png")) 
 ```
@@ -170,7 +158,7 @@ de agrupamento nebulosas (em inglês, *fuzzy clustering*). A Figura
 as linhas pretas demarcam cada partição.
 </p>
 
-```{r centroid-based, echo=FALSE, fig.align="center", fig.show = "hold", out.width="100%", fig.cap='Exemplo de um agrupamento baseado em partição. As linhas pretas demarcam as partições e as formas geométricas preenchidas os centróides. Adaptado de @google2020'}
+```{r centroid-based, echo=FALSE, fig.align="center", out.width="60%", fig.show = "hold", fig.cap='Exemplo de um agrupamento baseado em partição. As linhas pretas demarcam as partições e as formas geométricas preenchidas os centróides. Adaptado de @google2020'}
 knitr::include_graphics("./assets/04_clustering/centroid_bases.png") 
 ```
 
@@ -192,7 +180,7 @@ para criar os grupos. Baseado no modo em que sua decomposição hierárquica é 
 AGNES (do inglês, *Agglomerative Nesting*), considera-se, inicialmente, que cada objeto seja seu próprio grupo, e a cada iteração, os dois grupos mais parecidos são unidos, assim, formando um novo um grupo. Esse processo é repetido até que todos os objetos estejam em um único grupo. De modo oposto, o método **divisivo**, também conhecido como DIANA (do inglês, *Divise Analysis*), considera-se que todos objetos pertencem a um único grupo, e posteriormente, o único grupo é dividido até obter-se um grupo para cada objeto ou até que um critério de párada seja atendido [@han2011data].
 </p>
 
-```{r hierarquical-based, echo=FALSE, fig.align="center", fig.show = "hold", out.width="100%", fig.cap='Exemplo do processo de criação de grupos baseado nas técnicas de agrupamento hierarquicas. - Fonte: @han2011data'}
+```{r hierarquical-based, echo=FALSE, fig.align="center", out.width="60%", fig.show = "hold", fig.cap='Exemplo do processo de criação de grupos baseado nas técnicas de agrupamento hierarquicas. - Fonte: @han2011data'}
 knitr::include_graphics("./assets/04_clustering/metodo_hierarquico.png") 
 ```
 
@@ -210,7 +198,7 @@ base na semelhança dos objetos dentro do grupo.
 Uma técnica que auxilia na interpretação dos agrupamentos hierárquicos é o dendrograma, apresentado na Figura \@ref(fig:dend-based), que faz representação em forma de árvore, nele é possível obter informações sobre a estrutura do agrupamento realizado. No nível 0 é possível observar os objetos em seus próprios grupos, e, conforme o nível da árvore aumenta em relação a sua raiz, menor são as similaridades entre os objetos do mesmo grupo [@han2011data]. 
 </p>
 
-```{r dend-based, echo=FALSE, fig.align="center", fig.show = "hold", out.width="100%", fig.cap='Exemplo de representação do agrupamento hierarquico. - Fonte: @han2011data'}
+```{r dend-based, echo=FALSE, fig.align="center", out.width="60%", fig.show = "hold", fig.cap='Exemplo de representação do agrupamento hierarquico. - Fonte: @han2011data'}
 knitr::include_graphics("./assets/04_clustering/den_eg_1.png") 
 ```
 
@@ -244,7 +232,7 @@ objetos em um plano cartesiano (X,Y).
 </p>
 
 
-```{r kmeans-dataset, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Conjunto de dados utilizado como exemplo.'}
+```{r kmeans-dataset, echo=FALSE ,fig.align="center", out.width="45%", fig.cap='Conjunto de dados utilizado como exemplo.'}
   knitr::include_graphics("assets/04_clustering/kmeans_conjunto_de_dados.png")
 ```
 
@@ -381,7 +369,7 @@ objeto por grupo.
 </p>
 
 
-```{r kmeans-elbow, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Método do cotovelo aplicado no conjunto de dados de exemplo.'}
+```{r kmeans-elbow, echo=FALSE ,fig.align="center", out.width="80%", fig.cap='Método do cotovelo aplicado no conjunto de dados de exemplo.'}
   knitr::include_graphics("assets/04_clustering/metodo_cotovelo.png")
 ```
 
@@ -397,7 +385,7 @@ acima do cotovelo estão em uma região de *underfitting* e abaixo dele em *over
 <p align="justify">
 O método de Silhueta determina o quão bem cada objeto está alocado em um grupo, ou seja, a homogeneidade de um grupo. O índice de Silhueta varia de -1 a 1. Valores próximos a 1 indicam que o objeto possui semelhança com objetos de seu grupo e dessemelhança com objetos de outros grupos.  
 </p>
-```{r kmeans-silhueta, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Método de Silhueta aplicado no conjunto de dados de exemplo.'}
+```{r kmeans-silhueta, echo=FALSE ,fig.align="center", out.width="70%", fig.cap='Método de Silhueta aplicado no conjunto de dados de exemplo.'}
   knitr::include_graphics("assets/04_clustering/indice_silhueta.png")
 ```
 
@@ -449,7 +437,7 @@ no qual é possível observar 6 objetos (A,B,C,E,F) em um plano cartesiano (X,Y)
 
 > Os objetos foram marcados para facilitar a visualização do dendograma.
 
-```{r hierarquico-dataset, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Conjunto de dados utilizado como exemplo.'}
+```{r hierarquico-dataset, echo=FALSE ,fig.align="center", out.width="45%", fig.cap='Conjunto de dados utilizado como exemplo.'}
   knitr::include_graphics("assets/04_clustering/dataset_hierarquico.png")
 ```
 
@@ -459,13 +447,17 @@ seja seu próprio grupo, e, com isso, a cada iteração os grupos vão se juntan
 combinando os objetos dentro deles. O primeiro passo dos algoritmos hierárquicos, abrangendo às duas categorias, divisivos e aglomerativo, é calcular a matriz de distância entre todos os objetos. A Figura \@ref(fig:hierarquico-alg-0) mostra um exemplo do cálculo da distância do objeto **A** entre os outros.
 </p>
 
-```{r hierarquico-alg-0, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Conjunto de dados utilizado como exemplo.'}
+```{r hierarquico-alg-0, echo=FALSE ,fig.align="center", out.width="45%", fig.cap='Conjunto de dados utilizado como exemplo.'}
   knitr::include_graphics("assets/04_clustering/dendograma_0.png")
 ```
 
 <p align="justify">
 
-> Repare que é necessário calcular as distâncias entre os outros objetos: $B -> C, B -> D, B -> E, B -> F$; $C -> D, C -> E, C -> F$; $D -> E, D -> F$ e $E -> F$. Vamos deixar como tarefa para que você calcule a distância euclidiana entre os outros objetos.
+> Repare que é necessário calcular as distâncias entre os outros objetos: 
+$B -> C, B -> D, B -> E, B -> F$; 
+$C -> D, C -> E, C -> F$; 
+$D -> E, D -> F$ e $E -> F$. 
+Vamos deixar como tarefa para que você calcule a distância euclidiana entre os outros objetos.
 
 </p>
 
@@ -492,7 +484,7 @@ ligação mencionados, em **A)** temos a ligação completa, que visa juntar os 
 única, que faz a junção de modo oposto do que vimos em **A)**, usando os objetos mais próximos de cada grupo, e em **C)** temos a ligação pela média, que visa realizar a junção por meio da média das distâncias entre cada objeto dos dois grupos. 
 </p>
 
-```{r hierarquico-alg-2, echo=FALSE ,fig.align="center", out.width="100%", fig.cap='Etapa de junção dos grupos.'}
+```{r hierarquico-alg-2, echo=FALSE ,fig.align="center", out.width="90%", fig.cap='Etapa de junção dos grupos.'}
   knitr::include_graphics("assets/04_clustering/dendograma_2.png")
 ```
 
