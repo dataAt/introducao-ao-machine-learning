@@ -1,22 +1,21 @@
 # Exemplos
 
-<!-- TODO: Descrever o kaggle-->
-A plataforma kaggle ....
+Esta seção mostra exemplos de aplicação de cada um dos algoritmos apresentados neste livro-texto. Todos os exemplos foram feitos utilizando a linguagem de programação Python com o auxílio da plataforma [Kaggle](https://www.kaggle.com/). Os links para cada um dos exemplos são listados abaixo.
 
-Links dos exemplos de Classificação:
-- [Exemplo de uso do KNN](https://www.kaggle.com/phelpsmemo/intro-ml-python-knn-worcap2020)
-- [Exemplo de uso da Árvore de Decisão](https://www.kaggle.com/phelpsmemo/intro-ml-python-decisiontree-worcap2020)
+> Caso tenha interesse em conhecer um pouco melhor a plataforma Kaggle, consulte os apêncides desse material, lá criamos um passo a passo sobre o uso do Kaggle.
 
-Links dos exemplos de Regressão:
+**Links dos exemplos de Regressão**
+
 - [Exemplo de uso de Regressão Linear](https://www.kaggle.com/lordadriano/mc2-worcap-2020-linear-regression)
 - [Exemplo de uso da SVR ](https://www.kaggle.com/lordadriano/mc2-worcap-2020-svr)
 
-Links dos exemplos de Agrupamento:
-- [Exemplo de uso do KNN](https://www.kaggle.com/oldlipe/intro-ml-r-kmeans-worcap2020)
-- [Exemplo de uso da Árvore de Decisão](https://www.kaggle.com/oldlipe/intro-ml-r-hiererquico-worcap2020)
+**Links dos exemplos de Classificação**
 
+- [Exemplo de uso do kNN](https://www.kaggle.com/phelpsmemo/intro-ml-python-knn-worcap2020)
+- [Exemplo de uso da Árvore de Decisão](https://www.kaggle.com/phelpsmemo/intro-ml-python-decisiontree-worcap2020)
 
+**Links dos exemplos de Agrupamento**
 
-
-
+- [Exemplo de uso do K-Means](https://www.kaggle.com/oldlipe/intro-ml-r-kmeans-worcap2020)
+- [Exemplo de uso do método hierarquico](https://www.kaggle.com/oldlipe/intro-ml-r-hiererquico-worcap2020)
 
