@@ -24,10 +24,10 @@ link-citations: yes
 
 Seja bem vinda(o) ao livro-texto do minicurso de **Introdução ao Machine Learning**. Criamos este material para compartilhar o pouco que sabemos e dividir nossas experiências. Neste material, você irá encontrar conteúdos sobre o conceito, técnicas e algumas dicas úteis sobre Machine Learning. Procuramos abordar os conceitos de forma didática, porque sabemos o quão difícil é se inteirar de uma nova área, principalmente para as pessoas que não estão familiarizadas com o assunto. Este livro-texto não tem um público-alvo, escrevemos com o objeto de atingir o máximo de pessoas em quaisquer áreas. O único pré-requisito para ler este livro-texto é ter curiosidade, porque não são as respostas que movem o mundo, e sim, as perguntas!
 
-## Grupo DataAt
+## Grupo DataAt {-}
 
 <p align="justify">
-O Dataat é um grupo de estudos composto por quatro integrantes: Adriano Almeida, Felipe Carvalho, Felipe Menino e  Helvécio, buscamos sempre aprimorar nosso conhecimento e compartilhá-lo. A ideia do grupo de estudo começou pelos Felipe’s, em 2017, quando estávamos na iniciação científica no Instituto Nacional de Pesquisas Espaciais (INPE). Até hoje não sabemos o porquê do nome Dataat, um dia, quando estivermos no auge do nosso conhecimento, talvez, saberemos explicar o que se passava na nossa cabeça.
+O [**Dataat**](https://github.com/dataAt/) é um grupo de estudos composto por quatro integrantes: [Adriano Almeida](https://github.com/AdrianoPereira), [Felipe Carvalho](https://github.com/oldlipe), [Felipe Menino](https://github.com/M3nin0) e [Helvécio Neto](https://github.com/helvecioneto), buscamos sempre aprimorar nosso conhecimento e compartilhá-lo. A ideia do grupo de estudo começou pelos Felipe’s, em 2017, quando estávamos na iniciação científica no Instituto Nacional de Pesquisas Espaciais (INPE). Até hoje não sabemos o porquê do nome **Dataat**, um dia, quando estivermos no auge do nosso conhecimento, talvez, saberemos explicar o que se passava na nossa cabeça.
 <p>
 
 
