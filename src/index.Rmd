@@ -2,12 +2,13 @@
 knit: "bookdown::render_book"
 title: "Introdução ao Machine Learning"
 author: ["Adriano Almeida", "Felipe Carvalho", "Felipe Menino"]
-description: "Livro para alunos e alunas que querem iniciar o aprendizado em Machine Learning."
+description: "Livro para alunos e alunas que querem iniciar em Machine Learning."
 url: 'https://dataat.github.io/introducao-ao-machine-learning/'
 github-repo: dataat/introducao-ao-machine-learning
 site: bookdown::bookdown_site
 bibliography: bibfile.bib
 fig_caption: yes
+cover-image: assets/capa.png
 header-includes:
 - \usepackage{float}
 - \usepackage{xcolor}
@@ -18,22 +19,27 @@ link-citations: yes
 
 # Prefácio {-}
 
-TODO: Editar essa página <------
-
-<!-- <a href="https://amzn.to/2WoabjB"><img src="./assets/banner_notebook.png" width="250" height="366" align="center" alt="Cover image" /></a> -->
+<a href="https://github.com/dataAt/introducao-ao-machine-learning"><img src="assets/capa.png" width="270" height="366" align="right" alt="Cover image" /></a>
 
 
+Seja bem vinda(o) ao livro-texto do minicurso de **Introdução ao Machine Learning**. Criamos este material para compartilhar o pouco que sabemos e dividir nossas experiências. Neste material, você irá encontrar conteúdos sobre o conceito, técnicas e algumas dicas úteis sobre Machine Learning. Procuramos abordar os conceitos de forma didática, porque sabemos o quão difícil é se inteirar de uma nova área, principalmente para as pessoas que não estão familiarizadas com o assunto. Este livro-texto não tem um público-alvo, escrevemos com o objeto de atingir o máximo de pessoas em quaisquer áreas. O único pré-requisito para ler este livro-texto é ter curiosidade, porque não são as respostas que movem o mundo, e sim, as perguntas!
+
+## Grupo DataAt
+
+<p align="justify">
+O Dataat é um grupo de estudos composto por quatro integrantes: Adriano Almeida, Felipe Carvalho, Felipe Menino e  Helvécio, buscamos sempre aprimorar nosso conhecimento e compartilhá-lo. A ideia do grupo de estudo começou pelos Felipe’s, em 2017, quando estávamos na iniciação científica no Instituto Nacional de Pesquisas Espaciais (INPE). Até hoje não sabemos o porquê do nome Dataat, um dia, quando estivermos no auge do nosso conhecimento, talvez, saberemos explicar o que se passava na nossa cabeça.
+<p>
 
 
-## Nossos livros {-}
+## Nossos livros-textos {-}
 
-O Grupo DataAt possui diversos livros-texto, confira:
+No decorrer desses anos ministramos diversos mini-cursos, dentre eles:
 
-* __"[Introdução à Análise de Dados](https://dataat.github.io/introducao-analise-de-dados/)"__ Livro-texto criado com o objeto de mostrar os conceito de análise de dados com exemplos práticos com **R** e **Python**.
+* __"[Introdução à Análise de Dados](https://dataat.github.io/introducao-analise-de-dados/)"__ Livro-texto criado com o objeto de mostrar os conceitos básicos de análise de dados com exemplos práticos com **R** e **Python**.
 
 * __"[Introdução à análise de Dados Espaciais](https://dataat.github.io/introducao-analise-de-dados-espaciais/)"__ Livro-texto criado com objetivo de mostrar o uso de linguagens de programação na manipulação de dados espaciais.
 
-* __"[Introdução ao Docker](https://dataat.github.io/introducao-docker/)"__ feito pelo Felipe Menino, este livro almeja te ensinar os conceitos básicos sobre o Docker.
+* __"[Introdução ao Docker](https://dataat.github.io/introducao-docker/)"__ feito pelo Felipe Menino, este livro almeja te ensinar os conceitos básicos do Docker.
 
 
 ## Licença {-}

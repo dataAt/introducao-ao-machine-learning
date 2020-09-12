@@ -5,21 +5,21 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Regressão | Introdução ao Machine Learning</title>
-  <meta name="description" content="Livro para alunos e alunas que querem iniciar o aprendizado em Machine Learning." />
+  <meta name="description" content="Livro para alunos e alunas que querem iniciar em Machine Learning." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Regressão | Introdução ao Machine Learning" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://dataat.github.io/introducao-ao-machine-learning/" />
-  
-  <meta property="og:description" content="Livro para alunos e alunas que querem iniciar o aprendizado em Machine Learning." />
+  <meta property="og:image" content="https://dataat.github.io/introducao-ao-machine-learning/assets/capa.png" />
+  <meta property="og:description" content="Livro para alunos e alunas que querem iniciar em Machine Learning." />
   <meta name="github-repo" content="dataat/introducao-ao-machine-learning" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="2 Regressão | Introdução ao Machine Learning" />
   
-  <meta name="twitter:description" content="Livro para alunos e alunas que querem iniciar o aprendizado em Machine Learning." />
-  
+  <meta name="twitter:description" content="Livro para alunos e alunas que querem iniciar em Machine Learning." />
+  <meta name="twitter:image" content="https://dataat.github.io/introducao-ao-machine-learning/assets/capa.png" />
 
 <meta name="author" content="Adriano Almeida" />
 <meta name="author" content="Felipe Carvalho" />
@@ -67,7 +67,8 @@
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#nossos-livros"><i class="fa fa-check"></i>Nossos livros</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#grupo-dataat"><i class="fa fa-check"></i><b>0.1</b> Grupo DataAt</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#nossos-livros-textos"><i class="fa fa-check"></i>Nossos livros-textos</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licença"><i class="fa fa-check"></i>Licença</a></li>
 </ul></li>
 <li class="part"><span><b>I Introdução</b></span></li>
@@ -82,7 +83,6 @@
 <li class="chapter" data-level="2" data-path="regressão.html"><a href="regressão.html"><i class="fa fa-check"></i><b>2</b> Regressão</a><ul>
 <li class="chapter" data-level="2.1" data-path="regressão.html"><a href="regressão.html#regressão-linear"><i class="fa fa-check"></i><b>2.1</b> Regressão Linear</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="regressão.html"><a href="regressão.html#coeficientes-da-regressão-linear"><i class="fa fa-check"></i><b>2.1.1</b> Coeficientes da regressão linear</a></li>
-<li class="chapter" data-level="2.1.2" data-path="regressão.html"><a href="regressão.html#exemplos-de-aplicação-do-algoritmo"><i class="fa fa-check"></i><b>2.1.2</b> Exemplos de aplicação do algoritmo</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="regressão.html"><a href="regressão.html#máquinas-de-vetores-de-suporte"><i class="fa fa-check"></i><b>2.2</b> Máquinas de vetores de suporte</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="regressão.html"><a href="regressão.html#kernels"><i class="fa fa-check"></i><b>2.2.1</b> <em>Kernels</em></a></li>
@@ -111,7 +111,7 @@
 <li class="chapter" data-level="4.3.1" data-path="agrupamento.html"><a href="agrupamento.html#como-avaliar-o-kmeans"><i class="fa fa-check"></i><b>4.3.1</b> Como avaliar o Kmeans?</a></li>
 <li class="chapter" data-level="4.3.2" data-path="agrupamento.html"><a href="agrupamento.html#como-definir-a-quantidade-de-grupos"><i class="fa fa-check"></i><b>4.3.2</b> Como definir a quantidade de grupos?</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="agrupamento.html"><a href="agrupamento.html#agrupamento-hierarquico---método-aglomerativo"><i class="fa fa-check"></i><b>4.4</b> Agrupamento Hierarquico - Método Aglomerativo</a><ul>
+<li class="chapter" data-level="4.4" data-path="agrupamento.html"><a href="agrupamento.html#agrupamento-hierárquico---método-aglomerativo"><i class="fa fa-check"></i><b>4.4</b> Agrupamento Hierárquico - Método Aglomerativo</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="agrupamento.html"><a href="agrupamento.html#qual-método-de-ligação-deve-ser-usado"><i class="fa fa-check"></i><b>4.4.1</b> Qual método de ligação deve ser usado?</a></li>
 <li class="chapter" data-level="4.4.2" data-path="agrupamento.html"><a href="agrupamento.html#como-visualizar-os-grupos-no-dendrograma"><i class="fa fa-check"></i><b>4.4.2</b> Como visualizar os grupos no dendrograma?</a></li>
 </ul></li>
@@ -169,7 +169,7 @@ de felicidade, com uma força de correlação de 0,77.</p>
 Figure 2.1: Relação entre o índice de felicidade e expectativa de vida. Fonte: <span class="citation">(Helliwell et al. <a href="#ref-helliwell2020social">2020</a>)</span>
 </p>
 </div>
-<p>As relações entre as variáveis dependentes e independetes são feitas através de
+<p>As relações entre as variáveis dependentes e independentes são feitas através de
 algum coeficiente de correlação. Uma das métricas de correlação mais utilizadas
 é o coeficiente de Pearson, que mede a associação linear entre duas variáveis
 <span class="citation">(Kirch <a href="#ref-kirck2008pearson">2008</a>)</span>. Esse coeficiente de correlação pode ser definido pela
@@ -177,7 +177,7 @@ Equação <a href="regressão.html#eq:corr-pearson">(2.1)</a>, onde <span class=
 e <span class="math inline">\(\overline{y}\)</span> são as médias aritméticas de ambas as variáveis. Os valores do
 coeficiente de Pearson variam entre -1 e 1, de tal forma que quanto mais
 próximos desses extremos, melhor correlacionado estão as variáveis. A Figura
-<a href="regressão.html#fig:scatterCorrelations">2.2</a> mostra alguns exemplos com gráficos de disperssão
+<a href="regressão.html#fig:scatterCorrelations">2.2</a> mostra alguns exemplos com gráficos de dispersão
 de variáveis com diferentes correlações.</p>
 <p><span class="math display" id="eq:corr-pearson">\[\begin{equation} 
     r_{xy} = \frac{{}\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}
@@ -192,8 +192,8 @@ Figure 2.2: Diferentes correlações entre variáveis. Fonte: <span class="citat
 </div>
 <p>Os métodos de regressão se utilizam dessas correlações entre as variáveis para
 estimar valores não existentes na amostra ou conjunto de dados. Entretanto, nem
-sempre essas correlações são tão explicítas assim, sendo necessário outras
-abordagens mais robustas para realizar as previsões.Em ML os modelos de
+sempre essas correlações são tão explícitas assim, sendo necessário outras
+abordagens mais robustas para realizar as previsões. Em ML os modelos de
 regressão podem ser criados a partir de diversas abordagens, desde as mais
 simples com poucas configurações de parâmetros e de fácil interpretação do
 funcionamento, até as abordagens mais complexas. Os métodos de regressão
@@ -203,7 +203,7 @@ abordados neste capítulo serão <code>Regressão linear</code>,
 <h2><span class="header-section-number">2.1</span> Regressão Linear</h2>
 <p><a href="https://www.kaggle.com/lordadriano/mc2-worcap-2020-linear-regression"><img src="https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg" alt="Questao disponivel" /></a></p>
 <p>A regressão linear é um dos métodos mais intuitivos e utilizados para essa
-finalidade. Esses métodos são dividos em dois grupos, a regressão linear simples
+finalidade. Esses métodos são divididos em dois grupos, a regressão linear simples
 (RLS) e regressão linear múltipla (RLM). A RLS tem como objetivo estabelecer uma
 relação entre duas variáveis através de uma função, que pode ser definida por:</p>
 <p><span class="math display" id="eq:rls-function">\[\begin{equation} 
@@ -213,7 +213,7 @@ relação entre duas variáveis através de uma função, que pode ser definida 
 <p>Onde <span class="math inline">\(y_{i}\)</span> é a variável alvo, <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(beta x_{i}\)</span> são coeficientes
 calculados pela regressão, que representam o intercepto no eixo <span class="math inline">\(y\)</span> e inclinação
 da reta, respectivamente.</p>
-<p>A RLM é semelhante semelhante à RLS, porém possui multiplas variáveis
+<p>A RLM é semelhante semelhante à RLS, porém possui múltiplas variáveis
 preditoras, e pode ser definida por:</p>
 <p><span class="math display" id="eq:rlm-function">\[\begin{equation} 
     y_{i} = \alpha+\beta x_{i1}+\beta x_{i2}+...+\beta x_{in}
@@ -226,7 +226,7 @@ os métodos podem ainda serem somados a um termo <span class="math inline">\(\ep
 <h3><span class="header-section-number">2.1.1</span> Coeficientes da regressão linear</h3>
 <p>Existem diversas abordagens para se calcular os coeficientes <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>
 da equação da regressão linear, as técnicas baseadas em mínimos quadrados
-oridinários e gradiente descendente são as mais comuns. A seguir serão
+ordinários e gradiente descendente são as mais comuns. A seguir serão
 apresentados os funcionamentos dessas abordagens.</p>
 <div id="métodos-dos-quadrados-ordinários" class="section level4">
 <h4><span class="header-section-number">2.1.1.1</span> Métodos dos quadrados ordinários</h4>
@@ -234,7 +234,7 @@ apresentados os funcionamentos dessas abordagens.</p>
 busca encontrar o melhor valor para os coeficientes citados anteriormente, de
 tal forma que a diferença absoluta entre o valor real e o predito pela função
 seja a menor possível entre todos os pontos. A Figura <a href="regressão.html#fig:ols">2.3</a> mostra um
-exmplo de regressão linar utilizando o MQO para o conjunto pontos descritos na
+exemplo de regressão linear utilizando o MQO para o conjunto pontos descritos na
 tabela a seguir:</p>
 <p>| Variável independente | Variável dependente |
 | 0.44 | 5.52 |
@@ -275,9 +275,9 @@ que normalmente é o erro quadrático médio (MSE - sigla do inglês,
 <p>O GD funciona de forma iterativa e inicializa os coeficientes com um valor
 predefinido ou aleatório. Em cada iteração é obtido o somatório do erro entre
 todos os valores das variáveis dependentes e valores calculados pela função. Com
-base nesse erro e em uma taxa de aprendizagem do modelo predefinida, os valores
+base nesse erro e em uma taxa de aprendizagem do modelo pré definida, os valores
 dos coeficientes da função são atualizados para a próxima iteração. A taxa de
-aprendizagem deve ser definda com um valor equilibrado. A definição de um valor
+aprendizagem deve ser definida com um valor equilibrado. A definição de um valor
 muito alto para a taxa de aprendizagem pode levar o modelo a cair em um mínimo
 local, ou seja, o modelo não consegue chegar em seu melhor ajuste. Já quando a
 taxa de aprendizagem é definida com um valor muito baixo, o modelo demora mais
@@ -291,7 +291,7 @@ para a taxa de aprendizagem.</p>
 Figure 2.5: Problemas na taxa de aprendizado do gradiente descendente.
 </p>
 </div>
-<p>Os prinicipais parâmetros a serem definidos nessa abordagem são a taxa de
+<p>Os principais parâmetros a serem definidos nessa abordagem são a taxa de
 aprendizagem e o número de iterações. Considerando os pontos utilizados no
 exemplo anterior, foi aplicada a regressão linear utilizando o GD como método de
 atualização dos coeficientes. A Figura <a href="regressão.html#fig:gd-example1">2.6</a> mostra o ajuste da
@@ -318,7 +318,7 @@ Figure 2.7: Regressão linear com taxa de aprendizagem alta no gradiente descend
 coeficientes de forma mais eficiente. A Figura <a href="regressão.html#fig:gd-example3">2.8</a> mostra
 o resultado do algoritmo executado com uma taxa de aprendizagem mais
 equilibrada. Como os valores iniciais dos coeficientes são definidos de forma
-aleatória, nas primeiras iterações o gradiente apresenta uma alta pertubação,
+aleatória, nas primeiras iterações o gradiente apresenta uma alta perturbação,
 que vai se atenuando ao longo das épocas.</p>
 <div class="figure" style="text-align: center"><span id="fig:gd-example3"></span>
 <img src="assets/03_regression/gradient-descendent.png" alt="Regressão linear com taxa de aprendizagem equilibrada no gradiente descendente." width="2422" />
@@ -333,15 +333,8 @@ melhor performance quando os dados possuem muitas dimensões.</p>
 <p>A regressão linear pode ser aplicada em uma vasta variedade de problemas, mas
 como foi apresentado ao longo desta seção, é necessário que os dados possuam uma
 alta correlação. Este algoritmo está disponível na biblioteca <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">Scikit-learn</a>
-par ser utilizado em Python.</p>
+para ser utilizado em Python.</p>
 </div>
-</div>
-<div id="exemplos-de-aplicação-do-algoritmo" class="section level3">
-<h3><span class="header-section-number">2.1.2</span> Exemplos de aplicação do algoritmo</h3>
-<p>Para você colocar me prática os conceitos vistos, abaixo há um exemplo de aplicação do algoritmo.</p>
-<ul>
-<li><a href="https://www.kaggle.com/lordadriano/mc2-worcap-2020-linear-regression">Exemplo de Regressão Linear</a></li>
-</ul>
 </div>
 </div>
 <div id="máquinas-de-vetores-de-suporte" class="section level2">
@@ -351,7 +344,7 @@ par ser utilizado em Python.</p>
 <em>support vector machine</em>) são modelos de aprendizado de máquina supervisionado
 concebido a partir de um conceito inicialmente proposto por <span class="citation">Vapnik and Chervonenkis (<a href="#ref-vapnik1965class">1963</a>)</span>.
 As SVM podem ser utilizadas tanto para tarefas de classificação, quanto para
-tarefas de regressão, sendo uma ótima alteranativa aos modelos de redes neurais
+tarefas de regressão, sendo uma ótima alternativa aos modelos de redes neurais
 artificiais profundas que exigem um custo computacional muito superior em dados
 com muitas dimensões. Outra vantagem na utilização dos modelos baseados em SVM é
 que eles não são sensíveis aos <em>outliers</em>, ou seja, valores extremos não causam
@@ -377,7 +370,7 @@ ser modelados da seguinte forma:</p>
 <p>Onde <span class="math inline">\(\vec{w}\)</span> é um vetor perpendicular aos pontos, <span class="math inline">\(\vec{x}\)</span> é o vetor do
 conjunto de pontos é <span class="math inline">\(b\)</span> é uma constante opcional que pode ser usada como uma
 <em>bias</em>. Quando o resultado dessa equação é igual a <span class="math inline">\(1\)</span> ou <span class="math inline">\(-1\)</span> trata-se de um
-dos vetores de suporte, quando o resultado é um valor maior que <span class="math inline">\(0\)</span> e menor que
+dos vetores de suporte, quando o resultado é um valor maior que <span class="math inline">\(0\)</span> é menor que
 <span class="math inline">\(1\)</span> ou menor que <span class="math inline">\(0\)</span> e maior que <span class="math inline">\(-1\)</span> trata-se de um espaço da margem. A Figura
 <a href="regressão.html#fig:linear-svm">2.9</a> mostra um exemplo da aplicação do algoritmo SVM em um
 conjunto de dados linearmente separáveis. Nessa figura, o hiperplano é
@@ -432,7 +425,7 @@ Esses componentes <em>kernels</em> são responsáveis por criar uma transformaç
 dados a partir de uma função, que são responsáveis por maximizar as margens dos
 vetores de suporte. A maioria das bibliotecas de ML, já possuem <em>kernels</em>
 implementados e também permitem a integração de outras funções customizadas. A
-lista a seguir aprensenta brevemente algunso dos principais <em>kernels</em>
+lista a seguir apresenta brevemente alguns dos principais <em>kernels</em>
 utilizados.</p>
 <ul>
 <li><strong>Linear: </strong> Como mencionado anteriormente, é eficiente somente para problemas
@@ -445,9 +438,9 @@ reta. O <em>kernel</em> linear é definido apenas pelo produto entre duas amostr
 \tag{2.5}
 \end{equation}\]</span></p>
 <ul>
-<li><strong>Polinominal: </strong> Os <em>kernels</em> polinomiais popularmente utilizados em tarefas
+<li><strong>Polinomial: </strong> Os <em>kernels</em> polinomiais popularmente utilizados em tarefas
 de processamento de imagens, permitem adicionar curvas aos hiperplanos. Além das
-amostras <span class="math inline">\(\vec{x_{i}}\)</span> e <span class="math inline">\(\vec{x_{j}}\)</span>, o <em>kernel</em> polinominal também recebe o
+amostras <span class="math inline">\(\vec{x_{i}}\)</span> e <span class="math inline">\(\vec{x_{j}}\)</span>, o <em>kernel</em> polinomial também recebe o
 a variável <span class="math inline">\(d\)</span> que indica o seu grau, como definido pela equação:</li>
 </ul>
 <p><span class="math display" id="eq:polynomial-kernel">\[\begin{equation} 
@@ -457,7 +450,7 @@ a variável <span class="math inline">\(d\)</span> que indica o seu grau, como d
 <ul>
 <li><strong>Função gaussiana de base radial: </strong> Os <em>kernels</em> RBF
 (<em>radial basis function</em>), como também são chamados, são recomendados quando não
-se tem um conhecimento prévio a cerca dos dados. Esse <em>kernel</em> realiza uma
+se tem um conhecimento prévio acerca dos dados. Esse <em>kernel</em> realiza uma
 transformação dos pontos utilizando uma função gaussiana, definida por:</li>
 </ul>
 <p><span class="math display" id="eq:rbf-kernel">\[\begin{equation} 

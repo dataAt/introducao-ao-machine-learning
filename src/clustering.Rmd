@@ -109,7 +109,7 @@ De acordo com @jain2010data, um dos grandes estudiosos da área de aprendizado d
 
 <p align="justify">
 - **Descoberta de conhecimento em estruturas intrínsecas**: para obter 
-informações sobre dados, gerar hipóteses, detectar anomalías e identificar 
+informações sobre dados, gerar hipóteses, detectar anomalias e identificar 
 características salientes.
 - **Classificação natural**: por exemplo, na Biologia, para identificar o grau 
 de semelhança entre formas ou organismos (relação filogenética).
@@ -198,7 +198,7 @@ base na semelhança dos objetos dentro do grupo.
 Uma técnica que auxilia na interpretação dos agrupamentos hierárquicos é o dendrograma, apresentado na Figura \@ref(fig:dend-based), que faz representação em forma de árvore, nele é possível obter informações sobre a estrutura do agrupamento realizado. No nível 0 é possível observar os objetos em seus próprios grupos, e, conforme o nível da árvore aumenta em relação a sua raiz, menor são as similaridades entre os objetos do mesmo grupo [@han2011data]. 
 </p>
 
-```{r dend-based, echo=FALSE, fig.align="center", out.width="60%", fig.show = "hold", fig.cap='Exemplo de representação do agrupamento hierarquico. - Fonte: @han2011data'}
+```{r dend-based, echo=FALSE, fig.align="center", out.width="60%", fig.show = "hold", fig.cap='Exemplo de representação do agrupamento hierárquico. - Fonte: @han2011data'}
 knitr::include_graphics("./assets/04_clustering/den_eg_1.png") 
 ```
 
@@ -306,7 +306,7 @@ o algoritmo pára.
 
 <p align="justify">
 > Lembrando que, outro critério de párada é o número de iterações, pois nem
-sempre é possível obter grupos homogêneos com poucas iterações. Ainda mais se considermos conjuntos de dados de aplicações do mundo real. Outro fato a mencionar, é o sorteio de centróides, pois existem diversas métricas que podem ser utilizadas em relação a inicialização dos centróides, por exemplo, k-means++.
+sempre é possível obter grupos homogêneos com poucas iterações. Ainda mais se considerarmos conjuntos de dados de aplicações do mundo real. Outro fato a mencionar, é o sorteio de centróides, pois existem diversas métricas que podem ser utilizadas em relação a inicialização dos centróides, por exemplo, k-means++.
 
 </p>
 
@@ -402,7 +402,7 @@ algumas técnicas de estimativas de grupos, vamos apresentar alguns exemplos pr�
 
 <!-- > Link para o kaggle -->
 
-## Agrupamento Hierarquico - Método Aglomerativo
+## Agrupamento Hierárquico - Método Aglomerativo
 [![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/oldlipe/intro-ml-r-hiererquico-worcap2020)
 
 <p align="justify">
