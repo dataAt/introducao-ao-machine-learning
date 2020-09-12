@@ -4,24 +4,23 @@
 Todas as pessoas pelo menos uma vez na vida já sentiu ou sentirá a necessidade 
 de prever algum acontecimento futuro. Estamos a todo momento assimilando 
 informações para realizar alguma tomada de decisão, seja de forma intrínseca ou 
-não. No contexto de Machine Learning (ML) isso é feito pela técnicas de 
+não. No contexto de Machine Learning (ML) isso é feito pelas técnicas de 
 regressão. A regressão é uma ferramenta que busca modelar relações entre 
 variáveis dependentes e independentes através de métodos estatísticos 
 [@soto2013regression]. 
 
-Uma variável independente, normalmente representada pela variável $x$, 
+Uma variável independente, normalmente representada pela letra $x$, 
 caracteriza uma grandeza que está sendo manipulada durante um experimento e que 
 não sofre influência de outras variáveis. Já a variável dependente, normalmente 
-representada pela variável $y$, caracteriza valores que estão diretamente 
-associados à variável independente, ou seja, ao ser manipulada os valores 
-variável independente, o valor das variáveis dependentes também sofrem 
-alterações. Na Figura \@ref(fig:happinessWorld) é apresentada a relação entre a 
-expectativa de vida baseada e um índice de felicidade calculado em diversos 
-países obtidos a partir de um levantamento feito por @helliwell2020social. A 
-variável independente nesse exemplo é representada pelo índice de felicidade e a 
-expectativa de vida age como variável independente, dessa forma pode ser 
-observada uma tendência de expectativa de vida maior em países com alto índice 
-de felicidade, com uma força de correlação de 0,77. 
+representada pela letra $y$, caracteriza valores que estão diretamente 
+associados à variável independente, ou seja, de forma direta ou indireta $x$
+excerce influência sobre $y$. Na Figura \@ref(fig:happinessWorld) é apresentada 
+a relação entre a expectativa de vida baseada e um índice de felicidade 
+calculado em diversos países obtidos a partir de um levantamento feito por 
+@helliwell2020social. A variável independente nesse exemplo é representada pelo 
+índice de felicidade e a expectativa de vida age como variável independente, 
+dessa forma pode ser observada uma tendência de expectativa de vida maior em 
+países com alto índice de felicidade, com uma força de correlação de 0,77. 
 
 ```{r happinessWorld, echo=FALSE, fig.align="center", fig.cap='Relação entre o índice de felicidade e expectativa de vida. Fonte: [@helliwell2020social]'}
   knitr::include_graphics("assets/03_regression/happiness_world.png")
@@ -72,7 +71,7 @@ relação entre duas variáveis através de uma função, que pode ser definida 
 (\#eq:rls-function)
 \end{equation} 
 
-Onde $y_{i}$ é a variável alvo, $\alpha$ e $beta x_{i}$ são coeficientes 
+Onde $y_{i}$ é a variável alvo, $\alpha$ e $\beta x_{i}$ são coeficientes 
 calculados pela regressão, que representam o intercepto no eixo $y$ e inclinação 
 da reta, respectivamente.
 
@@ -101,20 +100,22 @@ O Método dos quadrados ordinários (MQO) ou método dos mínimos quadrados (MMQ
 busca encontrar o melhor valor para os coeficientes citados anteriormente, de 
 tal forma que a diferença absoluta entre o valor real e o predito pela função 
 seja a menor possível entre todos os pontos. A Figura \@ref(fig:ols) mostra um 
-exemplo de regressão linear utilizando o MQO para o conjunto pontos descritos na
-tabela a seguir:
+exemplo de regressão linear utilizando o MQO para o conjunto de pontos descritos 
+na tabela a seguir:
 
-|	Variável independente	|	Variável dependente	|
-|	0.44	|	5.52	|
-|	1.74	|	8.89	|
-|	0.41	|	4.05	|
-|	1.84	|	9.31	|
-|	0.98	|	6.57	|
-|	1.22	|	8.27	|
-|	1.53	|	6.93	|
-|	1.04	|	6.41	|
-|	0.59	|	6.93	|
-|	0.38	|	6.98	|
+| Variável independente | Variável dependente |
+|:-----------------------:|:---------------------:|
+| 0,44                    | 5,52                  |
+| 1,74                    | 8,89                  |
+| 0,41                    | 4,05                  |
+| 1,84                    | 9,31                  |
+| 0,98                    | 6,57                  |
+| 1,22                    | 8,27                  |
+| 1,53                    | 6,93                  |
+| 1,04                    | 6,41                  |
+| 0,59                    | 6,93                  |
+| 0,38                    | 6,98                  |
+
 
 ```{r ols, echo=FALSE, fig.align="center", fig.cap='Exemplo do método dos quadrados ordinários.'}
   knitr::include_graphics("assets/03_regression/ols.png")
@@ -160,8 +161,8 @@ aprendizagem e o número de iterações. Considerando os pontos utilizados no
 exemplo anterior, foi aplicada a regressão linear utilizando o GD como método de 
 atualização dos coeficientes. A Figura \@ref(fig:gd-example1) mostra o ajuste da 
 função, custo e os coeficientes $\alpha$ e $\beta$ ao longo de 50 iterações com 
-taxa de aprendizado muito baixa. Nessa figura pode ser observado que as 
-iterações finalizam antes da convergência do modelo. 
+taxa de aprendizado muito baixa. Na Figura \@ref(fig:gd-example1) pode ser 
+observado que as iterações finalizam antes da convergência do modelo. 
 
 ```{r gd-example1, echo=FALSE, fig.align="center", fig.cap='Regressão linear com taxa de aprendizagem baixa no gradiente descendente.'}
   knitr::include_graphics("assets/03_regression/gradient-descendent-small.png")
@@ -194,18 +195,20 @@ melhor performance quando os dados possuem muitas dimensões.
 
 A regressão linear pode ser aplicada em uma vasta variedade de problemas, mas 
 como foi apresentado ao longo desta seção, é necessário que os dados possuam uma 
-alta correlação. Este algoritmo está disponível na biblioteca [Scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) 
-para ser utilizado em Python. 
+alta correlação para ela funcionar perfeitamente bem. Este algoritmo está 
+implementado nas principais principais bibliotecas de ML em diferentes 
+linguagens de programação. Em Python a regressão linear está disponível na 
+biblioteca [Scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html). 
 
-## Máquinas de vetores de suporte
+## Máquina de vetores de suporte
 [![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/lordadriano/mc2-worcap-2020-svr)
 
-As máquinas de vetores de suporte (SVM - sigla do inglês, 
-*support vector machine*) são modelos de aprendizado de máquina supervisionado 
+A máquina de vetores de suporte (SVM - sigla do inglês, 
+*support vector machine*) é um modelo de aprendizado de máquina supervisionado 
 concebido a partir de um conceito inicialmente proposto por @vapnik1965class. 
-As SVM podem ser utilizadas tanto para tarefas de classificação, quanto para 
+A SVM podem ser utilizada tanto para tarefas de classificação, quanto para 
 tarefas de regressão, sendo uma ótima alternativa aos modelos de redes neurais 
-artificiais profundas que exigem um custo computacional muito superior em dados 
+artificiais profundas que tem custo computacional muito superior em dados 
 com muitas dimensões. Outra vantagem na utilização dos modelos baseados em SVM é
 que eles não são sensíveis aos *outliers*, ou seja, valores extremos não causam 
 ruído no treinamento.
@@ -233,10 +236,10 @@ ser modelados da seguinte forma:
 Onde $\vec{w}$ é um vetor perpendicular aos pontos, $\vec{x}$ é o vetor do 
 conjunto de pontos é $b$ é uma constante opcional que pode ser usada como uma 
 *bias*. Quando o resultado dessa equação é igual a $1$ ou $-1$ trata-se de um 
-dos vetores de suporte, quando o resultado é um valor maior que $0$ é menor que 
+dos vetores de suporte, já com o resultado maior que $0$ e menor que 
 $1$ ou menor que $0$ e maior que $-1$ trata-se de um espaço da margem. A Figura 
 \@ref(fig:linear-svm) mostra um exemplo da aplicação do algoritmo SVM em um 
-conjunto de dados linearmente separáveis. Nessa figura, o hiperplano é 
+conjunto de dados linearmente separável. Nessa figura, o hiperplano é 
 caracterizado pela linha contínua, os vetores de suporte são as linhas 
 tracejadas que interceptam os pontos com contorno destacado, e o espaço entre 
 eles são as margens.
@@ -267,7 +270,7 @@ conjunto de dados ajustado com hiperplanos lineares e não lineares.
 
 A abordagem utilizando os *kernels* é uma das principais características desse 
 modelo de ML, pois faz com que o hiperplano seja ajustado em uma dimensão 
-superior, utilizando equações de polinômios de maior grau. A Figura 
+superior, utilizando equações de polinômios de grau maior. A Figura 
 \@ref(fig:kernels-plot) mostra graficamente como é realizada essa manipulação. 
 
 ```{r kernels-plot, echo=FALSE, fig.align="center", fig.cap='Representação gráfica dos dados e da função não linear.'}
@@ -280,7 +283,7 @@ técnicas mais complexas.
 
 ### *Kernels*
 A utilização dos *kernels* em SVM foram introduzidos por @boser1992training. 
-Esses componentes *kernels* são responsáveis por criar uma transformação dos 
+*Kernels* são responsáveis por criar uma transformação dos 
 dados a partir de uma função, que são responsáveis por maximizar as margens dos 
 vetores de suporte. A maioria das bibliotecas de ML, já possuem *kernels* 
 implementados e também permitem a integração de outras funções customizadas. A 
@@ -318,14 +321,15 @@ transformação dos pontos utilizando uma função gaussiana, definida por:
 \end{equation} 
 
 ### Regressão com máquinas de vetores de suporte
-Embora as SVM sejam aplicadas principalmente para tarefas de classificação, ou 
-seja, um cálculo de um valor inteiro, ela também pode ser utilizada para tarefas 
-de regressão, calculando valores reais. Essas abordagens são chamadas de 
+Embora a SVM seja aplicada principalmente para tarefas de classificação, ou 
+seja, geração de variáveis categóricas, ela também pode ser utilizada para 
+tarefas de regressão, calculando valores reais a partir de uma mudança na sua 
+função objetivo [@drucker1997support]. Essas abordagens são chamadas de 
 regressão por vetores de suporte (SVR - sigla do inglês, 
 *support vector regression*) e foram propostas por @drucker1997support. 
 Diferente de modelos tradicionais como as técnicas de regressão apresentadas na 
-seção anterior, que utilizam derivadas para os cálculos dos intervalos de 
-confiança, no SVR os valores são previstos através dos hiperplanos.
+seção anterior, que utilizam derivadas parciais para os cálculos dos intervalos 
+de confiança, no SVR os valores são previstos através dos hiperplanos.
 
 Este método utiliza para a regressão a abordagem de classificação apresentada
 anteriormente, porém com uma pequena variação na função objetivo, que agora 
