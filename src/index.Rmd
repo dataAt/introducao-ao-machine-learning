@@ -27,7 +27,7 @@ Seja bem vinda(o) ao livro-texto do minicurso de **Introdução ao Machine Learn
 ## Grupo DataAt {-}
 
 <p align="justify">
-O Dataat é um grupo de estudos composto por quatro integrantes: Adriano Almeida, Felipe Carvalho, Felipe Menino e  Helvécio, buscamos sempre aprimorar nosso conhecimento e compartilhá-lo. A ideia do grupo de estudo começou pelos Felipe’s, em 2017, quando estávamos na iniciação científica no Instituto Nacional de Pesquisas Espaciais (INPE). Até hoje não sabemos o porquê do nome Dataat, um dia, quando estivermos no auge do nosso conhecimento, talvez, saberemos explicar o que se passava na nossa cabeça.
+O [**Dataat**](https://github.com/dataAt/) é um grupo de estudos composto por quatro integrantes: [Adriano Almeida](https://github.com/AdrianoPereira), [Felipe Carvalho](https://github.com/oldlipe), [Felipe Menino](https://github.com/M3nin0) e [Helvécio Neto](https://github.com/helvecioneto), buscamos sempre aprimorar nosso conhecimento e compartilhá-lo. A ideia do grupo de estudo começou pelos Felipe’s, em 2017, quando estávamos na iniciação científica no Instituto Nacional de Pesquisas Espaciais (INPE). Até hoje não sabemos o porquê do nome **Dataat**, um dia, quando estivermos no auge do nosso conhecimento, talvez, saberemos explicar o que se passava na nossa cabeça.
 <p>
 
 

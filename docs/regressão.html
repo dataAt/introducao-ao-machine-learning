@@ -67,7 +67,7 @@
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a><ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#grupo-dataat"><i class="fa fa-check"></i><b>0.1</b> Grupo DataAt</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#grupo-dataat"><i class="fa fa-check"></i>Grupo DataAt</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#nossos-livros-textos"><i class="fa fa-check"></i>Nossos livros-textos</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licença"><i class="fa fa-check"></i>Licença</a></li>
 </ul></li>
@@ -84,7 +84,7 @@
 <li class="chapter" data-level="2.1" data-path="regressão.html"><a href="regressão.html#regressão-linear"><i class="fa fa-check"></i><b>2.1</b> Regressão Linear</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="regressão.html"><a href="regressão.html#coeficientes-da-regressão-linear"><i class="fa fa-check"></i><b>2.1.1</b> Coeficientes da regressão linear</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="regressão.html"><a href="regressão.html#máquinas-de-vetores-de-suporte"><i class="fa fa-check"></i><b>2.2</b> Máquinas de vetores de suporte</a><ul>
+<li class="chapter" data-level="2.2" data-path="regressão.html"><a href="regressão.html#máquina-de-vetores-de-suporte"><i class="fa fa-check"></i><b>2.2</b> Máquina de vetores de suporte</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="regressão.html"><a href="regressão.html#kernels"><i class="fa fa-check"></i><b>2.2.1</b> <em>Kernels</em></a></li>
 <li class="chapter" data-level="2.2.2" data-path="regressão.html"><a href="regressão.html#regressão-com-máquinas-de-vetores-de-suporte"><i class="fa fa-check"></i><b>2.2.2</b> Regressão com máquinas de vetores de suporte</a></li>
 </ul></li>
@@ -146,23 +146,22 @@
 <p>Todas as pessoas pelo menos uma vez na vida já sentiu ou sentirá a necessidade
 de prever algum acontecimento futuro. Estamos a todo momento assimilando
 informações para realizar alguma tomada de decisão, seja de forma intrínseca ou
-não. No contexto de Machine Learning (ML) isso é feito pela técnicas de
+não. No contexto de Machine Learning (ML) isso é feito pelas técnicas de
 regressão. A regressão é uma ferramenta que busca modelar relações entre
 variáveis dependentes e independentes através de métodos estatísticos
 <span class="citation">(Soto <a href="#ref-soto2013regression">2013</a>)</span>.</p>
-<p>Uma variável independente, normalmente representada pela variável <span class="math inline">\(x\)</span>,
+<p>Uma variável independente, normalmente representada pela letra <span class="math inline">\(x\)</span>,
 caracteriza uma grandeza que está sendo manipulada durante um experimento e que
 não sofre influência de outras variáveis. Já a variável dependente, normalmente
-representada pela variável <span class="math inline">\(y\)</span>, caracteriza valores que estão diretamente
-associados à variável independente, ou seja, ao ser manipulada os valores
-variável independente, o valor das variáveis dependentes também sofrem
-alterações. Na Figura <a href="regressão.html#fig:happinessWorld">2.1</a> é apresentada a relação entre a
-expectativa de vida baseada e um índice de felicidade calculado em diversos
-países obtidos a partir de um levantamento feito por <span class="citation">Helliwell et al. (<a href="#ref-helliwell2020social">2020</a>)</span>. A
-variável independente nesse exemplo é representada pelo índice de felicidade e a
-expectativa de vida age como variável independente, dessa forma pode ser
-observada uma tendência de expectativa de vida maior em países com alto índice
-de felicidade, com uma força de correlação de 0,77.</p>
+representada pela letra <span class="math inline">\(y\)</span>, caracteriza valores que estão diretamente
+associados à variável independente, ou seja, de forma direta ou indireta <span class="math inline">\(x\)</span>
+excerce influência sobre <span class="math inline">\(y\)</span>. Na Figura <a href="regressão.html#fig:happinessWorld">2.1</a> é apresentada
+a relação entre a expectativa de vida baseada e um índice de felicidade
+calculado em diversos países obtidos a partir de um levantamento feito por
+<span class="citation">Helliwell et al. (<a href="#ref-helliwell2020social">2020</a>)</span>. A variável independente nesse exemplo é representada pelo
+índice de felicidade e a expectativa de vida age como variável independente,
+dessa forma pode ser observada uma tendência de expectativa de vida maior em
+países com alto índice de felicidade, com uma força de correlação de 0,77.</p>
 <div class="figure" style="text-align: center"><span id="fig:happinessWorld"></span>
 <img src="assets/03_regression/happiness_world.png" alt="Relação entre o índice de felicidade e expectativa de vida. Fonte: [@helliwell2020social]" width="1847" />
 <p class="caption">
@@ -210,7 +209,7 @@ relação entre duas variáveis através de uma função, que pode ser definida 
     y_{i} = \alpha+\beta x_{i}
 \tag{2.2}
 \end{equation}\]</span></p>
-<p>Onde <span class="math inline">\(y_{i}\)</span> é a variável alvo, <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(beta x_{i}\)</span> são coeficientes
+<p>Onde <span class="math inline">\(y_{i}\)</span> é a variável alvo, <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta x_{i}\)</span> são coeficientes
 calculados pela regressão, que representam o intercepto no eixo <span class="math inline">\(y\)</span> e inclinação
 da reta, respectivamente.</p>
 <p>A RLM é semelhante semelhante à RLS, porém possui múltiplas variáveis
@@ -234,19 +233,58 @@ apresentados os funcionamentos dessas abordagens.</p>
 busca encontrar o melhor valor para os coeficientes citados anteriormente, de
 tal forma que a diferença absoluta entre o valor real e o predito pela função
 seja a menor possível entre todos os pontos. A Figura <a href="regressão.html#fig:ols">2.3</a> mostra um
-exemplo de regressão linear utilizando o MQO para o conjunto pontos descritos na
-tabela a seguir:</p>
-<p>| Variável independente | Variável dependente |
-| 0.44 | 5.52 |
-| 1.74 | 8.89 |
-| 0.41 | 4.05 |
-| 1.84 | 9.31 |
-| 0.98 | 6.57 |
-| 1.22 | 8.27 |
-| 1.53 | 6.93 |
-| 1.04 | 6.41 |
-| 0.59 | 6.93 |
-| 0.38 | 6.98 |</p>
+exemplo de regressão linear utilizando o MQO para o conjunto de pontos descritos
+na tabela a seguir:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Variável independente</th>
+<th align="center">Variável dependente</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0,44</td>
+<td align="center">5,52</td>
+</tr>
+<tr class="even">
+<td align="center">1,74</td>
+<td align="center">8,89</td>
+</tr>
+<tr class="odd">
+<td align="center">0,41</td>
+<td align="center">4,05</td>
+</tr>
+<tr class="even">
+<td align="center">1,84</td>
+<td align="center">9,31</td>
+</tr>
+<tr class="odd">
+<td align="center">0,98</td>
+<td align="center">6,57</td>
+</tr>
+<tr class="even">
+<td align="center">1,22</td>
+<td align="center">8,27</td>
+</tr>
+<tr class="odd">
+<td align="center">1,53</td>
+<td align="center">6,93</td>
+</tr>
+<tr class="even">
+<td align="center">1,04</td>
+<td align="center">6,41</td>
+</tr>
+<tr class="odd">
+<td align="center">0,59</td>
+<td align="center">6,93</td>
+</tr>
+<tr class="even">
+<td align="center">0,38</td>
+<td align="center">6,98</td>
+</tr>
+</tbody>
+</table>
 <div class="figure" style="text-align: center"><span id="fig:ols"></span>
 <img src="assets/03_regression/ols.png" alt="Exemplo do método dos quadrados ordinários." width="1220" />
 <p class="caption">
@@ -296,8 +334,8 @@ aprendizagem e o número de iterações. Considerando os pontos utilizados no
 exemplo anterior, foi aplicada a regressão linear utilizando o GD como método de
 atualização dos coeficientes. A Figura <a href="regressão.html#fig:gd-example1">2.6</a> mostra o ajuste da
 função, custo e os coeficientes <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span> ao longo de 50 iterações com
-taxa de aprendizado muito baixa. Nessa figura pode ser observado que as
-iterações finalizam antes da convergência do modelo.</p>
+taxa de aprendizado muito baixa. Na Figura <a href="regressão.html#fig:gd-example1">2.6</a> pode ser
+observado que as iterações finalizam antes da convergência do modelo.</p>
 <div class="figure" style="text-align: center"><span id="fig:gd-example1"></span>
 <img src="assets/03_regression/gradient-descendent-small.png" alt="Regressão linear com taxa de aprendizagem baixa no gradiente descendente." width="2440" />
 <p class="caption">
@@ -332,20 +370,22 @@ complexidade está associada diretamente à quantidade de pontos. Já o GD tem
 melhor performance quando os dados possuem muitas dimensões.</p>
 <p>A regressão linear pode ser aplicada em uma vasta variedade de problemas, mas
 como foi apresentado ao longo desta seção, é necessário que os dados possuam uma
-alta correlação. Este algoritmo está disponível na biblioteca <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">Scikit-learn</a>
-para ser utilizado em Python.</p>
+alta correlação para ela funcionar perfeitamente bem. Este algoritmo está
+implementado nas principais principais bibliotecas de ML em diferentes
+linguagens de programação. Em Python a regressão linear está disponível na
+biblioteca <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">Scikit-learn</a>.</p>
 </div>
 </div>
 </div>
-<div id="máquinas-de-vetores-de-suporte" class="section level2">
-<h2><span class="header-section-number">2.2</span> Máquinas de vetores de suporte</h2>
+<div id="máquina-de-vetores-de-suporte" class="section level2">
+<h2><span class="header-section-number">2.2</span> Máquina de vetores de suporte</h2>
 <p><a href="https://www.kaggle.com/lordadriano/mc2-worcap-2020-svr"><img src="https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg" alt="Questao disponivel" /></a></p>
-<p>As máquinas de vetores de suporte (SVM - sigla do inglês,
-<em>support vector machine</em>) são modelos de aprendizado de máquina supervisionado
+<p>A máquina de vetores de suporte (SVM - sigla do inglês,
+<em>support vector machine</em>) é um modelo de aprendizado de máquina supervisionado
 concebido a partir de um conceito inicialmente proposto por <span class="citation">Vapnik and Chervonenkis (<a href="#ref-vapnik1965class">1963</a>)</span>.
-As SVM podem ser utilizadas tanto para tarefas de classificação, quanto para
+A SVM podem ser utilizada tanto para tarefas de classificação, quanto para
 tarefas de regressão, sendo uma ótima alternativa aos modelos de redes neurais
-artificiais profundas que exigem um custo computacional muito superior em dados
+artificiais profundas que tem custo computacional muito superior em dados
 com muitas dimensões. Outra vantagem na utilização dos modelos baseados em SVM é
 que eles não são sensíveis aos <em>outliers</em>, ou seja, valores extremos não causam
 ruído no treinamento.</p>
@@ -370,10 +410,10 @@ ser modelados da seguinte forma:</p>
 <p>Onde <span class="math inline">\(\vec{w}\)</span> é um vetor perpendicular aos pontos, <span class="math inline">\(\vec{x}\)</span> é o vetor do
 conjunto de pontos é <span class="math inline">\(b\)</span> é uma constante opcional que pode ser usada como uma
 <em>bias</em>. Quando o resultado dessa equação é igual a <span class="math inline">\(1\)</span> ou <span class="math inline">\(-1\)</span> trata-se de um
-dos vetores de suporte, quando o resultado é um valor maior que <span class="math inline">\(0\)</span> é menor que
+dos vetores de suporte, já com o resultado maior que <span class="math inline">\(0\)</span> e menor que
 <span class="math inline">\(1\)</span> ou menor que <span class="math inline">\(0\)</span> e maior que <span class="math inline">\(-1\)</span> trata-se de um espaço da margem. A Figura
 <a href="regressão.html#fig:linear-svm">2.9</a> mostra um exemplo da aplicação do algoritmo SVM em um
-conjunto de dados linearmente separáveis. Nessa figura, o hiperplano é
+conjunto de dados linearmente separável. Nessa figura, o hiperplano é
 caracterizado pela linha contínua, os vetores de suporte são as linhas
 tracejadas que interceptam os pontos com contorno destacado, e o espaço entre
 eles são as margens.</p>
@@ -407,7 +447,7 @@ Figure 2.11: Hiperplanos utilizando <em>kernels</em> com funções lineares e n�
 </div>
 <p>A abordagem utilizando os <em>kernels</em> é uma das principais características desse
 modelo de ML, pois faz com que o hiperplano seja ajustado em uma dimensão
-superior, utilizando equações de polinômios de maior grau. A Figura
+superior, utilizando equações de polinômios de grau maior. A Figura
 <a href="regressão.html#fig:kernels-plot">2.12</a> mostra graficamente como é realizada essa manipulação.</p>
 <div class="figure" style="text-align: center"><span id="fig:kernels-plot"></span>
 <img src="assets/03_regression/kernels-plot.png" alt="Representação gráfica dos dados e da função não linear." width="1816" />
@@ -421,7 +461,7 @@ técnicas mais complexas.</p>
 <div id="kernels" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> <em>Kernels</em></h3>
 <p>A utilização dos <em>kernels</em> em SVM foram introduzidos por <span class="citation">Boser, Guyon, and Vapnik (<a href="#ref-boser1992training">1992</a>)</span>.
-Esses componentes <em>kernels</em> são responsáveis por criar uma transformação dos
+<em>Kernels</em> são responsáveis por criar uma transformação dos
 dados a partir de uma função, que são responsáveis por maximizar as margens dos
 vetores de suporte. A maioria das bibliotecas de ML, já possuem <em>kernels</em>
 implementados e também permitem a integração de outras funções customizadas. A
@@ -460,14 +500,15 @@ transformação dos pontos utilizando uma função gaussiana, definida por:</li>
 </div>
 <div id="regressão-com-máquinas-de-vetores-de-suporte" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Regressão com máquinas de vetores de suporte</h3>
-<p>Embora as SVM sejam aplicadas principalmente para tarefas de classificação, ou
-seja, um cálculo de um valor inteiro, ela também pode ser utilizada para tarefas
-de regressão, calculando valores reais. Essas abordagens são chamadas de
+<p>Embora a SVM seja aplicada principalmente para tarefas de classificação, ou
+seja, geração de variáveis categóricas, ela também pode ser utilizada para
+tarefas de regressão, calculando valores reais a partir de uma mudança na sua
+função objetivo <span class="citation">(Drucker et al. <a href="#ref-drucker1997support">1997</a>)</span>. Essas abordagens são chamadas de
 regressão por vetores de suporte (SVR - sigla do inglês,
 <em>support vector regression</em>) e foram propostas por <span class="citation">Drucker et al. (<a href="#ref-drucker1997support">1997</a>)</span>.
 Diferente de modelos tradicionais como as técnicas de regressão apresentadas na
-seção anterior, que utilizam derivadas para os cálculos dos intervalos de
-confiança, no SVR os valores são previstos através dos hiperplanos.</p>
+seção anterior, que utilizam derivadas parciais para os cálculos dos intervalos
+de confiança, no SVR os valores são previstos através dos hiperplanos.</p>
 <p>Este método utiliza para a regressão a abordagem de classificação apresentada
 anteriormente, porém com uma pequena variação na função objetivo, que agora
 busca comportar dentro das margens comportar a maior quantidade de pontos. As
