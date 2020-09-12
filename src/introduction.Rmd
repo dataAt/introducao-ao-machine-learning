@@ -8,7 +8,7 @@ A pergunta acima faz parte de um exercício teórico proposto pelo cientista da
 computação Alan Turing em seu artigo publicado em 1950 
 [@turing1950computing]. Conhecido também como jogo da imitação, o teste de 
 Turing constitui, em sua concepção inicial, na interação entre três agentes: um 
-agente interrogador e dois agentes respondentes, onde um dos agentes repondentes 
+agente interrogador e dois agentes respondentes, onde um dos agentes respondentes 
 é um ser humano e outro uma máquina (computador). A pergunta enviada pelo agente 
 interrogador é recebida por ambos os agentes respondentes, onde cada um deles 
 devem enviar de volta a resposta. Com base nas respostas, o agente interrogador 
@@ -21,10 +21,10 @@ desse teste.
   knitr::include_graphics("assets/01_introduction/turing_test.png")
 ```
 
-Diversas derivações desse teste surgiram posteriormente, o mais 
+Diversas derivações deste teste surgiram posteriormente, o mais 
 famoso deles e familiar entre a maioria dos internautas é o CAPTCHA 
 (*Completely Automated Public Turing test to tell Computers and Humans Apart*), 
-mecanismo de seguraça proposto por @von2003captcha para validar requisições 
+mecanismo de segurança proposto por @von2003captcha para validar requisições 
 através da resolução de pequenos desafios, que podem ser identificação de 
 imagens ou textos distorcidos e com ruídos, e que tem como propósito dificultar 
 o acesso não convencional a formulários, por exemplo, tentar impedir o uso 
@@ -52,7 +52,7 @@ discorrendo sobre as principais classes de algoritmos e aplicações com ênfase
 ## Machine learning
 O ML é composto por uma coleção de métodos criados a partir de modelos 
 matemáticos baseados na teoria da estatística que permitem aos computadores 
-automatizarem tarefas com base na descoberta sistemática de padrões nos 
+automatizar tarefas com base na descoberta sistemática de padrões nos 
 conjuntos de dados disponíveis ou em experiências passadas [@bhavsar2017machine; 
 @alpaydin2020introduction]. Segundo a definição de @samuel1959some, um dos 
 pioneiros do assunto, o aprendizado de máquina é “*um campo de estudo que 

@@ -9,7 +9,7 @@ regressão. A regressão é uma ferramenta que busca modelar relações entre
 variáveis dependentes e independentes através de métodos estatísticos 
 [@soto2013regression]. 
 
-Uma variável independente, normalmente representada pela  variável $x$, 
+Uma variável independente, normalmente representada pela variável $x$, 
 caracteriza uma grandeza que está sendo manipulada durante um experimento e que 
 não sofre influência de outras variáveis. Já a variável dependente, normalmente 
 representada pela variável $y$, caracteriza valores que estão diretamente 
@@ -27,7 +27,7 @@ de felicidade, com uma força de correlação de 0,77.
   knitr::include_graphics("assets/03_regression/happiness_world.png")
 ```
 
-As relações entre as variáveis dependentes e independetes são feitas através de 
+As relações entre as variáveis dependentes e independentes são feitas através de 
 algum coeficiente de correlação. Uma das métricas de correlação mais utilizadas 
 é o coeficiente de Pearson, que mede a associação linear entre duas variáveis 
 [@kirck2008pearson]. Esse coeficiente de correlação pode ser definido pela 
@@ -35,7 +35,7 @@ Equação \@ref(eq:corr-pearson), onde $n$ é o total de amostras, $\overline{x}
 e $\overline{y}$ são as médias aritméticas de ambas as variáveis. Os valores do 
 coeficiente de Pearson variam entre -1 e 1, de tal forma que quanto mais 
 próximos desses extremos, melhor correlacionado estão as variáveis. A Figura 
-\@ref(fig:scatterCorrelations) mostra alguns exemplos com gráficos de disperssão 
+\@ref(fig:scatterCorrelations) mostra alguns exemplos com gráficos de dispersão 
 de variáveis com diferentes correlações. 
 
 \begin{equation} 
@@ -51,8 +51,8 @@ de variáveis com diferentes correlações.
 
 Os métodos de regressão se utilizam dessas correlações entre as variáveis para 
 estimar valores não existentes na amostra ou conjunto de dados. Entretanto, nem
-sempre essas correlações são tão explicítas assim, sendo necessário outras 
-abordagens mais robustas para realizar as previsões.Em ML os modelos de 
+sempre essas correlações são tão explícitas assim, sendo necessário outras 
+abordagens mais robustas para realizar as previsões. Em ML os modelos de 
 regressão podem ser criados a partir de diversas abordagens, desde as mais 
 simples com poucas configurações de parâmetros e de fácil interpretação do 
 funcionamento, até as abordagens mais complexas. Os métodos de regressão 
@@ -63,7 +63,7 @@ abordados neste capítulo serão `Regressão linear`,
 [![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/lordadriano/mc2-worcap-2020-linear-regression)
 
 A regressão linear é um dos métodos mais intuitivos e utilizados para essa 
-finalidade. Esses métodos são dividos em dois grupos, a regressão linear simples
+finalidade. Esses métodos são divididos em dois grupos, a regressão linear simples
 (RLS) e regressão linear múltipla (RLM). A RLS tem como objetivo estabelecer uma
 relação entre duas variáveis através de uma função, que pode ser definida por:
 
@@ -76,7 +76,7 @@ Onde $y_{i}$ é a variável alvo, $\alpha$ e $beta x_{i}$ são coeficientes
 calculados pela regressão, que representam o intercepto no eixo $y$ e inclinação 
 da reta, respectivamente.
 
-A RLM é semelhante semelhante à RLS, porém possui multiplas variáveis 
+A RLM é semelhante semelhante à RLS, porém possui múltiplas variáveis 
 preditoras, e pode ser definida por:
 
 \begin{equation} 
@@ -92,7 +92,7 @@ os métodos podem ainda serem somados a um termo $\epsilon$ de erro.
 
 Existem diversas abordagens para se calcular os coeficientes $\alpha$ e $\beta$ 
 da equação da regressão linear, as técnicas baseadas em mínimos quadrados 
-oridinários e gradiente descendente são as mais comuns. A seguir serão 
+ordinários e gradiente descendente são as mais comuns. A seguir serão 
 apresentados os funcionamentos dessas abordagens.
 
 #### Métodos dos quadrados ordinários
@@ -101,7 +101,7 @@ O Método dos quadrados ordinários (MQO) ou método dos mínimos quadrados (MMQ
 busca encontrar o melhor valor para os coeficientes citados anteriormente, de 
 tal forma que a diferença absoluta entre o valor real e o predito pela função 
 seja a menor possível entre todos os pontos. A Figura \@ref(fig:ols) mostra um 
-exmplo de regressão linar utilizando o MQO para o conjunto pontos descritos na
+exemplo de regressão linear utilizando o MQO para o conjunto pontos descritos na
 tabela a seguir:
 
 |	Variável independente	|	Variável dependente	|
@@ -140,9 +140,9 @@ que normalmente é o erro quadrático médio (MSE - sigla do inglês,
 O GD funciona de forma iterativa e inicializa os coeficientes com um valor 
 predefinido ou aleatório. Em cada iteração é obtido o somatório do erro entre 
 todos os valores das variáveis dependentes e valores calculados pela função. Com
-base nesse erro e em uma taxa de aprendizagem do modelo predefinida, os valores
+base nesse erro e em uma taxa de aprendizagem do modelo pré definida, os valores
 dos coeficientes da função são atualizados para a próxima iteração. A taxa de 
-aprendizagem deve ser definda com um valor equilibrado. A definição de um valor 
+aprendizagem deve ser definida com um valor equilibrado. A definição de um valor 
 muito alto para a taxa de aprendizagem pode levar o modelo a cair em um mínimo 
 local, ou seja, o modelo não consegue chegar em seu melhor ajuste. Já quando a 
 taxa de aprendizagem é definida com um valor muito baixo, o modelo demora mais 
@@ -155,7 +155,7 @@ para a taxa de aprendizagem.
   knitr::include_graphics("assets/03_regression/learning-rate-gd.png")
 ```
 
-Os prinicipais parâmetros a serem definidos nessa abordagem são a taxa de 
+Os principais parâmetros a serem definidos nessa abordagem são a taxa de 
 aprendizagem e o número de iterações. Considerando os pontos utilizados no 
 exemplo anterior, foi aplicada a regressão linear utilizando o GD como método de 
 atualização dos coeficientes. A Figura \@ref(fig:gd-example1) mostra o ajuste da 
@@ -180,7 +180,7 @@ Já com uma taxa de aprendizagem equilibrada, o GD é capaz de ajustar os
 coeficientes de forma mais eficiente. A Figura  \@ref(fig:gd-example3) mostra
 o resultado do algoritmo executado com uma taxa de aprendizagem mais 
 equilibrada. Como os valores iniciais dos coeficientes são definidos de forma 
-aleatória, nas primeiras iterações o gradiente apresenta uma alta pertubação, 
+aleatória, nas primeiras iterações o gradiente apresenta uma alta perturbação, 
 que vai se atenuando ao longo das épocas.
 
 ```{r gd-example3, echo=FALSE, fig.align="center", fig.cap='Regressão linear com taxa de aprendizagem equilibrada no gradiente descendente.'}
@@ -195,7 +195,7 @@ melhor performance quando os dados possuem muitas dimensões.
 A regressão linear pode ser aplicada em uma vasta variedade de problemas, mas 
 como foi apresentado ao longo desta seção, é necessário que os dados possuam uma 
 alta correlação. Este algoritmo está disponível na biblioteca [Scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) 
-par ser utilizado em Python. 
+para ser utilizado em Python. 
 
 ## Máquinas de vetores de suporte
 [![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/lordadriano/mc2-worcap-2020-svr)
@@ -204,7 +204,7 @@ As máquinas de vetores de suporte (SVM - sigla do inglês,
 *support vector machine*) são modelos de aprendizado de máquina supervisionado 
 concebido a partir de um conceito inicialmente proposto por @vapnik1965class. 
 As SVM podem ser utilizadas tanto para tarefas de classificação, quanto para 
-tarefas de regressão, sendo uma ótima alteranativa aos modelos de redes neurais 
+tarefas de regressão, sendo uma ótima alternativa aos modelos de redes neurais 
 artificiais profundas que exigem um custo computacional muito superior em dados 
 com muitas dimensões. Outra vantagem na utilização dos modelos baseados em SVM é
 que eles não são sensíveis aos *outliers*, ou seja, valores extremos não causam 
@@ -233,7 +233,7 @@ ser modelados da seguinte forma:
 Onde $\vec{w}$ é um vetor perpendicular aos pontos, $\vec{x}$ é o vetor do 
 conjunto de pontos é $b$ é uma constante opcional que pode ser usada como uma 
 *bias*. Quando o resultado dessa equação é igual a $1$ ou $-1$ trata-se de um 
-dos vetores de suporte, quando o resultado é um valor maior que $0$ e menor que 
+dos vetores de suporte, quando o resultado é um valor maior que $0$ é menor que 
 $1$ ou menor que $0$ e maior que $-1$ trata-se de um espaço da margem. A Figura 
 \@ref(fig:linear-svm) mostra um exemplo da aplicação do algoritmo SVM em um 
 conjunto de dados linearmente separáveis. Nessa figura, o hiperplano é 
@@ -284,7 +284,7 @@ Esses componentes *kernels* são responsáveis por criar uma transformação dos
 dados a partir de uma função, que são responsáveis por maximizar as margens dos 
 vetores de suporte. A maioria das bibliotecas de ML, já possuem *kernels* 
 implementados e também permitem a integração de outras funções customizadas. A 
-lista a seguir aprensenta brevemente algunso dos principais *kernels* 
+lista a seguir apresenta brevemente alguns dos principais *kernels* 
 utilizados.
 
 - **Linear: ** Como mencionado anteriormente, é eficiente somente para problemas 
@@ -297,9 +297,9 @@ $\vec{x_{i}}$ e $\vec{x_{j}}$:
 (\#eq:linear-kernel)
 \end{equation} 
 
-- **Polinominal: ** Os *kernels* polinomiais popularmente utilizados em tarefas 
+- **Polinomial: ** Os *kernels* polinomiais popularmente utilizados em tarefas 
 de processamento de imagens, permitem adicionar curvas aos hiperplanos. Além das
-amostras $\vec{x_{i}}$ e $\vec{x_{j}}$, o *kernel* polinominal também recebe o 
+amostras $\vec{x_{i}}$ e $\vec{x_{j}}$, o *kernel* polinomial também recebe o 
 a variável $d$ que indica o seu grau, como definido pela equação:
 
 \begin{equation} 
@@ -309,7 +309,7 @@ a variável $d$ que indica o seu grau, como definido pela equação:
 
 - **Função gaussiana de base radial: ** Os *kernels* RBF 
 (*radial basis function*), como também são chamados, são recomendados quando não 
-se tem um conhecimento prévio a cerca dos dados. Esse *kernel* realiza uma 
+se tem um conhecimento prévio acerca dos dados. Esse *kernel* realiza uma 
 transformação dos pontos utilizando uma função gaussiana, definida por:
 
 \begin{equation} 

@@ -5,21 +5,21 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Agrupamento | Introdução ao Machine Learning</title>
-  <meta name="description" content="Livro para alunos e alunas que querem iniciar o aprendizado em Machine Learning." />
+  <meta name="description" content="Livro para alunos e alunas que querem iniciar em Machine Learning." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Agrupamento | Introdução ao Machine Learning" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://dataat.github.io/introducao-ao-machine-learning/" />
-  
-  <meta property="og:description" content="Livro para alunos e alunas que querem iniciar o aprendizado em Machine Learning." />
+  <meta property="og:image" content="https://dataat.github.io/introducao-ao-machine-learning/assets/capa.png" />
+  <meta property="og:description" content="Livro para alunos e alunas que querem iniciar em Machine Learning." />
   <meta name="github-repo" content="dataat/introducao-ao-machine-learning" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="4 Agrupamento | Introdução ao Machine Learning" />
   
-  <meta name="twitter:description" content="Livro para alunos e alunas que querem iniciar o aprendizado em Machine Learning." />
-  
+  <meta name="twitter:description" content="Livro para alunos e alunas que querem iniciar em Machine Learning." />
+  <meta name="twitter:image" content="https://dataat.github.io/introducao-ao-machine-learning/assets/capa.png" />
 
 <meta name="author" content="Adriano Almeida" />
 <meta name="author" content="Felipe Carvalho" />
@@ -67,7 +67,8 @@
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#nossos-livros"><i class="fa fa-check"></i>Nossos livros</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#grupo-dataat"><i class="fa fa-check"></i><b>0.1</b> Grupo DataAt</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#nossos-livros-textos"><i class="fa fa-check"></i>Nossos livros-textos</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licença"><i class="fa fa-check"></i>Licença</a></li>
 </ul></li>
 <li class="part"><span><b>I Introdução</b></span></li>
@@ -82,7 +83,6 @@
 <li class="chapter" data-level="2" data-path="regressão.html"><a href="regressão.html"><i class="fa fa-check"></i><b>2</b> Regressão</a><ul>
 <li class="chapter" data-level="2.1" data-path="regressão.html"><a href="regressão.html#regressão-linear"><i class="fa fa-check"></i><b>2.1</b> Regressão Linear</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="regressão.html"><a href="regressão.html#coeficientes-da-regressão-linear"><i class="fa fa-check"></i><b>2.1.1</b> Coeficientes da regressão linear</a></li>
-<li class="chapter" data-level="2.1.2" data-path="regressão.html"><a href="regressão.html#exemplos-de-aplicação-do-algoritmo"><i class="fa fa-check"></i><b>2.1.2</b> Exemplos de aplicação do algoritmo</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="regressão.html"><a href="regressão.html#máquinas-de-vetores-de-suporte"><i class="fa fa-check"></i><b>2.2</b> Máquinas de vetores de suporte</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="regressão.html"><a href="regressão.html#kernels"><i class="fa fa-check"></i><b>2.2.1</b> <em>Kernels</em></a></li>
@@ -111,7 +111,7 @@
 <li class="chapter" data-level="4.3.1" data-path="agrupamento.html"><a href="agrupamento.html#como-avaliar-o-kmeans"><i class="fa fa-check"></i><b>4.3.1</b> Como avaliar o Kmeans?</a></li>
 <li class="chapter" data-level="4.3.2" data-path="agrupamento.html"><a href="agrupamento.html#como-definir-a-quantidade-de-grupos"><i class="fa fa-check"></i><b>4.3.2</b> Como definir a quantidade de grupos?</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="agrupamento.html"><a href="agrupamento.html#agrupamento-hierarquico---método-aglomerativo"><i class="fa fa-check"></i><b>4.4</b> Agrupamento Hierarquico - Método Aglomerativo</a><ul>
+<li class="chapter" data-level="4.4" data-path="agrupamento.html"><a href="agrupamento.html#agrupamento-hierárquico---método-aglomerativo"><i class="fa fa-check"></i><b>4.4</b> Agrupamento Hierárquico - Método Aglomerativo</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="agrupamento.html"><a href="agrupamento.html#qual-método-de-ligação-deve-ser-usado"><i class="fa fa-check"></i><b>4.4.1</b> Qual método de ligação deve ser usado?</a></li>
 <li class="chapter" data-level="4.4.2" data-path="agrupamento.html"><a href="agrupamento.html#como-visualizar-os-grupos-no-dendrograma"><i class="fa fa-check"></i><b>4.4.2</b> Como visualizar os grupos no dendrograma?</a></li>
 </ul></li>
@@ -244,7 +244,7 @@ De acordo com <span class="citation">Jain (<a href="#ref-jain2010data">2010</a>)
 <p align="justify">
 <ul>
 <li><strong>Descoberta de conhecimento em estruturas intrínsecas</strong>: para obter
-informações sobre dados, gerar hipóteses, detectar anomalías e identificar
+informações sobre dados, gerar hipóteses, detectar anomalias e identificar
 características salientes.</li>
 <li><strong>Classificação natural</strong>: por exemplo, na Biologia, para identificar o grau
 de semelhança entre formas ou organismos (relação filogenética).</li>
@@ -333,9 +333,9 @@ base na semelhança dos objetos dentro do grupo.
 Uma técnica que auxilia na interpretação dos agrupamentos hierárquicos é o dendrograma, apresentado na Figura <a href="agrupamento.html#fig:dend-based">4.5</a>, que faz representação em forma de árvore, nele é possível obter informações sobre a estrutura do agrupamento realizado. No nível 0 é possível observar os objetos em seus próprios grupos, e, conforme o nível da árvore aumenta em relação a sua raiz, menor são as similaridades entre os objetos do mesmo grupo <span class="citation">(Han, Pei, and Kamber <a href="#ref-han2011data">2011</a>)</span>.
 </p>
 <div class="figure" style="text-align: center"><span id="fig:dend-based"></span>
-<img src="assets/04_clustering/den_eg_1.png" alt="Exemplo de representação do agrupamento hierarquico. - Fonte: @han2011data" width="60%" />
+<img src="assets/04_clustering/den_eg_1.png" alt="Exemplo de representação do agrupamento hierárquico. - Fonte: @han2011data" width="60%" />
 <p class="caption">
-Figure 4.5: Exemplo de representação do agrupamento hierarquico. - Fonte: <span class="citation">Han, Pei, and Kamber (<a href="#ref-han2011data">2011</a>)</span>
+Figure 4.5: Exemplo de representação do agrupamento hierárquico. - Fonte: <span class="citation">Han, Pei, and Kamber (<a href="#ref-han2011data">2011</a>)</span>
 </p>
 </div>
 <p align="justify">
@@ -443,7 +443,7 @@ o algoritmo pára.</li>
 <p align="justify">
 <blockquote>
 <p>Lembrando que, outro critério de párada é o número de iterações, pois nem
-sempre é possível obter grupos homogêneos com poucas iterações. Ainda mais se considermos conjuntos de dados de aplicações do mundo real. Outro fato a mencionar, é o sorteio de centróides, pois existem diversas métricas que podem ser utilizadas em relação a inicialização dos centróides, por exemplo, k-means++.</p>
+sempre é possível obter grupos homogêneos com poucas iterações. Ainda mais se considerarmos conjuntos de dados de aplicações do mundo real. Outro fato a mencionar, é o sorteio de centróides, pois existem diversas métricas que podem ser utilizadas em relação a inicialização dos centróides, por exemplo, k-means++.</p>
 </blockquote>
 </p>
 <p align="justify">
@@ -533,8 +533,8 @@ algumas técnicas de estimativas de grupos, vamos apresentar alguns exemplos pr�
 </div>
 </div>
 </div>
-<div id="agrupamento-hierarquico---método-aglomerativo" class="section level2">
-<h2><span class="header-section-number">4.4</span> Agrupamento Hierarquico - Método Aglomerativo</h2>
+<div id="agrupamento-hierárquico---método-aglomerativo" class="section level2">
+<h2><span class="header-section-number">4.4</span> Agrupamento Hierárquico - Método Aglomerativo</h2>
 <p><a href="https://www.kaggle.com/oldlipe/intro-ml-r-hiererquico-worcap2020"><img src="https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg" alt="Questao disponivel" /></a></p>
 <p align="justify">
 Os métodos de agrupamento hierárquicos que pertencem à categoria de
