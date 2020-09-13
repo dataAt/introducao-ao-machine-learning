@@ -59,7 +59,7 @@ abordados neste capítulo serão `Regressão linear`,
 `Máquina de vetores de suporte` e `Árvores de decisão`.
 
 ## Regressão Linear
-[![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/lordadriano/mc2-worcap-2020-linear-regression)
+[![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/lordadriano/intro-ml-python-linear-regression-worcap2020)
 
 A regressão linear é um dos métodos mais intuitivos e utilizados para essa 
 finalidade. Esses métodos são divididos em dois grupos, a regressão linear simples
@@ -201,7 +201,7 @@ linguagens de programação. Em Python a regressão linear está disponível na
 biblioteca [Scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html). 
 
 ## Máquina de vetores de suporte
-[![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/lordadriano/mc2-worcap-2020-svr)
+[![Questao disponivel](https://suspicious-wescoff-e06084.netlify.app/badge-perguntas.svg)](https://www.kaggle.com/lordadriano/intro-ml-python-svr-worcap2020)
 
 A máquina de vetores de suporte (SVM - sigla do inglês, 
 *support vector machine*) é um modelo de aprendizado de máquina supervisionado 
