@@ -117,13 +117,12 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="exemplos.html"><a href="exemplos.html"><i class="fa fa-check"></i><b>5</b> Exemplos</a></li>
-<li class="chapter" data-level="6" data-path="considerações-finais.html"><a href="considerações-finais.html"><i class="fa fa-check"></i><b>6</b> Considerações finais</a></li>
 <li class="part"><span><b>IV Apendice</b></span></li>
-<li class="chapter" data-level="7" data-path="sobre-o-kaggle.html"><a href="sobre-o-kaggle.html"><i class="fa fa-check"></i><b>7</b> Sobre o Kaggle</a><ul>
-<li class="chapter" data-level="7.1" data-path="sobre-o-kaggle.html"><a href="sobre-o-kaggle.html#cadastro"><i class="fa fa-check"></i><b>7.1</b> Cadastro</a></li>
-<li class="chapter" data-level="7.2" data-path="sobre-o-kaggle.html"><a href="sobre-o-kaggle.html#criação-de-um-notebook"><i class="fa fa-check"></i><b>7.2</b> Criação de um notebook</a></li>
+<li class="chapter" data-level="6" data-path="sobre-o-kaggle.html"><a href="sobre-o-kaggle.html"><i class="fa fa-check"></i><b>6</b> Sobre o Kaggle</a><ul>
+<li class="chapter" data-level="6.1" data-path="sobre-o-kaggle.html"><a href="sobre-o-kaggle.html#cadastro"><i class="fa fa-check"></i><b>6.1</b> Cadastro</a></li>
+<li class="chapter" data-level="6.2" data-path="sobre-o-kaggle.html"><a href="sobre-o-kaggle.html#criação-de-um-notebook"><i class="fa fa-check"></i><b>6.2</b> Criação de um notebook</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="referências-bibliográficas.html"><a href="referências-bibliográficas.html"><i class="fa fa-check"></i><b>8</b> Referências Bibliográficas</a></li>
+<li class="chapter" data-level="7" data-path="referências-bibliográficas.html"><a href="referências-bibliográficas.html"><i class="fa fa-check"></i><b>7</b> Referências Bibliográficas</a></li>
 </ul>
 
       </nav>
@@ -201,15 +200,15 @@ a definição de <span class="citation">Samuel (<a href="#ref-samuel1959some">19
 máquina é “<em>um campo de estudo que oferece aos computadores a capacidade de</em>
 <em>aprender sem serem explicitamente programados</em>”. Segundo a definição de
 <span class="citation">Mitchell (<a href="#ref-mitchell1997machine">1997</a>)</span>, é dito que <em>um computador aprende com a experiência <span class="math inline">\(E\)</span> a</em>
-<em>repeito de alguma classe de tarefas <span class="math inline">\(T\)</span> e desempenho medido por <span class="math inline">\(P\)</span>, se seu
+<em>respeito de alguma classe de tarefas <span class="math inline">\(T\)</span> e desempenho medido por <span class="math inline">\(P\)</span>, se seu
 desempenho nas tarefas em <span class="math inline">\(T\)</span>, conforme medido por <span class="math inline">\(P\)</span>, melhora com a
-expêriencia <span class="math inline">\(E\)</span></em>, confuso? Então vamos a um exemplo:</p>
+experiência <span class="math inline">\(E\)</span></em>, confuso? Então vamos a um exemplo:</p>
 <p>Imagine que você está desenvolvendo um programa para prever o acumulado de
 precipitação na próxima hora a partir de dados anteriores. A tarefa <span class="math inline">\(T\)</span> seria
 estimar o acumulado de precipitação na próxima hora, a medida de desempenho <span class="math inline">\(P\)</span>
 poderia ser alguma métrica de erro, como a diferença entre o valor previsto e o
 observado, já a experiência <span class="math inline">\(E\)</span> seria as várias tentativas de realizar a
-previsão. O programa aprende a medida que sua previsão se aproxima do valor
+previsão. O programa aprende à medida que sua previsão se aproxima do valor
 observado durante suas experiências. A forma com que o programa aprende, está
 associada a um conjunto de configurações previamente definidas, denominadas de
 hiperparâmetros.</p>
@@ -229,7 +228,7 @@ Figure 1.2: Diagrama dos tipos de aprendizado em machine learning.
 <div id="aprendizado-supervisionado" class="section level3">
 <h3><span class="header-section-number">1.1.1</span> Aprendizado supervisionado</h3>
 <p>No aprendizado supervisionado, o modelo recebe um conjunto de entradas com suas
-respectivas saídas e busca encontrar uma função que estabelaça uma relação
+respectivas saídas e busca encontrar uma função que estabeleça uma relação
 aproximada entre elas. Mais formalmente, o modelo baseado no
 aprendizado supervisionado busca encontrar uma função <span class="math inline">\(h(x_{i})\)</span>, denominada
 hipótese, que se aproxime da função <span class="math inline">\(f(x_{i})\)</span>, onde <span class="math inline">\(f(x_{i})\)</span> é a saída da
@@ -240,13 +239,13 @@ Essas características estão associadas ao <em>bias</em> e variância do modelo
 está relacionado à capacidade do modelo se ajustar aos dados aos quais lhes
 foram apresentados durante o treinamento. Já a variância é a variabilidade das
 previsões do modelo. A complexidade do modelo aumenta a medida que ele vai
-se ajustando aos dados, em contrapartidada vai perdendo também a sua capacidade
+se ajustando aos dados, em contrapartida vai perdendo também a sua capacidade
 de generalização, que faz com que variância seja aumentada. Os hiperparâmetros
 devem ser configurados de tal forma equilibrar o <em>bias</em> e a variância, este
 equilíbrio é denominado <em>trade-off</em>. Para modelos lineares, a complexidade do
 modelo deve ser ajustada de tal forma que o <em>bias</em> e a variância tenham o menor
-valor possível. Já para modelos não lineares, o ponto de equilibrio deve ser
-onde a complexidade do podelo possui o menor <em>bias</em> e maior variância. A Figura
+valor possível. Já para modelos não lineares, o ponto de equilíbrio deve ser
+onde a complexidade do modelo possui o menor <em>bias</em> e maior variância. A Figura
 <a href="introdução.html#fig:trade-off">1.3</a> mostra um esquema para a complexidade ideal em modelos
 lineares e não lineares.</p>
 <div class="figure" style="text-align: center"><span id="fig:trade-off"></span>
@@ -270,8 +269,8 @@ Figure 1.4: Diferentes ajustes do modelo aos dados.
 </div>
 <p>Os modelos de aprendizado supervisionado estão associados às tarefas de
 regressão e classificação. Nas tarefas de regressão, o modelo deve buscar o
-ajuste de uma função que melhor aproxime os dados de entrada com os dados de
-saída. Já os modelos de classificação buscam o ajuste em uma função que mellhor
+ajuste de uma função que melhor se aproxima os dados de entrada com os dados de
+saída. Já os modelos de classificação buscam o ajuste em uma função que melhor
 separe um conjunto de variáveis categóricas. Os modelos de regressão e
 classificação são melhor apresentados neste livro nos capítulos
 <a href="https://dataat.github.io/introducao-ao-machine-learning/regress%C3%A3o.html">2</a>
@@ -312,20 +311,20 @@ detecção de bordas, no contexto de processamento digital de imagens.</p>
 principalmente em uma grande quantidade de dados. O aprendizado não
 supervisionado pode ser utilizado na detecção dessas características. Uma das
 tarefas em que pode ser aplicado esse recurso é na detecção de transações
-fraudalentas. Além disso, a indentifiação de anomalias em um conjunto de dados,
+fraudulentas. Além disso, a identificação de anomalias em um conjunto de dados,
 pode afetar no treinamento de um modelo utilizando o aprendizado supervisionado,
 agindo como ruído nos dados.</p>
 </div>
 <div id="aprendizado-por-reforço" class="section level3">
 <h3><span class="header-section-number">1.1.3</span> Aprendizado por reforço</h3>
 <p>No aprendizado por reforço os modelos são treinados para tomarem uma sequência
-de decisões e um abiente incerto e complexo. Nessa abordagem, os agentes possuem
+de decisões e um ambiente incerto e complexo. Nessa abordagem, os agentes possuem
 um estado que é alterado após realizar uma ação que é executada de forma
 aleatória, com base nessa ação, os agentes podem ser penalizados ou
-recomempensados. Caso a ação do agente gere recompensas, então ela será
+recompensados. Caso a ação do agente gere recompensas, então ela será
 reforçada para o seu próximo estado <span class="citation">(Goodfellow et al. <a href="#ref-goodfellow2016deep">2016</a>)</span>. Nessa abordagem o
 modelo pode utilizar a tentativa e erro de forma a maximizar suas recompensas. A
-Figura <a href="introdução.html#fig:rl">1.6</a> mostra o fluxo clássico da abordardagem baseada no
+Figura <a href="introdução.html#fig:rl">1.6</a> mostra o fluxo clássico da abordagem baseada no
 aprendizado por reforço.</p>
 <div class="figure" style="text-align: center"><span id="fig:rl"></span>
 <img src="assets/01_introduction/rl.png" alt="Fluxo clássico do aprendizado por reforço." width="70%" />
@@ -338,11 +337,11 @@ Figure 1.6: Fluxo clássico do aprendizado por reforço.
 vai o conhecendo no decorrer de suas experiências para evoluir seus estados. O
 estado diz respeito às condições atuais do agente e do ambiente. O estado do
 agente é atualizado com base em suas recompensas ou penalidades que são
-adiquiridas após suas ações. As ações são as interações do agente com o
-ambeiente. A recompensa é um sinal positivo que é ativado reforçando uma ação do
-agente, ja penalidade, é um sinal negativo que faz com que a ação do agente seja
+adquiridas após suas ações. As ações são as interações do agente com o
+ambiente. A recompensa é um sinal positivo que é ativado reforçando uma ação do
+agente, já penalidade, é um sinal negativo que faz com que a ação do agente seja
 esquecida.</p>
-<p>Esse tipo de abordagem é aplamente utilizada em jogos. Com base em suas
+<p>Esse tipo de abordagem é amplamente utilizada em jogos. Com base em suas
 experiências, um agente agente pode aprender jogos com regras complexas como o
 xadrez. Nesse caso, o ambiente é o tabuleiro de xadrez, o estado é o
 posicionamento das peças, a ação é o movimento da peça, a recompensa é eliminar

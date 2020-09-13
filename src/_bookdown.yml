@@ -10,7 +10,6 @@ rmd_files:
     "classification.Rmd",
     "clustering.Rmd",
     "examples.Rmd",
-    "final-considerations.Rmd",
     "appendix-kaggle.Rmd",
     "references.Rmd",
   ]

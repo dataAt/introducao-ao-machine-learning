@@ -2,7 +2,7 @@
 
 > ***"Nossas características nos fazem igualmente diferentes" - Autor desconhecido***
 
-É muito provável que você já tenha recebido algum tipo de SPAM em sua caixa de *e-mail*. Eles estão por toda parte, se disfarçando com os mais variados temas e assunto. Sua presença atrapalha se não esvaziarmos nossa caixa de email com periodicidade, em pouco tempo estamos com a caixa de entrada lotada! E não é só isso, como apresentado por @Blanzieri2008, os SPAMs representam cerca de 75-80% de todos os *e-mails* que circulam na *internet*. Isso porque ainda nem entramos na extensa lista de problemas que os SPAMs causam diariamente.
+É muito provável que você já tenha recebido algum tipo de SPAM em sua caixa de *e-mail*. Eles estão por toda parte, se disfarçando com os mais variados temas e assuntos. Sua presença atrapalha, se não esvaziarmos nossa caixa de email com periodicidade, em pouco tempo estamos com a caixa de entrada lotada! E não é só isso, como apresentado por @Blanzieri2008, os SPAMs representam cerca de 75-80% de todos os *e-mails* que circulam na *internet*. Isso porque ainda nem entramos na extensa lista de problemas que os SPAMs causam diariamente.
 
 Como acha que podemos resolver este problema ? Uma possível solução pode ser a criação de algum tipo de mecanismo que nos ajude a identificar os SPAMs, para que possamos eliminá-los. Fazendo isso, provavelmente vamos evitar todo tipo de problema que esses "simples" *e-mails* podem causar. Aí vem mais uma questão, como podemos fazer a criação desse tal mecanismo ?
 
