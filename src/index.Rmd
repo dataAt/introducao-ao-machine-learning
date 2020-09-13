@@ -35,9 +35,9 @@ O [**Dataat**](https://github.com/dataAt/) é um grupo de estudos composto por q
 
 No decorrer desses anos ministramos diversos mini-cursos, dentre eles:
 
-* __"[Introdução à Análise de Dados](https://dataat.github.io/introducao-analise-de-dados/)"__ Livro-texto criado com o objeto de mostrar os conceitos básicos de análise de dados com exemplos práticos com **R** e **Python**.
+* __"[Introdução à Análise de Dados](https://dataat.github.io/introducao-analise-de-dados/)"__ Livro-texto criado com o objetivo de mostrar os conceitos básicos de análise de dados com exemplos práticos com **R** e **Python**.
 
-* __"[Introdução à análise de Dados Espaciais](https://dataat.github.io/introducao-analise-de-dados-espaciais/)"__ Livro-texto criado com objetivo de mostrar o uso de linguagens de programação na manipulação de dados espaciais.
+* __"[Introdução à Análise de Dados Espaciais](https://dataat.github.io/introducao-analise-de-dados-espaciais/)"__ Livro-texto criado com objetivo de mostrar o uso de linguagens de programação na manipulação de dados espaciais.
 
 * __"[Introdução ao Docker](https://dataat.github.io/introducao-docker/)"__ feito pelo Felipe Menino, este livro almeja te ensinar os conceitos básicos do Docker.
 

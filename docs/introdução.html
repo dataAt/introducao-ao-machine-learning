@@ -73,10 +73,10 @@
 </ul></li>
 <li class="part"><span><b>I Introdução</b></span></li>
 <li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
-<li class="chapter" data-level="1.1" data-path="introdução.html"><a href="introdução.html#machine-learning"><i class="fa fa-check"></i><b>1.1</b> Machine learning</a></li>
-<li class="chapter" data-level="1.2" data-path="introdução.html"><a href="introdução.html#tipos-de-aprendizado"><i class="fa fa-check"></i><b>1.2</b> Tipos de aprendizado</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="introdução.html"><a href="introdução.html#aprendizado-supervisionado"><i class="fa fa-check"></i><b>1.2.1</b> Aprendizado supervisionado</a></li>
-<li class="chapter" data-level="1.2.2" data-path="introdução.html"><a href="introdução.html#aprendizado-não-supervisionado"><i class="fa fa-check"></i><b>1.2.2</b> Aprendizado Não supervisionado</a></li>
+<li class="chapter" data-level="1.1" data-path="introdução.html"><a href="introdução.html#machine-learning"><i class="fa fa-check"></i><b>1.1</b> Machine learning</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="introdução.html"><a href="introdução.html#aprendizado-supervisionado"><i class="fa fa-check"></i><b>1.1.1</b> Aprendizado supervisionado</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introdução.html"><a href="introdução.html#aprendizado-não-supervisionado"><i class="fa fa-check"></i><b>1.1.2</b> Aprendizado Não supervisionado</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introdução.html"><a href="introdução.html#aprendizado-por-reforço"><i class="fa fa-check"></i><b>1.1.3</b> Aprendizado por reforço</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Aprendizado Supervisionado</b></span></li>
@@ -192,24 +192,166 @@ discorrendo sobre as principais classes de algoritmos e aplicações com ênfase
 </ul>
 <div id="machine-learning" class="section level2">
 <h2><span class="header-section-number">1.1</span> Machine learning</h2>
-<p>O ML é composto por uma coleção de métodos criados a partir de modelos
-matemáticos baseados na teoria da estatística que permitem aos computadores
-automatizar tarefas com base na descoberta sistemática de padrões nos
-conjuntos de dados disponíveis ou em experiências passadas <span class="citation">(Bhavsar et al. <a href="#ref-bhavsar2017machine">2017</a>; Alpaydin <a href="#ref-alpaydin2020introduction">2020</a>)</span>. Segundo a definição de <span class="citation">Samuel (<a href="#ref-samuel1959some">1959</a>)</span>, um dos
-pioneiros do assunto, o aprendizado de máquina é “<em>um campo de estudo que
-oferece aos computadores a capacidade de aprender sem serem explicitamente
-programados</em>”.</p>
+<p>O aprendizado de máquina é uma das principais subáreas da inteligência artificial, e é composto por
+uma coleção de métodos criados a partir de modelos matemáticos baseados na
+teoria estatística que permitem aos computadores automatizar tarefas com base na
+descoberta sistemática de padrões nos conjuntos de dados disponíveis ou em
+experiências passadas <span class="citation">(Bhavsar et al. <a href="#ref-bhavsar2017machine">2017</a>; Alpaydin <a href="#ref-alpaydin2020introduction">2020</a>)</span>. Segundo
+a definição de <span class="citation">Samuel (<a href="#ref-samuel1959some">1959</a>)</span>, um dos pioneiros do assunto, o aprendizado de
+máquina é “<em>um campo de estudo que oferece aos computadores a capacidade de</em>
+<em>aprender sem serem explicitamente programados</em>”. Segundo a definição de
+<span class="citation">Mitchell (<a href="#ref-mitchell1997machine">1997</a>)</span>, é dito que <em>um computador aprende com a experiência <span class="math inline">\(E\)</span> a</em>
+<em>repeito de alguma classe de tarefas <span class="math inline">\(T\)</span> e desempenho medido por <span class="math inline">\(P\)</span>, se seu
+desempenho nas tarefas em <span class="math inline">\(T\)</span>, conforme medido por <span class="math inline">\(P\)</span>, melhora com a
+expêriencia <span class="math inline">\(E\)</span></em>, confuso? Então vamos a um exemplo:</p>
+<p>Imagine que você está desenvolvendo um programa para prever o acumulado de
+precipitação na próxima hora a partir de dados anteriores. A tarefa <span class="math inline">\(T\)</span> seria
+estimar o acumulado de precipitação na próxima hora, a medida de desempenho <span class="math inline">\(P\)</span>
+poderia ser alguma métrica de erro, como a diferença entre o valor previsto e o
+observado, já a experiência <span class="math inline">\(E\)</span> seria as várias tentativas de realizar a
+previsão. O programa aprende a medida que sua previsão se aproxima do valor
+observado durante suas experiências. A forma com que o programa aprende, está
+associada a um conjunto de configurações previamente definidas, denominadas de
+hiperparâmetros.</p>
+<p>Inicialmente, há uma certa subjetividade envolvida na definição inicial dos
+hiperparâmetros dos modelos, que ao longo do seu desenvolvimento vão sendo
+ajustados em conformidade com os dados. O processo de ajuste dos hiperparâmetros
+com o intuito de melhorar o desempenho do modelo é conhecido como <em>fine-tuning</em>.
+O conjunto de hiperparâmetros está associado ao tipo de modelo que está sendo
+desenvolvido, que por sua vez possuem características de aprendizado diferentes,
+conforme mostrado na Figura <a href="introdução.html#fig:ml-diagram">1.2</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:ml-diagram"></span>
+<img src="assets/ml-diagram.png" alt="Diagrama dos tipos de aprendizado em machine learning." width="90%" />
+<p class="caption">
+Figure 1.2: Diagrama dos tipos de aprendizado em machine learning.
+</p>
 </div>
-<div id="tipos-de-aprendizado" class="section level2">
-<h2><span class="header-section-number">1.2</span> Tipos de aprendizado</h2>
-<p>lorem ipsum</p>
 <div id="aprendizado-supervisionado" class="section level3">
-<h3><span class="header-section-number">1.2.1</span> Aprendizado supervisionado</h3>
-<p>lorem ipsum</p>
+<h3><span class="header-section-number">1.1.1</span> Aprendizado supervisionado</h3>
+<p>No aprendizado supervisionado, o modelo recebe um conjunto de entradas com suas
+respectivas saídas e busca encontrar uma função que estabelaça uma relação
+aproximada entre elas. Mais formalmente, o modelo baseado no
+aprendizado supervisionado busca encontrar uma função <span class="math inline">\(h(x_{i})\)</span>, denominada
+hipótese, que se aproxime da função <span class="math inline">\(f(x_{i})\)</span>, onde <span class="math inline">\(f(x_{i})\)</span> é a saída da
+<span class="math inline">\(i\)</span>-ésima entrada de <span class="math inline">\(x\)</span> <span class="citation">(Russell and Norvig <a href="#ref-norvig2002modern">2002</a>)</span>.</p>
+<p>Os hiperparâmetros dos modelos baseados em aprendizado supervisionado são
+configurados com intuito de calibrar seu nível de assertividade e precisão.
+Essas características estão associadas ao <em>bias</em> e variância do modelo. O <em>bias</em>
+está relacionado à capacidade do modelo se ajustar aos dados aos quais lhes
+foram apresentados durante o treinamento. Já a variância é a variabilidade das
+previsões do modelo. A complexidade do modelo aumenta a medida que ele vai
+se ajustando aos dados, em contrapartidada vai perdendo também a sua capacidade
+de generalização, que faz com que variância seja aumentada. Os hiperparâmetros
+devem ser configurados de tal forma equilibrar o <em>bias</em> e a variância, este
+equilíbrio é denominado <em>trade-off</em>. Para modelos lineares, a complexidade do
+modelo deve ser ajustada de tal forma que o <em>bias</em> e a variância tenham o menor
+valor possível. Já para modelos não lineares, o ponto de equilibrio deve ser
+onde a complexidade do podelo possui o menor <em>bias</em> e maior variância. A Figura
+<a href="introdução.html#fig:trade-off">1.3</a> mostra um esquema para a complexidade ideal em modelos
+lineares e não lineares.</p>
+<div class="figure" style="text-align: center"><span id="fig:trade-off"></span>
+<img src="assets/01_introduction/trade-off.png" alt="Esquema do *trade-off* no aprendizado supervisionado." width="90%" />
+<p class="caption">
+Figure 1.3: Esquema do <em>trade-off</em> no aprendizado supervisionado.
+</p>
+</div>
+<p>O ajuste desbalanceado da complexidade do modelo pode acarretar nos problemas de
+<em>underfitting</em> (sub-ajuste) e o <em>overfitting</em> (superajuste). O problema de
+<em>underfitting</em> está associado a falta de capacidade do modelo na representação
+dos dados. Já no <em>overfitting</em> o modelo se ajusta muito aos dados e perde a
+sua capacidade de generalização, que faz com que o erro seja muito alto ao ser
+apresentado novas amostras. A Figura <a href="introdução.html#fig:fitting">1.4</a> mostra um exemplo com
+diferentes ajustes do modelo aos dados.</p>
+<div class="figure" style="text-align: center"><span id="fig:fitting"></span>
+<img src="assets/01_introduction/fitting.png" alt="Diferentes ajustes do modelo aos dados." width="90%" />
+<p class="caption">
+Figure 1.4: Diferentes ajustes do modelo aos dados.
+</p>
+</div>
+<p>Os modelos de aprendizado supervisionado estão associados às tarefas de
+regressão e classificação. Nas tarefas de regressão, o modelo deve buscar o
+ajuste de uma função que melhor aproxime os dados de entrada com os dados de
+saída. Já os modelos de classificação buscam o ajuste em uma função que mellhor
+separe um conjunto de variáveis categóricas. Os modelos de regressão e
+classificação são melhor apresentados neste livro nos capítulos
+<a href="https://dataat.github.io/introducao-ao-machine-learning/regress%C3%A3o.html">2</a>
+e <a href="https://dataat.github.io/introducao-ao-machine-learning/classifica%C3%A7%C3%A3o.html">3</a>
+, respectivamente.</p>
 </div>
 <div id="aprendizado-não-supervisionado" class="section level3">
-<h3><span class="header-section-number">1.2.2</span> Aprendizado Não supervisionado</h3>
-<p>lorem ipsum</p>
+<h3><span class="header-section-number">1.1.2</span> Aprendizado Não supervisionado</h3>
+<p>O aprendizado não supervisionado, diferente do aprendizado supervisionado,
+deve fazer inferências a partir de um conjunto de dados que não foi rotulado,
+classificado ou categorizado previamente. Este tipo de aprendizado é amplamente
+utilizado para a descoberta de padrões ocultos nos dados. Este tipo de abordagem
+segue o fluxo apresentado na Figura <a href="introdução.html#fig:ul">1.5</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:ul"></span>
+<img src="assets/01_introduction/unsupervised-learning.png" alt="Fluxo de execução do aprendizado não supervisionado." width="1070" />
+<p class="caption">
+Figure 1.5: Fluxo de execução do aprendizado não supervisionado.
+</p>
+</div>
+<p>As tarefas de agrupamento e redução de dimensionalidade estão entre as
+principais tarefas executadas pelos algoritmos de aprendizado não
+supervisionado. Essa abordagem também é amplamente utilizada para identificação
+de anomalias nos dados.</p>
+<p>Para as tarefas de agrupamento, o modelo recebe um conjunto de dados não
+rotulado, e partir disso busca agrupá-lo com base em alguma característica de
+similaridade, por exemplo, a distância entre os pontos. A quantidade de grupos
+pode ser definida previamente, ou pode ficar a cargo do próprio modelo. Os
+sistemas de recomendações, geralmente presentes na plataformas de
+entretenimento, é uma das principais aplicações que utilizam essa abordagem. No
+capítulo <a href="https://dataat.github.io/introducao-ao-machine-learning/agrupamento.html">4</a>
+deste livro as técnicas de agrupamento são apresentadas com mais detalhes.</p>
+<p>A redução de dimensionalidade é uma técnica que utiliza o aprendizado não
+supervisionado para a redução do número de variáveis. Essa técnica é utilizada
+para encontrar um número inferior de variáveis que melhor representam as
+características dos conjuntos de dados. Essa técnica é amplamente utilizada na
+detecção de bordas, no contexto de processamento digital de imagens.</p>
+<p>Por serem eventos raros, as anomalias podem ser difíceis de identificar,
+principalmente em uma grande quantidade de dados. O aprendizado não
+supervisionado pode ser utilizado na detecção dessas características. Uma das
+tarefas em que pode ser aplicado esse recurso é na detecção de transações
+fraudalentas. Além disso, a indentifiação de anomalias em um conjunto de dados,
+pode afetar no treinamento de um modelo utilizando o aprendizado supervisionado,
+agindo como ruído nos dados.</p>
+</div>
+<div id="aprendizado-por-reforço" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Aprendizado por reforço</h3>
+<p>No aprendizado por reforço os modelos são treinados para tomarem uma sequência
+de decisões e um abiente incerto e complexo. Nessa abordagem, os agentes possuem
+um estado que é alterado após realizar uma ação que é executada de forma
+aleatória, com base nessa ação, os agentes podem ser penalizados ou
+recomempensados. Caso a ação do agente gere recompensas, então ela será
+reforçada para o seu próximo estado <span class="citation">(Goodfellow et al. <a href="#ref-goodfellow2016deep">2016</a>)</span>. Nessa abordagem o
+modelo pode utilizar a tentativa e erro de forma a maximizar suas recompensas. A
+Figura <a href="introdução.html#fig:rl">1.6</a> mostra o fluxo clássico da abordardagem baseada no
+aprendizado por reforço.</p>
+<div class="figure" style="text-align: center"><span id="fig:rl"></span>
+<img src="assets/01_introduction/rl.png" alt="Fluxo clássico do aprendizado por reforço." width="70%" />
+<p class="caption">
+Figure 1.6: Fluxo clássico do aprendizado por reforço.
+</p>
+</div>
+<p>O ambiente é o local em que o agente pode interagir tomando suas decisões. A
+<em>priori</em> o agente não possui nenhuma informação a respeito do ambiente, mas ele
+vai o conhecendo no decorrer de suas experiências para evoluir seus estados. O
+estado diz respeito às condições atuais do agente e do ambiente. O estado do
+agente é atualizado com base em suas recompensas ou penalidades que são
+adiquiridas após suas ações. As ações são as interações do agente com o
+ambeiente. A recompensa é um sinal positivo que é ativado reforçando uma ação do
+agente, ja penalidade, é um sinal negativo que faz com que a ação do agente seja
+esquecida.</p>
+<p>Esse tipo de abordagem é aplamente utilizada em jogos. Com base em suas
+experiências, um agente agente pode aprender jogos com regras complexas como o
+xadrez. Nesse caso, o ambiente é o tabuleiro de xadrez, o estado é o
+posicionamento das peças, a ação é o movimento da peça, a recompensa é eliminar
+uma peça adversária e a penalidade é a perda de uma peça após o movimento.</p>
+<p>A aprendizado por reforço também está presente nos algoritmos dos veículos
+autônomos. Onde, o ambiente é o próprio local onde o veículo está presente, o
+estado é localização e percepção dos obstáculos capturadas pelos sensores, a
+ação são os comandos de direção, aceleração e freio, a recompensa é a
+a aproximação do destino e a penalidade pode ser a colisão com algum obstáculo.</p>
 
 </div>
 </div>
@@ -224,6 +366,15 @@ programados</em>”.</p>
 </div>
 <div id="ref-bhavsar2017machine">
 <p>Bhavsar, Parth, Ilya Safro, Nidhal Bouaynaya, Robi Polikar, and Dimah Dera. 2017. “Machine Learning in Transportation Data Analytics.” In <em>Data Analytics for Intelligent Transportation Systems</em>, 283–307. Elsevier.</p>
+</div>
+<div id="ref-goodfellow2016deep">
+<p>Goodfellow, Ian, Yoshua Bengio, Aaron Courville, and Yoshua Bengio. 2016. <em>Deep Learning</em>. Vol. 1. MIT press Cambridge.</p>
+</div>
+<div id="ref-mitchell1997machine">
+<p>Mitchell, Tom M. 1997. <em>Machine Learning</em>. First. McGraw-Hill Science/Engineering/Math.</p>
+</div>
+<div id="ref-norvig2002modern">
+<p>Russell, Stuart, and Peter Norvig. 2002. <em>Artificial Intelligence: A Modern Approach</em>. Second. Prentice Hall.</p>
 </div>
 <div id="ref-samuel1959some">
 <p>Samuel, Arthur L. 1959. “Some Studies in Machine Learning Using the Game of Checkers.” <em>IBM Journal of Research and Development</em> 3 (3). IBM: 210–29.</p>
