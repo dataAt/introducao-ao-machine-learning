@@ -7,7 +7,7 @@
 <!-- TODO: pensando em add a citação de que o termo cluster apareceu em um artigo 
 em 1959 -->
 
-> Afinal, todos nós nos enquadramos em um grupo. - (autor desconhecido) 
+> **Afinal, todos nós nos enquadramos em um grupo. - (autor desconhecido)**
 
 <p align="justify">
 Vimos até agora que os métodos de classificação e regressão usam conjuntos de
@@ -563,5 +563,3 @@ Você deve estar se perguntando: "Como faço para avaliar os grupos gerados no c
 <p align="justify">
 Agora que entendemos os fundamentos da técnica de agrupamento aglomerativa e como podemos definir os grupos, vamos apresentar alguns exemplos práticos na plataforma kaggle, os exemplos estão disponíveis nas linguagens R e Python.
 </p>
-
-<!-- ## Saiba mais -->
